@@ -17,28 +17,29 @@
         /*전역변수 설정 완료*/
 
         header {
-            display: inline;
+          display: inline;
         }
-
+   
    
         header > .search{
             margin-left: 20px;
+            display:inline;
 
             padding-top: 30px;
-            display: inline-block;
-
             float: left;
         }
         header > .mainimg{
-            display: inline-block;
             padding-top: 30px;
-            text-align: center;
-        }
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+          }
    
         header > .nav{
             padding-top: 30px;
             float: right;
-            display: inline-block;
+            display:inline;
+
         }
          
 .nav{
@@ -78,4 +79,17 @@
     padding-right: 50px;
     text-decoration: none;
     color: black;
+  }
+
+  #search-btn{
+    background:#181818;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:20px;
+    font-size:0.5em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
   }
