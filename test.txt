@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 test-jenn
+=======
+﻿test1-haejun
+test2-haejun
+>>>>>>> df332c7d6f1bdf89935217f53d8b3edbb44a341b
