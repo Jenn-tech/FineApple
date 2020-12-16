@@ -12,4 +12,4 @@
 <br>
 
 # 2. semi-project
-<img src="img/semitable.png"/>
+<img src="related/img/semitable.png"/>
