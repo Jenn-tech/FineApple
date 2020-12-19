@@ -6,6 +6,7 @@
 <head>
 <title>FineApple Main</title>
 <link rel="stylesheet" href="./css/indexstyle.css">
+<link rel="stylesheet" href="./css/header.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
 		crossorigin="anonymous"></script>
@@ -20,44 +21,9 @@
 	%>
 	<jsp:include page="/header.jsp"/>
 	
-	<!-- <header id="header">
-		<nav class="left">
-            <div class="search_bar">
-                 <form role="search" method="get" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="s" />
-                    <button type="submit" class="search-submit">검색</button>
-                 </form>
-            </div>
-        </nav>
-        <a href ="./index.jsp"><img src="./images/pineapple.png"/></a>
-		<nav class="right">
-            <a href="#" class="button alt">소개</a>
-			<a href="#" class="button alt">커뮤니티</a>
-			<a href="#" class="button alt">고객지원</a>
-            <a href="#" class="button alt">마이페이지</a>                
-            <a href="./login/loginfo.jsp" class="button alt">로그인</a>                
-        </nav>  
-	</header> -->
 	<%} else {%>
-	<!-- <header id="header">
-		<nav class="left">
-            <div class="search_bar">
-                 <form role="search" method="get" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="s" />
-                    <button type="submit" class="search-submit">검색</button>
-                 </form>
-            </div>
-        </nav>
-        <a href ="./index.jsp"><img src="./images/pineapple.png"/></a>
-		<nav class="right">
-            <a href="#" class="button alt">소개</a>
-			<a href="#" class="button alt">커뮤니티</a>
-			<a href="#" class="button alt">고객지원</a>
-            <a href="#" class="button alt">마이페이지</a>                
-		<input type='button' id='btnLogout' value='로그아웃' />
-        </nav>  
-	</header> -->
-		<jsp:include page="/header2.jsp"/>
+	
+	<jsp:include page="/header2.jsp"/>
 	
 	<%} %>
     <div class = "container">
