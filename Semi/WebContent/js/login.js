@@ -18,7 +18,10 @@ var logInOut = function(){
 		
 	if(btnLogout != null){
 	btnLogout.onclick = function(){
+		if( confirm("정말 로그아웃 하시겠습니까?")){
+		alert("로그아웃되었습니다");
 		location.href = './login/logout.jsp';
+		}
 	}
 	}
 
