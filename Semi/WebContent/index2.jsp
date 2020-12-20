@@ -28,10 +28,14 @@
 	<%} %>
     <div class = "container">
     
-        <div class =" main-view">
-            <img src="./images/macbook.jpg " width="100%" />
+       <div class="main-view">
+          <ul>
+            <li><img src="./images/macbook.jpg " width="100%" /></li>
+            <li><img src="./images/ipad.jpg"width="100%"/></li>
+            <li><img src="./images/phone.jpg"width="100%"/></li>
+          </ul>
         </div>
-       
+        
             <ul class="menu">
                 <li><a href="#">노트북</a></li>
                 <li><a href="#">휴대폰</a></li>
