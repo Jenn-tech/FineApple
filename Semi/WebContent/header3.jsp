@@ -25,14 +25,15 @@
 	            	<a href="#" class="button alt">커뮤니티</a>
 	            	<ul>
 	            		<a href="#" >이벤트</a>
-	            		<a href="#" >리뷰게시판</a>
+	            		<a href="#" >리뷰 게시판</a>
 	            	</ul>
 	            </li>
 	            <li>
 	            	<a href="#" class="button alt">고객지원</a>
 	            	<ul>
-	            		<a href="#" >환불정책</a>
-	            		<a href="#" >Q n A</a>
+	            		<a href="#" >환불 정책</a>
+	            		<a href="#" >QnA게시판  </a>
+	            		<a href="#" >FAQ</a>
 	            	</ul>
 	            </li>
 	            <li>
@@ -44,7 +45,7 @@
 	            		<a href="#" >찜목록</a>
 	            	</ul>
 	            </li>            
-	            <a href="./login/loginfo.jsp" class="button alt">로그인</a>                
+	            <li><a href="./login/loginfo.jsp" class="button alt">로그인</a></li>                
         	</div>
         </nav>  
 	</header>
