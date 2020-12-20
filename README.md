@@ -12,3 +12,9 @@
 - 헤더분리
   - [header.jsp](Semi/WebContent/header.jsp)
   - [header.css](Semi/WebContent/css/header.css)
+- 메뉴 dropdown 구현
+  - [index2.jsp](Semi/WebContent/index2.jsp)
+  - [header2.css](Semi/WebContent/css/header2.css)
+  - dropdown시 접근성은 좋으나 디자인적으로 거슬리는 부분있음..개빡치는부분....
+  - 팀원들 의견반영하고 헤더픽스 
+    - 더는 수정x
