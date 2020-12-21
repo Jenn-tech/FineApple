@@ -10,13 +10,8 @@
   - [login.js에서 구현](Semi/WebContent/js/login.js)
     - [logout.jsp](Semi/WebContent/login/logout.jsp)
 - header 분리
-  - [header.jsp](Semi/WebContent/header.jsp)
-  - [header.css](Semi/WebContent/css/header.css)
 - menu dropdown 
-  - [index2.jsp](Semi/WebContent/index2.jsp)
-  - [header2.css](Semi/WebContent/css/header2.css)
 
 # 201220 
 - 메뉴 dropdown시 submenu 밝기focus
 - mainview slide
-  - [index2.jsp](Semi/WebContent/index2.jsp)
