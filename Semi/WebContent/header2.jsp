@@ -13,11 +13,42 @@
         </nav>
         <a href ="index.jsp"><img src="./images/pineapple.png"/></a>
 		<nav class="right">
-            <a href="#" class="button alt">소개</a>
-			<a href="#" class="button alt">커뮤니티</a>
-			<a href="#" class="button alt">고객지원</a>
-            <a href="#" class="button alt">마이페이지</a>                
-		<input type='button' id='btnLogout' value='로그아웃' />
+          <div class = "menubar">
+	            <li>
+	            	<a href="#" class="button alt">소개</a>
+	            	<ul>
+	            		<a href="#" >회사소개</a>
+	            		<a href="#" >회사비전</a>
+	            		<a href="#" >오시는길</a>
+	            	</ul>
+	            </li>
+	            <li>
+	            	<a href="#" class="button alt">커뮤니티</a>
+	            	<ul>
+	            		<a href="#" >이벤트</a>
+	            		<a href="#" >리뷰 게시판</a>
+	            	</ul>
+	            </li>
+	            <li>
+	            	<a href="#" class="button alt">고객지원</a>
+	            	<ul>
+	            		<a href="#" >환불 정책</a>
+	            		<a href="#" >QnA게시판  </a>
+	            		<a href="#" >FAQ</a>
+	            	</ul>
+	            </li>
+	            <li>
+	            	<a href="#" class="button alt">마이룸</a>
+	            	<ul>
+	            		<a href="#" >장바구니</a>
+	            		<a href="#" >주문내역</a>
+	            		<a href="#" >정보수정</a>
+	            		<a href="#" >찜목록</a>
+	            	</ul>
+	            </li>            
+	            <li><input type='button' id='btnLogout' value='로그아웃' /></li>                
+        	</div>               
+		
         </nav>  
 	</header>
 	<script>logInOut()</script>
