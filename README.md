@@ -18,3 +18,7 @@
 
 # 201221
 - 아이디찾기 및 result화면 구현
+  - [아이디찾기.jsp](Semi/WebContent/login/findId.jsp)
+  - [아이디찾기.js](Semi/WebContent/js/findinfo.js)
+  - [아이디찾기결과화면](Semi/WebContent/login/findIdResult.jsp)
+  - [아이디찾기.css](Semi/WebContent/css/findinfo.css)
