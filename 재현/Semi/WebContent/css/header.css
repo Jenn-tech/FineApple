@@ -47,7 +47,7 @@ body {
    }
 
 #header nav.right {
-        right: 2em;
+        right: 0.5em;
       }
 
 #header nav .button {
@@ -78,30 +78,20 @@ body {
       min-width: 320px;
   }
 }
-#header .right>input{
+#header .menubar input[type=button]{
 	border : white;
 	background-color : white;
 	cursor : pointer;
   font-weight: 700;
   width : 100px;
   height:50px;
+  font-size : 1rem;
 }
 
-#header .right>input:hover{
+#header .right input:hover{
   color: white;
   background-color: black;
 	}
-
-#header a{
-  color: black;
-  font-weight: 700;
-}
-
-#header .right>a:hover{
-  color: white;
-  background-color: black;
-}
-
 
 
 /*헤더 검색바*/
@@ -113,7 +103,7 @@ body {
   display: inline-block;
   margin-left: 20px;
 }
-#header button{
+#header .left button{
   background-color: white;
   border: white;
   height: 40px;
@@ -122,13 +112,13 @@ body {
   color: white;
   font-size: 1rem;
 }
-#header button:hover{
+#header .left button:hover{
   color: black;
   background-color: white;
   cursor: pointer;
 }
 
-#header input{
+#header .left input{
   border: black;
   width: 200px;
   border-bottom: black solid 1px;
@@ -137,3 +127,46 @@ body {
   text-align: center;
   height: 34px;
 }
+.menubar>li{
+	display:inline-block;
+}
+/*dropdown*/
+
+.menubar li ul { 
+display:none; /* 평상시에는 서브메뉴가 안보이게 하기 */ 
+position:absolute; 
+background : white;
+width : 110px;
+  }
+
+.menubar li:hover ul{ 
+	display:block;
+	
+ /* 마우스 커서 올리면 서브메뉴 보이게 하기 */ }
+
+.menubar>li>a:hover{
+	background : black;
+	color:white;
+} 
+.menubar a{
+	color : black;
+  font-weight: 700;
+}
+
+.menubar ul>a{
+	color : black;
+	transition: 0.5s; 
+	
+}
+
+ .menubar ul:hover a{        /*메인효과1*/
+            opacity: 0.3;   
+        }
+        
+.menubar ul>a:hover {        /*메인효과2 : 특정 a만 밝게*/
+            opacity: 1;
+        }
+        
+
+
+ 
