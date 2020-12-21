@@ -14,4 +14,4 @@
 
 # 201220 
 - 메뉴 dropdown시 submenu 밝기focus
-- mainview slide
+- mainview slide 
