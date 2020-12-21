@@ -1,9 +1,11 @@
-//login을 위한
+
 package bean;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import javax.servlet.http.HttpServlet;
 
 public class MemberDao {
 	Connection conn; //database의 연결정보
@@ -36,4 +38,29 @@ public class MemberDao {
 			return b;
 		}
 	}
+	
+	
+	public String findId(String name, String phone) {
+		String mid = null;
+		
+		try {
+			String sql = "select mid from members where name=? and phone=? ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				mid = rs.getString("mid");
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mid;
+	}
+	
+	
+	
 }

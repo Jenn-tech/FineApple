@@ -1,16 +1,25 @@
+<%@page import="bean.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+ request.setCharacterEncoding("UTF-8");
+    String name = request.getParameter("name");
+     String phone = request.getParameter("phone");
+     
+MemberDao dao = new MemberDao();
+ String mid = dao.findId(name, phone); //아이디를 디비에서 가져옴..실패시 널
+ 
+%>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <script src='../js/login.js'></script>
-    
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="stylesheet" href="../css/findinfo.css">
+
 </head>
 <body>
-   	<header id="header">
+<header id="header">
 		<nav class="left">
             <div class="search_bar">
                  <form role="search" method="get" class="search-form" >
@@ -28,56 +37,33 @@
             <a href="#" class="button alt">로그인</a>                
         </nav>  
 	</header>
-
-    <div class="container">
-        <section class="form-write">
-			<form name='form_log' method='post'>
-                <div class="align">
-                    <input type="text" id="mid" name = "mid" placeholder="FineApple ID">
-                     <div class="text-id">
-                       
-                    </div> 
-                    <label></label>
-                    <input type="password" id="pwd" name = "pwd" placeholder="암호">
-                   <div class="text-id">
-                        
-                    </div> 
-                    <input type="submit" id="btnLogin" value="로그인">
-                </div>
-            </form>
-            <section class="login-search">
-                <div class="login-id">
-                    <a href="./findId.jsp">아이디찾기</a>
-                </div>
-                <div class="login-pw">
-                    <a href="#">비밀번호 찾기</a>
-                </div>
-                <div class="login-join">
-                    <a href="#">회원가입</a>
-                </div>
-            </section>
-            <div class="item-center">
-                <div class="flex-1"></div>
-                <span>OR</span>
-                <div class="flex-1"></div>
-            </div>
-        </section>
-        
-        
-        <section class="login-write">
-            <div class="button-login">
-                <button class="btn-kakao">
-                    <a href="#"> KAKAO 로그인</a>
-                   
-                </button>
-            </div>
-            <div class="button-login">
-                <button class="btn-naver" >
-                    <a href="#">NAVER 로그인</a>
-                </button>
-            </div>
-        </section>
-    </div>
+  <form name="idsearch" method="post">
+      <%
+       if (mid != null) {
+      %>
+      
+      <div class = "container">
+      	<div class = "found">
+	      <h4>  회원님의 아이디는 </h4>  
+	      <div class ="found-id"><%=mid%></div>
+	      <h4>  입니다 </h4>
+	     </div>
+	     <div class = "found-login">
+ 		    <input type="button" id="btnLogin" value="로그인" />
+       	</div>
+       </div>
+      <%
+  } else {
+ %>
+        <div>* 아이디 찾기를 실패하셨습니다. *</div>
+       <input type="button" value="돌아가기"
+         onClick="history.back()">
+        <div><%=mid%></div>
+       <%
+  }
+ %> 
+      </form>
+     
     <div class="footer-align">
         <hr>
         <div class="help-box">도움이 더 필요하신가요? <a href="#">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
@@ -96,8 +82,6 @@
                 </ul>
             </div>
         </footer>
-    </div>
-    <script>logInOut()</script>
-    
+        </div>
 </body>
 </html>
