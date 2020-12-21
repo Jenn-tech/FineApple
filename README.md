@@ -15,3 +15,6 @@
 # 201220 
 - 메뉴 dropdown시 submenu 밝기focus
 - mainview slide 
+
+# 201221
+- 아이디찾기 및 result화면 구현
