@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 목차
 
 
@@ -69,3 +68,4 @@
 - 다이어그램/프로토타입
   - https://ovenapp.io/
   - https://app.diagrams.net/
+
