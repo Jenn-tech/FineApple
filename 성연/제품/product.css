@@ -1,0 +1,136 @@
+/* header */
+* {
+    /* background-color: #f7f7f7; */
+    text-align: center;
+} 
+
+.main{
+    margin: 220px;
+    padding: 0;
+}
+
+.summary{
+    position: relative;
+    float: right;
+    width: 100%;
+    max-width: 472px;
+    min-height: 680px;
+    padding: 50px 46px 46px;
+    background-color: #fff;
+    border-radius: 23px;
+    box-sizing: border-box;
+}
+
+.small-str{
+    font-size: 13px;
+}
+
+#btncolor1, #btncolor2{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+#btncolor2{
+    background-color: brown;
+
+}
+.btn1, .btn2 {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 3px solid rgba(20, 20, 20, 0.733);
+    background-color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* container */
+/* item-title */
+.container{
+    background-color: #fff;
+}
+
+.item-title, .item-title2{
+    background: black;
+    width: 100%;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+/* 
+    font-size: 20px;
+    line-height: 80px;
+    font-weight: bold;
+}
+} */
+
+ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.item-title2 li{
+    background: black;
+    display: flex;
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    float: left;
+    text-align: right;
+}
+.item-title2 button{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background: #2189ff;
+    border-color: #2189ff;
+    border-radius: 30px;
+}
+
+/* 상품평 */
+.review-btn ul, li{
+    display: flex;
+    margin: 50px;
+}
+
+/* 유의사항 */
+.note{
+    background-color: #f7f7f7;
+    list-style-type: none;
+    text-align: left;
+}
+.note>ul, .note>.bold{
+    font-weight: bold;
+    font-size: 16px;
+}
+.note p{
+    font-weight: normal;
+    font-size: 15px;
+}
