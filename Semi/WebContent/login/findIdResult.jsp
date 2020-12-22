@@ -43,22 +43,29 @@ MemberDao dao = new MemberDao();
       %>
       
       <div class = "container">
-      	<div class = "found">
+      	<div class = "found-success">
 	      <h4>  회원님의 아이디는 </h4>  
 	      <div class ="found-id"><%=mid%></div>
 	      <h4>  입니다 </h4>
 	     </div>
 	     <div class = "found-login">
- 		    <input type="button" id="btnLogin" value="로그인" />
+ 		    <input type="button" id="btnLogin" value="로그인" onClick = 'history.back()'/>
        	</div>
        </div>
       <%
   } else {
  %>
-        <div>* 아이디 찾기를 실패하셨습니다. *</div>
-       <input type="button" value="돌아가기"
-         onClick="history.back()">
-        <div><%=mid%></div>
+        <div class = "container">
+      	<div class = "found-fail">
+	      <h4>  등록된 정보가 없습니다 </h4>  
+	     </div>
+	     <div class = "found-login">
+ 		    <input type="button" id="btnback" value="다시 찾기" onClick="history.back()"/>
+ 		    <input type="button" id="btnjoin" value="회원가입" onClick="joinin()"/>
+       	</div>
+       </div>
+       
+       
        <%
   }
  %> 
