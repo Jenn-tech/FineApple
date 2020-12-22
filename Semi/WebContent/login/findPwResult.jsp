@@ -3,11 +3,11 @@
     pageEncoding="UTF-8"%>
     <%
  request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-     String phone = request.getParameter("phone");
+    String mid = request.getParameter("mid");     
+    String phone = request.getParameter("phone");
      
 MemberDao dao = new MemberDao();
- String mid = dao.findId(name, phone); //아이디를 디비에서 가져옴..실패시 널
+ String pwd = dao.findPw(mid, phone); //아이디를 디비에서 가져옴..실패시 널
  
 %>
 <!DOCTYPE html>
@@ -40,13 +40,13 @@ MemberDao dao = new MemberDao();
 	</header>
   <form name="idsearch" method="post">
       <%
-       if (mid != null) {
+       if (pwd != null) {
       %>
       
       <div class = "container">
       	<div class = "found-success">
-	      <h4>  회원님의 아이디는 </h4>  
-	      <div class ="found-id"><%=mid%></div>
+	      <h4>회원님의 비밀번호는 </h4>  
+	      <div class ="found-id"> <%=pwd%></div>
 	      <h4>  입니다 </h4>
 	     </div>
 	     <div class = "found-login">
@@ -66,9 +66,10 @@ MemberDao dao = new MemberDao();
        	</div>
        </div>
        
-    <div class = "adcontainer">
+<div class = "adcontainer">
 	<a href="#" ><img src = "../images/casead.png" /></a>                
-</div>   
+</div>
+       
        <%
   }
  %> 

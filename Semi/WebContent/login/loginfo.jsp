@@ -50,7 +50,7 @@
                     <a href="./findId.jsp">아이디찾기</a>
                 </div>
                 <div class="login-pw">
-                    <a href="#">비밀번호 찾기</a>
+                    <a href="./findPw.jsp">비밀번호 찾기</a>
                 </div>
                 <div class="login-join">
                     <a href="#">회원가입</a>

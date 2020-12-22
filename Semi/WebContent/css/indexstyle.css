@@ -24,6 +24,31 @@
     }
 
 
+
+
+.title-container {
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+	
+	100% {
+		transform: translateY(0);
+	}
+	
+}
+
+@keyframes draw {
+	
+	100% {
+		width: 100%;
+	}
+	
+}
+
 /*카테고리 설정*/
 .menu{
   border:1px solid #ccc;
