@@ -29,6 +29,7 @@
     <div class = "container">
     
        <div class="main-view">
+       
           <ul>
             <li><img src="./images/macbook.jpg " width="100%" /></li>
             <li><img src="./images/ipad.jpg"width="100%"/></li>

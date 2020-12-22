@@ -61,6 +61,24 @@ public class MemberDao {
 		return mid;
 	}
 	
-	
+	public String findPw(String mid, String phone) {
+		String pwd = null;
+		try {
+			String sql = "select pwd from members where mid=? and phone=? ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, phone);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				pwd = rs.getString("pwd");
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pwd;
+	}
 	
 }

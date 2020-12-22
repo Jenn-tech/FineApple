@@ -36,18 +36,11 @@
 		<section class = "form-search">
 			<div class = "find-name">
 				<label>이름</label>
-				<input type="text" name="name" class = "btn-name" placeholder = "가입시 등록한 이름">
+				<input type="text" name="name" class = "btn-name" placeholder = "등록한 이름">
 			<br>
 			</div>
 			<div class = "find-phone">
 				<label>번호</label>
-				<!-- <select name="phone" class = phone-select>
-					<option value="010" selected="selected">010</option>
-				    <option value="011">011</option>
-				   	<option value="016">016</option>
-					<option value="017">017</option>
-				</select>
-				<input type="text" name="phone1" > -->
 				<input type="text" onKeyup = "addHypen(this);" name="phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
 			</div>
 			<br>

@@ -2,6 +2,8 @@
  * 아이디, 비밀번호 찾기
  */
 
+
+//아이디찾기
 function id_search1() { 
 	 	var frm = document.idfindscreen;
 
@@ -19,6 +21,28 @@ function id_search1() {
 	 frm.action = "findIdResult.jsp"; //넘어간화면
 	 frm.submit();  
 	 }
+
+
+//비밀번호찾기
+ function pw_search(){
+
+  var frm=document.pwfindscreen;
+
+  if(frm.mid.value.length<3){
+   alert("아이디를 올바르게 입력해주세요");
+   return;
+  }
+
+   if (frm.phone.value.length != 13) {
+			  alert("핸드폰번호를 정확하게 입력해주세요");
+			  return;
+		 }
+	
+  frm.method="post";
+  frm.action="findPwResult.jsp"; //넘어간화면
+  frm.submit(); //등록이 될수 있는 조건이면, 정보를 보내겠다.
+  }
+
 
  function addHypen(obj) {
 	    var number = obj.value.replace(/[^0-9]/g, "");
@@ -45,4 +69,18 @@ function id_search1() {
 	    }
 	    obj.value = phone;
 	}
-  
+	
+function login() {
+		if(btnLogin != null){
+	btnLogin.onclick = function(){
+		location.href = 'loginfo.jsp';
+	}
+	}
+}
+  function joinin() { //회원가입 창으로 이동(수정필요)
+		if(btnjoin != null){
+	btnjoin.onclick = function(){
+		location.href = 'loginfo.jsp';
+	}
+	}
+}
