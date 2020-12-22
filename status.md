@@ -25,4 +25,7 @@
 
 # 201222
 - 비밀번호 찾기 및 result화면 
+  - [](Semi/WebContent/login/findPw.jsp)
+  - [](Semi/WebContent/login/findPwResult.jsp)
 - 찾기화면실패시 ad추가
+  
