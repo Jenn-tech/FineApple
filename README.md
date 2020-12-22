@@ -22,3 +22,7 @@
   - [아이디찾기.js](Semi/WebContent/js/findinfo.js)
   - [아이디찾기결과화면](Semi/WebContent/login/findIdResult.jsp)
   - [아이디찾기.css](Semi/WebContent/css/findinfo.css)
+
+# 201222
+- 비밀번호 찾기 및 result화면 
+- 찾기화면실패시 ad추가
