@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+.head_container {
+	min-height: 350px;
+	text-align: center;
+	padding-top: 70px;
+	background-color: black;
+	color: white;
+}
+
+.main-view{
+  margin:  auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-align: center;
+  height:500px
+}
+.head_container>img {
+	display: inline-block;
+	width: 10%;
+	height: 10%;
+	margin-bottom: 10px;
+}
+
+#search_box {
+	margin-top: 10px;
+	width: 25%;
+	height: 2rem;
+	border-radius: 9px;
+	border: 1px solid #333333;
+}
+
+#submit_box {
+	height: 2rem;
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid #333333;
+}
+
+#menu_box {
+	margin-top: 30px;
+	height: 350px;
+}
+
+#menu_box>ul {
+	text-align: center;
+	vertical-align: baseline;
+}
+
+#menu_box>ul>li {
+	display: inline-block;
+	width: 160px;
+	height: 160px;
+	width: 160px;
+	margin: 0 20px;
+	border: 1px solid #ccc;
+	border-radius: 9px;
+}
+
+#menu_box>ul>img, a {
+	display: block;
+}
+
+.QA-container {
+  height: 500px;
+  margin: 0 auto;
+}
+.Qa-bar {
+	width: 100%;
+}
+.QA-bar > ul {
+	height: 70px;
+	vertical-align: baseline;
+	background-color: black;
+}
+.QA-bar > ul li {
+	display: inline-block;
+	padding-top: 10px;
+	height: 100%;
+}
+.QA-bar > ul li:hover {
+	background-color: rgb(91, 135, 164);
+}
+
+#QA_notice li{
+	text-indent: 1em;
+	list-style-type: circle;
+}
+
+.QA-header {
+	text-indent: 1em;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid gray;
+}

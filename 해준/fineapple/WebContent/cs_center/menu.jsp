@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div class="head_container">
+    <h2>어떻게 도와드릴까요?</h2>
+    <form action="">
+        <input type="text" placeholder="문제를 설명해주세요!" id="search_box">
+        <input type="button" value="검색" id="submit_box">
+    </form>
+</div>
+<div id="menu_box">
+    <ul>
+        <li><a href="./cs_center/quest_answer.jsp"><img alt=""
+                src="http://placehold.it/150X120">Q&A</a></li>
+        <li><a href="./product/accordion.jsp"><img alt=""
+                src="http://placehold.it/150X120">FAQ</a></li>
+        <li><a href=""><img alt=""
+                src="http://placehold.it/150X120">게시판</a></li>
+        <li><a href=""><img alt=""
+                src="http://placehold.it/150X120">찾아오시는 길</a></li>
+    </ul>
+</div>
