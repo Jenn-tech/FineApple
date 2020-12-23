@@ -3,11 +3,11 @@
     pageEncoding="UTF-8"%>
     <%
  request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-     String phone = request.getParameter("phone");
+    String mid = request.getParameter("mid");     
+    String phone = request.getParameter("phone");
      
 MemberDao dao = new MemberDao();
- String mid = dao.findId(name, phone); //아이디를 디비에서 가져옴..실패시 널
+ String pwd = dao.findPw(mid, phone); //아이디를 디비에서 가져옴..실패시 널
  
 %>
 <!DOCTYPE html>
@@ -16,10 +16,7 @@ MemberDao dao = new MemberDao();
 <meta charset="UTF-8">
 <title>Insert title here</title>
     <link rel="stylesheet" href="../css/findinfo.css">
-<<<<<<< HEAD
 <script src ='../js/findinfo.js'></script>
-=======
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 
 </head>
 <body>
@@ -43,31 +40,22 @@ MemberDao dao = new MemberDao();
 	</header>
   <form name="idsearch" method="post">
       <%
-       if (mid != null) {
+       if (pwd != null) {
       %>
       
       <div class = "container">
-<<<<<<< HEAD
       	<div class = "found-success">
-=======
-      	<div class = "found">
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
-	      <h4>  회원님의 아이디는 </h4>  
-	      <div class ="found-id"><%=mid%></div>
+	      <h4>회원님의 비밀번호는 </h4>  
+	      <div class ="found-id"> <%=pwd%></div>
 	      <h4>  입니다 </h4>
 	     </div>
 	     <div class = "found-login">
-<<<<<<< HEAD
  		    <input type="button" id="btnLogin" value="로그인" onClick = 'login()'/>
-=======
- 		    <input type="button" id="btnLogin" value="로그인" />
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
        	</div>
        </div>
       <%
   } else {
  %>
-<<<<<<< HEAD
         <div class = "container">
       	<div class = "found-fail">
 	      <h4>  등록된 정보가 없습니다 </h4>  
@@ -78,15 +66,10 @@ MemberDao dao = new MemberDao();
        	</div>
        </div>
        
-    <div class = "adcontainer">
+<div class = "adcontainer">
 	<a href="#" ><img src = "../images/casead.png" /></a>                
-</div>   
-=======
-        <div>* 아이디 찾기를 실패하셨습니다. *</div>
-       <input type="button" value="돌아가기"
-         onClick="history.back()">
-        <div><%=mid%></div>
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
+</div>
+       
        <%
   }
  %> 

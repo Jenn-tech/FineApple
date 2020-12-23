@@ -1,29 +1,16 @@
-<%@page import="bean.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
- request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-     String phone = request.getParameter("phone");
-     
-MemberDao dao = new MemberDao();
- String mid = dao.findId(name, phone); //아이디를 디비에서 가져옴..실패시 널
- 
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
     <link rel="stylesheet" href="../css/findinfo.css">
-<<<<<<< HEAD
 <script src ='../js/findinfo.js'></script>
-=======
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 
 </head>
 <body>
-<header id="header">
+	<header id="header">
 		<nav class="left">
             <div class="search_bar">
                  <form role="search" method="get" class="search-form" >
@@ -41,57 +28,30 @@ MemberDao dao = new MemberDao();
             <a href="#" class="button alt">로그인</a>                
         </nav>  
 	</header>
-  <form name="idsearch" method="post">
-      <%
-       if (mid != null) {
-      %>
-      
-      <div class = "container">
-<<<<<<< HEAD
-      	<div class = "found-success">
-=======
-      	<div class = "found">
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
-	      <h4>  회원님의 아이디는 </h4>  
-	      <div class ="found-id"><%=mid%></div>
-	      <h4>  입니다 </h4>
-	     </div>
-	     <div class = "found-login">
-<<<<<<< HEAD
- 		    <input type="button" id="btnLogin" value="로그인" onClick = 'login()'/>
-=======
- 		    <input type="button" id="btnLogin" value="로그인" />
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
-       	</div>
-       </div>
-      <%
-  } else {
- %>
-<<<<<<< HEAD
-        <div class = "container">
-      	<div class = "found-fail">
-	      <h4>  등록된 정보가 없습니다 </h4>  
-	     </div>
-	     <div class = "found-login">
- 		    <input type="button" id="btnback" value="다시 찾기" onClick="history.back()"/>
- 		    <input type="button" id="btnjoin" value="회원가입" onClick="joinin()"/>
-       	</div>
-       </div>
-       
-    <div class = "adcontainer">
-	<a href="#" ><img src = "../images/casead.png" /></a>                
-</div>   
-=======
-        <div>* 아이디 찾기를 실패하셨습니다. *</div>
-       <input type="button" value="돌아가기"
-         onClick="history.back()">
-        <div><%=mid%></div>
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
-       <%
-  }
- %> 
-      </form>
-     
+<div class = "container">
+	<form name="pwfindscreen" method = "POST">
+			<div class = "search-title">
+				<h3>등록한 정보로 인증</h3>
+			</div>
+		<section class = "form-search">
+			<div class = "find-id">
+				<label>아이디</label>
+				<input type="text" name="mid" class = "btn-name" placeholder = "FineApple ID">
+			<br>
+			</div>
+			<div class = "find-phone">
+				<label>번호</label>
+				<input type="text" onKeyup = "addHypen(this);" name="phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
+			</div>
+			<br>
+	</section>
+	<div class ="btnSearch">
+		<input type="button" name="enter" value="찾기"  onClick="pw_search()">
+		<input type="button" name="cancle" value="취소" onClick="history.back()">
+ 	</div>
+ </form>
+</div>
+
     <div class="footer-align">
         <hr>
         <div class="help-box">도움이 더 필요하신가요? <a href="#">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
@@ -111,5 +71,8 @@ MemberDao dao = new MemberDao();
             </div>
         </footer>
         </div>
+ <script>
+ 
+ </script>
 </body>
 </html>
