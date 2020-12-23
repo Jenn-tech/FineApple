@@ -6,36 +6,37 @@
 <head>
 <title>FineApple Main</title>
 <link rel="stylesheet" href="./css/indexstyle.css">
-<link rel="stylesheet" href="./css/header2.css">
-<script src="https://code.jquery.com/jquery-3.5.1.js" 
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
-		crossorigin="anonymous"></script>
-		   <script src='./js/login.js'></script>
-		
-</head>
+<link rel='stylesheet' type='text/css'
+   href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
+<script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
 </head>
 
 <body>
-	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="/header3.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="/header2.jsp"/>
-	
-	<%} %>
+    <header>
+        <div id="search">
+            <input id="search-product" type="text"size="15" placeholder="상품명"/>
+            <input id="search-btn" type="submit" value="검색"/>
+        </div>
+        <div id="img_container">
+            <!--<img src="https://t1.daumcdn.net/cfile/tistory/1705C6384DE6EB7433" width="95px"/>> -->
+            <img src="img/pineapple.png" width="220px"/>
+            
+        </div>
+        <ul id="nav">
+            <li><a href="#">소개</a></li>
+            <li><a href="#">서비스</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">고객지원</a></li>
+            <li><a href="#">로그인</a></li>
+        </ul>
+    </header> 
+    
     <div class = "container">
     
-       <div class="main-view">
-          <ul>
-            <li><img src="./images/macbook.jpg " width="100%" /></li>
-            <li><img src="./images/ipad.jpg"width="100%"/></li>
-            <li><img src="./images/phone.jpg"width="100%"/></li>
-          </ul>
+        <div class =" main-view">
+            <img src="img/macbook.jpg " width="100%" />
         </div>
-        
+       
             <ul class="menu">
                 <li><a href="#">노트북</a></li>
                 <li><a href="#">휴대폰</a></li>
@@ -171,14 +172,25 @@
 
 
        
-   <!-- footer영역 -->
-   	<%@include file="footer.jsp" %>
-   
-
     
+    <footer class="footer-list">
+        <div class="ul-align">
+            <ul class="list-box">
+                <li>사업자등록번호 : 120-81-84429 | 통신판매업신고번호 : 제 2011-서울강남-00810호</li>
+                <li>대표이사 : PETER DENWOOD | 주소 : 서울 특별시 강남구 영동대로 517</li>
+                <li>대표전화 : 080-330-8877 | 팩스 : 02-6928-0000</li>
+                <li>Apple 온라인 스토어는 업계 표준 암호화를 사용하여 제출된 고객 비밀 정보를 보호합니다. <a href="#">보안 정보</a>에 대해 더 알아보기.</li>
+                <hr class="list-box-hr">
+            </ul>
+            <ul class="list-box">
+                <li>다양한 쇼핑 방법: Apple Store를 방문하거나, 리셀러를 찾아보거나, 080-330-8877번으로 전화하세요.</li>
+                <li>Copyright © 2020 Apple Inc. 모든 권리 보유.</li>
+            </ul>
+        </div>
+    </footer>
 </div>
 <script>
-logInOut()
+	
 </script>
 </body>
 </html>
