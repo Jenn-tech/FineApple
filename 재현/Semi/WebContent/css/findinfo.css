@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+@charset "UTF-8";
 * {
     margin: 0;
     padding: 0;
@@ -138,29 +140,103 @@
 form {
     margin: 0 auto;
     min-height: 300px;
-    display: flex;
     align-items: center;
 }
 
-.align {
-    margin: 0 auto;
+.search-title{
+	text-align : center;
+	margin-bottom : 50px;
 }
 
-input,
-.button-login>button {
-    width: 400px;
-    height: 50px;
-    border-radius: 5px;
-    border: 1px solid;
+.form-search {
+	text-align : center;
+}
+.find-name{
+	margin-bottom : 20px;
+	
 }
 
-#mid,
-#pwd{
-    text-indent: 20px;
+.find-phone{
+	margin-bottom : 50px;
+	
+}
+label{
+	margin-right : 10px;
+	font-weight : 700;
+}
+.phone-select {
+	width : 80px;
+	height : 34px;
+	border : 1px solid black;
+}
+
+.btn-name{
     font-size :0.8rem;
+    text-indent: 20px;
+    
+}
+.btn-phone{
+    font-size :0.8rem;
+	text-indent: 20px;
+    
+}
+input{
+    border: black;
+    width: 200px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 40px;
+        
+    
+  }
+
+.btnSearch input{
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+      font-weight : 700;
+      width : 140px;
+      height : 45px;
+      cursor : pointer;
+}
+.btnSearch{
+	text-align : center;
 }
 
-#btnLogin {
+.btnSearch  input:hover{
+	background-color : white;
+	border : 1px solid black;
+	color : black;
+	}
+/*result*/
+.found-id {
+	width : 100px;
+	height : 60px;
+	text-align : center;
+	margin : 20px -10px 5px 20px ;
+	padding-top : 20px ;
+	border : 1px solid #eee;
+}	
+
+.found {
+	display : flex;
+	height : 100px;
+	text-align : center;
+}
+h4 {
+	text-align : center;
+	line-height : 100px;
+	margin-left : 40px;
+}
+
+.found-login{
+	      text-align : center;
+	      margin-top : 20px;
+	
+}
+  #btnLogin {
     background-color: black;
     color: white;
     border: none;
@@ -173,101 +249,7 @@ input,
 	color : black;
 	cursor : pointer;
 }
-.button-login {
-    margin-bottom: 30px;
-  
-}
-
-.button-login>button {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    font-weight: 800;
-	cursor : pointer;
-}
-
-img {
-    width: 50px;
-
-}
-
-.button-login>.btn-kakao {
-    background-color: rgb(254, 229, 0);
-    border: none;
-	color : brown;
-	      font-weight : 700;
-	      font-size : 1rem;
-	
-}
-
-.button-login>.btn-naver {
-    box-shadow: 0 1px 1px rgba(27,31,35,0.1);
-    border: none;
-  background-color:  rgb(32, 189, 39);
-        font-weight : 700;
-	      font-size : 1rem;
-  
-   
-}
-
-.login-search {
-   text-align : center;
-   margin-bottom : 30px;
-}
-
-.login-id {
-    margin: 0 auto;
-    display : inline-block;
-   
-   margin-right : 30px;
-}
-
-.login-pw {
-    margin: 0 auto;
-    display : inline;
-  padding-left : 20px;
-  padding-right : 20px;
-  border-left : 1px solid black;
-  border-right : 1px solid black;
-}
-.login-join {
-    margin: 0 auto;
-    display : inline;
-   margin-left: 30px;
-}
-.text-id {
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.item-center {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-
-}
-
-.item-center>span {
-    margin: 0 5px 0 5px;
-}
-
-.flex-1 {
-    width: 50%;
-    border-top: 2px solid gray;
-
-}
-
-a {
-    text-decoration: none;
-    color:black;
-    font-weight: bold;
-
-}
-
-
+/* footer */
 
 .list-box {
     font-size: small;
@@ -288,7 +270,8 @@ li {
 .footer-list {
     padding: 20px;
     color: grey;
-    background-color: #f5f5f7;
+    background-color:black;
+
 }
 
 .list-box-hr {
