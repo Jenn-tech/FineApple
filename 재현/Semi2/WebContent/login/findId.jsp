@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <script src='../js/login.js'></script>
-    
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="stylesheet" href="../css/findinfo.css">
+<script src ='../js/findinfo.js'></script>
+
 </head>
 <body>
-   	<header id="header">
+	<header id="header">
 		<nav class="left">
             <div class="search_bar">
                  <form role="search" method="get" class="search-form" >
@@ -28,60 +28,30 @@
             <a href="#" class="button alt">로그인</a>                
         </nav>  
 	</header>
+<div class = "container">
+	<form name="idfindscreen" method = "POST">
+			<div class = "search-title">
+				<h3>휴대폰 본인확인</h3>
+			</div>
+		<section class = "form-search">
+			<div class = "find-name">
+				<label>이름</label>
+				<input type="text" name="name" class = "btn-name" placeholder = "등록한 이름">
+			<br>
+			</div>
+			<div class = "find-phone">
+				<label>번호</label>
+				<input type="text" onKeyup = "addHypen(this);" name="phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
+			</div>
+			<br>
+	</section>
+	<div class ="btnSearch">
+		<input type="button" name="enter" value="찾기"  onClick="id_search1()">
+		<input type="button" name="cancle" value="취소" onClick="history.back()">
+ 	</div>
+ </form>
+</div>
 
-    <div class="container">
-        <section class="form-write">
-			<form name='form_log' method='post'>
-                <div class="align">
-                    <input type="text" id="mid" name = "mid" placeholder="FineApple ID">
-                     <div class="text-id">
-                       
-                    </div> 
-                    <label></label>
-                    <input type="password" id="pwd" name = "pwd" placeholder="암호">
-                   <div class="text-id">
-                        
-                    </div> 
-                    <input type="submit" id="btnLogin" value="로그인">
-                </div>
-            </form>
-            <section class="login-search">
-                <div class="login-id">
-                    <a href="./findId.jsp">아이디찾기</a>
-                </div>
-                <div class="login-pw">
-<<<<<<< HEAD
-                    <a href="./findPw.jsp">비밀번호 찾기</a>
-=======
-                    <a href="#">비밀번호 찾기</a>
->>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
-                </div>
-                <div class="login-join">
-                    <a href="#">회원가입</a>
-                </div>
-            </section>
-            <div class="item-center">
-                <div class="flex-1"></div>
-                <span>OR</span>
-                <div class="flex-1"></div>
-            </div>
-        </section>
-        
-        
-        <section class="login-write">
-            <div class="button-login">
-                <button class="btn-kakao">
-                    <a href="#"> KAKAO 로그인</a>
-                   
-                </button>
-            </div>
-            <div class="button-login">
-                <button class="btn-naver" >
-                    <a href="#">NAVER 로그인</a>
-                </button>
-            </div>
-        </section>
-    </div>
     <div class="footer-align">
         <hr>
         <div class="help-box">도움이 더 필요하신가요? <a href="#">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
@@ -100,8 +70,9 @@
                 </ul>
             </div>
         </footer>
-    </div>
-    <script>logInOut()</script>
-    
+        </div>
+ <script>
+ 
+ </script>
 </body>
 </html>
