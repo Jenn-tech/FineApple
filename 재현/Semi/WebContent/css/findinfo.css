@@ -125,17 +125,29 @@
     height: 34px;
   }
 
+<<<<<<< HEAD
 /*본문 */
+=======
+/*연주님 */
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 .container {
     width: 500px;
     margin: 0 auto;
     margin-top: 50px;
+<<<<<<< HEAD
     margin-bottom: 40px;
+=======
+    margin-bottom: 50px;
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
     border: 1px solid #d2d6dc;
     padding: 30px;
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 form {
     margin: 0 auto;
     min-height: 300px;
@@ -214,12 +226,20 @@ input{
 	width : 100px;
 	height : 60px;
 	text-align : center;
+<<<<<<< HEAD
 	margin : auto 0 ;
+=======
+	margin : 20px -10px 5px 20px ;
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 	padding-top : 20px ;
 	border : 1px solid #eee;
 }	
 
+<<<<<<< HEAD
 .found-success {
+=======
+.found {
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 	display : flex;
 	height : 100px;
 	text-align : center;
@@ -227,6 +247,7 @@ input{
 h4 {
 	text-align : center;
 	line-height : 100px;
+<<<<<<< HEAD
 	margin-left : 30px;
 	margin-right : 30px;
 }
@@ -234,27 +255,43 @@ h4 {
 		margin-left : 0;
 	
 }
+=======
+	margin-left : 40px;
+}
+
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 .found-login{
 	      text-align : center;
 	      margin-top : 20px;
 	
 }
+<<<<<<< HEAD
   #btnLogin, #btnback, #btnjoin {
+=======
+  #btnLogin {
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
     background-color: black;
     color: white;
     border: none;
     font-size: 15px;
+<<<<<<< HEAD
           height : 45px;
       font-weight : 700;
 }
 #btnback:hover,
 #btnLogin:hover,
 #btnjoin:hover{
+=======
+      font-weight : 700;
+}
+#btnLogin:hover{
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 	background: white;
 	border : black solid 1px;
 	color : black;
 	cursor : pointer;
 }
+<<<<<<< HEAD
 .find-id{
 	
 		margin-bottom : 20px;
@@ -281,6 +318,10 @@ h4 {
 .footer-align {
 	margin-top : 150px;
 }
+=======
+/* footer */
+
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 .list-box {
     font-size: small;
 }

@@ -2,8 +2,11 @@
  * 아이디, 비밀번호 찾기
  */
 
+<<<<<<< HEAD
 
 //아이디찾기
+=======
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
 function id_search1() { 
 	 	var frm = document.idfindscreen;
 
@@ -22,6 +25,7 @@ function id_search1() {
 	 frm.submit();  
 	 }
 
+<<<<<<< HEAD
 
 //비밀번호찾기
  function pw_search(){
@@ -44,6 +48,8 @@ function id_search1() {
   }
 
 
+=======
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
  function addHypen(obj) {
 	    var number = obj.value.replace(/[^0-9]/g, "");
 	    var phone = "";
@@ -69,6 +75,7 @@ function id_search1() {
 	    }
 	    obj.value = phone;
 	}
+<<<<<<< HEAD
 	
 function login() {
 		if(btnLogin != null){
@@ -84,3 +91,6 @@ function login() {
 	}
 	}
 }
+=======
+  
+>>>>>>> 9a2de42d937c7dfb294f2ece69c4d8cc6fb24481
