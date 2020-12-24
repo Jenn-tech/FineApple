@@ -13,7 +13,6 @@
 		   <script src='./js/login.js'></script>
 		
 </head>
-</head>
 
 <body>
 	<!-- header영역 -->
@@ -27,7 +26,7 @@
 	
 	<%} %>
     <div class = "container">
-    
+    		
        <div class="main-view">
        
           <ul>
@@ -36,7 +35,23 @@
             <li><img src="./images/phone.jpg"width="100%"/></li>
           </ul>
         </div>
-        
+        <div class = "container2">
+  
+   
+        	<!-- <div class="title-container">
+				<h2><span class = "fineapple">	FineApple</span></h2>
+				<h2><span class = "makes">	Makes</span></h2>
+				<h2><span class = "innovation">	Innovation </span></h2>
+			</div> -->
+        </div>
+         <div class="cater3-movingBG">
+<div class="flyinTxtCont">
+<div class="flyIn lineOne">FineApple</div>
+<div class="flyIn lineTwo">maeks </div>
+<div class="flyIn lineThree">Innovation</div>
+  <div class="flyIn lineFour"></div>
+</div>
+</div>
             <ul class="menu">
                 <li><a href="#"> <input type='submit' value = '노트북'/></a></li>
                 <li><a href="#">휴대폰</a></li>
