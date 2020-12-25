@@ -18,13 +18,7 @@
 </head>
 
 <body>
-<%
-	request.setCharacterEncoding("utf-8");
-	String inc = "cs_home_menu.jsp";
-	if(request.getParameter("inc") != null) {
-		inc = request.getParameter("inc");
-	}
-%>
+<!-- 고정 상단바 -->
 <header id="header">
 <nav class="left">
 	<div class="search_bar">
@@ -44,11 +38,37 @@
 </nav>  
 </header>
 
-<jsp:include page="<%=inc %>"></jsp:include>
 
+<!-- 고객센터 시작 페이지 -->
+<div class="cs_home_container">
+	<header class="cs_home_title">
+		<h2>어떻게 도와드릴까요?</h2>
+			<form action="">
+			       <input type="text" placeholder="문제를 설명해주세요!" id="search_box">
+			       <input type="button" value="검색" id="submit_box">
+			</form>
+	</header>
+	<section class="cs_home_content">
+		<main class="cs_home_content_menu">
+		    <ul>
+				<li><a href="cs_func_page.jsp?func=cs_notice.jsp"><img alt="" src="../images/Map.png">공지사항</a></li>
+				<li><a href="cs_func_page.jsp"><img alt="" src="../images/QA.png">Q&A</a></li>
+				<li><a href="cs_func_page.jsp?func=cs_FAQ.jsp"><img alt=""src="../images/FAQ.png">FAQ</a></li>
+	       		<li><a href="cs_func_page.jsp?func=cs_board.jsp"><img alt="" src="../images/Map.png">게시판</a></li>
+	       		<li><a href="cs_main_page.jsp?func=cs_map.jsp"><img alt=""src="../images/Map.png">찾아오시는 길</a></li>
+	    	</ul>
+		</main>
+	</section>
+</div>
+
+
+<!-- footer 고정 광고 배너 -->
 <div class="cs_home_footer">
 		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
 </div>	
+
+
+<!-- 고정 footer -->
 <footer class="footer-list">
   <div class="ul-align">
       <ul class="list-box">
@@ -65,6 +85,8 @@
   </div>
 </footer>
 
+
+<!-- 스크립트 -->
 <script>
 </script>
 </body>

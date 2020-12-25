@@ -1,4 +1,8 @@
 @charset "UTF-8";
+* {
+	box-sizing: border-box;
+}
+
 /* cs-center 홈 메뉴 css */
 .cs_home_container {
 	display: flex;
@@ -60,41 +64,80 @@
 
 
 
-/* Q&A CSS */
-.cs_insert_container {
+/* cs_func_page CSS */
+.cs_func_page_container {
 	display: flex;
 	flex-direction: column;
 }
 
-.cs_insert_title {
+.cs_func_page_title {
 	background-color: black;
 	color: white;
 	height: 60px;
 }
-.cs_insert_content {
+.cs_func_page_content {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.cs_insert_content > nav {
-	flex-basis: 200px;
+.cs_func_page_content > nav {
+	flex-basis: 15%;
 	border-right: 1px solid gray;
 	padding-left: 20px;
 }
-.cs_insert_content > aside {
-	flex-basis: 150px;
+.cs_func_page_content > aside {
+	flex-basis: 13%;
 	border: 1px solid gray;
 	margin: 10px 10px 0 0;
 } 
 
-.cs_insert_content > main {
+.cs_func_page_content > main {
+	flex-basis: 72%;
 	padding: 60px;
 }
 
 
+/* board CSS */
+.cs_board {
+	width: 100%;
+}
+#frm_board input {
+	display: inline-block;
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+	border-radius: 9px;
+}
+.frm_board_btns {
+	float: right;
+}
 
+.cs_board span {display: inline-block;}
+.cs_board .no {width: 70px;}
+.cs_board .subject {width: 100px;}
+.cs_board .name {width: 120px;}
+.cs_board .mdate {width: 200px;}
+.cs_board .hit {width: 110px;}
 
+.cs_board div {line-height: 25px;}
+
+.cs_board div:hover {
+	background-color: #bbb;
+	cursor: pointer; 
+}
+.cs_board_paging {
+	text-align: center;
+}
+.cs_board_paging > input {
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+	border-radius: 9px;
+}
+.cs_board_paging > input:hover {
+	cursor: pointer;
+}
 
 
 

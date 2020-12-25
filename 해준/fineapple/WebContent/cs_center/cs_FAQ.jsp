@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>asdasd</title>
+<title>FAQ</title>
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script>
@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 	<div class="faq_acodion_container">
 		<div class="faq_list">
 			<div style="">
