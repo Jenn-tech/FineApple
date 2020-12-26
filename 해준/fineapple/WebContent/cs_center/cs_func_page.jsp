@@ -56,11 +56,45 @@
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
 <div class="cs_func_page_container">
 	<header class="cs_func_page_title">
-		<h2>CS_CENTER</h2>		
+		<div class="cs_func_page_title_item">
+		<h2>CS CENTER</h2>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="">
+		<h4>공지사항</h4>
+		<p>FINEAPPLE에서 전하는 새로운 소식을 확인해주세요.</p>
+		</a>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="">
+		<h4>Q&A</h4>
+		<p>질문 전 FAQ를 먼저 확인해주세요.</p>
+		</a>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="">
+		<h4>FAQ</h4>
+		<p>자주 묻는 질문</p>
+		</a>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="">
+		<h4>게시판</h4>
+		<p>다른 고객님의 질문 사항을 확인해주세요.</p>
+		</a>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="">
+		<h4>찾아오시는 길</h4>
+		<p>제품을 눈으로 확인하고 구매하세요.</p>
+		</a>
+		</div>
 	</header>
 	<section class="cs_func_page_content">
 		<nav>
-			<h3>Quick menu</h3>
+			<div class="cs_func_page_quickmenu">
+			<h3>QUICK MENU</h3>
+			</div>
 			<ul>
 				<h4>제품</h4>
 				<li><a>핸드폰</a></li>
@@ -101,6 +135,10 @@
 		</main>
 		
 		<aside class="cs_func_page_sidebanner">
+			<div class="cs_func_page_sidenotice">
+				<h3>핸드폰 구매 절차</h3>
+				
+			</div>
 		</aside>
 	</section>
 </div>
