@@ -96,48 +96,88 @@
 	flex-basis: 72%;
 	padding: 60px;
 }
+/*-----------------------------------------------------------*/
 
 
-/* board CSS */
+
+/* --------------- board CSS --------------- */
 .cs_board {
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 }
-#frm_board input {
+
+#frm_board .btns {
 	display: inline-block;
 	background-color: black;
 	border: 1px solid black;
 	color: white;
-	border-radius: 9px;
+	border-radius: 7px;
 }
+
 .frm_board_btns {
 	float: right;
 }
 
-.cs_board span {display: inline-block;}
-.cs_board .no {width: 70px;}
-.cs_board .subject {width: 100px;}
-.cs_board .name {width: 120px;}
-.cs_board .mdate {width: 200px;}
-.cs_board .hit {width: 110px;}
+.cs_board span {
+	display: inline-block;
+	padding-left: 40px;
+}
 
+.cs_board .no {width: 70px;}
+.cs_board .subject {width: 240px;}
+.cs_board .name {width: 120px;}
+.cs_board .mdate {width: 160px;}
+.cs_board .hit {width: 110px;}
 .cs_board div {line-height: 25px;}
 
-.cs_board div:hover {
-	background-color: #bbb;
-	cursor: pointer; 
+.cs_board_article {
+	background-color: #0d0d0d;
+	color: white;
 }
+
+.cs_board_items {
+	background-color: #e2e2e2;
+}
+.cs_board_item:hover {
+	cursor: pointer;
+	background-color: #777777;
+}
+
 .cs_board_paging {
 	text-align: center;
 }
+
 .cs_board_paging > input {
 	background-color: black;
 	border: 1px solid black;
 	color: white;
-	border-radius: 9px;
+	border-radius: 7px;
 }
-.cs_board_paging > input:hover {
-	cursor: pointer;
+
+/*-----------------------------------------------------------*/
+
+
+
+/* --------------- notice CSS --------------- */
+.cs_notice_title {
+	border-bottom: 3px solid #303030;
+	padding: 0 0 30px 10px;
+	margin-bottom: 40px;
 }
+
+
+
+/* --------------- board CSS --------------- */
+.cs_board_title {
+	border-bottom: 3px solid #303030;
+	padding: 0 0 30px 10px;
+	margin-bottom: 40px;
+}
+
+
+
+
+
 
 
 

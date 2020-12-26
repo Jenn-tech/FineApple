@@ -10,24 +10,12 @@
 <form action="" method="post" name="frm_question" id="frm_question">
 <div>
     <label for="inquiryType">문의 유형</label>
-    <select name="inquiryType" id="inquiryType" aria-placeholder="문의 유형" size="1" >
-        <option value="">문의 유형</option>
-        <option value="refund">환불</option>
-        <option value="cancel">취소(출하 전 취소)</option>
-        <option value="delivery">배송</option>
-        <option value="AS">불량/AS</option>
-        <option value="order">주문/결제</option>
-        <option value="product">상품/재입고</option>
-        <option value="accumlatedMoney">적립금</option>
-        <option value="membership">회원 관련</option>
-        <option value="etc">기타 문의</option>
-        <option value="report">신고</option>
-    </select>
+    <input name="inquiryType" id="inquiryType" aria-placeholder="문의 유형" value="" >
 </div>
 
  <div>
     <label for="ordernum">주문 번호</label>
-    <input type="number" id="ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum"/>
+    <input type="text" id="ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum"/>
     <input type="button" id="orderNumSearch" value="검색">
 </div>
 
@@ -50,15 +38,11 @@
 <div class="send_box">
        <label for="check">비밀글</label>
        <input type="checkbox" name="secretcheck" id="check" value="secret">
-       <input type="button" value="전송" id="btnSave">
+       <input type="button" value="전송" id="btnInsert">
        <input type="button" value="취소" id="btnCancel">
 </div>
-<input type="number" value="813" name="mserial" id="mserial">
-<input type="number" value="10" name="hit" id="hit">
+<input type="hidden" value="813" name="mserial" id="mserial">
+<input type="hidden" value="10" name="hit" id="hit">
 </form>
-
-<script type="text/javascript">
-question()
-</script>
 </body>
 </html>

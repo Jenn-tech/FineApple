@@ -9,12 +9,14 @@
 <link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
 <link rel="stylesheet" type="text/css" href="../css/login.css">
 <link rel="stylesheet" type="text/css" href="../css/header.css">
-
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
+   
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous"></script>
+        
+<script type="text/javascript" src="../js/inquirybook.js"></script>
 </head>
 
 <body>
@@ -130,6 +132,7 @@
 
 <!-- 스크립트 -->
 <script>
+question()
 </script>
 </body>
 </html>

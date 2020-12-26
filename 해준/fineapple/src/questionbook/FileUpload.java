@@ -36,19 +36,19 @@ public class FileUpload {
 			e.printStackTrace();
 		}
 	}
-	
-	public QuestionBookVo getQuestion() {
-		QuestionBookVo vo = new QuestionBookVo();
-		vo.setQuestionNum(mul.getParameter("questionnum"));
-		vo.setMidNum(mul.getParameter("midnum"));
+	public InquiryBookVo getQuestion() {
+		InquiryBookVo vo = new InquiryBookVo();
+		vo.setMserial(mul.getParameter("mserial"));
+		vo.setMid(mul.getParameter("mid"));
 		vo.setPwd(mul.getParameter("pwd"));
-		vo.setName(mul.getParameter("name"));
-		vo.setInquiryType(mul.getParameter("inquirytype"));
-		vo.setOrderNum(mul.getParameter("ordernum"));
-		vo.setTitle(mul.getParameter("title"));
+		vo.setSubject(mul.getParameter("subject"));
 		vo.setDoc(mul.getParameter("doc"));
-		vo.setPhoto(mul.getParameter("photo"));
-		vo.setSecretCheck(mul.getParameter("secretcheck"));
+		vo.setInquiryType(mul.getParameter("inquirytype"));
+		vo.setHit(mul.getParameter("hit"));
+		vo.setPserial(mul.getParameter("pserial"));
+		vo.setOrderNum(mul.getParameter("ordernum"));
+		vo.setSecretCheck(mul.getParameter("inquirytype"));
+		
 		return vo;
 		
 	}
