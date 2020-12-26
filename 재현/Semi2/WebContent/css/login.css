@@ -1,0 +1,302 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SF Pro KR, SF Pro Display, SF Pro Icons, AOS Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    padding-top: 6em;
+  }
+  
+  /*헤더 이미지*/
+  #header img {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  #header {
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    background: #fff;
+    cursor: default;
+    height: 6em;
+    left: 0;
+    line-height: 6em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.075);
+    text-align: center;
+  }
+  
+  #header nav {
+        position: absolute;
+        top: 0;
+        height: inherit;
+        line-height: inherit;
+    }
+  
+  #header nav.left {
+        left: 2em;
+     }
+  
+  #header nav.right {
+          right: 2em;
+        }
+  
+  #header nav .button {
+          padding: 0 2em;
+          height: 3.25em;
+          line-height: 3.25em;
+        }
+  
+  #header nav a {
+          text-decoration: none;
+            display: inline-block;
+        }
+  
+  @media screen and (max-width: 980px) {
+    body {
+        padding-top: 44px;
+    }
+  
+    #header {
+        height: 44px;
+        line-height: 44px;
+    }   
+  }
+  
+  @media screen and (max-width: 480px) {
+  
+    #header {
+        min-width: 320px;
+    }
+  }
+  
+  #header a{
+    color: black;
+    font-weight: 700;
+  }
+  
+ #header .right>a:hover{
+  color: white;
+  background-color: black;
+}
+
+  
+  /*헤더 검색바*/
+  #header .searchbar{
+    margin-left: 20px;
+  }
+  
+  #header .search-form{
+    display: inline-block;
+    margin-left: 20px;
+  }
+  #header button{
+    background-color: white;
+    border: white;
+    height: 40px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+  }
+  #header button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  #header input{
+    border: black;
+    width: 200px;
+    border-bottom: black solid 1px;
+    border-radius: 0;
+    font-size: 1rem;
+    text-align: center;
+    height: 34px;
+  }
+
+/*연주님 */
+.container {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid #d2d6dc;
+    padding: 30px;
+}
+
+
+
+form {
+    margin: 0 auto;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.align {
+    margin: 0 auto;
+}
+
+input,
+.button-login>button {
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+#mid,
+#pwd{
+    text-indent: 20px;
+    font-size :0.8rem;
+}
+
+#btnLogin {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+      font-weight : 700;
+}
+#btnLogin:hover{
+	background: white;
+	border : black solid 1px;
+	color : black;
+	cursor : pointer;
+}
+.button-login {
+    margin-bottom: 30px;
+  
+}
+
+.button-login>button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    font-weight: 800;
+	cursor : pointer;
+}
+
+img {
+    width: 50px;
+
+}
+
+.button-login>.btn-kakao {
+    background-color: rgb(254, 229, 0);
+    border: none;
+	color : brown;
+	      font-weight : 700;
+	      font-size : 1rem;
+	
+}
+
+.button-login>.btn-naver {
+    box-shadow: 0 1px 1px rgba(27,31,35,0.1);
+    border: none;
+  background-color:  rgb(32, 189, 39);
+        font-weight : 700;
+	      font-size : 1rem;
+  
+   
+}
+
+.login-search {
+   text-align : center;
+   margin-bottom : 30px;
+}
+
+.login-id {
+    margin: 0 auto;
+    display : inline-block;
+   
+   margin-right : 30px;
+}
+
+.login-pw {
+    margin: 0 auto;
+    display : inline;
+  padding-left : 20px;
+  padding-right : 20px;
+  border-left : 1px solid black;
+  border-right : 1px solid black;
+}
+.login-join {
+    margin: 0 auto;
+    display : inline;
+   margin-left: 30px;
+}
+.text-id {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.item-center {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.item-center>span {
+    margin: 0 5px 0 5px;
+}
+
+.flex-1 {
+    width: 50%;
+    border-top: 2px solid gray;
+
+}
+
+a {
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+
+}
+
+
+
+.list-box {
+    font-size: small;
+}
+
+.help-box {
+    font-size: 20px;
+    height: 100px;
+    width: 800px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+li {
+    list-style: none;
+}
+
+.footer-list {
+    padding: 20px;
+    color: grey;
+    background-color: #f5f5f7;
+}
+
+.list-box-hr {
+    margin: 10px 0px 10px 0;
+
+}
+
+.ul-align {
+    width: 800px;
+    margin: 0 auto;
+}
