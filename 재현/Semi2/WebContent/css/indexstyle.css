@@ -209,11 +209,19 @@
 }
 
 /*contents영역*/
-
+#product_list {
+	width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    padding-left : 100px;
+    padding-right : 100px;
+}
 
 .product{
     display: inline-block;
-    padding-left: 100px;    
+    text-align : center;
 }
 .product {
     font-family: 'Source Sans Pro', sans-serif;
@@ -224,7 +232,6 @@
     max-width: 300px;
     width: 100%;
     color: #000000;
-    text-align: left;
     font-size: 16px;
     background-color: #fff;
   }
@@ -286,7 +293,7 @@
     z-index: 1;
 }
 
-.product > img{
+.product > a{
     text-align: center;
 
 }
@@ -313,7 +320,6 @@
 
 .product > img{
     display: inline-block;
-    margin-left: 25px;
 }
 
 #detail{

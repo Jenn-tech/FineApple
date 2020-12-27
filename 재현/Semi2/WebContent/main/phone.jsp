@@ -1,72 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <meta charset="UTF-8">
-<head>
-<title>FineApple Main</title>
-<link rel="stylesheet" href="../css/indexstyle.css">
-<link rel="stylesheet" href="../css/header.css">
-<script src="https://code.jquery.com/jquery-3.5.1.js" 
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
-		crossorigin="anonymous"></script>
-<script src='../js/login.js'></script>
-<script src='../js/indexProduct.js'></script>
-		
-</head>
-
-<body>
-	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="./header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="./header2.jsp"/>
-	
-	<%} %>
-    <div class = "container">
-    		
-       <div class="main-view">
-       
-          <ul>
-            <li><img src="../images/macbook.jpg " width="100%" /></li>
-            <li><img src="../images/ipad.jpg"width="100%"/></li>
-            <li><img src="../images/phone.jpg"width="100%"/></li>
-          </ul>
-        </div>
-        <div class = "container2">
-  
-   <!--
-        	 <div class="title-container">
-				<h2><span class = "fineapple">	FineApple</span></h2>
-				<h2><span class = "makes">	Makes</span></h2>
-				<h2><span class = "innovation">	Innovation </span></h2>
-			</div> -->
-        </div>
-        
-        
-        <div class="cater3-movingBG">
-		<div class="flyinTxtCont">
-		<div class="flyIn lineOne">FineApple</div>
-		<div class="flyIn lineTwo">maeks </div>/		
-		<div class="flyIn lineThree">Innovation</div>
-		  <div class="flyIn lineFour"></div>
-		</div>
-		</div>
-		
-            <ul class="menu">
-                <li><a href="javascript:phone();">휴대폰</a></li>
-                <li><a href="javascript:laptop();">노트북</a></li>
-                <li><a href="javascript:tablet()">태블릿PC</a></li>
-                <li><a href="javascript:watch()">스마트워치</a></li>
-                <li><a href="javascript:tesktop()">데스크탑</a></li>
-                <li><a href="javascript:accessory()">악세서리</a></li>
-             </ul>
-
-		<div id = "product_list">
-             <figure class="product">
+<figure class="product">
                 <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-silver-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000" width="200px" height="250px" />
                 <figcaption>
                   <h3>  더 알아보기</h3>
@@ -187,18 +121,3 @@
                 <a href="https://www.apple.com/shop/buy-iphone/iphone-11"></a>
                 <div id="detail">아이폰11</br>1,280,000</br></div>
               </figure>
-</div>
-
-
-       
-   <!-- footer영역 -->
-   	<%@include file="footer.jsp" %>
-   
-
-    
-</div>
-<script>
-logInOut();
-</script>
-</body>
-</html>
