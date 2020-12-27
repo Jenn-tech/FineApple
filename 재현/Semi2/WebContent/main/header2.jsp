@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <script src='../js/login.js'></script>
     
 <header id="header">
 		<nav class="left">
@@ -10,9 +11,9 @@
                  </form>
             </div>
         </nav>
-        <a href ="index.jsp"><img src="./images/pineapple.png"/></a>
+        <a href ="../main/index.jsp"><img src="../images/pineapple.png"/></a>
 		<nav class="right">
-			<div class = "menubar">
+          <div class = "menubar">
 	            <li>
 	            	<a href="#" class="button alt">소개</a>
 	            	<ul>
@@ -24,6 +25,7 @@
 	            <li>
 	            	<a href="#" class="button alt">커뮤니티</a>
 	            	<ul>
+	            		<a href="../event/event.jsp" >공지사항</a>
 	            		<a href="#" >이벤트</a>
 	            		<a href="#" >리뷰 게시판</a>
 	            	</ul>
@@ -45,7 +47,9 @@
 	            		<a href="#" >찜목록</a>
 	            	</ul>
 	            </li>            
-	            <li><a href="./login/loginfo.jsp" class="button alt">로그인</a></li>                
-        	</div>
+	            <li><input type='button' id='btnLogout' value='로그아웃' /></li>                
+        	</div>               
+		
         </nav>  
 	</header>
+	<script>logInOut()</script>

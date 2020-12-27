@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Main</title>
-<link rel="stylesheet" href="./css/indexstyle.css">
-<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="../css/indexstyle.css">
+<link rel="stylesheet" href="../css/header.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
 		crossorigin="anonymous"></script>
-		   <script src='./js/login.js'></script>
+		   <script src='../js/login.js'></script>
 		
 </head>
 
@@ -18,11 +18,11 @@
 	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
 	%>
-	<jsp:include page="/header1.jsp"/>
+	<jsp:include page="./header1.jsp"/>
 	
 	<%} else {%>
 	
-	<jsp:include page="/header2.jsp"/>
+	<jsp:include page="./header2.jsp"/>
 	
 	<%} %>
     <div class = "container">
@@ -30,9 +30,9 @@
        <div class="main-view">
        
           <ul>
-            <li><img src="./images/macbook.jpg " width="100%" /></li>
-            <li><img src="./images/ipad.jpg"width="100%"/></li>
-            <li><img src="./images/phone.jpg"width="100%"/></li>
+            <li><img src="../images/macbook.jpg " width="100%" /></li>
+            <li><img src="../images/ipad.jpg"width="100%"/></li>
+            <li><img src="../images/phone.jpg"width="100%"/></li>
           </ul>
         </div>
         <div class = "container2">
