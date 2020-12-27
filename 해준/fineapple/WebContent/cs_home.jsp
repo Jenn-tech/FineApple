@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Main</title>
-<link rel="stylesheet" type="text/css" href="../css/cs_center.css">
-<link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
-<link rel="stylesheet" type="text/css" href="../css/login.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css">
+<link rel="stylesheet" type="text/css" href="./css/cs_center.css">
+<link rel="stylesheet" type="text/css" href="./css/indexstyle.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="./css/header.css">
 
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
@@ -28,7 +28,7 @@
 	     </form>
 	</div>
 </nav>
-<img src="../images/pineapple.png"/>
+<img src="./images/pineapple.png"/>
 <nav class="right">
     <a href="#" class="button alt">소개</a>
 	<a href="#" class="button alt">커뮤니티</a>
@@ -51,11 +51,11 @@
 	<section class="cs_home_content">
 		<main class="cs_home_content_menu">
 		    <ul>
-				<li><a href="cs_func_page.jsp?func=cs_notice.jsp"><img alt="" src="../images/Map.png">공지사항</a></li>
-				<li><a href="cs_func_page.jsp"><img alt="" src="../images/QA.png">Q&A</a></li>
-				<li><a href="cs_func_page.jsp?func=cs_FAQ.jsp"><img alt=""src="../images/FAQ.png">FAQ</a></li>
-	       		<li><a href="cs_func_page.jsp?func=cs_board.jsp"><img alt="" src="../images/Map.png">게시판</a></li>
-	       		<li><a href="cs_main_page.jsp?func=cs_map.jsp"><img alt=""src="../images/Map.png">찾아오시는 길</a></li>
+				<li><a href="cs_func_page.jsp?func=./cs_center/cs_notice.jsp"><img alt="" src="./images/Map.png">123123</a></li>
+				<li><a href="cs_func_page.jsp"><img alt="" src="./images/QA.png">Q&A</a></li>
+				<li><a href="cs_func_page.jsp?func=./cs_center/cs_FAQ.jsp"><img alt=""src="./images/FAQ.png">FAQ</a></li>
+	       		<li><a href="inquiry.do?qa=select"><img alt="" src="./images/Map.png">게시판</a></li>
+	       		<li><a href="cs_main_page.jsp?func=./cs_center/cs_map.jsp"><img alt=""src="./images/Map.png">찾아오시는 길</a></li>
 	    	</ul>
 		</main>
 	</section>
@@ -64,7 +64,7 @@
 
 <!-- footer 고정 광고 배너 -->
 <div class="cs_home_footer">
-		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
+		<img alt="" src="./images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
 </div>	
 
 

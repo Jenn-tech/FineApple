@@ -5,12 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/cs_center.css">
-<link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
-<link rel="stylesheet" type="text/css" href="../css/login.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
+첫번째 퀘스트 완료..
 
+<form action="">
+<input type="text" name="findStr" value="${page.findStr }">
+<input type="text" name="nowPage" value="${page.nowPage }">
+
+<div class="btns">
+<input type="button" value="홈으로" name="frm_question">
+<input type="button" value="홈으로" name="frm_question">
+</div>
+
+</form>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class Application {
          
        //oracle드라이버의 위치, 포트 등등 유저명, 암호 등을 사용해서 객체를 생성하면 커넥션 객체가 만들어짐
          conn = DriverManager.getConnection(
-               "jdbc:oracle:thin:@localhost:1521:XE", 
+               "jdbc:oracle:thin:@localhost:1521:xe", 
                "system", "oracle"
                ); 
       }catch(Exception ex) {

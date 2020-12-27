@@ -21,26 +21,28 @@
 			<div class="frm_board_btns">
 				<input type="text" name="findStr" id="findStr">
 				<input type="button" name="btnFind" id="btnFind" value="조회" class="btns">
+				<input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
+				<input type="hidden" name="mid"/>
 			</div>
 		</form>
 	</div>
 	<div class="cs_board_article">
 		<span class="no">No</span>
 		<span class="subject">제목</span>
-		<span class="name">작성자</span>
+		<span class="mid">작성자</span>
 		<span class="mdate">작성일자</span>
 		<span class="hit">조회수</span>
 	</div>
 	
 	<div class="cs_board_items">
-		<c:set var="no" value="${page.startNo }"></c:set>
-			<c:forEach var="no" begin="1" end="${list }">
+		<c:set var="no" value="${page.startNo}"></c:set>
+			<c:forEach var="vo" items="${list}">
 				<div class="cs_board_item" onclick="view('vo.mid')">
 					<span class="no">${no}</span>
-					<span class="subject">제목</span>
-					<span class="name">작성자</span>
-					<span class="mdate">작성일자</span>
-					<span class="hit">조회수</span>
+					<span class="subject">${vo.subject}</span>
+					<span class="mid">${vo.mid}</span>
+					<span class="mdate">${vo.mdate}</span>
+					<span class="hit">${vo.hit}</span>
 				</div>
 			</c:forEach>
 		<c:set var="no" value="${no=no+1 }"></c:set>	

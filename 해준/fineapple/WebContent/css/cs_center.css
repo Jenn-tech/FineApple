@@ -102,9 +102,19 @@
 	width: 100%;
 	height: 100%;
 	padding: 10px 0 10px 10px;
-	border-left: 1px solid gray;
+	border-left: 1px solid #474747 ;
 }
-
+.cs_func_page_title_item:hover {
+	background-color: rgb(91, 135, 164);
+}
+.cs_func_page_title_item > a:visited{
+		text-decoration: none;
+		color: white;
+}
+.cs_func_page_title_item > a:link {
+		text-decoration: none;
+		color: white;
+}
 
 .cs_func_page_title_item > a > p {
 	font-size: 0.7em;
@@ -117,9 +127,8 @@
 }
 
 .cs_func_page_content > nav {
-	flex-basis: 202px;
+	flex-basis: 201px;
 	background-color: #1b1b1b;
-	border-right: 2px solid black;
 	color: white;
 	padding-top: 20px; 
 }
@@ -177,7 +186,7 @@
 
 .cs_board .no {width: 70px;}
 .cs_board .subject {width: 240px;}
-.cs_board .name {width: 120px;}
+.cs_board .mid {width: 120px;}
 .cs_board .mdate {width: 160px;}
 .cs_board .hit {width: 110px;}
 .cs_board div {line-height: 25px;}
@@ -206,6 +215,11 @@
 	border-radius: 7px;
 }
 
+.cs_board_title {
+	border-bottom: 3px solid #303030;
+	padding: 0 0 30px 10px;
+	margin-bottom: 40px;
+}
 /*-----------------------------------------------------------*/
 
 
@@ -219,12 +233,127 @@
 
 
 
-/* --------------- board CSS --------------- */
-.cs_board_title {
+/* --------------- insert CSS --------------- */
+#frm_question input {
+	border: 1px solid #f1f1f1;
+}
+.cs_insert_body {
+	width: 90%;
+	margin: 0 auto;
+}
+.cs_insert_title {
 	border-bottom: 3px solid #303030;
 	padding: 0 0 30px 10px;
 	margin-bottom: 40px;
 }
+
+.cs_insert_notice {
+	font-size: 0.8em;
+}
+.cs_insert_notice ul {
+	margin-bottom: 60px;
+}
+.cs_insert_notice > ul >li {
+	margin-bottom: 5px;
+}
+
+.cs_insert_frm_container {
+	display: flex;
+	justify-content: space-around;
+	font-size: 0.9em;
+}
+
+.cs_insert_frm_body:nth-child(1) {
+	flex-basis: 50%;
+	padding-right: 20px;
+}
+.cs_insert_frm_body:nth-child(1) > div > label {
+	display: inline-block;
+	width: 80px;	
+}
+.cs_insert_frm_body:nth-child(1) > div {
+	margin-bottom: 5px; 
+}
+.cs_insert_frm_body:nth-child(2) {
+	flex-basis: 50%;
+}
+.cs_insert_doc {
+	display: flex;
+	justify-content: space-between;
+}
+.cs_insert_photobox {
+	display: flex;
+	flex-direction: row;
+}
+
+.send_box {
+	margin: 30px 0 100px;
+	width: 100%;
+	text-align: center;
+}
+#cs_insert_btnSave, #cs_insert_btnCancel {
+	width: 100px;
+	line-height: 36px;
+	padding: 2px 8px 0 8px;
+	font-size: 14px;
+	height: 40px;
+	text-align: center;	
+}
+#cs_insert_btnCancel {
+	border: 1px solid #f1f1f1;
+	background-color: f1f1f1;
+	color: #000000;
+}
+
+#cs_insert_btnSave {
+	margin: 0 10px;
+	border: 1px solid #000000;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+
+/* ----------------------------------------------------- */
+
+
+/*--------------- FAQ CSS ---------------*/
+.cs_faq_title {
+	border-bottom: 3px solid #303030;
+	padding: 0 0 30px 10px;
+	margin-bottom: 40px;
+}
+.cs_faq_article_bar {
+	width: 100%;
+	margin: 0 auto;
+	min-height: 700px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -473,11 +602,6 @@
 	left: 0;
 }
 
-.faq_acodion_container {
-	width: 70%;
-	margin: 0 auto;
-	height: 700px;
-}
 .faq_list {
 	margin-top: 30px;
 }
@@ -534,5 +658,26 @@
 .footer_banner > img {
 width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 }
+
+
+
+/* --------------- nav CSS ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

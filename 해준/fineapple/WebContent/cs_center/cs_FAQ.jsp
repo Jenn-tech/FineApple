@@ -13,22 +13,28 @@
 </head>
 
 <body>
-	<div class="faq_acodion_container">
+<div class="cs_faq_body">
+	<header class="cs_faq_title">
+		<h2>FAQ</h2>
+		</br>
+		<h3>많은 고객님들이 물어보셨던 질문입니다. 여러분의 질문을 찾아보세요!</h3>
+	</header>
+	<div class="cs_faq_article_bar">
 		<div class="faq_list">
 			<div style="">
 				<h1>FAQ</h1>
 			</div>
 			<div class="faq_category">
-				<a href="">주문 결제</a>
-				<a href="">배송 안내</a>
-				<a href="">주문 취소</a>
-				<a href="">교환</a>
-				<a href="">환불</a>
-				<a href="">상품 관련</a>
-				<a href="">적립금</a>
-				<a href="">회원관련</a>
-				<a href="">기타</a>
-				<a href="">TIP</a>
+				<a href="#">주문 결제</a>
+				<a href="#">배송 안내</a>
+				<a href="#">주문 취소</a>
+				<a href="#">교환</a>
+				<a href="#">환불</a>
+				<a href="#">상품 관련</a>
+				<a href="#">적립금</a>
+				<a href="#">회원관련</a>
+				<a href="#">기타</a>
+				<a href="#">TIP</a>
 			</div>
 			<ul>
 				<li class="collapsible">
@@ -80,6 +86,7 @@
 			</ul>
 		</div>
 	</div>
+</div>
 <script type="text/javascript">
 $(document).ready(
 	function() {

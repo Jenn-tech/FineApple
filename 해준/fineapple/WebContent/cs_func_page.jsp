@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Main</title>
-<link rel="stylesheet" type="text/css" href="../css/cs_center.css">
-<link rel="stylesheet" type="text/css" href="../css/indexstyle.css">
-<link rel="stylesheet" type="text/css" href="../css/login.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css">
+<link rel="stylesheet" type="text/css" href="./css/cs_center.css">
+<link rel="stylesheet" type="text/css" href="./css/indexstyle.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="./css/header.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
    
@@ -16,14 +16,14 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous"></script>
         
-<script type="text/javascript" src="../js/inquirybook.js"></script>
+<script type="text/javascript" src="./js/inquirybook.js"></script>
 </head>
 
 <body>
 <!-- include 변수 설정 -->
 <%
 	request.setCharacterEncoding("utf-8");
-	String func = "cs_insert.jsp";
+	String func = "./cs_center/cs_insert.jsp";
 	if(request.getParameter("func") != null) {
 		func = request.getParameter("func");
 	}
@@ -41,7 +41,7 @@
 		</div>
 	</nav>
 
-	<img src="../images/pineapple.png"/>
+	<img src="./images/pineapple.png"/>
 	
 	<nav class="right">
 	    <a href="#" class="button alt">소개</a>
@@ -60,31 +60,31 @@
 		<h2>CS CENTER</h2>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="">
+		<a href="cs_func_page.jsp?func=./cs_center/cs_notice.jsp">
 		<h4>공지사항</h4>
 		<p>FINEAPPLE에서 전하는 새로운 소식을 확인해주세요.</p>
 		</a>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="">
+		<a href="cs_func_page.jsp?func=./cs_center/cs_insert.jsp">
 		<h4>Q&A</h4>
 		<p>질문 전 FAQ를 먼저 확인해주세요.</p>
 		</a>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="">
+		<a href="cs_func_page.jsp?func=./cs_center/cs_FAQ.jsp">
 		<h4>FAQ</h4>
 		<p>자주 묻는 질문</p>
 		</a>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="">
+		<a href="inquiry.do?qa=select">
 		<h4>게시판</h4>
 		<p>다른 고객님의 질문 사항을 확인해주세요.</p>
 		</a>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="">
+		<a href="cs_func_page.jsp?func=./cs_center/cs_map.jsp">
 		<h4>찾아오시는 길</h4>
 		<p>제품을 눈으로 확인하고 구매하세요.</p>
 		</a>
@@ -95,37 +95,27 @@
 			<div class="cs_func_page_quickmenu">
 			<h3>QUICK MENU</h3>
 			</div>
-			<ul>
-				<h4>제품</h4>
-				<li><a>핸드폰</a></li>
-				<li><a>태블릿</a></li>
-				<li><a>노트북</a></li>
-				<li><a>스마트워치</a></li>
-				<li><a>엑세서리</a></li>
-			</ul>
-			<ul>
-				<h4>마이페이지</h4>
-				<li><a>고객 정보 수정</a></li>
-				<li><a>장바구니</a></li>
-				<li><a>찜목록</a></li>
-				<li><a>쿠폰함</a></li>
-				<li><a>문의 내역</a></li>
-			</ul>
-			<ul>
-				<h4>제품</h4>
-				<li><a>핸드폰</a></li>
-				<li><a>태블릿</a></li>
-				<li><a>노트북</a></li>
-				<li><a>스마트워치</a></li>
-				<li><a>엑세서리</a></li>
-			</ul>
-			<ul>
-				<h4>제품</h4>
-				<li><a>핸드폰</a></li>
-				<li><a>태블릿</a></li>
-				<li><a>노트북</a></li>
-				<li><a>스마트워치</a></li>
-				<li><a>엑세서리</a></li>
+			<ul class="cs_func_page_quickmenu_ul">
+				<li>
+					<a href="#">제품</a>
+					<ul>
+						<li><a href="">핸드폰</a></li>
+						<li><a href="">태블릿</a></li>
+						<li><a href="">노트북</a></li>
+						<li><a href="">스마트워치</a></li>
+						<li><a href="">엑세서리</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">마이페이지</a>
+					<ul>
+						<li><a href="">고객정보수정</a></li>
+						<li><a href="">장바구니</a></li>
+						<li><a href="">찜목록</a></li>
+						<li><a href="">쿠폰함</a></li>
+						<li><a href="">문의 내역</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 		
@@ -146,7 +136,7 @@
 
 <!-- footer 고정 광고 배너 -->
 <div class="cs_home_footer">
-		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
+		<img alt="" src="./images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
 </div>	
 
 
@@ -171,6 +161,7 @@
 <!-- 스크립트 -->
 <script>
 question()
+initmenu()
 </script>
 </body>
 </html>

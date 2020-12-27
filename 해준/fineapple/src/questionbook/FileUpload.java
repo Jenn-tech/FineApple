@@ -38,7 +38,6 @@ public class FileUpload {
 	}
 	public InquiryBookVo getQuestion() {
 		InquiryBookVo vo = new InquiryBookVo();
-		vo.setMserial(mul.getParameter("mserial"));
 		vo.setMid(mul.getParameter("mid"));
 		vo.setPwd(mul.getParameter("pwd"));
 		vo.setSubject(mul.getParameter("subject"));
@@ -47,7 +46,6 @@ public class FileUpload {
 		vo.setHit(mul.getParameter("hit"));
 		vo.setPserial(mul.getParameter("pserial"));
 		vo.setOrderNum(mul.getParameter("ordernum"));
-		vo.setSecretCheck(mul.getParameter("inquirytype"));
 		
 		return vo;
 		

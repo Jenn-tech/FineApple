@@ -1,6 +1,7 @@
 package questionbook;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import bean.CsPage;
 
 
 //요청값을 받는 url정의?
@@ -28,28 +31,64 @@ public class InquiryBookServlet extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		
+		//Page 초기 값 설정
+		int nowPage = 1;
+		String findStr = "";
+		
+		//변수 선언
 		InquiryBookVo vo = new InquiryBookVo();
+		CsPage page;
 		
+		//btn 별 기능 선언
 		switch(qa) {
-		
 		case "insert":
-			System.out.println("asd");
 			FileUpload photoLoad = new FileUpload(req);
 			vo = photoLoad.getQuestion();
 			String msg = dao.insert(vo);
 			
 			req.setAttribute("msg", msg);
 			req.setAttribute("vo", vo);
-			System.out.println("asd");
-			rd = req.getRequestDispatcher("cs_center\\cs_func_page.jsp");
-			System.out.println("as11111111");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_result.jsp");
 			rd.forward(req, resp);
+			System.out.println("insert 문제 없음");
 			break;
-		case "view": 
 			
+		case "select": 
+			if(req.getParameter("nowPage") != null) {
+				nowPage = Integer.parseInt(req.getParameter("nowPage"));
+			}
+			if(req.getParameter("findStr") != null) {
+				findStr = req.getParameter("findStr");
+			}
 			
+			page = new CsPage();
+			page.setNowPage(nowPage);
+			page.setFindStr(findStr);
+			List<InquiryBookVo> list = dao.select(page);
 			
+			req.setAttribute("list", list);
+			req.setAttribute("page", page);
+			System.out.println("111");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd.forward(req, resp);
+			System.out.println("select 문제 없음");
 			break;
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

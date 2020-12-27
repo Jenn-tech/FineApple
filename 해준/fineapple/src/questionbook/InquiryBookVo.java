@@ -1,7 +1,7 @@
 package questionbook;
 
 public class InquiryBookVo {
-	int serial; //0 -
+	String serial; //0 -
 	String mserial; //0 -
 	String mid; //0 - 
 	String pwd; //0 -
@@ -14,11 +14,11 @@ public class InquiryBookVo {
 	String orderNum; //0
 	String secretCheck; //
 	
-	public int getSerial() {
+	public String getSerial() {
 		return serial;
 	}
-	public void setSerial(int serial) {
-		this.serial = serial;
+	public void setSerial(String string) {
+		this.serial = string;
 	}
 	public String getMserial() {
 		return mserial;
