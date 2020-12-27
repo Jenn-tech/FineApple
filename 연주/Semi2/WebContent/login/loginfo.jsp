@@ -53,7 +53,7 @@
                     <a href="./findPw.jsp">비밀번호 찾기</a>
                 </div>
                 <div class="login-join">
-                    <a href="#">회원가입</a>
+                    <a href="../UsersJoin/index.jsp">회원가입</a>
                 </div>
             </section>
             <div class="item-center">
