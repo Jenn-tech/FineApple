@@ -56,7 +56,7 @@
 		</div>
 		
             <ul class="menu">
-                <li><a href="#"> <input type='submit' value = '노트북'/></a></li>
+                <li><a href="#">노트북</a></li>
                 <li><a href="#">휴대폰</a></li>
                 <li><a href="#">태블릿PC</a></li>
                 <li><a href="#">스마트워치</a></li>

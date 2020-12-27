@@ -32,8 +32,7 @@
 
 
 		<h3 class = 'event_h3'>공지사항</h3>
-<%-- <%if( session.getAttribute("mid").equals("kim")){ 
-	%>
+
 					
 <!-- 검색하기 -->	
 	<div id = 'event_search'>
@@ -45,17 +44,12 @@
 			</div>
 		</form>
 	</div>
-	<%} else {%> --%>
-	<div id = 'event_search'>
-		<form name = 'frm_board' method = 'POST'>
-			<input type = 'hidden'	 id = 'btnInsert' value = '입력'/>
-			<div>
-				<input type = 'text' name = 'findStr' id = 'findStr'/>
-				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
-			</div>
-		</form>
-	</div>
-<%			
+	
+<%		String findStr = "";
+if(request.getParameter("findStr") != null) {
+	findStr = request.getParameter("findStr");
+}
+	
 		List<NoticeVo> list = dao.select("");
 		request.setAttribute("list", list);
 
@@ -68,7 +62,7 @@
 		<span class = 'no'>NO</span>
 		<span class = 'subject'>제목</span>
 		<span class = 'mdate'>작성일</span>
-		<span class = 'hit'>조회수<%=list.size() %></span>
+		<span class = 'hit'>조회수</span>
 	</div>
 	
 <!-- event 글 list -->
@@ -78,7 +72,7 @@
 		
 			<div class = 'item'>
 				<span class = 'no'>${vo.noticeNo }</span>			
-				<span class = 'subject'>${vo.noticeSubject }</span>			
+				<span class = 'subject' onclick="view('${vo.noticeNo}')" >${vo.noticeSubject }</span>			
 				<span class = 'mdate'>${vo.noticeDate }</span>			
 				<span class = 'hit'>${vo.noticeHit }</span>			
 			</div>

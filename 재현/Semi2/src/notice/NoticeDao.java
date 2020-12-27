@@ -32,7 +32,7 @@ public class NoticeDao {
 		return -1;
 	}
 	public List<NoticeVo> select(String findStr){
-		String sql = "select notice_no, notice_subject, notice_doc, notice_date, notice_hit from notice where notice_subject like ? ";
+		String sql = "select notice_no, notice_subject, notice_doc, notice_date, notice_hit from notice where notice_subject like ? order by notice_no desc";
 		List<NoticeVo> list = new ArrayList<NoticeVo>();
 		
 		try {
