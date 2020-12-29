@@ -40,7 +40,7 @@
 				<div class="terms-box">
 					<div>
 						<input id="check-agree" type="checkbox">
-						<label for="check-agree" id="check-agree-label">모두 동의합니다.</label>
+						<label for="check-agree" class="check-agree-label">모두 동의합니다.</label>
 					</div>
 				</div>
 
@@ -52,15 +52,14 @@
 					<div>
 						<input id="check-agree-one" type="checkbox">
 						<label for="check-agree-one">만 14세 이상입니다.</label>
-						<button class="btnLink"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
 
 				<div class="terms-box terms-box-font">
 					<div>
 						<input id="check-agree-two" type="checkbox">
-						<label for="check-agree-two">[필수] 카카오계정 약관</label>
-						<button class="btnLink"><img src="../images/UsersJoin/arrow.png"></button>
+						<label for="check-agree-two">[필수] FineApple계정 약관</label>
+						<button class="btnLink" id="agree-id"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
 
@@ -68,7 +67,7 @@
 					<div>
 						<input id="check-agree-three" type="checkbox">
 						<label for="check-agree-three" >[필수] 개인정보 수집 및 이용 동의</label>
-						<button class="btnLink"><img src="../images/UsersJoin/arrow.png"></button>
+						<button class="btnLink" id="agree-service"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
 
@@ -77,7 +76,7 @@
 						<input id="check-agree-four" type="checkbox">
 						<label for="check-agree-four">
 							[선택] 위치정보 수집 및 이용 동의</label>
-						<button class="btnLink"><img src="../images/UsersJoin/arrow.png"></button>
+						<button class="btnLink" id="agree-location"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
 
@@ -85,7 +84,7 @@
 					<div>
 						<input id="check-agree-five" type="checkbox">
 						<label for="check-agree-five"">[선택]FineApple 광고메시지 수신</label>
-						<button class="btnLink"><img src="../images/UsersJoin/arrow.png"></button>
+						<button class="btnLink" id="agree-adv"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
 

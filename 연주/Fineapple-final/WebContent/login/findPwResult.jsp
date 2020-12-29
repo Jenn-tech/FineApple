@@ -35,7 +35,7 @@ MemberDao dao = new MemberDao();
 			<a href="#" class="button alt">커뮤니티</a>
 			<a href="#" class="button alt">고객지원</a>
             <a href="#" class="button alt">마이페이지</a>                
-            <a href="#" class="button alt">로그인</a>                
+            <a href="login.jsp" class="button alt">로그인</a>                
         </nav>  
 	</header>
   <form name="idsearch" method="post">

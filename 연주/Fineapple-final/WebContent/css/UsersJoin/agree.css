@@ -30,18 +30,8 @@
 }
 
 
-.agree-checkbox>span {
-	font-size: 20px;
-	line-height: 46px;
-	margin-left: 10px;
-}
 
-.agree-align>p {
-	width: 400px;
-	margin: 0 auto;
-}
-
-#check-agree-label {
+.check-agree-label {
 	font-size: 20px;
 	line-height: 10px;
 }
