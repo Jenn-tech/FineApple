@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+.row {
+	text-align: center;
+	margin: 20px 20% 0 20%;
+}
+
+.review-table {
+	width: 100%;
+	min-height: 200px;
+	border: 1px solid #dddddd;
+	font-size: 20px;
+}
+
+.review-table thead>td{
+	padding-top: 10px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.btn-review-write{
+	text-decoration: none;
+	
+}
+
+.review-table-detail {
+		width: 100%;
+	min-height: 200px;
+	border: 1px solid #dddddd;
+	font-size: 20px;
+	text-align: center;
+}
