@@ -30,12 +30,10 @@ public class memberServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
-		
-		System.out.println("Hello");
-
 		PrintWriter out = response.getWriter();
-		out.println("hello");
-
+		
+		System.out.println("doPost() 실행");
+		
 		String mid = request.getParameter("frm-id");
 		String pwd = request.getParameter("frm-password");
 		String name = request.getParameter("frm-name");
@@ -43,10 +41,6 @@ public class memberServlet extends HttpServlet {
 		String phone = request.getParameter("frm-phone");
 		String zipcode = request.getParameter("zipcode");
 		String address = request.getParameter("address");
-		
-
-	
-		out.printf("%s, %s, %s", mid, pwd, name);
 
 
 		BoardDao dao = new BoardDao();
@@ -68,8 +62,10 @@ public class memberServlet extends HttpServlet {
 			vo.setAddress(address);
 
 
+
 			int cnt = dao.sqlSession.insert("board.insert", vo);
 			System.out.println("vo : " + vo);
+			
 			if( cnt > 0 ) {
 				System.out.println("INSERT : " + vo);
 				dao.sqlSession.commit();
@@ -78,11 +74,11 @@ public class memberServlet extends HttpServlet {
 			}
 
 			dao.sqlSession.close();
+			
 		}
 
-		System.out.println("dao : " + dao);
-		out.printf("%s, %s, %s", mid, pwd, name);
-
+		out.printf("%s, %s, %s,%s, %s, %s,%s", mid, pwd, name, email, phone, zipcode, address);
+		response.sendRedirect("../index.jsp");
 	}
 
 }

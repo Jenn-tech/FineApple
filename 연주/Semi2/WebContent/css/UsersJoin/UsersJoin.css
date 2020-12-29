@@ -16,7 +16,7 @@
 	border: 1px solid rgb(250, 238, 238);
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 230vh;
+	height: 1500px;
 }
 
 .welcome-img {
@@ -88,6 +88,7 @@
 	background-color: white;
 	color: black;
 	border: 1px solid;
+	cursor: pointer;
 }
 
 /* 비밀번호 */
@@ -250,6 +251,7 @@
 	height: 30px;
 	margin-top: 20px;
 	margin: 30px auto 0 auto;
+	
 }
 
 .frm-submit>input:nth-child(1) {
@@ -260,6 +262,7 @@
 	margin-top: 50px;
 	font-size: 20px;
 	border: white;
+	cursor: pointer;
 }
 
 .frm-submit>input:nth-child(1):hover {

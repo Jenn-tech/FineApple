@@ -5,7 +5,7 @@
 
 <mapper namespace="board">
 	<insert id="insert" parameterType="users.MemberVo">
-		INSERT INTO membervo(seqno, mid, pwd, name, email, phone, zipcode, address)VALUES(seq_seqno.nextval, #{mid}, #{pwd}, #{name}, #{email}, #{phone}, #{zipcode}, #{address})
+		INSERT INTO membervo(seqno, mid, pwd, name, email, phone, zipcode, address, joindate)VALUES(seq_seqno.nextval, #{mid}, #{pwd}, #{name}, #{email}, #{phone}, #{zipcode}, #{address}, sysdate)
 	</insert>
 
 </mapper>

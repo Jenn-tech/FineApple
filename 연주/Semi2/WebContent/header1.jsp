@@ -10,7 +10,7 @@
                  </form>
             </div>
         </nav>
-        <a href ="index.jsp"><img src="../images/pineapple.png"/></a>
+        <a href ="index.jsp"><img src="./images/pineapple.png"/></a>
 		<nav class="right">
 			<div class = "menubar">
 	            <li>

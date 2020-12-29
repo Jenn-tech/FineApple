@@ -1,5 +1,7 @@
 package users;
 
+import java.sql.Date;
+
 public class MemberVo {
 	private int seqno;
 	private String mid;
@@ -9,6 +11,7 @@ public class MemberVo {
 	private String phone;
 	private String zipcode;
 	private String address;
+	private Date joindate;
 	
 	public int getSeqno() {
 		return seqno;
@@ -60,10 +63,17 @@ public class MemberVo {
 		this.address = address;
 	}
 	
+	public Date getJoindate() {
+		return joindate;
+	}
+	public void setJoindate(Date joindate) {
+		this.joindate = joindate;
+	}
+	
 	@Override
 	public String toString() {
 		return "MemberVo [seqno=" + seqno + ", mid=" + mid + ", pwd=" + pwd + ", name=" + name + ", email=" + email
-				+ ", phone=" + phone + ", zipcode=" + zipcode + ", address=" + address + "]";
+				+ ", phone=" + phone + ", zipcode=" + zipcode + ", address=" + address + ", joindate=" + joindate + "]";
 	}
 	
 }

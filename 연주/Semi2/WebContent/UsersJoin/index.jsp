@@ -129,12 +129,11 @@
 			</section>
 		</div>
 
-		
-	
-	
+
 	<footer>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</footer>
+
 	
 	<script>
 	member();
