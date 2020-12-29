@@ -80,11 +80,11 @@
   			</div>
   		</div>
 	</div>
-	<div class="send_box">
+	<div class="cs_center_insert_send_box">
 		       <label for="check">비밀글</label>
 		       <input type="checkbox" name="secretcheck" id="check" value="secret">
-		       <input type="button" value="전송" id="cs_insert_btnSave">
-		       <input type="button" value="취소" id="cs_insert_btnCancel">
+		       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_center_insert_btns">
+		       <input type="button" value="취소" id="cs_insert_btnCancel" class="cs_center_insert_btns">
 	</div>
 	<input type="" value="813" name="mserial" id="mserial">
 	<input type="number" value="10" name="hit" id="hit">

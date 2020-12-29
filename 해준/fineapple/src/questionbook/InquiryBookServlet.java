@@ -27,6 +27,7 @@ public class InquiryBookServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
+		System.out.println("asd?");
 		String qa = req.getParameter("qa");
 		
 		RequestDispatcher rd = null;
@@ -72,6 +73,20 @@ public class InquiryBookServlet extends HttpServlet {
 			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
 			rd.forward(req, resp);
 			System.out.println("select 문제 없음");
+			break;
+		
+		case "selectfaq" :
+			String faqStr = "";
+			List<FaqBookVo> faqlist;
+			if(req.getParameter("faqStr") != null) {
+				faqStr = req.getParameter("faqStr");
+			}
+			faqlist = new FaqBookDao().select(faqStr);
+			
+			System.out.println("faqStr");
+			req.setAttribute("list", faqlist);
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_FAQ.jsp");
+			rd.forward(req, resp);
 			break;
 		}
 	}

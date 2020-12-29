@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!doctype html>
 <html>
 
@@ -25,6 +26,20 @@
 				<h1>FAQ</h1>
 			</div>
 			<div class="faq_category">
+				<form action="inquiry.do?qa=select" name="frm_faqbook">
+					<input type="hidden" name="faqStr" value="주문결제">
+					<input type="hidden" name="qa" value="selectfaq">
+					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)" name="btn">
+					<input type="button" value="배송안내" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="주문취소" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="교환" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="환불" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="상품관련" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="적립금" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="회원관련" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="기타" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="tip" class="btnFaq" onclick="gofaq(this.value)">
+				</form>
 				<a href="#">주문 결제</a>
 				<a href="#">배송 안내</a>
 				<a href="#">주문 취소</a>
@@ -36,6 +51,21 @@
 				<a href="#">기타</a>
 				<a href="#">TIP</a>
 			</div>
+			<c:forEach var="vo" items="${list }">
+				<ul>
+					<li class="collapsible">
+						<h4 class="title" id="title-first">
+							<a href="#html5">${vo.subject }</a>
+						</h4>
+						<div class="content">
+							<p>${vo.doc}</p>
+						</div>
+					</li>
+				</ul>
+			</c:forEach>
+			
+			
+			
 			<ul>
 				<li class="collapsible">
 					<h4 class="title" id="title-first">

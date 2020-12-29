@@ -60,7 +60,7 @@
 		<h2>CS CENTER</h2>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="cs_func_page.jsp?func=./cs_center/cs_notice.jsp">
+		<a href="notice.do?notice=select">
 		<h4>공지사항</h4>
 		<p>FINEAPPLE에서 전하는 새로운 소식을 확인해주세요.</p>
 		</a>
@@ -126,7 +126,6 @@
 		
 		<aside class="cs_func_page_sidebanner">
 			<div class="cs_func_page_sidenotice">
-				<h3>핸드폰 구매 절차</h3>
 				
 			</div>
 		</aside>
