@@ -42,19 +42,19 @@
 <!-- 고객센터 시작 페이지 -->
 <div class="cs_home_container">
 	<header class="cs_home_title">
-		<h2>어떻게 도와드릴까요?</h2>
+		<h2 style="font-weight: bold; margin-top: 60px; font-size: 2.1em;">FINEAPPLE지원에 오신 걸 환영합니다.</h2>
 			<form action="">
-			       <input type="text" placeholder="문제를 설명해주세요!" id="search_box">
-			       <input type="button" value="검색" id="submit_box">
+			       <input type="text" placeholder="문제를 설명해주세요!" id="cs_home_search_box">
+			       <input type="hidden" value="검색" id="cs_home_submit_box">
 			</form>
 	</header>
 	<section class="cs_home_content">
 		<main class="cs_home_content_menu">
 		    <ul>
-				<li><a href="cs_func_page.jsp?func=./cs_center/cs_notice.jsp"><img alt="" src="./images/Map.png">123123</a></li>
+				<li><a href="notice.do?notice=select"><img alt="" src="./images/Map.png">123123</a></li>
 				<li><a href="cs_func_page.jsp"><img alt="" src="./images/QA.png">Q&A</a></li>
 				<li><a href="cs_func_page.jsp?func=./cs_center/cs_FAQ.jsp"><img alt=""src="./images/FAQ.png">FAQ</a></li>
-	       		<li><a href="inquiry.do?qa=select"><img alt="" src="./images/Map.png">게시판</a></li>
+	       		<li><a href="inquiry.do?qa=	select"><img alt="" src="./images/Map.png">게시판</a></li>
 	       		<li><a href="cs_main_page.jsp?func=./cs_center/cs_map.jsp"><img alt=""src="./images/Map.png">찾아오시는 길</a></li>
 	    	</ul>
 		</main>

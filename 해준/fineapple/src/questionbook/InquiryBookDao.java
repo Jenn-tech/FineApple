@@ -58,7 +58,6 @@ public class InquiryBookDao {
 		}
 		finally {
 			try {
-				conn.close();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -105,7 +104,6 @@ public class InquiryBookDao {
 		}
 		finally {
 			try {
-				conn.close();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
