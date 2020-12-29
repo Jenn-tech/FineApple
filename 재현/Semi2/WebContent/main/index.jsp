@@ -50,7 +50,7 @@
         <div class="cater3-movingBG">
 		<div class="flyinTxtCont">
 		<div class="flyIn lineOne">FineApple</div>
-		<div class="flyIn lineTwo">maeks </div>/		
+		<div class="flyIn lineTwo">makes </div>/		
 		<div class="flyIn lineThree">Innovation</div>
 		  <div class="flyIn lineFour"></div>
 		</div>
