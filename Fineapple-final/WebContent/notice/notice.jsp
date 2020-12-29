@@ -90,15 +90,9 @@ if(request.getParameter("findStr") != null) {
 	
 <!-- buttons -->
 	<div class = 'btns'>
-		<input type = 'button' value = '<<'/>
 		<input type = 'button' value = '<'/>
-
-		<c:forEach var = 'i' begin = '1' end = '5'>
-			<input type = 'button'class = 'num' value = '${i }'>
-		</c:forEach>
-
+		<input type = 'button'class = 'num' value = '1'>
 		<input type = 'button' value = '>'/>
-		<input type = 'button' value = '>>'/>
 	</div>
 			
 	

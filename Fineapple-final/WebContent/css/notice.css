@@ -59,6 +59,7 @@
 	display : inline-block;
 	width :550px;
 	text-align: left;
+	cursor : pointer;
 }
 .notice_items .mdate{
 	display : inline-block;

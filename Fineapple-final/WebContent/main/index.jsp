@@ -7,6 +7,7 @@
 <title>FineApple Main</title>
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
 		crossorigin="anonymous"></script>
@@ -42,7 +43,7 @@
         <div class="cater3-movingBG">
 			<div class="flyinTxtCont">
 				<div class="flyIn lineOne">FineApple</div>
-				<div class="flyIn lineTwo">maeks </div>/		
+				<div class="flyIn lineTwo">makes </div>/		
 				<div class="flyIn lineThree">Innovation</div>
 				<div class="flyIn lineFour"></div>
 			</div>
@@ -63,7 +64,7 @@
 		
 	<div class = "product_middle">	
 		<div id = "product_total">
-			<p>Total&nbsp:&nbsp&nbsp<span>12</span>&nbsp&nbsp&nbsp&nbsp</p>
+			<p>Total&nbsp:&nbsp&nbsp<span>12</span></p>
 		</div>
 		
 		<div id="product_order_list">
