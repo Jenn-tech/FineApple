@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+# FineApple
+Semi-Team Project
+
+![](https://images.velog.io/images/withcolinsong/post/b731e5bb-b37f-4bfa-9ad2-4459517a4447/image.png)
+=======
 # 목차
 
 
@@ -69,6 +75,9 @@
   - https://ovenapp.io/
   - https://app.diagrams.net/
 
+<<<<<<< HEAD:README.md
+>>>>>>> d748ecac189fd2d8f80c846dcbab3ed1618c9c77
+=======
 <<<<<<< HEAD:status.md
 # 201219
 - 로그인 로그아웃 구현
@@ -102,3 +111,4 @@
   
 =======
 >>>>>>> d748ecac189fd2d8f80c846dcbab3ed1618c9c77:README.md
+>>>>>>> 18850173d2aeba65cb02e489659828772f36a2b5:status.md
