@@ -25,7 +25,7 @@
         <ul id="nav">
             <li><a href="#">소개</a></li>
             <li><a href="#">서비스</a></li>
-            <li><a href="#">커뮤니티</a></li>
+            <li><a href="./review3/review.jsp">커뮤니티</a></li>
             <li><a href="#">고객지원</a></li>
             <li><a href="#">로그인</a></li>
         </ul>

@@ -1,4 +1,4 @@
-package bean;
+package review;
 
 public class ReviewVo {
 	String id;
@@ -6,7 +6,7 @@ public class ReviewVo {
 	String category;
 	String redate;
 	String doc;
-	int numbering;
+	public int numbering;
 	String img;
 	String delFile;
 	

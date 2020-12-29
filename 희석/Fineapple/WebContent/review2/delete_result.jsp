@@ -4,8 +4,8 @@
 	request.setCharacterEncoding("utf-8");
 %>
 
-<jsp:useBean id="dao" class="bean.ReviewDao" />
-<jsp:useBean id="vo" class="bean.ReviewVo"/>
+<jsp:useBean id="dao" class="review.ReviewDao" />
+<jsp:useBean id="vo" class="review.ReviewVo"/>
 <jsp:setProperty property="*" name="vo" />
 
 <%
