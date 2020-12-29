@@ -10,11 +10,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>event</title>
+<title>notice</title>
 
-<link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" href="../css/header.css">
-<link rel="stylesheet" href="../css/event.css">
+<link rel="stylesheet" href="../css/notice.css">
+<link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
 <jsp:useBean id="dao" class="notice.NoticeDao"/>
@@ -31,11 +31,11 @@
 	<%} %>
 
 
-		<h3 class = 'event_h3'>공지사항</h3>
+		<h3 class = 'notice_h3'>공지사항</h3>
 
 					
 <!-- 검색하기 -->	
-	<div id = 'event_search'>
+	<div id = 'notice_search'>
 		<form name = 'frm_board' method = 'POST'>
 			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
 			<div>
@@ -55,19 +55,19 @@ if(request.getParameter("findStr") != null) {
 
 	%>	
 	
-	<!-- event-title메뉴 -->
+	<!-- notice-title메뉴 -->
 	
-<div class = "event-container">
-	<div class = 'event_title'>
+<div class = "notice-container">
+	<div class = 'notice_title'>
 		<span class = 'no'>NO</span>
 		<span class = 'subject'>제목</span>
 		<span class = 'mdate'>작성일</span>
 		<span class = 'hit'>조회수</span>
 	</div>
 	
-<!-- event 글 list -->
+<!-- notice 글 list -->
 
-		<div class = 'event_items'>
+		<div class = 'notice_items'>
 				<c:forEach var ='vo' items ='${list }'>
 		
 			<div class = 'item'>

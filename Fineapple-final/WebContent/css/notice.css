@@ -7,13 +7,13 @@
   }
   
 /*공지사항 h3 */
-.event_h3{
+.notice_h3{
 	text-align: center;
 	margin-top : 50px;
 }
 
-/*event-container 설정*/
-.event-container {
+/*notice-container 설정*/
+.notice-container {
 	  width: 70%;
     margin: 0 auto;
     margin-top: 50px;
@@ -23,68 +23,68 @@
 
 }
 /* 공지사항 list 상단 */
-.event_title {
+.notice_title {
 	margin-top :50px; 
 	border-bottom : 1px solid #d2d6dc;
 	line-height : 25px;
 }
-.event_title .no{
+.notice_title .no{
 	display : inline-block;
 	width :100px;
 }
-.event_title .subject{
+.notice_title .subject{
 	display : inline-block;
 	width :800px;
 }
-.event_title .mdate{
+.notice_title .mdate{
 	display : inline-block;
 	width :200px;
 }
-.event_title .hit{
+.notice_title .hit{
 	display : inline-block;
 	width :100px;
 }
 
 /* 내용list */
 
-.event-container .item {
+.notice-container .item {
 	border-bottom : 1px solid #d2d6dc;
 	height : 50px;
 	line-height : 50px;
 }
-.event_items .no{
+.notice_items .no{
 	display : inline-block;
 	width :100px;
 }
-.event_items .subject{
+.notice_items .subject{
 	display : inline-block;
 	width :800px;
 	text-align: left;
 }
-.event_items .mdate{
+.notice_items .mdate{
 	display : inline-block;
 	width :200px;
 }
-.event_items .hit{
+.notice_items .hit{
 	display : inline-block;
 	width :100px;
 }
 
 /*검색버튼 */
 
-#event_search form{
+#notice_search form{
 	float : right;
 	padding-right : 350px;
 	display : flex;
 }
 
-#event_search input[type=text]{
+#notice_search input[type=text]{
 	width: 200px;
 	border : white;
 	border-bottom : 1px solid black;
 	height: 30px;
 }
-#event_search input[type=button]{
+#notice_search input[type=button]{
   width: 50px;
   border-radius: 0;
   font-size: 1rem;
@@ -94,7 +94,7 @@
   color : white;
   cursor : pointer;
 }
-#event_search .btnInsert{
+#notice_search .btnInsert{
 	margin-right : 900px;	
 }
 /*페이지 버튼 */
@@ -115,4 +115,50 @@
 .btns input:hover{
 	color:white;
 	background-color : black;
+}
+
+
+
+/*notice - insert */
+
+.notice-container .notice_view th {
+	width: 200px;
+    padding: 10px 0 8px 20px;
+    border-top: 1px solid #ccc;
+    background: none;
+    border-right: 1px solid #ccc;
+    text-align: left;
+    font-weight: normal;
+}
+.notice-container .notice_view td {
+	width : 1000px;
+	    border-top: 1px solid #ccc;
+    background: none;
+     text-align: left;
+     text-indent : 10px;
+}
+
+.notice-view .view {
+table-layout: fixed;
+    border-top: 1px solid #c9c9c9;
+    color: #000;
+    line-height: 180%;
+}
+
+.notice_view .view .content{
+	text-align : center;
+	padding-top : 50px;
+	padding-bottom : 50px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.notice-view .view img {
+	width : 100%;
+	margin-bottom : 10px;
+	max-width : 600px;
+}
+
+
+.btns #btnSelect {
+	width : 60px;
+	height : 35px;
 }
