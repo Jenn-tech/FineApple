@@ -1,3 +1,5 @@
+<%@page import="event.EventVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
@@ -15,6 +17,7 @@
 
 </head>
 <body>
+<jsp:useBean id="dao" class="event.EventDao"/>
 
 <!-- header -->
 <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
@@ -45,75 +48,30 @@
 	</div>
 	
 
-	
+	<%		String findStr = "";
+	if(request.getParameter("findStr") != null) {
+		findStr = request.getParameter("findStr");
+	}
+		
+			List<EventVo> list = dao.select("");
+			request.setAttribute("list", list);
+
+	%>	
 
 	
 <!-- event 글 list -->
 <div class = "event-container">
+				<c:forEach var="vo" items="${list }">
 		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item'>
-				<span class = 'no'>${event.eventNo }</span>			
-				<img src = 'http://placehold.it/400x250' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' onclick="view('${event.eventNo}')" >제목</span>			
-			</div>
-		</div>	
+				<div class = 'item' onclick="view('${vo.serial}')">
+					<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
+					<br>		
+					<span class = 'subject' >${vo.subject }</span>			
+				</div>
+			</div>	
+				</c:forEach>
+			
+		
 </div>			
 
 			
@@ -128,5 +86,6 @@
 	
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
+<script>event()</script>
 </body>
 </html>
