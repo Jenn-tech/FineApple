@@ -10,6 +10,8 @@ body {
 /*header설정*/
 header {
     margin-top: 50px;
+    width: 100%;
+    min-height: 50px;
 }
 
 /*검색바 설정*/

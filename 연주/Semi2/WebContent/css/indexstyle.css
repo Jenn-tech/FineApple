@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+
+
+/*메인화면 사진 */
+  .main-view{
+      margin:  auto;
+      margin-bottom: 20px;
+      margin-top: 50px;
+    text-align: center;
+}
+.main-view{height:500px;overflow:hidden;}
+    .main-view ul{width:calc(100% * 3);display:flex;animation:slide 8s infinite;} /* slide를 8초동안 진행하며 무한반복 함 */
+    .main-view li{width:calc(100% / 3);height:300px;}
+    
+    @keyframes slide {
+      0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+      10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+      25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+      35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+      50% {margin-left:-200%;}
+      60% {margin-left:-200%;}
+      100% {margin-left:0;}
+    }
+
+
+
+
+.title-container {
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+	
+	100% {
+		transform: translateY(0);
+	}
+	
+}
+
+@keyframes draw {
+	
+	100% {
+		width: 100%;
+	}
+	
+}
+
+/*카테고리 설정*/
+.menu{
+  border:1px solid #ccc;
+  border-width:1px 0;
+  list-style:none;
+  text-align:center;
+}
+.menu li{
+  display:inline;
+  text-align:center;
+  
+}
+.menu a{
+    display:inline-block;
+    padding:20px;
+    text-decoration: none;
+    color: black;
+    text-align:center;
+    font-weight: 700;
+    width: 150px;
+
+}
+
+.menu a:hover{
+    background-color: black;
+    color: white;
+
+}
+
+/*contents영역*/
+
+
+.product{
+    display: inline-block;
+    padding-left: 100px;    
+}
+.product {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+   min-width: 230px;
+    max-width: 300px;
+    width: 100%;
+    color: #000000;
+    text-align: left;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .product * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+  }
+  
+  .product img {
+    vertical-align: top;
+    max-width: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .product figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .product h3,
+  .product h5 {
+    margin: 0;
+    opacity: 0;
+    letter-spacing: 1px;
+  }
+  
+  .product h3 {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  
+  .product h5 {
+    font-weight: normal;
+    font-style: italic;
+    color: #888;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  
+  .product a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.product > img{
+    text-align: center;
+
+}
+.product:hover > img,
+.product.hover > img {
+    opacity: 0.1;
+  }
+  
+  .product:hover h3,
+  .product.hover h3,
+  .product:hover h5,
+  .product.hover h5 {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+#product {
+    border: 1px solid white;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.product > img{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+#detail{
+    text-align: center;
+    width: 250px;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+
+
+/*footer*/
+.list-box {
+    font-size: small;
+}
+
+.help-box {
+    font-size: 20px;
+    height: 100px;
+    width: 800px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+li {
+    list-style: none;
+}
+
+.footer-list {
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    background-color:black;
+}
+.list-box  a{
+    color: white;
+}
+.list-box-hr {
+    margin: 10px 0px 10px 0;
+
+}
+
+.ul-align {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
