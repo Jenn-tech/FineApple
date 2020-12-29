@@ -10,6 +10,12 @@
 	align-items: center;
 }
 
+.cs_home_search {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 230px; 
+}
+
 #cs_home_search_box {
 	color: #ffffff;
 	margin-top: 30px;
@@ -103,16 +109,16 @@
 	border: 0;
 }
 .cs_func_page_title_item:nth-child(2) {
-	flex-basis: 20%;
+	flex-basis: 25%;
 }
 .cs_func_page_title_item:nth-child(3) {
-	flex-basis: 15%;
+	flex-basis: 25%;
 }
 .cs_func_page_title_item:nth-child(4) {
-	flex-basis: 15%;
+	flex-basis: 25%;
 }
 .cs_func_page_title_item:nth-child(5) {
-	flex-basis: 20%;
+	flex-basis: 25%;
 }
 .cs_func_page_title_item > a {
 	display: block;
@@ -140,7 +146,6 @@
 .cs_func_page_content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 }
 
 .cs_func_page_content > nav {
@@ -159,7 +164,7 @@
 	line-height: 50px;
 	font-size: 1.3em;
 }
-.cs_func_page_content > main {
+.cs_func_page_content > .cs_func_page_inquiry {
 	flex-basis: 72%;
 	padding: 60px;
 }
@@ -168,7 +173,6 @@
 	width: 120px;
 	height: 321px;
 	margin: 50px 0 0 15px;
-	position: fixed;
 	background-image: url("../images/sidebanner.png");
 	right: 30px;
 }
@@ -819,14 +823,35 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 
 
 
-/* --------------- nav CSS ---------------*/
+/* --------------- cs_map CSS --------------- */
 
+.cs_map_body {
+	width: 90%;
+	
+}
 
+.cs_map_title {
+	border-bottom: 3px solid #303030;
+	padding: 0 0 30px 10px;
+	margin-bottom: 40px;
+}
 
+.cs_map_place_content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 
+.cs_map_content_photo_box {
+	width:	55%;
+	min-height: 500px;
+	text-align: center;
+}
 
-
-
+.cs_map_content_article {
+	width:	40%;
+	min-height: 500px;
+}
 
 
 

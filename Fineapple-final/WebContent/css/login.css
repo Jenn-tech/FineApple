@@ -22,8 +22,8 @@
 }
 
 
-
-form {
+/* header form태그명이 바로 사용되어서 설정되어 있던 클래스명 사용했습니다 -해준- */
+.search-form {
     margin: 0 auto;
     min-height: 300px;
     display: flex;
