@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/notice.css">
 <link rel="stylesheet" href="../css/footer.css">
+<script type="text/javascript" src="../js/notice.js"></script>
+
 </head>
 <body>
 <jsp:useBean id="dao" class="notice.NoticeDao"/>
@@ -36,11 +38,13 @@
 					
 <!-- 검색하기 -->	
 	<div id = 'notice_search'>
-		<form name = 'frm_board' method = 'POST'>
+		<form name = 'frm_notice' method = 'POST'>
 			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
 			<div>
 				<input type = 'text' name = 'findStr' id = 'findStr'/>
 				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
+				<input type="hidden" name="noticeNo" size="5" >
+				
 			</div>
 		</form>
 	</div>
@@ -68,13 +72,13 @@ if(request.getParameter("findStr") != null) {
 <!-- notice 글 list -->
 
 		<div class = 'notice_items'>
-				<c:forEach var ='vo' items ='${list }'>
+				<c:forEach var ='notice' items ='${list }'>
 		
 			<div class = 'item'>
-				<span class = 'no'>${vo.noticeNo }</span>			
-				<span class = 'subject' onclick="view('${vo.noticeNo}')" >${vo.noticeSubject }</span>			
-				<span class = 'mdate'>${vo.noticeDate }</span>			
-				<span class = 'hit'>${vo.noticeHit }</span>			
+				<span class = 'no'>${notice.noticeNo }</span>			
+				<span class = 'subject' onclick="view('${notice.noticeNo}')" >${notice.noticeSubject }</span>			
+				<span class = 'mdate'>${notice.noticeDate }</span>			
+				<span class = 'hit'>${notice.noticeHit }</span>			
 			</div>
 			</c:forEach>
 		</div>	

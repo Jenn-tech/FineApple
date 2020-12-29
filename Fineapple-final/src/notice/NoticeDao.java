@@ -61,6 +61,34 @@ public class NoticeDao {
 			return list;
 		}
 	}
+
+
+public NoticeVo view(int noticeNo){
+	NoticeVo notice = new NoticeVo();
+	String sql = "select * from notice where notice_no like ? ";
+	
+	try {
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, noticeNo);
+		
+		rs = ps.executeQuery();
+		while(rs.next()) {
+			notice.setNoticeNo(rs.getInt("notice_no"));
+			notice.setNoticeSubject(rs.getString("notice_subject"));
+			notice.setNoticeDoc(rs.getString("notice_doc"));
+			notice.setNoticeDate(rs.getString("notice_date"));
+			notice.setNoticeHit(rs.getInt("notice_hit"));
+			
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	return notice;
 }
-
-
+}
