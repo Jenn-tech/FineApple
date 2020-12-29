@@ -15,7 +15,7 @@ boolean b = dao.login(vo.getMid(), vo.getPwd());
 if(b){
 	//로그인 성공
 	session.setAttribute("mid", vo.getMid());
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("../main/index.jsp");
 }else{
 	//로그인 실패
 %>

@@ -5,12 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
     <link rel="stylesheet" href="../css/findinfo.css">
+    <link rel="stylesheet" href="../css/header.css">
+    
+<link rel="stylesheet" href="../css/indexstyle.css">
 <script src ='../js/findinfo.js'></script>
 
 </head>
 <body>
-	<header id="header">
+	<!-- <header id="header">
 		<nav class="left">
             <div class="search_bar">
                  <form role="search" method="get" class="search-form" >
@@ -27,7 +31,10 @@
             <a href="#" class="button alt">마이페이지</a>                
             <a href="#" class="button alt">로그인</a>                
         </nav>  
-	</header>
+	</header> -->
+	
+		<jsp:include page="/main/header1.jsp"/>
+	
 <div class = "container">
 	<form name="idfindscreen" method = "POST">
 			<div class = "search-title">

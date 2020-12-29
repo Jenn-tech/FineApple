@@ -3,5 +3,5 @@
 
 <%
 	session.removeAttribute("mid");
-	response.sendRedirect("../index.jsp");
+	response.sendRedirect("../main/index.jsp");
 %>

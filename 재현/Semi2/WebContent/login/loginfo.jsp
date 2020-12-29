@@ -6,11 +6,14 @@
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/header.css">
+    
+<link rel="stylesheet" href="../css/indexstyle.css">
     <script src='../js/login.js'></script>
     
 </head>
 <body>
-   	<header id="header">
+  <!--  	<header id="header">
 		<nav class="left">
             <div class="search_bar">
                  <form role="search" method="get" class="search-form" >
@@ -19,7 +22,7 @@
                  </form>
             </div>
         </nav>
-        <a href ="../index.jsp"><img src="../images/pineapple.png"/></a>
+        <a href ="../main/index.jsp"><img src="../images/pineapple.png"/></a>
 		<nav class="right">
             <a href="#" class="button alt">소개</a>
 			<a href="#" class="button alt">커뮤니티</a>
@@ -28,6 +31,10 @@
             <a href="#" class="button alt">로그인</a>                
         </nav>  
 	</header>
+ -->
+ 
+	<jsp:include page="/main/header1.jsp"/>
+	
 
     <div class="container">
         <section class="form-write">

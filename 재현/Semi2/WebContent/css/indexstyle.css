@@ -24,6 +24,57 @@
     }
 
 
+/*test*/
+
+.container2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom : 30px;
+}
+
+.title-container h2 {
+	position: relative;
+	display: block;
+	margin: 0;
+	font-size: 4rem;
+	line-height: 1;
+	transform: translateY(6rem);
+	animation: up 500ms linear forwards;
+	z-index: 1;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+}
+.title-container	h2::before,
+.title-container	h2::after {
+		position: absolute;
+		content: '';
+		width: 0px;
+		height: 1px;
+		left: 0;
+	background-color:#a2a2a2; 
+		z-index: -1;
+	}
+/* .title-container	h1::before {
+		top: 1.4rem;
+		animation: draw 200ms linear 1s forwards;
+	}
+	 */
+.title-container	h2::after {
+		bottom: 0.4rem;
+		animation: draw 150ms linear 1s forwards;
+	}
+	
+
+.fineapple {
+	color : #777777;
+}	
+.makes {
+	color : #4e4e4e;
+}
+.innovation {
+	color : #000000;
+}
+	
 
 
 .title-container {
@@ -49,6 +100,85 @@
 	
 }
 
+/*test3 */
+
+.cater3-movingBG {
+    height: 1vh;
+   
+}
+
+
+
+.flyinTxtCont {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-bottom: 10%;
+      margin-left: 2em;
+}
+.flyIn {
+    color:#fff;
+    font-family:'Raleway';
+    text-transform:uppercase;
+    line-height:1.2em;
+    position:relative;
+  text-shadow: 2px 2px 40px rgba(0,0,0,0.7);
+}
+.lineOne {
+  transition-delay:.2s; 
+  transition:.4s ease in;
+  animation: txtFlyIn .3s linear;
+}
+.lineTwo {
+    transition-delay:.8s; 
+    transition:.6s ease in;
+    animation: txtFlyIn .6s linear;
+}
+.lineThree {
+    transition-delay:.6s; 
+    transition:.8s ease in;
+    animation: txtFlyIn .9s linear;
+}
+.lineOne, .lineTwo, .lineThree {
+    font-size:90px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+.lineFour {
+    transition-delay:2s; 
+    transition:2s ease in;
+    animation: fadeIn 2s linear;
+    width: 100%;
+    background-color:rgba(255,255,255,0.9);
+    display:inline-block;
+    color:#000;
+    box-size:border-box;
+    max-width:63%;
+    max-width: 22em;
+    font-size: 32px;
+    padding: .2em .5em;
+    margin-top: 30px;
+    
+}
+@keyframes fadeIn{
+    0% { opacity:0;}
+    100% { opacity:1;}
+}
+@keyframes txtFlyIn{
+    0% { transform:translateX(-100%); }
+    100% { transform:translateX(0%); }
+}
 /*카테고리 설정*/
 .menu{
   border:1px solid #ccc;
@@ -79,11 +209,19 @@
 }
 
 /*contents영역*/
-
+#product_list {
+	width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    padding-left : 100px;
+    padding-right : 100px;
+}
 
 .product{
     display: inline-block;
-    padding-left: 100px;    
+    text-align : center;
 }
 .product {
     font-family: 'Source Sans Pro', sans-serif;
@@ -94,7 +232,6 @@
     max-width: 300px;
     width: 100%;
     color: #000000;
-    text-align: left;
     font-size: 16px;
     background-color: #fff;
   }
@@ -156,7 +293,7 @@
     z-index: 1;
 }
 
-.product > img{
+.product > a{
     text-align: center;
 
 }
@@ -183,7 +320,6 @@
 
 .product > img{
     display: inline-block;
-    margin-left: 25px;
 }
 
 #detail{
