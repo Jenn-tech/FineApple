@@ -39,7 +39,7 @@
 <!-- 검색하기 -->	
 	<div id = 'notice_search'>
 		<form name = 'frm_notice' method = 'POST'>
-			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
+			<input type = 'hidden'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
 			<div>
 				<input type = 'text' name = 'findStr' id = 'findStr'/>
 				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
