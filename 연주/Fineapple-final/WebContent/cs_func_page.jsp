@@ -6,8 +6,9 @@
 <head>
 <title>FineApple Main</title>
 <link rel="stylesheet" type="text/css" href="./css/cs_center.css">
+<link rel="stylesheet" type="text/css" href="./css/indexstyle.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
 <link rel="stylesheet" type="text/css" href="./css/header.css">
-<link rel="stylesheet" type="text/css" href="./css/footer.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
    
@@ -57,6 +58,12 @@
 	<header class="cs_func_page_title">
 		<div class="cs_func_page_title_item">
 		<h2>CS CENTER</h2>
+		</div>
+		<div class="cs_func_page_title_item">
+		<a href="notice.do?notice=select">
+		<h4>공지사항</h4>
+		<p>FINEAPPLE에서 전하는 새로운 소식을 확인해주세요.</p>
+		</a>
 		</div>
 		<div class="cs_func_page_title_item">
 		<a href="cs_func_page.jsp?func=./cs_center/cs_insert.jsp">

@@ -3,22 +3,20 @@
 <%@page import="review.ReviewDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
+    
      
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
 <head>
 <title>FineApple Review</title>
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" href="../css/review3.css"> 
-<link rel="stylesheet" href="../css/header.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
 </head>
 <style>
-
 	a, a:hover {
 		color: #000000;
 		text-decoration: none;
@@ -32,26 +30,34 @@
 	}
 
 %>
-<div class="review">
-	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %> 
-    <h3 class="review_h3">리뷰게시판</h3>
- 	<div class="container">
+<div id="review">
+    <header>
+        <div id="search">
+            <input id="search-product" type="text"size="15" placeholder="상품명"/>
+            <input id="search-btn" type="submit" value="검색"/>
+        </div>
+        <div id="img_container">
+            <!--<img src="https://t1.daumcdn.net/cfile/tistory/1705C6384DE6EB7433" width="95px"/>> -->
+            <img src="img/pineapple.png" width="220px"/>
+            
+        </div>
+        <ul id="nav">
+            <li><a href="#">소개</a></li>
+            <li><a href="#">서비스</a></li>
+            <li><a href="./review.jsp">커뮤니티</a></li>
+            <li><a href="#">고객지원</a></li>
+            <li><a href="#">로그인</a></li>
+        </ul>
+    </header> 
+ 	<div class="container" style="width: 100%; min-height: 300px;">
  		<div class="row">
  			<table class="review-table" style="text-align: center;"> 
  				<thead>
- 					<tr class="table-top">
- 						<th class="no" style="background-color: #ffffff; text-align: center;">번호</th>
- 						<th class="title" style="backlground-color: #ffffff; text-align: center;">제목</th>
- 						<th class="name" style="background-color: #ffffff; text-align: center;">작성자</th>
- 						<th class="date" style="background-color: #ffffff; text-align: center;">작성일</th>
+ 					<tr>
+ 						<th style="bakcground-color: #eeeeee; text-align: center;">번호</th>
+ 						<th style="bakcground-color: #eeeeee; text-align: center;">제목</th>
+ 						<th style="bakcground-color: #eeeeee; text-align: center;">작성자</th>
+ 						<th style="bakcground-color: #eeeeee; text-align: center;">작성일</th>
  					</tr>
  				</thead>
  				<tbody>
@@ -60,18 +66,18 @@
  					ArrayList<ReviewVo> list = dao.getList(pageNumber);
  					for(int i = 0; i< list.size(); i++){
  				%>
- 					<tr class="table-item" style = "cursor:pointer;" onclick="location.href='view.jsp?reviewSerial=<%= list.get(i).getReviewSerial()%>'">
- 						<td class="no"><%= list.get(i).getReviewSerial() %></td>
- 						<td class="title"><%= list.get(i).getReviewTitle() %></td>
- 						<td class="name"><%= list.get(i).getMemberId() %></td>
- 						<td class="date"><%= list.get(i).getReviewDate().substring(0,11) + list.get(i).getReviewDate().substring(11,13)+"시"+list.get(i).getReviewDate().substring(14,16)+"분" %></td> 
+ 					<tr>
+ 						<td><%= list.get(i).getReviewSerial() %></td>
+ 						<td><a href="view.jsp?reviewSerial=<%= list.get(i).getReviewSerial()%>"><%= list.get(i).getReviewTitle() %></a></td>
+ 						<td><%= list.get(i).getMemberId() %></td>
+ 						<td><%= list.get(i).getReviewDate() %></td> 
  					</tr>
  				<%
  				}
  				%>
  				</tbody>
  			</table>
- 			<% 
+ 			<%
  				if(pageNumber != 1){
  			%>
  				<a href="review.jsp?pageNumber=<%=pageNumber - 1 %>" >이전</a>
@@ -82,28 +88,30 @@
  			<%
  				}
  			%>
+ 			<a href="write.jsp" class="btn-review write">글쓰기</a>
  			
  			
  		</div>
- 	</div> 
-<!-- buttons -->
-	<div class = 'btns'>
-		<input type = 'button' value = '<<'/>
-		<input type = 'button' value = '<'/>
+ 	</div>
+ 
+ 
 
-		<c:forEach var = 'i' begin = '1' end = '5'>
-			<input type = 'button'class = 'num' value = '${i }'>
-		</c:forEach>
-
-		<input type = 'button' value = '>'/>
-		<input type = 'button' value = '>>'/>
-		
-		<input class="btn-write" type="button" value="글쓰기" onclick="location.href='write.jsp'">
-	</div>
+       
     
-    
-      <!-- footer영역 -->
-   	<%@include file="../main/footer.jsp" %>
+    <footer class="footer-list">
+        <div class="ul-align">
+            <ul class="list-box">
+                <li>사업자등록번호 : 120-81-84429 | 통신판매업신고번호 : 제 2011-서울강남-00810호</li>
+                <li>대표이사 : PETER DENWOOD | 주소 : 서울 특별시 강남구 영동대로 517</li>
+                <li>대표전화 : 080-330-8877 | 팩스 : 02-6928-0000</li>
+                <li>Apple 온라인 스토어는 업계 표준 암호화를 사용하여 제출된 고객 비밀 정보를 보호합니다. <a href="#">보안 정보</a>에 대해 더 알아보기.</li>
+            </ul>
+            <ul class="list-box">
+                <li>다양한 쇼핑 방법: Apple Store를 방문하거나, 리셀러를 찾아보거나, 080-330-8877번으로 전화하세요.</li>
+                <li>Copyright © 2020 Apple Inc. 모든 권리 보유.</li>
+            </ul>
+        </div>
+    </footer>
 </div>
 
 </body>

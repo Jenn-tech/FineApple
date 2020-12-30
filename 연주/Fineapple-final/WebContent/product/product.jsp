@@ -11,44 +11,58 @@
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
     crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src='../js/product.js'></script>
-    <link rel="stylesheet" href="../css/product.css">
-     <link rel="stylesheet" href="../css/header.css">
-    <!-- <link rel="stylesheet" href="../css/indexstyle.css"> -->
-    <!-- <link rel="stylesheet" href="../css/login.css"> -->
-    <link rel="shortcut icon" href="../images/favicon.png">
-    <link rel="icon" href="favicon.ico">
+    <script src='./product.js'></script>
+    <link rel="stylesheet" href="./product.css">
+ 
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/findinfo.css">
+    <link rel="stylesheet" href="../css/indexstyle.css">
+    <link rel="stylesheet" href="../css/login.css"> 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="../img/favicon.png">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
+	<!-- header -->
+	<header id="header">
+		<nav class="left">
+            <div class="search_bar">
+                 <form role="search" method="get" class="search-form" >
+                     <input type="search" class="search-field" placeholder="상품명" value="" name="s" />
+                    <button type="submit" class="search-submit">검색</button>
+                 </form>
+            </div>
+        </nav>
+        <a href ="../index.jsp"><img src="../images/pineapple.png"/></a>
+		<nav class="right">
+            <a href="#" class="button alt">소개</a>
+			<a href="#" class="button alt">커뮤니티</a>
+			<a href="#" class="button alt">고객지원</a>
+            <a href="#" class="button alt">마이페이지</a>                
+            <a href="#" class="button alt">로그인</a>                
+        </nav>  
+	</header>
 	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
     <!-- main -->
     <div class="main" id="main">
-        <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
+        <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nzkakoo-frontmysticblack-308345330?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
         <div class="summary">
+            <div class="heart">
+                <a href="#"><span style="color:rgb(253, 46, 81)"><i class="far fa-heart"></i></span></a>
+            </div>
             <form name="form" method="get">
-                <h1>갤럭시 Z 폴드2 5G</h1><br/>
+                <h1>갤럭시 Z 폴드2 5G</h1>
                 <span>상품코드 : </span>
                 <span>SM-F916NZKAKOO</span><br/>
                 <span>판매가 : </span>
                 <span>2,398,000원</span><br/>
                 <div class="summary-color">
                     <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
+                    <label for="btncolor1" class="btncolor1">미스틱블랙</label> 
                     <label for="btncolor2" class="btncolor2">미스틱브론즈</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
+                    <input type="button" id="btncolor1" onclick='border()'/>
+                    <input type="button" id="btncolor2" onclick='border()'/> <br/>
                     <span>메모리 : </span>
                     <span>256 GB</span><br/>
                 </div>
@@ -61,7 +75,12 @@
                 </div>
             </form>
             <br/>
+            <hr/>
+            <div class="choice">
 
+
+            </div>
+            <hr/>
             <div class="btns">
                 <a href="#"><input type="submit" value="장바구니" class="btn1"/></a>
                 <a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
@@ -70,8 +89,7 @@
     </div>
 
     <!-- 메뉴바 -->
-    <div class = "menubar2">
-        <div class = "여백3"></div>
+    <div class = "menubar">
         <div class="item-title">
             <a href="#main"><h2>갤럭시 Z 폴드2 5G</h2></a>
             <div class="item-title2">
@@ -234,9 +252,8 @@
 
 
         <!-- 유의사항 -->
-        <div id="note"></div>
-        <div class="여백2"></div>
-        <div class= "note">
+        <div class= "note" id="note">
+            <div class="여백2"></div>
             <h2>구매시 유의사항</h2>
             <ul>
                 <div class="note-btn">
@@ -302,8 +319,26 @@
             </ul>
         </div>
         
-   <!-- footer영역 -->
-   	<%@include file="../main/footer.jsp" %>
+   <!-- footer -->
+    <div class="footer-align">
+        <hr>
+        <div class="help-box">도움이 더 필요하신가요? <a href="#">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
+        <footer class="footer-list">
+            <div class="ul-align">
+                <ul class="list-box">
+                    <li>사업자등록번호 : 120-81-84429 | 통신판매업신고번호 : 제 2011-서울강남-00810호</li>
+                    <li>대표이사 : PETER DENWOOD | 주소 : 서울 특별시 강남구 영동대로 517</li>
+                    <li>대표전화 : 080-330-8877 | 팩스 : 02-6928-0000</li>
+                    <li>Apple 온라인 스토어는 업계 표준 암호화를 사용하여 제출된 고객 비밀 정보를 보호합니다. <a href="#">보안 정보</a>에 대해 더 알아보기.</li>
+                    <hr class="list-box-hr">
+                </ul>
+                <ul class="list-box">
+                    <li>다양한 쇼핑 방법: Apple Store를 방문하거나, 리셀러를 찾아보거나, 080-330-8877번으로 전화하세요.</li>
+                    <li>Copyright © 2020 Apple Inc. 모든 권리 보유.</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 <script>
 
 </script>

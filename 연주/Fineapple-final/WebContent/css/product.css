@@ -7,15 +7,16 @@
 
 .여백1{
     width: 1rem;
-    height: 200px;
+    height: 7rem;
     background-color: #fff;
 }
 
 .여백2{
     width: 1rem;
-    height: 150px;
+    height: 3rem;
     background-color: #f7f7f7;
 }
+
 
 /* main */
 
@@ -34,14 +35,14 @@
 }
 
 .summary{
-    margin: 250px 0 0 100px;
+    margin: 170px 0 0 100px;
     line-height: 2;
     position: relative;
     margin-right: 250px;
     float: right;
     box-sizing: border-box;
     width: 472px;
-    height: 500px;
+    height: 680px;
     padding: 50px 46px 46px;
     background-color: #fff;
     border-radius: 23px;
@@ -91,14 +92,13 @@
 }
 
 /* menubar */
-.menubar2{
-    width: 100%;
+.menubar{
+    width: 100vw;
     height: 80px;
     text-align: center;
-    background: black;
 }
 
-.menubar2 h2{
+.menubar h2{
     padding-left: 400px;
     display: inline;
 }
@@ -113,16 +113,14 @@
     font-weight: bold;   
 }
 
-.menubar2 a{
+.menubar a{
     text-decoration: none;
     color: white;
-    margin: 0 0 0 30px
 }
 
 .item-title2 ul{
-    margin-left: 300px;
-    margin-right: 300px;
-    padding-left: 200px;
+    margin-left: 550px;
+    margin-right: 200px;
 }
 
 .item-title2 li{
@@ -134,7 +132,7 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin: 100x;
+    padding-inline-start: 40px;
     border: none;
     float: left;
     width: 70px;
@@ -144,6 +142,7 @@
     line-height: 50px;
     display: inline-block;
     margin: 10px;
+    margin-left: 50px;
     padding: 0px;
     padding-left: 40px;
     padding-right: 40px;
@@ -161,12 +160,6 @@
     position: fixed;
     top: 0px;
     }
-
-.여백3{
-    width: 1920px;
-    height: 100px;
-    background-color: #f7f7f7;
-}
 
 /* 특장점 */
 .item-benefits{
@@ -198,7 +191,7 @@
     cursor: pointer;
 }
 
-.review-avg ul, .review-avg li{
+.review-avg ul, li{
     display: inline-flex;
     justify-content: center;
     margin: 20px;
