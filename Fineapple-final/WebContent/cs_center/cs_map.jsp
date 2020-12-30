@@ -30,8 +30,8 @@
 						<h4 >버스를 이용한 방법</h4>
 						<span>
 						정류장: 역삼역, 포스코 P&S타워 </br></br>
-						<img alt="" src="./images/bluebus.jpg">  164번, 740번, 341번, 360번 </br>
-						<img alt="" src="./images/redbus.jpg">  1100번, 1700번, 2000번, 7007번, 8001번</br>
+						<img alt="" src="../images/bluebus.jpg">  164번, 740번, 341번, 360번 </br>
+						<img alt="" src="../images/redbus.jpg">  1100번, 1700번, 2000번, 7007번, 8001번</br>
 						</span>
 	
 						<h4>지하철을 이용한 방법</h4>
