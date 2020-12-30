@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SF Pro KR, SF Pro Display, SF Pro Icons, AOS Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    padding-top: 6em;
+  }
+  
+  /*헤더 이미지*/
+  #header img {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  #header {
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    background: #fff;
+    cursor: default;
+    height: 6em;
+    left: 0;
+    line-height: 6em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.075);
+    text-align: center;
+  }
+  
+  #header nav {
+        position: absolute;
+        top: 0;
+        height: inherit;
+        line-height: inherit;
+    }
+  
+  #header nav.left {
+        left: 2em;
+     }
+  
+  #header nav.right {
+          right: 2em;
+        }
+  
+  #header nav .button {
+          padding: 0 2em;
+          height: 3.25em;
+          line-height: 3.25em;
+        }
+  
+  #header nav a {
+          text-decoration: none;
+            display: inline-block;
+        }
+  
+  @media screen and (max-width: 980px) {
+    body {
+        padding-top: 44px;
+    }
+  
+    #header {
+        height: 44px;
+        line-height: 44px;
+    }   
+  }
+  
+  @media screen and (max-width: 480px) {
+  
+    #header {
+        min-width: 320px;
+    }
+  }
+  
+  #header a{
+    color: black;
+    font-weight: 700;
+  }
+  
+ #header .right>a:hover{
+  color: white;
+  background-color: black;
+}
+
+  
+  /*헤더 검색바*/
+  #header .searchbar{
+    margin-left: 20px;
+  }
+  
+  #header .search-form{
+    display: inline-block;
+    margin-left: 20px;
+  }
+  #header button{
+    background-color: white;
+    border: white;
+    height: 40px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+  }
+  #header button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  #header input{
+    border: black;
+    width: 200px;
+    border-bottom: black solid 1px;
+    border-radius: 0;
+    font-size: 1rem;
+    text-align: center;
+    height: 34px;
+  }
+
+/*본문 */
+.container {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    border: 1px solid #d2d6dc;
+    padding: 30px;
+}
+
+
+form {
+    margin: 0 auto;
+    min-height: 300px;
+    align-items: center;
+}
+
+.search-title{
+	text-align : center;
+	margin-bottom : 50px;
+}
+
+.form-search {
+	text-align : center;
+}
+.find-name{
+	margin-bottom : 20px;
+	
+}
+
+.find-phone{
+	margin-bottom : 50px;
+	
+}
+label{
+	margin-right : 10px;
+	font-weight : 700;
+}
+.phone-select {
+	width : 80px;
+	height : 34px;
+	border : 1px solid black;
+}
+
+.btn-name{
+    font-size :0.8rem;
+    text-indent: 20px;
+    
+}
+.btn-phone{
+    font-size :0.8rem;
+	text-indent: 20px;
+    
+}
+input{
+    border: black;
+    width: 200px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 40px;
+        
+    
+  }
+
+.btnSearch input{
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+      font-weight : 700;
+      width : 140px;
+      height : 45px;
+      cursor : pointer;
+}
+.btnSearch{
+	text-align : center;
+}
+
+.btnSearch  input:hover{
+	background-color : white;
+	border : 1px solid black;
+	color : black;
+	}
+/*result*/
+.found-id {
+	width : 100px;
+	height : 60px;
+	text-align : center;
+	margin : auto 0 ;
+	padding-top : 20px ;
+	border : 1px solid #eee;
+}	
+
+.found-success {
+	display : flex;
+	height : 100px;
+	text-align : center;
+}
+h4 {
+	text-align : center;
+	line-height : 100px;
+	margin-left : 30px;
+	margin-right : 30px;
+}
+.found-fail h4{
+		margin-left : 0;
+	
+}
+.found-login{
+	      text-align : center;
+	      margin-top : 20px;
+	
+}
+  #btnLogin, #btnback, #btnjoin {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+          height : 45px;
+      font-weight : 700;
+}
+#btnback:hover,
+#btnLogin:hover,
+#btnjoin:hover{
+	background: white;
+	border : black solid 1px;
+	color : black;
+	cursor : pointer;
+}
+.find-id{
+	
+		margin-bottom : 20px;
+}
+.find-id label{
+	margin-left : -15px;
+	
+}
+
+/*광고박스*/
+
+.adcontainer {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 30px;
+    text-align : center;
+}
+
+.adcontainer img{
+	width : 650px;
+}
+/* footer */
+.footer-align {
+	margin-top : 150px;
+}
+.list-box {
+    font-size: small;
+}
+
+.help-box {
+    font-size: 20px;
+    height: 100px;
+    width: 800px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+li {
+    list-style: none;
+}
+
+.footer-list {
+    padding: 20px;
+    color: grey;
+    background-color:black;
+
+}
+
+.list-box-hr {
+    margin: 10px 0px 10px 0;
+
+}
+
+.ul-align {
+    width: 800px;
+    margin: 0 auto;
+}

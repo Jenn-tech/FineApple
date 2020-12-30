@@ -8,6 +8,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import bean.Page;
+import review.ReviewVo;
 
 public class FileUpload {
 	public static final String saveDir = "C:\\Users\\USER\\FineApple\\희석\\Fineapple\\WebContent\\upload\\";
