@@ -26,6 +26,8 @@
 	<jsp:include page="./header2.jsp"/>
 	
 	<%} %>
+	
+	
     <div class = "container">
     		
        <div class="main-view">
