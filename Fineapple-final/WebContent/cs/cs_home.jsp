@@ -44,8 +44,8 @@
 		    <ul>
 				<li><a href="cs_func_page.jsp"><img alt="" src="../images/QA.png">Q&A</a></li>
 				<li><a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp"><img alt=""src="../images/FAQ.png">FAQ</a></li>
-	       		<li><a href="inquiry.do?qa=	select"><img alt="" src="../images/Map.png">게시판</a></li>
-	       		<li><a href="cs_main_page.jsp?func=./cs_center/cs_map.jsp"><img alt=""src="../images/Map.png">찾아오시는 길</a></li>
+	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp"><img alt="" src="../images/Map.png">게시판</a></li>
+	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp"><img alt=""src="../images/Map.png">찾아오시는 길</a></li>
 	    	</ul>
 		</main>
 	</section>

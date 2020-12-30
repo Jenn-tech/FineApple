@@ -23,7 +23,7 @@ var question = function() {
 		cs_insert_btnSave.onclick = function() {
 			var frm = document.frm_question;
 			frm.enctype = 'multipart/form-data';
-			frm.action = 'inquiry.do?qa=insert';
+			frm.action = '../inquiry.do?qa=insert';
 			frm.submit();
 		}
 	}
@@ -70,18 +70,12 @@ var autoscroll = function() {
 }
 
 
-
-/* --------------- func_page quick menu toggle --------------- 
-$(docnment).ready(fucntion() {
-	$(".cs_func_page_menu > a").click(function() {
-		$(this).next("ul").toggleClass("hide");
+/* --------------- func_page quick menu toggle --------------- */
+var toggleMenu = function() {
+$(document).ready(function() {
+	$(".cs_toggle_func:nth-child(2)").hide();
+	$(".cs_func_page_menu a").on('click', function() {
+		$(this).next(".cs_toggle_func").slideToggle("slow");
 	})
 });
-*/
-
-
-
-
-
-
-
+}

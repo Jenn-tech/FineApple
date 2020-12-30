@@ -15,7 +15,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous"></script>
         
-<script type="text/javascript" src="./js/inquirybook.js"></script>
+<script type="text/javascript" src="../js/inquirybook.js"></script>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
 <div class="cs_func_page_container">
 	<header class="cs_func_page_title">
 		<div class="cs_func_page_title_item">
-		<h2>CS CENTER</h2>
+		<h3>CS CENTER</h3>
 		</div>
 		<div class="cs_func_page_title_item">
 		<a href="cs_func_page.jsp?func=../cs_center/cs_insert.jsp">
@@ -59,7 +59,7 @@
 		</a>
 		</div>
 		<div class="cs_func_page_title_item">
-		<a href="inquiry.do?qa=select">
+		<a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp">
 		<h4>게시판</h4>
 		<p>다른 고객님의 질문 사항을 확인해주세요.</p>
 		</a>
@@ -73,31 +73,31 @@
 	</header>
 	<section class="cs_func_page_content">
 		<nav>
-			<div class="cs_func_page_quickmenu">
-			<h3>QUICK MENU</h3>
+			<div class="cs_func_page_nav_menu_fixed">
+				<div class="cs_func_page_nav_title">
+				<h3>QUICK MENU</h3>
+				</div>
+				<ul class="cs_func_page_menu">
+					<li class="cs_toggle_menu">
+						<a href="#">제품</a>
+						<ul class="cs_toggle_func">
+							<li><a href="">핸드폰</a></li>
+							<li><a href="">태블릿</a></li>
+							<li><a href="">노트북</a></li>
+							<li><a href="">스마트워치</a></li>
+							<li><a href="">엑세서리</a></li>
+						</ul>
+					</li>
+					<li class="cs_toggle_menu">
+						<a href="#">커뮤니티</a>
+						<ul class="cs_toggle_func">
+							<li><a href="">공지사항</a></li>
+							<li><a href="">이벤트</a></li>
+							<li><a href="">후기</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-			<ul class="cs_func_page_quickmenu_ul">
-				<li>
-					<a href="#">제품</a>
-					<ul>
-						<li><a href="">핸드폰</a></li>
-						<li><a href="">태블릿</a></li>
-						<li><a href="">노트북</a></li>
-						<li><a href="">스마트워치</a></li>
-						<li><a href="">엑세서리</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">마이페이지</a>
-					<ul>
-						<li><a href="">고객정보수정</a></li>
-						<li><a href="">장바구니</a></li>
-						<li><a href="">찜목록</a></li>
-						<li><a href="">쿠폰함</a></li>
-						<li><a href="">문의 내역</a></li>
-					</ul>
-				</li>
-			</ul>
 		</nav>
 		
 		<!-- 실질적으로 변경되는 공간 -->
@@ -127,7 +127,7 @@
 <!-- 스크립트 -->
 <script>
 question()
-initmenu()
+toggleMenu()
 </script>
 </body>
 </html>

@@ -87,10 +87,16 @@
 
 
 
-/* cs_func_page CSS */
+/*--------------- cs_func_page CSS ---------------*/
 .cs_func_page_container {
 	display: flex;
 	flex-direction: column;
+}
+.cs_func_page_container a:visited {
+	text-decoration: none;
+}
+.cs_func_page_container a:link {
+		text-decoration: none;
 }
 
 .cs_func_page_title {
@@ -104,9 +110,10 @@
 	flex-grow: 0;
 }
 .cs_func_page_title_item:nth-child(1) {
-	flex-basis: 200px;
+	flex-basis: 233px;
 	font-size: 1.3em;
-	border: 0;
+	text-align: center;
+	padding-top: 16px;
 }
 .cs_func_page_title_item:nth-child(2) {
 	flex-basis: 25%;
@@ -154,15 +161,53 @@
 	color: white;
 	padding-top: 20px; 
 }
+
+.cs_toggle_menu > a {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	background-color: #303030;
+	color: #ffffff;	
+	border-top: 2px solid #ffffff;
+	text-decoration: none;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.cs_toggle_func > li > a {
+	font-weight: bold;
+	color: #000000;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.cs_toggle_func > li > a:hover {
+	background-color: #919191;
+}
+.cs_toggle_func > li {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	background-color: #e2e2e2;
+}
+
 .cs_func_page_content > aside {
 	flex-basis: 7%;
 	margin: 10px 10px 0 0;
 } 
+.cs_func_page_nav_menu_fixed {
+	position: fixed;
+	width: 201px;
+}
+
 .cs_func_page_nav_title {
 	text-align: center;
 	height: 50px;
 	line-height: 50px;
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 
 .cs_func_page_menu > a {
@@ -174,6 +219,7 @@
 	font-weight: bold;
 	line-height: 30px;
 }
+
 .cs_func_page_content > .cs_func_page_inquiry {
 	flex-basis: 72%;
 	padding: 60px;
