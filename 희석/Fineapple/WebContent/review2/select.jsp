@@ -1,5 +1,5 @@
-<%@page import="bean.ReviewVo"%>
-<%@page import="bean.ReviewDao" %>
+<%@page import="review.ReviewVo"%>
+<%@page import="review.ReviewDao" %>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
 <script src='../js/review.js'></script>
 </head>
 <body>
-<jsp:useBean id="dao" class="bean.ReviewDao"/>
+<jsp:useBean id="dao" class="review.ReviewDao"/>
 <div id ='review'>
    <h2>리뷰</h2>
    <%-- 검색바 --%>

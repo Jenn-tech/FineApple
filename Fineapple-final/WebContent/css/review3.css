@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+
+/*리뷰 h3*/
+.review> h3{
+	text-align: center;
+	margin-top: 50px;
+}
+
+
+/*리뷰 container*/
+.review>.container {
+	width: 70%; 
+	min-height: 300px;
+	margin-left: 15%;
+	margin-top: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+.review> .row {
+	text-align: center;
+}
+
+.review .review-table{
+	width: 100%;
+}
+
+/*리뷰 상단*/
+.review-table>thead .no{
+	display : inline-block;
+	width :100px;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.review-table>thead .title{
+	display : inline-block;
+	width :700px;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.review-table>thead .name{
+	display : inline-block;
+	width :200px;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.review-table>thead .date{
+	display : inline-block;
+	width :200px;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+/*리뷰 내용*/
+.review-table>tbody .no{
+	display : inline-block;
+	width :100px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.review-table>tbody .title{
+	display : inline-block;
+	width :700px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.review-table>tbody .name{
+	display : inline-block;
+	width :200px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.review-table>tbody .date{
+	display : inline-block;
+	width :200px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.review-table>tbody>tr:hover {
+	background-color: #aaaaaa;
+}
+
+
+/*리뷰 write*/
+
+.review .review-table-detail{
+	width: 100%;
+	text-align: center;
+}
+
+/*리뷰 view*/
+.review-table-detail .table-title{
+	width: 100px;
+	height: 60px;
+	font-size: 30px;
+	text-align: center;
+	border: 1px solid #aaaaaa;
+}
+
+.review-table-detail .table-left{
+	width: 100px;
+	border: 1px solid #aaaaaa;
+	height: 45px;
+	
+}
+
+.review-table-detail .table-right{
+	width: 300px;
+	text-align: left;
+	border: 1px solid #aaaaaa;
+	height: 45px;
+}
+
+#table-doc{
+	width: 300px;
+	text-align: left;
+	border: 1px solid #aaaaaa;
+	height: 400px;
+}
+
+/*버튼*/
+.review>.btns{
+	width: 70%; 
+	margin-left: 15%;
+	text-align : center;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+.review>.btns input{
+	border : white;
+	width: 30px;
+	height : 30px;
+	background-color : white;
+	cursor : pointer;
+	border : 1px solid black;
+}
+
+
+.review>.btns input:hover{
+	color:white;
+	background-color : black;
+}
+
+.review>.btns>.btn-write {
+	float: right; 
+	width: 50px;
+	height : 30px;
+}
+
+.review .btns>.btn-review-write {
+	width: 50px; 
+	height : 30px;
+}
+
+.review .btns>.btn-review-write:hover{
+	color:white;
+	background-color : black;
+}
