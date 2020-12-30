@@ -6,9 +6,8 @@
 <head>
 <title>FineApple Main</title>
 <link rel="stylesheet" type="text/css" href="./css/cs_center.css">
-<link rel="stylesheet" type="text/css" href="./css/indexstyle.css">
-<link rel="stylesheet" type="text/css" href="./css/login.css">
 <link rel="stylesheet" type="text/css" href="./css/header.css">
+<link rel="stylesheet" type="text/css" href="./css/footer.css">
 
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
