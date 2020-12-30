@@ -15,11 +15,12 @@
 /*notice-container 설정*/
 .notice-container {
 	  width: 70%;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 30px;
     text-align : center;
+
 }
 /* 공지사항 list 상단 */
 .notice_title {
@@ -33,11 +34,11 @@
 }
 .notice_title .subject{
 	display : inline-block;
-	width : 550px;
+	width :800px;
 }
 .notice_title .mdate{
 	display : inline-block;
-	width :100px;
+	width :200px;
 }
 .notice_title .hit{
 	display : inline-block;
@@ -57,13 +58,12 @@
 }
 .notice_items .subject{
 	display : inline-block;
-	width :550px;
+	width :800px;
 	text-align: left;
-	cursor : pointer;
 }
 .notice_items .mdate{
 	display : inline-block;
-	width :100px;
+	width :200px;
 }
 .notice_items .hit{
 	display : inline-block;
@@ -119,7 +119,7 @@
 
 
 
-/*notice - view */
+/*notice - insert */
 
 .notice-container .notice_view th {
 	width: 200px;
@@ -151,19 +151,14 @@ table-layout: fixed;
 	padding-bottom : 50px;
     border-bottom: 1px solid #c9c9c9;
 }
-.notice_view .view img {
+.notice-view .view img {
 	width : 100%;
 	margin-bottom : 10px;
 	max-width : 600px;
 }
-.notice_view .content_text{
-	text-align : left;
-	text-indent : 0;
-	
-}
+
 
 .btns #btnSelect {
 	width : 60px;
 	height : 35px;
 }
-

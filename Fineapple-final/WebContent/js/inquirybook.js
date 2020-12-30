@@ -34,41 +34,6 @@ var question = function() {
 	})
 }
 
-var initmenu = function() {
-	$('.cs_func_page_quickmenu_ul ul').hide();
-	$('.cs_func_page_quickmenu_ul ul').children().parent().show();
-	$('.cs_func_page_quickmenu_ul ul > li > a').click(
-		function() {
-      var checkElement = $(this).next();
-      if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-        return false;
-        }
-      if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-        $('.cs_func_page_quickmenu_ul ul:visible').slideUp('normal');
-        checkElement.slideDown('normal');
-        return false; 
-        }
-      })
-}
-function initMenu() {
-  $('.cs_func_page_quickmenu_ul ul').hide();
-  $('.cs_func_page_quickmenu_ul li a').click(
-    function() {
-        $(this).next().slideToggle('normal');	
-      }
-    );  
-  }
-$(document).ready(function() {initMenu();});
-
-var gofaq = function(value) {
-	var frm = document.frm_faqbook;
-	frm.faqStr.value = value;
-	frm.action = 'inquiry.do?qa=selectfaq';
-	frm.submit();
-}
-
-
-
 /*--------------- notice js ---------------*/
 
 
@@ -106,6 +71,12 @@ var autoscroll = function() {
 
 
 
+/* --------------- func_page quick menu toggle --------------- */
+$(docnment).ready(fucntion() {
+	$(".cs_func_page_menu > a").click(function() {
+		$(this).next("ul").toggleClass("hide");
+	})
+});
 
 
 

@@ -46,13 +46,13 @@ function change () {
 
 /* item-title 상단 고정*/
 $(document).ready(function() {
-var jbOffset = $('.menubar2').offset();
+var jbOffset = $('.menubar').offset();
 $(window).scroll(function() {
     if ($(document).scrollTop() > jbOffset.top) {
-    $('.menubar2').addClass('jbFixed');
+    $('.menubar').addClass('jbFixed');
     }
     else {
-    $('.menubar2').removeClass('jbFixed');
+    $('.menubar').removeClass('jbFixed');
     }
 });
 } );
