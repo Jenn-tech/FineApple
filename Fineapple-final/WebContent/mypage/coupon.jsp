@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/header.css">
 <style>
 
 .coupon-product-table{
@@ -17,6 +19,15 @@
 </style>
 </head>
 <body>
+<!-- header영역 -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<jsp:include page="../main/header1.jsp"/>
+	
+	<%} else {%>
+	
+	<jsp:include page="../main/header2.jsp"/>
+	
+	<%} %> 
 
 <div id="쿠폰함" class="coupon-list">
    <div module="coupon-couponList">
@@ -126,5 +137,7 @@
       </div>
    </div>
 </div>
+   <!-- footer영역 -->
+   	<%@include file="../main/footer.jsp" %>
 </body>
 </html>

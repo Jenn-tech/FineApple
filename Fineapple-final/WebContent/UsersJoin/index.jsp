@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/UsersJoin/UsersJoin.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
@@ -13,13 +14,17 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-	<header>
-		<jsp:include page="/main/header1.jsp"></jsp:include>
-	</header>
+<!-- header영역 -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<jsp:include page="../main/header1.jsp"/>
+	
+	<%} else {%>
+	
+	<jsp:include page="../main/header2.jsp"/>
+	
+	<%} %> 
 	
 		<div class="div-container">
 

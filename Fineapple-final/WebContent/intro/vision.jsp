@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/vision.css">
 	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
 	<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 	<script src="https://code.jquery.com/jquery-3.5.1.js" 
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
@@ -14,7 +15,7 @@
     <title>Vision</title>
 </head>
 <body>
-<!-- header영역 -->
+	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
 	%>
 	<jsp:include page="../main/header1.jsp"/>
@@ -23,7 +24,7 @@
 	
 	<jsp:include page="../main/header2.jsp"/>
 	
-	<%} %>
+	<%} %> 
 
 <!-- VISION  -->
 <div class="vision">

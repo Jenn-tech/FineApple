@@ -4,6 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>상품 상세정보</title>
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/header.css">
 <style>
 .cart_list_box{
    background-color : white;
@@ -38,6 +40,15 @@
 </style>
 </head>
 <body>
+<!-- header영역 -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<jsp:include page="../main/header1.jsp"/>
+	
+	<%} else {%>
+	
+	<jsp:include page="../main/header2.jsp"/>
+	
+	<%} %> 
 <div id="장바구니" class="cart_list">
       <h2 class="cart-list-title">장바구니</h2>
       <hr>
@@ -180,6 +191,8 @@
 </table>
 <button id="전체상품 취소" class="delete_all_product_button">전체 상품 삭제</button>
 </div>
+   <!-- footer영역 -->
+   	<%@include file="../main/footer.jsp" %>
 </body>
 
 </html>

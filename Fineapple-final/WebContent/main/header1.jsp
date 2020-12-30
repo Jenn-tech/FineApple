@@ -14,15 +14,15 @@
 		<nav class="right">
 			<div class = "menubar">
 	            <li>
-	            	<a href="#" class="button alt">소개</a>
+	            	<a href="../intro/intro.jsp" class="button alt">소개</a>
 	            	<ul>
-	            		<a href="#" >회사소개</a>
-	            		<a href="#" >회사비전</a>
+	            		<a href="../intro/intro.jsp" >회사소개</a>
+	            		<a href="../intro/vision.jsp" >회사비전</a>
 	            		<a href="#" >오시는길</a>
 	            	</ul>
 	            </li>
 	            <li>
-	            	<a href="#" class="button alt">커뮤니티</a>
+	            	<a href="../notice/notice.jsp" class="button alt">커뮤니티</a>
 	            	<ul>
 	            		<a href="../notice/notice.jsp" >공지사항</a>
 	            		<a href="../event/event.jsp" >이벤트</a>
@@ -30,20 +30,18 @@
 	            	</ul>
 	            </li>
 	            <li>
-	            	<a href="../cs_home.jsp" class="button alt">고객지원</a>
+	            	<a href="../cs/cs_home.jsp" class="button alt">고객지원</a>
 	            	<ul>
-	            		<a href="#" >환불 정책</a>
-	            		<a href="../cs_func_page.jsp?func=./cs_center/cs_board.jsp" >QnA게시판  </a>
-	            		<a href="../cs_func_page.jsp?func=./cs_center/cs_FAQ.jsp" >FAQ</a>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_board.jsp" >QnA게시판  </a>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp" >FAQ</a>
 	            	</ul>
 	            </li>
 	            <li>
-	            	<a href="#" class="button alt">마이룸</a>
+	            	<a href="../mypage/mypage.jsp" class="button alt">마이룸</a>
 	            	<ul>
-	            		<a href="#" >장바구니</a>
-	            		<a href="#" >주문내역</a>
-	            		<a href="#" >정보수정</a>
-	            		<a href="#" >찜목록</a>
+	            		<a href="../mypage/cart.jsp" >장바구니</a>
+	            		<a href="../mypage/orderlist.jsp" >주문내역</a>
+	            		<a href=".,/mypage/coupon.jsp" >쿠폰함</a>
 	            	</ul>
 	            </li>            
 	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>                

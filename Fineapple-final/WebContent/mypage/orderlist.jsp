@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/header.css">
 <style>
 .order_list_box{
    background-color : white;
@@ -27,6 +29,15 @@
 </style>
 </head>
 <body>
+<!-- header영역 -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<jsp:include page="../main/header1.jsp"/>
+	
+	<%} else {%>
+	
+	<jsp:include page="../main/header2.jsp"/>
+	
+	<%} %> 
 <div id="주문내역" class="order_list">
       <h2 class="order-list-title">주문내역</h2>
       <hr>
@@ -106,5 +117,7 @@
    </tr>
 </table>
 </div>
+   <!-- footer영역 -->
+   	<%@include file="../main/footer.jsp" %>
 </body>
 </html>

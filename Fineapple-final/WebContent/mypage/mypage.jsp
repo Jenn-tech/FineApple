@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/header.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
@@ -42,6 +44,15 @@
 </head>
 
 <body>
+<!-- header영역 -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<jsp:include page="../main/header1.jsp"/>
+	
+	<%} else {%>
+	
+	<jsp:include page="../main/header2.jsp"/>
+	
+	<%} %> 
    <div class="w3-center w3-large w3-margin-top">
       <h2>My Page</h2>
    </div>
@@ -131,6 +142,7 @@
       selectTab.style.display="block";
     }
   </script>
-
+   <!-- footer영역 -->
+   	<%@include file="../main/footer.jsp" %>
 </body>
 </html>
