@@ -329,42 +329,32 @@
     font-weight: 500;
     font-size: large;
 }
+/*상품 갯수*/
 
+.product_middle {
+	width : 100%;
+	padding-left:200px;
+	padding-right:200px;
+	display : inline-block;
+	margin-top : 50px;
+}
+#product_total{
+		display : inline-block;
+}
+#product_total span {
+	font-weight: 700;
+}
+/*상품정렬*/
 
-
-/*footer*/
-.list-box {
-    font-size: small;
+#product_order_list {
+	float : right;
+		display : inline-block;
+	
 }
 
-.help-box {
-    font-size: 20px;
-    height: 100px;
-    width: 800px;
-    margin: 0 auto;
-    line-height: 100px;
-}
-
-li {
-    list-style: none;
-}
-
-.footer-list {
-    padding: 20px;
-    margin-top: 50px;
-    color: white;
-    background-color:black;
-}
-.list-box  a{
-    color: white;
-}
-.list-box-hr {
-    margin: 10px 0px 10px 0;
-
-}
-
-.ul-align {
-    width: 800px;
-    margin: 0 auto;
-    margin-top: 20px;
+#product_order_list a {
+	text-align : right ;
+	text-decoration : none;
+	color : black;
+	
 }

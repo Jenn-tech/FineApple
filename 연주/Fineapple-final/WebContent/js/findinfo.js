@@ -80,7 +80,7 @@ function login() {
   function joinin() { //회원가입 창으로 이동(수정필요)
 		if(btnjoin != null){
 	btnjoin.onclick = function(){
-		location.href = 'loginfo.jsp';
+		location.href = '../UsersJoin/index.jsp';
 	}
 	}
 }

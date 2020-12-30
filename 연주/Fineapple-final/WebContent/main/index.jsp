@@ -7,6 +7,7 @@
 <title>FineApple Main</title>
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
 		crossorigin="anonymous"></script>
@@ -26,36 +27,29 @@
 	<jsp:include page="./header2.jsp"/>
 	
 	<%} %>
+	
+<!-- 메인 이미지 -->	
     <div class = "container">
-    		
        <div class="main-view">
-       
           <ul>
             <li><img src="../images/macbook.jpg " width="100%" /></li>
             <li><img src="../images/ipad.jpg"width="100%"/></li>
             <li><img src="../images/phone.jpg"width="100%"/></li>
           </ul>
         </div>
-        <div class = "container2">
-  
-   <!--
-        	 <div class="title-container">
-				<h2><span class = "fineapple">	FineApple</span></h2>
-				<h2><span class = "makes">	Makes</span></h2>
-				<h2><span class = "innovation">	Innovation </span></h2>
-			</div> -->
-        </div>
+ 
         
-        
+<!-- 메인 문구 -->       
         <div class="cater3-movingBG">
-		<div class="flyinTxtCont">
-		<div class="flyIn lineOne">FineApple</div>
-		<div class="flyIn lineTwo">maeks </div>/		
-		<div class="flyIn lineThree">Innovation</div>
-		  <div class="flyIn lineFour"></div>
+			<div class="flyinTxtCont">
+				<div class="flyIn lineOne">FineApple</div>
+				<div class="flyIn lineTwo">makes </div>/		
+				<div class="flyIn lineThree">Innovation</div>
+				<div class="flyIn lineFour"></div>
+			</div>
 		</div>
-		</div>
-		
+
+<!-- 상품 카테고리 -->		
             <ul class="menu">
                 <li><a href="javascript:phone();">휴대폰</a></li>
                 <li><a href="javascript:laptop();">노트북</a></li>
@@ -64,7 +58,21 @@
                 <li><a href="javascript:tesktop()">데스크탑</a></li>
                 <li><a href="javascript:accessory()">악세서리</a></li>
              </ul>
-
+		
+		
+<!-- 상품정렬 -->
+		
+	<div class = "product_middle">	
+		<div id = "product_total">
+			<p>Total&nbsp:&nbsp&nbsp<span>12</span></p>
+		</div>
+		
+		<div id="product_order_list">
+			<p><a href="#">최신순<a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<a href="#">낮은가격</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<a href="#">높은가격</a> </p>
+		</div>
+	</div>
+		
+<!-- 상품 목록 -->
 		<div id = "product_list">
                <figure class="product">
                 <img src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-openbackmysticbronze-308345462?$PD_GALLERY_L_PNG$" width="250px" height="230px" />

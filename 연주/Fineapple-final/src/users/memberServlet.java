@@ -20,7 +20,6 @@ public class memberServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Hello");
-		System.out.println("Get방식??");
 
 
 	}
@@ -69,10 +68,8 @@ public class memberServlet extends HttpServlet {
 			
 			if( cnt > 0 ) {
 				System.out.println("INSERT : " + vo);
-				
 				dao.sqlSession.commit();
-		
-			}	else {
+			}else {
 				System.out.println("Insert 오류");
 			}
 
@@ -81,8 +78,7 @@ public class memberServlet extends HttpServlet {
 		}
 
 		out.printf("%s, %s, %s,%s, %s, %s,%s", mid, pwd, name, email, phone, zipcode, address);
-		
-		response.sendRedirect("result.jsp");
+		response.sendRedirect("../index.jsp");
 	}
 
 }
