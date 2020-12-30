@@ -13,7 +13,8 @@
 		<script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="../js/userjoin/userjoin.js"></script>
-
+		<script src="../js/userjoin/agree.js"></script>
+	
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic&display=swap"
 			rel="stylesheet">
@@ -62,6 +63,17 @@
 						<button class="btnLink" id="agree-id"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
+				
+				<div id="modal">
+   
+				    <div class="modal_content">
+				       <jsp:include page="./agree/self.jsp"></jsp:include>
+				        <button type="button" id="modal_close_btn">X</button>
+				       
+				    </div>
+				   
+				    <div class="modal_layer"></div>
+				</div>	
 
 				<div class="terms-box terms-box-font" >
 					<div>
@@ -70,6 +82,20 @@
 						<button class="btnLink" id="agree-service"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
+				
+								<div id="modal">
+   
+			    <div class="modal_content">
+			        <h2>모달 창</h2>
+			       
+			        <p>모달 창 입니다.</p>
+			       
+			        <button type="button" id="modal_close_btn">X</button>
+			       
+			    </div>
+			   
+			    <div class="modal_layer"></div>
+			</div>	
 
 				<div class="terms-box terms-box-font">
 					<div>
@@ -106,6 +132,7 @@
 
 		<script>
 			member();
+			modal();
 		</script>
 	</body>
 
