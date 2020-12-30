@@ -18,9 +18,9 @@
 				<h3>강남 지점</h3>
 				<div class="cs_map_place_content">
 					<div class="cs_map_content_photo_box">
-						<img alt="" src="./images/place2.png" />
-						<img alt="" src="./images/place2-1.jpg"/>
-						<img alt="" src="./images/place2-2.jpg"/>
+						<img alt="" src="../images/place2.png" />
+						<img alt="" src="../images/place2-1.jpg"/>
+						<img alt="" src="../images/place2-2.jpg"/>
 					</div>
 					<div class="cs_map_content_article">
 						<h4>주소</h4>
@@ -46,9 +46,9 @@
 				<h3>당산 지점</h3>
 				<div class="cs_map_place_content">
 					<div class="cs_map_content_photo_box">
-						<img alt="" src="./images/place1.png" style="width: 350px; height: 330px;"/>
-						<img alt="" src="./images/place1-1.jpg" style="width: 170px; height: 140px;"/>
-						<img alt="" src="./images/place1-2.jpg" style="width: 170px; height: 140px;"/>
+						<img alt="" src="../images/place1.png" style="width: 350px; height: 330px;"/>
+						<img alt="" src="../images/place1-1.jpg" style="width: 170px; height: 140px;"/>
+						<img alt="" src="../images/place1-2.jpg" style="width: 170px; height: 140px;"/>
 					</div>
 					<div class="cs_map_content_article" sty>
 						<h4>주소</h4>
@@ -59,14 +59,14 @@
 						<h4 >버스를 이용한 방법</h4>
 						<span>
 						정류장: 선유고등학교/(구)강서세무서 </br></br>
-						<img alt="" src="./images/bluebus.jpg">  7612번 </br>
-						<img alt="" src="./images/redbus.jpg">  1000번, 1200번, 1300번, 1301번, 1302번</br>
+						<img alt="" src="../images/bluebus.jpg">  7612번 </br>
+						<img alt="" src="../images/redbus.jpg">  1000번, 1200번, 1300번, 1301번, 1302번</br>
 						   1400번, 1500번, 1601번, M6628, M6724 </br>
 						</span>
 						</br>
 						<span style="margin-top: -40px;">
 						정류장: 당산역</br></br>
-						<img alt="" src="./images/bluebus.jpg">  602번, 760번, 5620번, 5714번, 6514번, 6623번, 6631번</br>
+						<img alt="" src="../images/bluebus.jpg">  602번, 760번, 5620번, 5714번, 6514번, 6623번, 6631번</br>
 						</span>
 						
 	
@@ -82,9 +82,9 @@
 				<h3>종로 지점</h3>
 				<div class="cs_map_place_content">
 					<div class="cs_map_content_photo_box">
-						<img alt="" src="./images/place3.png"/>
-						<img alt="" src="./images/place3-1.jpg"/>
-						<img alt="" src="./images/place3-2.jpg"/>
+						<img alt="" src="../images/place3.png"/>
+						<img alt="" src="../images/place3-1.jpg"/>
+						<img alt="" src="../images/place3-2.jpg"/>
 					</div>
 					<div class="cs_map_content_article">
 						<h4>주소</h4>
@@ -95,10 +95,10 @@
 						<h4 >버스를 이용한 방법</h4>
 						<span>
 						정류장: 우리은행 종로지점</br></br>
-						<img alt="" src="./images/bluebus.jpg">  163번, 172번, 201번, 262번, 401번, 406번 </br>
+						<img alt="" src="../images/bluebus.jpg">  163번, 172번, 201번, 262번, 401번, 406번 </br>
 						701번, 704번, N15, N62</br>
-						<img alt="" src="./images/greenbus.jpg">  7017번, 7021번, 7022번</br>
-						<img alt="" src="./images/redbus.jpg">  8110번</br>
+						<img alt="" src="../images/greenbus.jpg">  7017번, 7021번, 7022번</br>
+						<img alt="" src="../images/redbus.jpg">  8110번</br>
 						</span>
 	
 						<h4>지하철을 이용한 방법</h4>
