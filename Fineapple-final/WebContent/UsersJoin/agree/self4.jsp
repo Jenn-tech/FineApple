@@ -10,7 +10,7 @@
 
 <body>
 
-<h1 class="header">FineApple계정 약관</h1>
+<h1 class="header">FineApple 광고메세지 수신</h1>
 <div class="wrap_terms self-container">
 
 <h3>제 1 장 환영합니다!</h3>
