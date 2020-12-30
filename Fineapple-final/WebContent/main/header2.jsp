@@ -42,7 +42,7 @@
 	            	<ul>
 	            		<a href="../mypage/cart.jsp" >장바구니</a>
 	            		<a href="../mypage/orderlist.jsp" >주문내역</a>
-	            		<a href=".,/mypage/coupon.jsp" >쿠폰함</a>
+	            		<a href="../mypage/coupon.jsp" >쿠폰함</a>
 	            	</ul>
 	            </li>            
 	            <li><input type='button' id='btnLogout' value='로그아웃' /></li>                

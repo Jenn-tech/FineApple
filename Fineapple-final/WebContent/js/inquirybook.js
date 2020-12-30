@@ -71,13 +71,13 @@ var autoscroll = function() {
 
 
 
-/* --------------- func_page quick menu toggle --------------- */
+/* --------------- func_page quick menu toggle --------------- 
 $(docnment).ready(fucntion() {
 	$(".cs_func_page_menu > a").click(function() {
 		$(this).next("ul").toggleClass("hide");
 	})
 });
-
+*/
 
 
 

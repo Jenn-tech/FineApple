@@ -41,7 +41,7 @@
 	            	<ul>
 	            		<a href="../mypage/cart.jsp" >장바구니</a>
 	            		<a href="../mypage/orderlist.jsp" >주문내역</a>
-	            		<a href=".,/mypage/coupon.jsp" >쿠폰함</a>
+	            		<a href="../mypage/coupon.jsp" >쿠폰함</a>
 	            	</ul>
 	            </li>            
 	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>                
