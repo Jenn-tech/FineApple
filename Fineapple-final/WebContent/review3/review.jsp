@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Review</title>
-<link rel="stylesheet" href="../css/indexstyle.css">
+<link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/review3.css"> 
 <link rel="stylesheet" href="../css/header.css">
 <link rel='stylesheet' type='text/css'
