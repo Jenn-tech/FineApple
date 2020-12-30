@@ -54,7 +54,7 @@
 
 <!-- footer 고정 광고 배너 -->
 <div class="cs_home_footer">
-		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
+		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block;"/>
 </div>	
 
 

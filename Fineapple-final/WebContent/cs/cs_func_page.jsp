@@ -102,12 +102,35 @@
 		
 		<!-- 실질적으로 변경되는 공간 -->
 		<main class="cs_func_page_inquiry">
-		<jsp:include page="<%=func%>"></jsp:include>
+			<jsp:include page="<%=func%>"></jsp:include>
+			<div class="cs_func_footer_imfo">
+				<div class="cs_func_QA_item">
+					<h4>FINEEAPPLE 고객 센터</h4>
+					</br>
+					<h3>010-4199-1479</h3>
+					</br>
+					<span>
+					오전 09:00 ~ 오후 18:00 (토,일 공휴일 휴무)</br>
+					점심 시간: 12:00 ~ 13:00
+					</span>
+				</div>
+				<div class="cs_func_QA_item">
+					<h4>FINEEAPPLE 입금 계좌</h4>
+					</br>
+					<h3>110-394-590843</h3>
+					</br>
+					<span>
+					신한 은행
+					예금주: 정해준
+					</span>					
+				</div>
+			</div>
 		</main>
 		
 		<aside class="cs_func_page_sidebanner">
 			<div class="cs_func_page_sidenotice">
-				
+				<img alt="" src="../images/aside.jpg">
+				<img alt="" src="../images/left_fold2.jpg" style="margin-top: 5px;">
 			</div>
 		</aside>
 	</section>
@@ -115,9 +138,6 @@
 
 
 <!-- footer 고정 광고 배너 -->
-<div class="cs_home_footer">
-		<img alt="" src="../images/adv.png" style="width: 100%; height: 100%; display: block; margin: 50px 0 -50px  0;"/>
-</div>	
 
 
   <!-- footer영역 -->

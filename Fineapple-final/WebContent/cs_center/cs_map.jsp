@@ -18,7 +18,7 @@
 				<h3>강남 지점</h3>
 				<div class="cs_map_place_content">
 					<div class="cs_map_content_photo_box">
-						<img alt="" src="../images/place2.jpg" />
+						<img alt="" src="../images/place2.JPG" />
 						<img alt="" src="../images/place2-1.jpg"/>
 						<img alt="" src="../images/place2-2.jpg"/>
 					</div>
@@ -82,7 +82,7 @@
 				<h3>종로 지점</h3>
 				<div class="cs_map_place_content">
 					<div class="cs_map_content_photo_box">
-						<img alt="" src="../images/place3.jpg"/>
+						<img alt="" src="../images/place3.JPG"/>
 						<img alt="" src="../images/place3-1.jpg"/>
 						<img alt="" src="../images/place3-2.jpg"/>
 					</div>
