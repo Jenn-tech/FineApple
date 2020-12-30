@@ -329,6 +329,32 @@
     font-weight: 500;
     font-size: large;
 }
+/*상품 갯수*/
 
+.product_middle {
+	width : 100%;
+	padding-left:200px;
+	padding-right:200px;
+	display : inline-block;
+	margin-top : 50px;
+}
+#product_total{
+		display : inline-block;
+}
+#product_total span {
+	font-weight: 700;
+}
+/*상품정렬*/
 
+#product_order_list {
+	float : right;
+		display : inline-block;
+	
+}
 
+#product_order_list a {
+	text-align : right ;
+	text-decoration : none;
+	color : black;
+	
+}
