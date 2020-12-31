@@ -53,31 +53,6 @@
 }
     
     /*상단 검색*/
-/* #event_search form{
-	float : right;
-	padding-right : 350px;
-	display : flex;
-}
-
-#event_search input[type=text]{
-	width: 200px;
-	border : white;
-	border-bottom : 1px solid black;
-	height: 30px;
-}
-#event_search input[type=button]{
-  width: 50px;
-  border-radius: 0;
-  font-size: 1rem;
-  text-align: center;
-  height: 34px;
-  background-color : black;
-  color : white;
-  cursor : pointer;
-}
-#event_search .btnInsert{
-	margin-right : 900px;	
-} */
 
 
 .frm_event_btns {
