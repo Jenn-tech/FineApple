@@ -13,13 +13,12 @@
 
 .trk-hr {
 	width: 90%;
-	margin:0 auto;
+	margin:10px auto;
 }
 
 /* 레이아웃 잡기 */
 .trk-container {
 	width: 1000px;
-	border: 1px solid black;
 	margin: 30px auto;
 	height: 800px;
 }
@@ -43,7 +42,7 @@
 
 
 .trk-header-align {
-
+	margin-top: 30px;
 	display: flex;
 	align-items: center;
 	border: 1px solid black;
@@ -79,3 +78,30 @@
 	height: 150px;
 }
 
+/* 마이페이지로 이동 */
+
+.trk-header-align-btn {
+	margin-top: 30px;
+	height: 100px;
+	margin: 30px auto;
+	text-align:center;
+}
+
+.trk-header-align-btn > button {
+	width: 500px;
+	height: 80px;
+	margin: 10px auto;
+	font-size: 25px;
+	background-color:black;
+	color:white;
+	cursor: pointer;
+	border-radius: 3px;
+	
+}
+
+.trk-header-align-btn > button:hover {
+	background-color: white;
+	color: black;
+	border: 1px solid;
+	box-shadow: 0px 0px 2px 0px #202224;
+}

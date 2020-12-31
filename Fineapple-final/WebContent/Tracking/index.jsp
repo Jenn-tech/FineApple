@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="../css/tracking/tracking.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="../js/userjoin/userjoin.js"></script>
-
 </head>
 <body class="body">
 <!-- header영역 -->
@@ -42,7 +39,7 @@
 				<tr>
 	
 					<th>택배사</th>
-					<td>우체국택배</td>
+					<td>우체국택배(1588-1350)</td>
 					<th>운송장번호</th>
 					<td>01012341234</td>
 	
@@ -116,15 +113,19 @@
 			</div>
 		
 		</section>
+		
+	
 	</div>
-
+	<hr class="trk-hr">
+	
+		<section>
+			<div class="trk-header-align-btn">
+				<button>마이페이지로 이동하기</button>
+			</div>
+		</section>
 	<footer>
 		<jsp:include page="/main/footer.jsp"></jsp:include>
 	</footer>
 
-	
-	<script>
-	member();
-	</script>
 </body>
 </html>
