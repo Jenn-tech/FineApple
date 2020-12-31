@@ -42,63 +42,8 @@
 
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
 <div class="cs_func_page_container">
-	<header class="cs_func_page_title">
-		<div class="cs_func_page_title_item">
-		<h3>CS CENTER</h3>
-		</div>
-		<div class="cs_func_page_title_item">
-		<a href="cs_func_page.jsp?func=../cs_center/cs_insert.jsp">
-		<h4>Q&A</h4>
-		<p>질문 전 FAQ를 먼저 확인해주세요.</p>
-		</a>
-		</div>
-		<div class="cs_func_page_title_item">
-		<a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp">
-		<h4>FAQ</h4>
-		<p>자주 묻는 질문</p>
-		</a>
-		</div>
-		<div class="cs_func_page_title_item">
-		<a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp">
-		<h4>게시판</h4>
-		<p>다른 고객님의 질문 사항을 확인해주세요.</p>
-		</a>
-		</div>
-		<div class="cs_func_page_title_item">
-		<a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp">
-		<h4>찾아오시는 길</h4>
-		<p>제품을 눈으로 확인하고 구매하세요.</p>
-		</a>
-		</div>
-	</header>
 	<section class="cs_func_page_content">
-		<nav>
-			<div class="cs_func_page_nav_menu_fixed">
-				<div class="cs_func_page_nav_title">
-				<h3>QUICK MENU</h3>
-				</div>
-				<ul class="cs_func_page_menu">
-					<li class="cs_toggle_menu">
-						<a href="#">제품</a>
-						<ul class="cs_toggle_func">
-							<li><a href="">핸드폰</a></li>
-							<li><a href="">태블릿</a></li>
-							<li><a href="">노트북</a></li>
-							<li><a href="">스마트워치</a></li>
-							<li><a href="">엑세서리</a></li>
-						</ul>
-					</li>
-					<li class="cs_toggle_menu">
-						<a href="#">커뮤니티</a>
-						<ul class="cs_toggle_func">
-							<li><a href="">공지사항</a></li>
-							<li><a href="">이벤트</a></li>
-							<li><a href="">후기</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
+
 		
 		<!-- 실질적으로 변경되는 공간 -->
 		<main class="cs_func_page_inquiry">
@@ -126,13 +71,6 @@
 				</div>
 			</div>
 		</main>
-		
-		<aside class="cs_func_page_sidebanner">
-			<div class="cs_func_page_sidenotice">
-				<img alt="" src="../images/aside.jpg">
-				<img alt="" src="../images/left_fold2.jpg" style="margin-top: 5px;">
-			</div>
-		</aside>
 	</section>
 </div>
 

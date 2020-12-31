@@ -188,7 +188,6 @@
 
 .cs_func_page_content > nav {
 	flex-basis: 201px;
-	background-color: #1b1b1b;
 	color: white;
 	padding-top: 20px; 
 	min-height: 800px;
@@ -253,8 +252,9 @@
 }
 
 .cs_func_page_content > .cs_func_page_inquiry {
-	flex-basis: 72%;
+	flex-basis: 90%;
 	padding: 60px;
+	margin: 0 auto;
 }
 .cs_func_page_sidenotice > img {
 	display: block;
@@ -263,8 +263,7 @@
 .cs_func_page_sidenotice {
 	width: 120px;
 	height: 420px;
-	margin: 5px 45px 0 15px;
-	right: 30px;
+	margin: 25px 0 0 45px;
 	position: fixed;
 }
 /*-----------------------------------------------------------*/
@@ -513,7 +512,7 @@
 	border: 1px solid #f1f1f1;
 }
 .cs_insert_body {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 }
 .cs_insert_title {

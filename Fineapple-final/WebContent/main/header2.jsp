@@ -19,7 +19,6 @@
 	            	<ul>
 	            		<a href="../intro/intro.jsp" >회사소개</a>
 	            		<a href="../intro/vision.jsp" >회사비전</a>
-	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는길</a>
 	            	</ul>
 	            </li>
 	            <li>
@@ -33,8 +32,9 @@
 	            <li>
 	       			    <a href="../cs/cs_home.jsp" class="button alt">고객지원</a>
 	            	<ul>
-	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_board.jsp" >QnA게시판  </a>
-	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp" >FAQ</a>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_board.jsp" >QnA게시판</a>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp" >FAQ</a></br>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는 길</a>
 	            	</ul>
 	            </li>
 	            <li>
