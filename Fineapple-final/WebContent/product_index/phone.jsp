@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<figure class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-silver-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000" width="200px" height="250px" />
+ <figure class="product">
+                <img src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-openbackmysticbronze-308345462?$PD_GALLERY_L_PNG$" width="250px" height="230px" />
                 <figcaption>
                   <h3>  더 알아보기</h3>
                   <h5>more detail</h5>
                 </figcaption>
-                <a href="https://www.apple.com/shop/buy-iphone/iphone-11"></a>
-                <div id="detail">아이폰12 Pro</br>1,380,000</div>
+                <a href="../product/product.jsp"></a>
+                <div id="detail">갤럭시 Z 폴드2 5G</br>2,398,000</div>
             </figure>
 
 
