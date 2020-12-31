@@ -32,10 +32,15 @@
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
-	 						<td><input type="text" class="form-control" placeholder="글 제목" name="reviewTitle" style="width: 100%; height: 45px;" maxlength="50"></td>
+	 						<td class="table-left">작성자</td>
+	 						<td class="table-right" colspan="2"><input type="text"  placeholder="작성자" name="memberId" style="width: 100%; height: 45px;" maxlength="50" readonly="readonly"></td>
 	 					</tr>
 	 					<tr>
-	 						<td><textarea class="form-control" placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;"></textarea></td>
+	 						<td class="table-left">제목</td>
+	 						<td class="table-right" colspan="2"><input type="text" placeholder="글 제목" name="reviewTitle" style="width: 100%; height: 45px;" maxlength="50"></td>
+	 					</tr>
+	 					<tr>
+	 						<td id="table-doc" class="table-right" colspan="2"><textarea placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;"></textarea></td>
 	 					</tr>
 	 				</tbody>
 	 			</table>

@@ -18,7 +18,7 @@
 	            	<ul>
 	            		<a href="../intro/intro.jsp" >회사소개</a>
 	            		<a href="../intro/vision.jsp" >회사비전</a>
-	            		<a href="#" >오시는길</a>
+	            		<a href="../cs/cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는길</a>
 	            	</ul>
 	            </li>
 	            <li>

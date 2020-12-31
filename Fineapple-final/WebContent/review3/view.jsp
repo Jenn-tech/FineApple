@@ -50,7 +50,8 @@
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
-	 						<td class="table-title" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td>
+	 						<td class="table-left">제목</td>
+	 						<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
@@ -61,7 +62,6 @@
 	 						<td class="table-right" colspan="2"><%= rv.getReviewDate()%></td>
 	 					</tr>
 	 					<tr>
-	 						<td class="table-left">내용</td>
 	 						<td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td>
 	 					</tr>
 	 				</tbody>

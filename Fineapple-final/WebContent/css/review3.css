@@ -15,7 +15,8 @@
 	margin-left: 15%;
 	margin-top: 10px;
     padding: 30px;
-    text-align: center;
+    text-align: center;    
+
 }
 
 .review> .row {
@@ -24,6 +25,10 @@
 
 .review .review-table{
 	width: 100%;
+}
+.review .review-table-detail{
+	border-collapse: collapse; 
+    border-spacing: 0;
 }
 
 /*리뷰 상단*/
@@ -105,7 +110,7 @@
 	width: 100px;
 	border: 1px solid #aaaaaa;
 	height: 45px;
-	
+	border-left: none;
 }
 
 .review-table-detail .table-right{
@@ -113,6 +118,11 @@
 	text-align: left;
 	border: 1px solid #aaaaaa;
 	height: 45px;
+	border-right: none;
+}
+
+.review-table-detail input{
+	border: none;
 }
 
 #table-doc{
@@ -120,6 +130,9 @@
 	text-align: left;
 	border: 1px solid #aaaaaa;
 	height: 400px;
+	padding-left: 50px;
+	border-left: none;
+	border-right: none;
 }
 
 /*버튼*/
