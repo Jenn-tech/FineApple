@@ -16,9 +16,9 @@
 <body>
 <div class="cs_faq_body">
 	<header class="cs_faq_title">
-		<h2>FAQ</h2>
+		<h1 style="font-size: 2em;">FAQ</h1>
 		</br>
-		<h3>많은 고객님들이 물어보셨던 질문입니다. 여러분의 질문을 찾아보세요!</h3>
+		<h2 style="font-weight: bold">많은 고객님들이 물어보셨던 질문입니다. 여러분의 질문을 찾아보세요!</h2>
 	</header>
 	<div class="cs_faq_article_bar">
 		<div class="faq_list">

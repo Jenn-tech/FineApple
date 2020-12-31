@@ -57,18 +57,19 @@
 	display: flex;
 	align-items: row;
 	justify-content: space-around;
-		align-self: center;
+	align-self: center;
 }
 
 .cs_home_content_menu > ul > li {
 	display: inline-block;
-	width: 150px;
-	height: 150px;
+	width: 220px;
+	height: 200px;
 	margin: 0 20px;
 	border: 1px solid gray;
 	border-radius: 9px;
 	text-align: center;
 }
+
 .cs_home_content_menu > ul > li > a {
 	width: 100%;
 	height: 100%;
@@ -356,7 +357,7 @@
 }
 .cs_board_title {
 	border-bottom: 3px solid #303030;
-	padding: 0 0 30px 10px;
+	padding: 50px 0 30px 10px;
 	margin-bottom: 40px;
 }
 /*-----------------------------------------------------------*/
@@ -405,7 +406,7 @@
 	width: 100%;
 	text-align: center;
 }
-.cs_center_insert_btns {
+.cs_center_save_btns {
 	width: 100px;
 	line-height: 36px;
 	padding: 2px 8px 0 8px;
@@ -517,12 +518,12 @@
 }
 .cs_insert_title {
 	border-bottom: 3px solid #303030;
-	padding: 0 0 30px 10px;
+	padding: 50px 0 30px 10px;
 	margin-bottom: 40px;
 }
 
 .cs_insert_notice {
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 .cs_insert_notice ul {
 	margin-bottom: 60px;
@@ -535,6 +536,9 @@
 	display: flex;
 	justify-content: space-around;
 	font-size: 0.9em;
+}
+.cs_insert_frm_body label {
+	font-weight: bold;
 }
 
 .cs_insert_frm_body:nth-child(1) {
@@ -593,7 +597,7 @@
 /*--------------- FAQ CSS ---------------*/
 .cs_faq_title {
 	border-bottom: 3px solid #303030;
-	padding: 0 0 30px 10px;
+	padding: 50px 0 30px 10px;
 	margin-bottom: 40px;
 }
 .cs_faq_article_bar {
@@ -601,6 +605,7 @@
 	margin: 0 auto;
 	min-height: 700px;
 }
+
 
 
 
@@ -939,12 +944,12 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 
 .cs_map_body {
 	width: 90%;
-	
+	margin: 0 auto;
 }
 
 .cs_map_title {
 	border-bottom: 3px solid #303030;
-	padding: 0 0 30px 10px;
+	padding: 50px 0 30px 10px;
 	margin-bottom: 40px;
 }
 
@@ -954,7 +959,7 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 	margin: 80px auto 0 auto;
 }
 
-.cs_map_place_1 > h3 {
+.cs_map_place_1 > h2 {
 	margin-bottom: 10px;
 	padding-left: 30px;
 	border-bottom: 1px double #5e5e5e;
@@ -968,7 +973,7 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 .cs_map_place_content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 20px;
 }
 
@@ -986,18 +991,18 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 	display: inline-block;
 }
 .cs_map_content_photo_box > img:nth-child(1) {
-	width: 350px;
-	height: 300px;
-	margin-bottom: -40px;
+	width: 450px;
+	height: 350px;
+	margin-bottom: 10px;
 }
 .cs_map_content_photo_box > img:nth-child(2) {
-	width: 170px;
-	height: 120px;
+	width: 220px;
+	height: 200px;
 	margin-right: 10px;
 }
 .cs_map_content_photo_box > img:nth-child(3) {
-	width: 170px;
-	height: 120px;
+	width: 220px;
+	height: 200px;
 }
 
 
@@ -1009,16 +1014,15 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 .cs_map_content_article {
 	padding: 0 0 0 0;
 	margin-right: 20px;
+	margin-top: 30px;
 }
 
 .cs_map_content_article > span {
 	display: block;
-	font-size: 0.9em;
-	margin: 15px 0 50px 0;
+	margin: 15px 0 80px 0;
 }
 
-.cs_map_content_article > h4 {
-	font-size: 1em;
+.cs_map_content_article > h3 {
 	border-bottom: 1px solid #c6c6c6;
 	margin-top: 20px;
 }

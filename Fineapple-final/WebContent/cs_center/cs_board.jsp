@@ -11,9 +11,9 @@
 <body>
 <div class="cs_board">
 	<header class="cs_board_title">
-	<h2>게시판</h2>
+	<h1 style="font-size: 2em;">게시판</h1>
 	</br>
-	<h3>다른 사람들이 궁금해했던 질문, 지금 확인해보세요! </h3>
+	<h2 style="font-weight: bold">다른 사람들이 궁금해했던 질문, 지금 확인해보세요! </h2>
 	</header>
 		
 	<form action="" name="frm_board" method="post">
