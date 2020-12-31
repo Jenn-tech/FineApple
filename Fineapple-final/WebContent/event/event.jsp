@@ -35,14 +35,15 @@
 
 					
 <!-- 검색하기 -->	
+<div class = 'event_container_list'>
 	<div id = 'event_search'>
 		<form name = 'frm_event' method = 'POST'>
-			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
-			<div>
+			<div class = 'event_search_input'>
+				<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
+				<div class='event_search_box'>
 				<input type = 'text' name = 'findStr' id = 'findStr'/>
-				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
-				<input type="hidden" name="eventNo" size="5" >
-				
+				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색' class='frm_event_btns'/>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -73,49 +74,63 @@
 </div> -->			
 <div class = "event-container">
 		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
+			<ul class = 'item' onclick="view('${vo.serial}')">
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				<li onclick="view('${vo.serial}')" class='items-lecord'>
+					<div class='box' >
+						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
+						<br>		
+						<span class = 'subject' >Merry holiday event</span>	
+					</div>
+				</li>
+				
+				
+				
+				
+				
+				
+				
+				
+						
+			</ul>
 		</div>	
-		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
-		</div>	
-		<div class = 'event_items'>
-			<div class = 'item' onclick="view('${vo.serial}')">
-				<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' id=photo width = '400px' height = '250px'/>	
-				<br>		
-				<span class = 'subject' >Merry holiday event</span>			
-			</div>
-		</div>	
+	
 </div>			
-
+</div> 
 			
 	
 <!-- buttons -->

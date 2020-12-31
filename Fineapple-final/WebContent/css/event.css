@@ -14,17 +14,46 @@
 }
 
 /*event-container 설정*/
+.event_container_list{
+	flex-basis: 90%;
+    padding: 60px;
+    margin: 0 auto;
+}
 .event-container {
 	  width:100%;
-    padding-left: 100px;
-    padding-right: 100px;
     display: inline-block;
     text-align : center;
-    margin: 50px auto ;
+    margin: 0 auto ;
+}
+
+.event-container .item{
+    display: inline-block;
+    width: 80%;
+    text-align: center;
 }
 
 
-#event_search form{
+.event-container .item li {
+    width: 30.83336%;
+        display: inline-block;
+}
+
+
+.event-container li .box{
+	
+	line-height: 1.6em;
+    position: relative;
+}
+.event-container .box .photo{
+	width: 80%;
+}
+.event-container .box img{
+	    max-width: 100%;
+    height: auto;
+}
+    
+    /*상단 검색*/
+/* #event_search form{
 	float : right;
 	padding-right : 350px;
 	display : flex;
@@ -48,7 +77,48 @@
 }
 #event_search .btnInsert{
 	margin-right : 900px;	
+} */
+
+
+.frm_event_btns {
+	width: 50px;
+	font-size: 1rem;
+	text-align: center;
+	height: 35px;
+	background-color: #000000;
+	color: #ffffff;
+	cursor: pointer;
 }
+.event_search_box {
+	display: inline-block;
+	float: right;
+}
+.event_search_input .btnInsert{
+	background : black;
+	color : white;
+	height : 35px;
+	float : left;
+	width: 50px;
+	
+}
+.event_search_input {
+	text-align : center;
+	width: 100%;
+	display: inline-block;
+	margin: 30px auto;
+	height: 35px;
+	padding-left:15%;
+	padding-right:15%;
+}
+
+.event_search_input input[type=text] {
+	width: 250px;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #000000;
+	
+}
+
 /*페이지 버튼 */
 .btns{
 	
@@ -75,11 +145,6 @@
 		display : inline-block;
 }
 
-.event-container .item {
-	padding-right:20px;
-	padding-left:20px;
-	padding-bottom : 50px;
-}
 
 /*event - view */
 
