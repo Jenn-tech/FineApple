@@ -13,9 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src='../js/product.js'></script>
     <link rel="stylesheet" href="../css/product.css">
-     <link rel="stylesheet" href="../css/header.css">
-    <!-- <link rel="stylesheet" href="../css/indexstyle.css"> -->
-    <!-- <link rel="stylesheet" href="../css/login.css"> -->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
 
@@ -35,25 +34,25 @@
 	<%} %>
     <!-- main -->
     <div class="main" id="main">
-        <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
+        <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-yellow-select-2019?wid=470&hei=556&fmt=png-alpha&.v=1568141245782" alt="iPhone 11" width="600px" style="margin-top: 40px;">
         <div class="summary">
             <form name="form" method="get">
-                <h1>갤럭시 Z 폴드2 5G</h1><br/>
+                <h1>iPhone 11</h1><br/>
                 <span>상품코드 : </span>
-                <span>SM-F916NZKAKOO</span><br/>
+                <span>iPhone11</span><br/>
                 <span>판매가 : </span>
-                <span>2,398,000원</span><br/>
+                <span>1,060,000원</span><br/>
                 <div class="summary-color">
                     <span>색상 : </span>
                     <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">미스틱브론즈</label><br/>
+                    <label for="btncolor2" class="btncolor2">옐로</label><br/>
                     <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
                     <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
                     <span>메모리 : </span>
                     <span>256 GB</span><br/>
                 </div>
                 <div class="amount">
-                    수량  <input type=hidden name="sell_price" value="2398000">
+                    수량  <input type=hidden name="sell_price" value="106000">
                     <input type="button" value=" - " onclick="del();">
                     <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
                     <input type="button" value=" + " onclick="add();"><br/>
@@ -73,7 +72,7 @@
     <div class = "menubar2">
         <div class = "여백3"></div>
         <div class="item-title">
-            <a href="#main"><h2>갤럭시 Z 폴드2 5G</h2></a>
+            <a href="#main"><h2>iPhone 11</h2></a>
             <div class="item-title2">
                 <ul>
                     <a href="#item-benefits"><li>특장점</li></a>
@@ -88,94 +87,11 @@
         <!-- 특장점 -->
         <div class="item-benefits" id="item-benefits">
             <div class="item-video">
-                <iframe width="1120" height="630" src="https://www.youtube.com/embed/lAOSljJYOqI?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="540" src="https://www.youtube.com/embed/IPvSAtAsMM4?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <br/><br/><br/><br/><br/><br/><br/>
             
-            <h1>섬세한 색조의 신비로운 미스틱 컬러</h1>
-            <p>시대를 초월한 프리미엄을 제시할 두 가지 컬러를 소개합니다.<br/>
-                무광의 미스틱 브론즈와 클래식한 유광의 미스틱 블랙 컬러는 고급스러운 색감으로 눈길을 사로잡습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874846?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>펼치지 않아도 그 자체로 완전합니다</h1>
-            <p>158.1 mm의 디스플레이로 커버 디스플레이를 꽉 채웠습니다.<br/>
-                한 손으로 사용하기 딱 좋은 크기죠. 동영상과 게임을 즐기고 문자 메시지를 하기에 부족함이 없습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874848?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            <p class="small-str2">* 화면을 직각화해 측정한 크기는 158.1 mm이며, 직각화하지 않고 측정한 크기는 156.5 mm입니다. 둥근 모서리와 전면 카메라 홀로 인해 실제 보이는 영역은 화면 사이즈보다 작습니다.<br/>
-                * 이해를 돕기 위해 연출된 이미지로 실 사용시 차이가 있을 수 있습니다.</p>
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>펼치면 더 큰 세상을 마주하게 됩니다</h1>
-            <p>삼성 Ultra Thin Glass를 사용한 192.7 mm 크기의 다이내믹 아몰레드 2X 디스플레이로 압도적인 화면을 경험해보세요.<br/>
-                블루라이트를 획기적으로 줄여 큰 화면도 눈의 피로 걱정 없이 즐길 수 있습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874850?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>섬세한 설계로 완성한 예술적인 움직임</h1>
-            <p>부드럽게 펼쳐지는 최첨단 힌지 기술을 적용했습니다.<br/>
-                접었다 펼 때마다 예술적인 움직임이 손끝에 느껴지죠. 보기 편한 각도로 조절하여 사용할 수 있습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874852?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            <p class="small-str2">* 히든 힌지는 75°와 115° 사이의 각도에서 플렉스 모드를 지원합니다.<br/>
-                * 흔들림이나 다른 상황들로 인해 움직이는 동안에는 플렉스 모드를 유지하기 어려울 수 있습니다. 플렉스 모드는 스마트폰을 움직이지 않는 상황에서 사용하기를 권장합니다.<br/>
-                * 이해를 돕기 위해 연출된 이미지로 실 사용시 차이가 있을 수 있습니다.</p>
-
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>나만의 각도로 감상</h1>
-            <p>플렉스 모드를 사용하면 갤럭시 Z 폴드 5G를 다양한 각도로 접거나 펼칠 수도 있습니다.<br/>
-                이제 스마트폰을 손에 들지 않고 Google Duo로 영상 통화를 하거나 좋아하는 콘텐츠를 감상해보세요.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874854?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            <p class="small-str2">* Google Duo 관련 표기는 Google LLC.의 상표입니다.<br/>
-                * 플렉스 모드가 동작하는 각도는 75˚~115˚입니다. 해당 범위를 벗어날 경우 제품이 완전히 펼쳐지거나 접힐 수 있습니다.<br/>
-                * 이동 중에는 흔들림과 같은 충격으로 플렉스 모드 유지가 어려울 수 있습니다. 가급적 정지된 상태에서 사용하시기를 권장합니다.<br/>
-                * 일부 앱은 플렉스 모드를 지원하지 않을 수 있습니다.<br/>
-                * 이해를 돕기 위해 연출된 이미지입니다. 실제 UI는다를 수 있습니다.</p>
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>플렉스 모드로 새롭게 촬영하세요</h1>
-            <p>삼각대나 거치대 없이도 다양한 각도에서 사진을 찍거나 동영상을 촬영할 수 있습니다.<br/>
-                촬영 인물에 따라 화각을 바꿔주는 자동 프레이밍 기능까지 추가되어 브이로그도 손쉽게 촬영할 수 있습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874856?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            <p class="small-str2">* 플렉스 모드가 동작하는 각도는 75˚~115˚입니다. 해당 범위를 벗어날 경우 제품이 완전히 펼쳐지거나 접힐 수 있습니다.<br/>
-                * 이동 중에는 흔들림과 같은 충격으로 플렉스 모드 유지가 어려울 수 있습니다. 가급적 정지된 상태에서 사용하시기를 권장합니다.<br/>
-                * 일부 앱은 플렉스 모드를 지원하지 않을 수 있습니다.<br/>
-                * 이해를 돕기 위해 연출된 이미지입니다. 실제 UI는 다를 수 있습니다.</p>
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>화면과 화면 간의 매끄러운 연결</h1>
-            <p>커버 디스플레이와 메인 디스플레이가 자연스럽게 연결됩니다.<br/>
-                갤럭시 Z 폴드2 5G를 접은 상태에서 앱을 사용하다가 화면을 펼쳐보세요. 더 큰 화면에서 사용하던 그대로 이어집니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874858?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G"> 
-            <p class="small-str2">* 일부 앱은 앱 연속성을 지원하지 않을 수 있습니다.<br/>
-                * 메인 디스플레이 보기는 설정에서 조정할 수 있습니다.<br/>
-                * 이해를 돕기 위해 연출된 이미지입니다. 실제 UI는 다를 수 있습니다.</p>
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>앞서 가는 멀티플레이</h1>
-            <p>멀티 액티브 윈도우가 업그레이드됐습니다.<br/>
-                커버 디스플레이에서는 두 개의 앱을, 메인 디스플레이에서는 세 개의 앱을 동시에 사용할 수 있죠.<br/>
-                이제 한 번에 더 많은 일을 하세요.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874860?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>완전히 새로운 게임 세계가 펼쳐집니다</h1>
-            <p>메인 디스플레이에서 120 Hz 주사율의 부드러운 장면 전환과 빠른 반응 속도를 느껴보세요.<br/>
-                블루투스 컨트롤러와 갤럭시 버즈 라이브까지 연결하면 게이밍 환경이 더 완벽해지죠.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874862?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>촬영하기 전에 한 번 더 체크해보세요</h1>
-            <p>갤럭시 Z 폴드2 5G를 펼치면 커버와 메인 디스플레이 모두에서 카메라에 잡힌 모습을 미리 볼 수 있습니다.<br/>
-                찍는 사람도 찍히는 사람도 더 만족할 만한 사진을 촬영할 수 있죠.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874868?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-
-            <br/><br/><br/><br/><br/><br/><br/>
-            <h1>차원이 다른 셀피를 완성하세요</h1>
-            <p>고성능 후면 카메라로 셀피를 찍을 수 있습니다. 커버 디스플레이에서 카메라를 실행한 뒤, 셀피 아이콘을 누르고 화면을 펼쳐보세요.<br/>
-                커버 디스플레이로 내 모습을 보면서 촬영할 수 있습니다.</p>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-fold2-302874870?$FB_TYPE_A_JPG$" alt="갤럭시 Z 폴드2 5G">
-            <br/><br/><br/><br/><br/><br/><br/>
-        </div>
+            <br/><br/><br/><br/><br/>
+            <img class="ipone" width="1000px" src="https://thumbnail6.coupangcdn.com/thumbnails/remote/q89/image/retail/images/188430346427170-aa7ab0ab-bed0-4c37-900c-7b7abe95ef14.jpg">
         
         <!-- 상품평 -->
         <div class="review" id="review">
