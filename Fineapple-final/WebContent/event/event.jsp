@@ -31,9 +31,21 @@
 	<%} %>
 
 
-		<h3 class = 'event_h3'>이벤트</h3>
 
-					
+<header class="cs_func_page_header">
+		<h1 style="font-size: 2em;">커뮤니티</h1>
+		<div class="cs_category">
+			<a href="../notice/notice.jsp">공지사항</a>
+			<a href="../event/event.jsp">이벤트</a>
+			<a href="../review3/review.jsp">리뷰 게시판</a>
+		</div>
+</header>
+<header class="cs_board_title">
+	<h1 style="font-size: 2em;">이벤트</h1>
+	</br>
+	<h2 style="font-weight: bold">매일매일 쏟아지는 혜택 </h2>
+	</header>
+								
 <!-- 검색하기 -->	
 <div class = 'event_container_list'>
 	<div id = 'event_search'>
