@@ -42,9 +42,9 @@
 	<section class="cs_home_content">
 		<main class="cs_home_content_menu">
 		    <ul>
-				<li><a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp"><img alt=""src="../images/faq.png">FAQ</a></li>
-	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp"><img alt="" src="../images/qa.png">Q&A게시판</a></li>
-	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp"><img alt=""src="../images/map.png">매장 오시는 길</a></li>
+				<li><a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp"><img alt=""src="../images/FAQ.png">FAQ</a></li>
+	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp"><img alt="" src="../images/QA.png">Q&A게시판</a></li>
+	       		<li><a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp"><img alt=""src="../images/Map.png">매장 오시는 길</a></li>
 	    	</ul>
 		</main>
 	</section>

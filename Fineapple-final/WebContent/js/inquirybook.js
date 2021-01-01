@@ -73,9 +73,29 @@ var autoscroll = function() {
 /* --------------- func_page quick menu toggle --------------- */
 var toggleMenu = function() {
 $(document).ready(function() {
-	$(".cs_toggle_func:nth-child(2)").hide();
-	$(".cs_func_page_menu a").on('click', function() {
-		$(this).next(".cs_toggle_func").slideToggle("slow");
+	$(".cs_FAQ_title a").on('click', function() {
+		
+		var submenu = $(this).parent().next();
+		
+		if(submenu.is(":visible")) {
+			$(this).css("color", "#000000");
+			submenu.slideUp();
+			$('#cs_faq_change_img').attr("src", "../images/arrow_bottom.png")
+		}
+		else {
+			$(this).css("color", "rgb(91, 135, 164)");
+			submenu.slideDown();
+			$('#cs_faq_change_img').attr("src", "../images/arrow_top.png")
+				
+		}
 	})
 });
+}
+
+
+
+var change = function() {
+	$('#cs_faq_change_img').on('click', function() {
+		
+	})
 }

@@ -11,7 +11,7 @@
 <body>
 <div class="cs_board">
 	<header class="cs_board_title">
-	<h1 style="font-size: 2em;">게시판</h1>
+	<h1 style="font-size: 2em;">Q&A 게시판</h1>
 	</br>
 	<h2 style="font-weight: bold">다른 사람들이 궁금해했던 질문, 지금 확인해보세요! </h2>
 	</header>

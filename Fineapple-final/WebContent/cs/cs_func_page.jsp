@@ -42,8 +42,17 @@
 
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
 <div class="cs_func_page_container">
+		<header class="cs_func_page_header">
+		<h1 style="font-size: 2em;">고객 센터</h1>
+		<div class="cs_category">
+			<a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp">Q&A게시판</a>
+			<a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp">FAQ</a>
+			<a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp">오시는 길</a>
+		</div>
+		</header>
 	<section class="cs_func_page_content">
-
+			
+		
 		
 		<!-- 실질적으로 변경되는 공간 -->
 		<main class="cs_func_page_inquiry">
@@ -85,7 +94,6 @@
 <!-- 스크립트 -->
 <script>
 question()
-toggleMenu()
 </script>
 </body>
 </html>

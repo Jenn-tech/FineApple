@@ -73,11 +73,20 @@
 .cs_home_content_menu > ul > li > a {
 	width: 100%;
 	height: 100%;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+}
+.cs_home_content_menu > ul > li > a:visited {
+	text-decoration: none;
+	color: #000000;
 }
 .cs_home_content_menu > ul > li > a > img{
-	width: 80%;
+	width: 70%;
+	height: 70%;
 	display: block;
 	margin: 0 auto;
+	margin-top: 15px;
 }
 
 .cs_home_footer {
@@ -129,6 +138,37 @@
 }
 .cs_func_page_container a:link {
 		text-decoration: none;
+}
+
+.cs_func_page_header {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	padding-top: 55px; 
+	border-bottom: 2px solid #000000;
+}
+
+.cs_category {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	margin: 52px auto 0 auto;
+	height: 50px;
+}
+.cs_category > a {
+	display: inline-block;
+	width: 150px;
+	padding-bottom: 10px;
+}
+.cs_category > a:hover {
+	border-bottom:5px solid #000000;
+}
+
+.cs_category > a:visited {
+	color: #000000;
 }
 
 .cs_func_page_title {
@@ -605,42 +645,86 @@
 	margin: 0 auto;
 	min-height: 700px;
 }
+.cs_FAQ_title > a:visited {
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.1em;
+}
 
+.cs_FAQ_title {
+	border-bottom: 1px solid #e6e6e6;
+	height: 50px;
+	padding: 11px;
+}
+.cs_faq_body {
+	width: 90%;
+	margin: 0 auto;
+}
 
+.cs_FAQ_title > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.cs_FAQ_title > a > span {
+	display: inline-block;
+}
+.cs_FAQ_title > a > img {
+	display: inline-block;
+	width: 2%;
+	height: 89%;
+	float: right;
+	margin: 4px 8px 0 0;
+}
 
+.cs_FAQ_content {
+	display: none;
+	background-color: #e6e6e6;
+}
 
+.cs_FAQ_content {
+	width: 100%;
+	padding: 20px 40px 40px 25px;
+}
 
+.faq_category {
+	text-align: center;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
 
+.faq_category input:hover {
+	color: #ffffff;
+	background-color: #000000;
+	cursor: pointer;
+}
+.faq_category input {
+	width: 120px;
+	font-weight: bold;
+	border: none;
+	background-color: #ffffff;
+	padding: 15px 20px 15px 20px;
+	margin: 0 -5px 0 -1px;
+	font-size: 1.1em;
+}
+.faq_category a {
+	background-color: black;
+	width: 10%;
+	line-height: 30px;
+	display: inline-block;
+	border: 1px solid gray;
+	font-size: 0.8em;
+	float: left;
+}
+.faq_category a:link, .faq_category a:visited {
+	color: white;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.faq_category > a:hover {
+	background-color: gray;
+}
 
 
 
@@ -812,122 +896,9 @@
 	display: inline-block;
 	float: right;
 }
-/* 아코디언 */
-
-.acodion_container ul, li {
-	list-style: none;
-}
-
-.clearfix:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-.acodion_container h1 {
-	text-align: center;
-	padding: 20px 0;
-}
-
-.f_question1 > ul > li, .f_answer1 > ul > li {
-	float: left;
-}
-
-.fnq {
-	width: 70%;
-	line-height: 300%;
-	margin: 0 auto; 
-}
-
-.f_qiestion1 {
-	position: relative;
-}
-
-.f_answer1 {
-	background-color: #eee;
-	display: none;
-}
-
-.f_answer1.on {
-	display: block;
-}
-
-.f_question1 > ul > li:nth-child(1) {
-	width: 7%;
-	text-align: center;
-}
-
-.f_answer1 > ul > li:nth-child(1) {
-	width: 7%;
-	text-align: center;
-}
-
-.f_question1 > ul > li:nth-child(2) {
-	width: 13%;
-	text-align: center;
-}
-.f_question1 > ul > li:nth-child(3) {
-	width: 75%;
-}
-.f_question1 > ul > li:nth-child(4) {
-	width: 5%;
-}
-
-.f_q_link {
-	width: 70%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
 
 .faq_list {
 	margin-top: 30px;
-}
-
-.title {
-	background: black;
-	padding: 10px;
-}
-.title {
-	background: black;
-	padding: 10px;
-}
-.title a {
-	color: white;
-}
-
-#title-first {
-	border-radius: 5px 5px 0 0 ;
-}
-#title-last {
-	border-radius: 0 0 5px 5px ;
-}
-.content {
-	width: 100%;
-	padding: 20px 40px 40px 25px;
-	background-color: gray;
-}
-
-.faq_category {
-	color: white;
-	text-align: center;
-}
-.faq_category a {
-	background-color: black;
-	width: 10%;
-	line-height: 30px;
-	display: inline-block;
-	border: 1px solid gray;
-	font-size: 0.8em;
-	float: left;
-}
-.faq_category a:link, .faq_category a:visited {
-	color: white;
-}
-
-.faq_category > a:hover {
-	background-color: gray;
 }
 .footer_banner {
 	width: 100%;
@@ -1026,6 +997,7 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 	border-bottom: 1px solid #c6c6c6;
 	margin-top: 20px;
 }
+
 
 
 
