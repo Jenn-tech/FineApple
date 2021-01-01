@@ -22,7 +22,7 @@
 <!-- include 변수 설정 -->
 <%
 	request.setCharacterEncoding("utf-8");
-	String func = "../cs_center/cs_insert.jsp";
+	String func = "../cs_center/cs_board.jsp";
 	if(request.getParameter("func") != null) {
 		func = request.getParameter("func");
 	}

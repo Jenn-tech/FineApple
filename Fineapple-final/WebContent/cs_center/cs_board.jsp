@@ -16,7 +16,7 @@
 	<h2 style="font-weight: bold">다른 사람들이 궁금해했던 질문, 지금 확인해보세요! </h2>
 	</header>
 		
-	<form action="" name="frm_board" method="post">
+	<form action="" name="frm_board" method="post" id="frm_board">
 		<div class="cs_board_input">
 			<input type="button" name="btnInsert" value="입력" class="frm_board_btns" />
 			<div class="cs_board_input_select-box">
