@@ -4,9 +4,12 @@
 <header id="header">
 		<nav class="left">
             <div class="search_bar">
-                 <form role="search" method="get" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="s" />
-                    <button type="submit" class="search-submit">검색</button>
+                 <form action="../product.do" name="frm_search" role="search" method="post" class="search-form" >
+                     <input type="search" class="search-field" placeholder="상품명" value="" name="findStr" />
+                    <button type="submit"  name="btnFind" class="search-submit">검색</button>
+                    <input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}" size="10">
+					<input type="hidden" name="serial" size="10" >
+					<input type="hidden" name="search" value="">
                  </form>
             </div>
         </nav>

@@ -9,6 +9,9 @@ import java.util.List;
 import bean.Application;
 
 public class ProductDao {
+	Connection conn; 
+	PreparedStatement ps; 
+	ResultSet rs;
 	public ProductDao() {
 	}
 
@@ -18,6 +21,23 @@ public class ProductDao {
 			return instance;
 		}
 
+		public int getTotListSize(String findStr) throws Exception {
+			int totListSize = 0;
+			String sql = "SELECT count(serial)cnt FROM product"
+					+ " WHERE code LIKE ? or name  LIKE ? ";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + findStr +"%");
+			ps.setString(2, "%" + findStr +"%");
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				totListSize = rs.getInt("cnt");
+			}
+			return totListSize;
+		}
+		
+		
 		//c Read u d
 		public List<ProductVo> selectAllProducts(){
 			//최근 등록한 상품 먼저 출력하기
@@ -52,4 +72,43 @@ public class ProductDao {
 			}
 			return list;
 		}
-}
+
+		public List<ProductVo> select(ProductPage page) {
+			List<ProductVo> list = new ArrayList<>();
+			try {
+				
+				String findStr = page.getFindStr();
+				page.setTotListSize(getTotListSize(findStr));
+				page.pageCompute();
+				
+				String sql = "SELECT * FROM product "
+						+ "WHERE name LIKE ?";
+				
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, "%" + findStr +"%");
+				
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					ProductVo vo = new ProductVo();
+					vo.setCode(rs.getInt("code"));
+					vo.setName(rs.getString("name"));
+					vo.setPrice(rs.getInt("price"));
+					vo.setPictureUrl(rs.getString("PICTUREURL"));
+					vo.setDescription(rs.getString("DESCRIPTION"));
+					vo.setLinkUrl(rs.getString("linkurl"));
+					list.add(vo);
+				}
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				try {
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+			return list;
+		}
+		}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+#content {
+    width: 68.5%;
+}
+#content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 70px 0px 80px;
+    padding: 30px 0 !important;
+    max-width: none!important;
+
+}
+
+
+.cate_top_txt {
+    text-align: center;
+    margin-top: 40px;
+}
+
