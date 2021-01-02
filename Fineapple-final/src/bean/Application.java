@@ -2,6 +2,8 @@ package bean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 
 public class Application {
@@ -24,6 +26,26 @@ public class Application {
    }
    public Connection getConn() {//getter만 만듬 
       return conn;
+   }
+   
+   public static void close(Connection conn, Statement stmt, ResultSet rs) {
+	   try {
+		rs.close();
+		stmt.close();
+		conn.close();
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+   }
+   
+   public static void close(Connection conn, Statement stmt) {
+	   try {
+		stmt.close();
+		conn.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
    }
 }
 

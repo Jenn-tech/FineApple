@@ -25,8 +25,8 @@ var phone = function(url){
 		return;
 	}
 	$.ajax({
-		type: 'POST',
-		url: "../product_index/phone.jsp",
+		type: 'get',
+		url: "../productList.do",
 		data: "",
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {
