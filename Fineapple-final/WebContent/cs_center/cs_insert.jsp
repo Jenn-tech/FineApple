@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/board.js"></script>
 </head>
 <body>
 <div class="cs_insert_body">
@@ -64,7 +63,7 @@
 				    <input type="password" placeholder="비밀번호를 입력해주세요." id="cs_pwd" size="25" name="pwd" style="width: 75%; height: 30px"/>
 				</div>
 				<label>사진</label>	
-				<div class="cs_attach_box">
+				<div id="cs_attach_box">
 						
 				</div>
 	  		</div>

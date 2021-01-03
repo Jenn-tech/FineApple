@@ -627,7 +627,38 @@
 	color: #ffffff;
 }
 
+.attach_files {
+	width: 147px;
+	height:110px; 
+	display: inline-block; 
+	position: relative;
+	margin-right: 5px;
+}
 
+.attach_delBtn {
+	position: absolute;
+	bottom: 0px;
+	right: 6px; 
+	opacity: 0.5; 
+	outline: none;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 40px;
+	color: #f00;
+	border: 0 !important;
+}
+
+.attach_delBtn:hover {
+	cursor: pointer;
+}
+
+.attach_img {
+	width: 147px;
+	height: 110px;
+}
+
+.attach_img:hover {
+	cursor: pointer;
+}
 /* ----------------------------------------------------- */
 
 

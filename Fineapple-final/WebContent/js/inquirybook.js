@@ -119,3 +119,80 @@ var inquiry = function() {
 
 
 
+/*-------------- cs_insert file_upload ---------------*/
+
+var fileAttCnt = 1;
+
+var fileUpload = function(attZone) {
+	var zone = document.getElementById(attZone);
+	append(zone);
+}
+
+function append(zone) {
+	
+	var div  = document.createElement("div");
+	div.setAttribute("class", "attach_files")
+	
+	var img = document.createElement("img");
+	img.setAttribute("src", "http://placehold.it/147x110");
+	img.setAttribute("class", "attach_img");
+	div.appendChild(img);
+	img.onclick = function(ev) {
+		imagePreView(zone,ev);
+	}
+	
+	var file = document.createElement("input");
+	file.setAttribute("type", "file");
+	file.setAttribute("name", "attfile" + fileAttCnt);
+	file.setAttribute("style", "display: none");
+	file.setAttribute("modify", "no");
+	file.setAttribute("class", "attfile");
+	fileAttCnt++;
+	
+	var delBtn = document.createElement("input");
+	delBtn.setAttribute("class", "attach_delBtn")
+	delBtn.setAttribute("type", "button");
+	delBtn.setAttribute("value", "x");
+	delBtn.onclick = function(ev) {
+		if(zone.childNodes.length <= 1) {
+			return;
+		}
+		
+		var ele = ev.srcElement;
+		var p = ele.parentNode;
+		var file = p.getElementsByClassName("attfile").item(0);
+		
+		if(file.getAttribute("modify") === "yes") {
+			zone.removeChild(p);			
+		}
+	}
+	div.appendChild(file);
+	div.appendChild(delBtn);
+	
+	zone.appendChild(div);
+}
+
+
+var imagePreView = function(zone, ev) {
+	var tag = ev.srcElement;
+	var pDiv = tag.parentNode;
+	var file = pDiv.getElementsByClassName("attfile").item(0);
+	file.click();
+	
+	file.onchange = function(ev2) {
+		if(file.getAttribute("modify") === "no") {
+			append(zone);
+		}
+		
+		var url = ev2.srcElement.files[0];
+		var reader = new FileReader();
+		
+		reader.readAsDataURL(url);
+		reader.onload = function(ev3) {
+			tag.src = ev3.target.result;
+			file.setAttribute("modify", "yes");
+		}
+	}
+} 		
+
+
