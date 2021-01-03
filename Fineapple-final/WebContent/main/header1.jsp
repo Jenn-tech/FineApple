@@ -1,17 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+	<script type="text/javascript" language="javascript">
+ 
+ 
+    // 팝업오픈하여 폼데이터 Post 전송
+    function openPop(){
+         
+         
+        var pop_title = "popupOpener" ;
+         
+        window.open("", pop_title) ;
+         
+        var frmData = document.frm_search ;
+        frmData.target = pop_title ;
+        frmData.action = "../product_list/select.jsp" ;
+         
+        frmData.submit() ;
+         
+         
+         
+    }
+ 
+ 
+</script>
 <header id="header">
 		<nav class="left">
-            <div class="search_bar">
-                 <form action="../product.do" name="frm_search" role="search" method="post" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="findStr" />
-                    <button type="submit"  name="btnFind" class="search-submit">검색</button>
-                    <input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}" size="10">
-					<input type="hidden" name="serial" size="10" >
-					<input type="hidden" name="search" value="">
+   
+           <div class="search_bar">
+                 <form  name="frm_search" role="search" method="get" class="search-form" >
+                     <input type="search" class="search-field" placeholder="상품명" value="${param.findStr }" name="findStr" />
+                    <button type="submit"  name="btnFind" class="search-submit" onClick="openPop();">검색</button>
+					<input type="hidden" name="search" value="select">
                  </form>
-            </div>
+            </div> 
+  
         </nav>
         <a href ="../main/index.jsp"><img src="../images/pineapple.png"/></a>
 		<nav class="right">

@@ -16,6 +16,8 @@
 		crossorigin="anonymous"></script>
 <script src='../js/login.js'></script>
 <script src='../js/indexProduct.js'></script>
+<script src='../js/Productlist.js'></script>
+
 		
 </head>
 
@@ -90,5 +92,6 @@
 <script>
 logInOut();
 </script>
+
 </body>
 </html>

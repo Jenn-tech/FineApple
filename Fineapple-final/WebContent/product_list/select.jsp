@@ -1,3 +1,5 @@
+<%@page import="product.ProductVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -6,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title><title>FineApple Main</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
@@ -14,10 +16,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js" 
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
 		crossorigin="anonymous"></script>
+<script src = './js/Productlist.js'></script>
 		
 </head>
 
 <body>
+<jsp:useBean id="dao" class="product.ProductDao"/>
+
 	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
 	%>
@@ -37,15 +42,24 @@
         </div>
 <h1>어쩌구</h1>
 		<div class="search_bar">
-                 <form action="../product.do" name="frm_search" role="search" method="post" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="findStr" />
-                    <button type="submit"  name="btnFind" class="search-submit">검색</button>
+                 <form  name="frm_search" role="search" method="get" class="search-form" >
+                     <input type="search" class="search-field" placeholder="상품명" value="${param.findStr }" name="findStr" />
+                    <input type="submit"  name="btnFind" class="search-submit"/>검색
                     <input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}" size="10">
 					<input type="hidden" name="serial" size="10" >
-					<input type="hidden" name="search" value="">
+					<input type="hidden" name="search" value="select">
                  </form>
             </div>
+		<%
+		String findStr = "";
+		if(request.getParameter("findStr") != null) {
+			findStr = request.getParameter("findStr");
+		}
 		
+		List<ProductVo> list = dao.select(findStr);
+		request.setAttribute("list", list);
+
+	%>	
 		</div>
 		<div id = "product_list">
 			<c:forEach var = "vo" items = "${list }">
@@ -61,20 +75,7 @@
 			</c:forEach>
 		</div>
 	
-	<div class="cs_board_paging">
-		<c:if test="${page.startPage>1}">
-			<input type="button" value="맨 처음">
-			<input type="button" value="이전">
-		</c:if>	
-			<c:forEach var="i" begin="1" end="5">
-				<input type="button" value="${i}">
-			</c:forEach>
-		<c:if test="${page.endPage<page.totPage }">
-			<input type="button" value="다음">
-			<input type="button" value="맨 끝 ">
-		</c:if>		
-	</div>
-
+	
 
 
 

@@ -3,6 +3,7 @@ package product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,14 +45,11 @@ public class ProductDao {
 			String sql = "select * from product order by code desc";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
 			
 			try {
 				conn = new Application().getConn();
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
+				ps = conn.prepareStatement(sql);
+				rs = ps.executeQuery();
 				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
@@ -68,26 +66,22 @@ public class ProductDao {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				Application.close(conn, pstmt, rs);
+				Application.close(conn, ps, rs);
 			}
 			return list;
 		}
 
-		public List<ProductVo> select(ProductPage page) {
-			List<ProductVo> list = new ArrayList<>();
+		
+		public List<ProductVo> select(String findStr) {
+			List<ProductVo> list = new ArrayList<ProductVo>();
 			try {
 				
-				String findStr = page.getFindStr();
-				page.setTotListSize(getTotListSize(findStr));
-				page.pageCompute();
+				conn = new Application().getConn();
 				
-				String sql = "SELECT * FROM product "
-						+ "WHERE name LIKE ?";
-				
+				String sql = "SELECT * FROM product WHERE name LIKE ?";
 				ps = conn.prepareStatement(sql);
-				ps.setString(1, "%" + findStr +"%");
-				
-				rs = ps.executeQuery();
+				ps.setString(1, "%" + findStr + "%");
+				rs= ps.executeQuery();
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
 					vo.setCode(rs.getInt("code"));
@@ -98,15 +92,15 @@ public class ProductDao {
 					vo.setLinkUrl(rs.getString("linkurl"));
 					list.add(vo);
 				}
-				
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-			finally {
+			} finally {
 				try {
-				} catch (Exception ex) {
-					ex.printStackTrace();
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			return list;
