@@ -25,11 +25,11 @@ public class InquiryBookServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String method = req.getMethod();
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
-		System.out.println("asd?");
-		String qa = req.getParameter("qa");
-		
+		String job = req.getParameter("job");
+		System.out.println(job);
 		RequestDispatcher rd = null;
 		
 		//Page 초기 값 설정
@@ -41,7 +41,7 @@ public class InquiryBookServlet extends HttpServlet {
 		CsPage page;
 		
 		//btn 별 기능 선언
-		switch(qa) {
+		switch(job) {
 		case "insert":
 			FileUpload photoLoad = new FileUpload(req);
 			vo = photoLoad.getQuestion();
@@ -49,7 +49,7 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("msg", msg);
 			req.setAttribute("vo", vo);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_result.jsp");
+			rd = req.getRequestDispatcher("./cs/cs_func_page.jsp?func=../cs_center/cs_result.jsp");
 			rd.forward(req, resp);
 			System.out.println("insert 문제 없음");
 			break;

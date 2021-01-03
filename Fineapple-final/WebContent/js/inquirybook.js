@@ -15,18 +15,9 @@ var question = function() {
 	var btnCancel = getID("btnCancel");
 	if(btnCancel != null) {
 		btnCancel.onclick = function() {
-						
 		}
 	}
 
-	if(cs_insert_btnSave != null) {
-		cs_insert_btnSave.onclick = function() {
-			var frm = document.frm_question;
-			frm.enctype = 'multipart/form-data';
-			frm.action = '../inquiry.do?qa=insert';
-			frm.submit();
-		}
-	}
 	$('#cs_notice_btn_insert').on('click', function() {
 		var frm = document.frm_cs_notice;
 		frm.action = 'cs_func_page.jsp?func=./cs_center/cs_notice_insert.jsp';
@@ -94,8 +85,37 @@ $(document).ready(function() {
 
 
 
-var change = function() {
-	$('#cs_faq_change_img').on('click', function() {
-		
-	})
+/*--------------- board JS ---------------*/
+var inquiry = function() {
+	var cs_btnInsert = getID("cs_btnInsert");
+	var cs_insert_btnCancel = getID("cs_insert_btnCancel");
+	var cs_insert_btnSave = getID("cs_insert_btnSave");
+	var frm = document.cs_frm_board;
+
+	if(cs_insert_btnSave != null) {
+		cs_insert_btnSave.onclick = function() {
+			frm.enctype = 'multipart/form-data';
+			frm.job.value = "insert";
+			frm.action = '../inquiry.do?job=insert'
+			frm.submit();
+		}
+	}
+	
+	if(cs_insert_btnCancel !== null) {
+		cs_insert_btnCancel.onclick = function() {
+			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_board.jsp';
+			frm.submit();
+		}
+	}
+	
+	if(cs_btnInsert !== null) {
+		cs_btnInsert.onclick = function() {
+			frm.action = "cs_func_page.jsp?func=../cs_center/cs_insert.jsp";
+			frm.submit();
+		}
+	}
+	
 }
+
+
+

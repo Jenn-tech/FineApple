@@ -9,7 +9,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class FileUpload {
-	public static final String saveDir = "C:\\Users\\J\\eclipse-workspace\\fineapple\\WebContent\\Upload\\";
+	public static final String saveDir = "C:\\Users\\정해준\\Documents\\FineApple\\Fineapple-final\\WebContent\\cs_Upload\\";
 	int maxSize = 1024*1024*100;
 	String encoding = "utf-8";
 	MultipartRequest mul;

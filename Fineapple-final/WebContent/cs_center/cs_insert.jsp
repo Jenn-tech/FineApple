@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +27,13 @@
 		</ul>
 	</div>
 		
-	<form action="" method="post" name="frm_question" id="frm_question">
+	<form action="../inquiry.do" method="post" name="cs_frm_board" id="frm_question">
 		<div class="cs_insert_frm_container">
 		    <div class="cs_insert_frm_body">
 		    	<div>
 				    <label for="inquiryType">문의 유형</label>
 				    <select name="inquiryType" id="inquiryType" aria-placeholder="문의 유형" size="1" style="width: 75%; height: 30px; border: 1px solid #f1f1f1;" >
-				        <option value="">문의 유형</option>
+				        <option>문의 유형</option>
 				        <option value="refund">환불</option>
 				        <option value="cancel">취소(출하 전 취소)</option>
 				        <option value="delivery">배송</option>
@@ -87,8 +88,10 @@
 			       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
 			       <input type="button" value="취소" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 		</div>
-		<input type="" value="813" name="mserial" id="mserial">
 		<input type="number" value="10" name="hit" id="hit">
+		<input type="text" name="nowPage" value="${param.nowPage}">
+		<input type="text" name="findStr" value="${param.findStr}">
+		<input type="hidden" name="job" />
 	</form>
 </div>
 

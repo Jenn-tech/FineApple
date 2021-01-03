@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
+<script type="text/javascript" src="../js/inquiry.js"></script>
 </head>
 <body>
 <div class="cs_board">
@@ -16,10 +17,11 @@
 	<h2 style="font-weight: bold">다른 사람들이 궁금해했던 질문, 지금 확인해보세요! </h2>
 	</header>
 		
-	<form action="" name="frm_board" method="post" id="frm_board">
+	<form action="" name="cs_frm_board" method="post" id="frm_board">
 		<div class="cs_board_input">
-			<input type="button" name="btnInsert" value="입력" class="frm_board_btns" />
+			<input type="button" name="btnInsert" value="입력" class="frm_board_btns" id="cs_btnInsert"/>
 			<div class="cs_board_input_select-box">
+			<input type="text" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
 			<input type="text" name="findStr" placeholder="검색어를 입력해주세요!" />
 			<input type="button" name="btnFind" id="btnFind" value="조회" class="frm_board_btns" />
 			</div>
@@ -61,14 +63,9 @@
 			<input type="button" value="end" id="paging_btns">
 		<%-- </c:if> --%>		
 	</div>
-	
-	<form action="" name="frm_board" method="post">
-		<input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
-		<input type="hidden" name="mid"/>
-	</form>
 </div>
 <script type="text/javascript">
-	question()
+inquiry()
 </script>
 </body>
 </html>
