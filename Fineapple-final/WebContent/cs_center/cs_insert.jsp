@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="../js/board.js"></script>
 </head>
 <body>
 <div class="cs_insert_body">
@@ -62,13 +63,9 @@
 				    <label for="pwd">비밀번호</label>
 				    <input type="password" placeholder="비밀번호를 입력해주세요." id="cs_pwd" size="25" name="pwd" style="width: 75%; height: 30px"/>
 				</div>
-				<div class="cs_insert_photobox">
-					<label>사진</label>	
-		   			<div>
-		   			<img alt="" src="http://placehold.it/200x140" id="cs_photo" style="width: 200px; height: 140px;">			
-					</br>
-					<input type="file" name="photo" id="cs_btnPhoto" style="border: 0"/>
-					</div>
+				<label>사진</label>	
+				<div class="cs_attach_box">
+						
 				</div>
 	  		</div>
 	  		<div class="cs_insert_frm_body">
@@ -96,7 +93,7 @@
 </div>
 
 <script type="text/javascript">
-question()
+fileUpload('cs_attach_box')
 </script>
 </body>
 </html>
