@@ -1,15 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <script src='../js/login.js'></script>
-    
+<script type="text/javascript" language="javascript">
+    function openPop(){
+        var pop_title = "popupOpener" ;
+        var frmData = document.frm_search ;
+        frmData.action = "../product_list/select.jsp" ;
+        frmData.submit() ;
+    }
+ 
+</script>
 <header id="header">
 		<nav class="left">
             <div class="search_bar">
-                 <form role="search" method="get" class="search-form" >
-                     <input type="search" class="search-field" placeholder="상품명" value="" name="s" />
-                    <button type="submit" class="search-submit">검색</button>
+                 <form  name="frm_search" role="search" method="get" class="search-form" >
+                     <input type="search" class="search-field" placeholder="상품명" value="${param.findStr }" name="findStr" />
+                    <button type="submit"  name="btnFind" class="search-submit" onClick="openPop();">검색</button>
+					<input type="hidden" name="search" value="select">
                  </form>
-            </div>
+            </div> 
         </nav>
         <a href ="../main/index.jsp"><img src="../images/pineapple.png"/></a>
 		<nav class="right">

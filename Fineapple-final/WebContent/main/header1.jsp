@@ -1,26 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-	<script type="text/javascript" language="javascript">
- 
- 
-    // 팝업오픈하여 폼데이터 Post 전송
+<script type="text/javascript" language="javascript">
     function openPop(){
-         
-         
         var pop_title = "popupOpener" ;
-         
-        window.open("", pop_title) ;
-         
         var frmData = document.frm_search ;
-        frmData.target = pop_title ;
         frmData.action = "../product_list/select.jsp" ;
-         
         frmData.submit() ;
-         
-         
-         
     }
- 
  
 </script>
 <header id="header">
