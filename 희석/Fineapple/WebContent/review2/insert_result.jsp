@@ -5,7 +5,7 @@
 %>
 
 
-<jsp:useBean id="dao" class="review.ReviewDao" />
+<jsp:useBean id="dao" class="review.ReviewDao3" />
 <jsp:useBean id="vo" class="review.ReviewVo" />
 <jsp:setProperty property="*" name="vo" />   <!-- 폼테그에 있는 모든 정보들이 vo로 들어간다. -->
 

@@ -1,15 +1,16 @@
 package review;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import bean.Application;
 
 public class ReviewDao {
-	
 	Connection conn;
 	PreparedStatement ps;
 	ResultSet rs;
@@ -18,139 +19,193 @@ public class ReviewDao {
 		conn = new Application().getConn();
 	}
 	
-	public String getDate() {
-		String sql = "select now()";
-		try {
-			ps = conn.prepareStatement(sql);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				return rs.getString(1);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return ""; // 데이터 베이스 오류
-	}
+	public int getTotListSize(String findStr) throws Exception{
+		int totListSize = 0;
+		String sql = "select count(reviewSerial) cnt from review where reviewSerial like ?";
+		ps = conn.prepareStatement(sql);
+		ps.setString(1,  "%" + findStr + "%");
+		
+		rs = ps.executeQuery();
+		if(rs.next()) {
+			totListSize = rs.getInt("cnt");
+		}
+		return totListSize;
+		
+	}	
 	
-	public int getNext() {
-		String sql = "select reviewSerial from review order by reviewSerial desc";
+	public List<ReviewVo> select(ReviewPage page){
+		List<ReviewVo> list = new ArrayList<ReviewVo>();
 		try {
+			
+			String f = page.getFindStr();
+			page.setTotListSize(getTotListSize(f));
+			page.pageCompute();
+			
+			String sql = " select * from ("
+			           + "   select rownum no, m.* from ("
+			           + "     select * from review "
+					   + "     where reviewSerial like ?"
+					   + "     order by reviewSerial asc) m   "
+					   + " ) where no between ? and ? ";
+			
 			ps = conn.prepareStatement(sql);
+			ps.setString(1,  "%" + page.getFindStr() + "%");		
+			ps.setInt(2, page.getStartNo());
+			ps.setInt(3, page.getEndNo());
 			rs = ps.executeQuery();
-			if (rs.next()) {
-				return rs.getInt("reviewSerial") + 1;
-				}
-			return 1; //첫번째 개시물인 경우
-			} catch (SQLException e) {
-				e.printStackTrace();
+			
+			while(rs.next()) {
+				ReviewVo vo = new ReviewVo();
+				vo.setReviewSerial(rs.getInt("revieSerial"));
+				vo.setMemberId(rs.getString("MemberId"));
+				vo.setReviewTitle(rs.getString("reviewTitle"));
+				vo.setReviewDate(rs.getString("reviewDate"));
+				vo.setReviewDoc(rs.getString("reviewDoc"));
+				vo.setProductName(rs.getString("ProductName"));
+				vo.setReviewCategory(rs.getString("reviewCategory"));
+				vo.setReviewImg(rs.getString("reviewImg"));
+				vo.setReviewAvailable(rs.getInt("reviewAvailable"));
+				vo.setDelFile(rs.getString("delFile"));
+				list.add(vo);
 			}
-			return -1; // 데이터 베이스 오류
-	}
-	
-	public int write(String reviewTitle, String memberId, String reviewDoc) {
-		String sql = "insert into review(reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, reviewAvailable) "
-				+ "values(seq_reviewSerial.nextval,?,?,sysdate,?,?)";
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setString(1,memberId);
-			ps.setString(2,reviewTitle);
-			ps.setString(3,reviewDoc);
-			ps.setInt(4, 1);
-			return ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return -1; // 데이터 베이스 오류
-	}
-	
-	public ArrayList<ReviewVo> getList(int pageNumber) {
-		String sql = "select reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, reviewAvailable from "
-				+ "review where reviewSerial < ? and reviewAvailable = 1 order by reviewSerial desc";
-		ArrayList<ReviewVo> list = new ArrayList<ReviewVo>();
-		try {
-			int next = getNext()-((pageNumber-1) * 10);
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, next); 
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				ReviewVo rv = new ReviewVo();
-				rv.setReviewSerial(rs.getInt("reviewSerial"));
-				rv.setMemberId(rs.getString("memberId"));
-				rv.setReviewTitle(rs.getString("reviewTitle"));
-				rv.setReviewDate(rs.getString("reviewDate"));
-				rv.setReviewDoc(rs.getString("reviewDoc"));
-				rv.setReviewAvailable(rs.getInt("reviewAvailable"));
-				list.add(rv);
-				} 
-			}catch (SQLException e) {
-				e.printStackTrace();
-			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			disConn();
 			return list;
+		}
 	}
 	
-	public boolean nextPage(int pageNumber) {
-		String sql = "select reviewSerial from review where reviewSerial < ? and reviewAvailable = 1 order by reviewSerial limit 10";
+	public String insert(ReviewVo vo) {
+		String msg = "리뷰가 정상적으로 저장되었습니다.";
+		
 		try {
-			int next = getNext()-((pageNumber-1) * 10);
+			String sql = "insert into review(reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, productName, reviewcategory, reviewImg, reviewAvailable)"
+					+ "values(seq_reviewSerial.nextval,?,?,sysdate,?,?,?,?,?)";
+			
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, vo.getMemberId());
+				ps.setString(2, vo.getReviewTitle());
+				ps.setString(3, vo.getReviewDoc());
+				ps.setString(4, vo.getProductName());
+				ps.setString(5, vo.getReviewCategory());
+				ps.setString(6, vo.getReviewImg());
+				ps.setInt(7, vo.getReviewAvailable());
+				
+				int rowCnt = ps.executeUpdate();
+				if (rowCnt<1) {
+					msg = "리뷰 작성 중 오류 발생";
+					throw new Exception(msg);
+				}
+			
+		} catch (Exception e) {
+			msg = e.getMessage();
+			
+			// 이미 업로드된 파일 삭제
+			File file = new File(ReviewFileUpload.saveDir + vo.getReviewImg());
+			if(file.exists()) {
+				file.delete();
+			}
+						
+		}finally {
+			disConn();
+			return msg;
+		}
+	}
+	
+	public String update(ReviewVo vo) {
+		String msg = "리뷰가 정상적으로 수정되었습니다.";
+		
+		try {
+			String sql = "update review set reviewTitle = ?, reviewDoc = ?, reviewDate = sysdate";
+			
+				if(vo.getReviewImg() != null && !vo.getReviewImg().equals("")) {
+					sql += ", photo= '" + vo.getReviewImg() + "'";
+				}
+				
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, vo.getReviewTitle());
+				ps.setString(2, vo.getReviewDoc());
+				
+				int rowCnt = ps.executeUpdate();
+				if (rowCnt<1) {
+					msg = "리뷰 작성 중 오류 발생";
+					throw new Exception(msg);
+				}
+				
+				//이미지가 수정된 경우 기존 파일 삭제
+				if(vo.getReviewImg() !=null && !vo.getReviewImg().equals("")) {
+					File file = new File(ReviewFileUpload.saveDir + vo.getDelFile());
+					if(file.exists()) {
+						file.delete();
+					}
+				}
+			
+		} catch (Exception e) {
+			msg = e.getMessage();
+			
+						
+		}finally {
+			disConn();
+			return msg;
+		}
+	}
+	
+	public String delete(ReviewVo vo){
+		String msg = "리뷰가 정상적으로 삭제되었습니다.";
+			try {
+				String sql = "update review set reviewAvailable = 0 where reviewSerial = ? ";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1,vo.getReviewSerial());
+			
+			int rowCnt = ps.executeUpdate();
+			if(rowCnt<1) {
+				throw new Exception("회원 정보 삭제중 오류 발생");
+			}
+			
+			//첨부 파일 삭제
+			File file = new File(ReviewFileUpload.saveDir + vo.getDelFile());
+			if(file.exists()) {
+				file.delete();
+			}
+			
+		}catch(Exception ex) {
+			msg = ex.getMessage();
+		}finally {
+			disConn();
+			return msg;
+		}
+	}
+	
+	public ReviewVo view(int reviewSerial){
+		ReviewVo vo = new ReviewVo();
+		try {
+			String sql = "select * from review where reviewSerial=?";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, next); 
+			ps.setInt(1, reviewSerial);
 			rs = ps.executeQuery();
-			if (rs.next()) {
-				return true;
-				} 
-			}catch (SQLException e) {
-				e.printStackTrace();
+			if(rs.next()) {
+				vo.setReviewSerial(rs.getInt("reviewSerial"));
+				vo.setMemberId(rs.getString("memberId"));
+				vo.setReviewTitle(rs.getString("reviewTitle"));
+				vo.setReviewDate(rs.getString("reviewDate"));
+				vo.setReviewDoc(rs.getString("reviewDoc"));
+				vo.setReviewAvailable(rs.getInt("reviewAvailable"));
 			}
-			return false;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			disConn();
+			return vo;
+		}
 	}
 	
-	public ReviewVo getReview(int reviewSerial) {
-		String sql = "select * from review where reviewSerial = ?";
+	public void disConn() {
 		try {
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, reviewSerial); 
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				ReviewVo rv = new ReviewVo();
-				rv.setReviewSerial(rs.getInt("reviewSerial"));
-				rv.setMemberId(rs.getString("memberId"));
-				rv.setReviewTitle(rs.getString("reviewTitle"));
-				rv.setReviewDate(rs.getString("reviewDate"));
-				rv.setReviewDoc(rs.getString("reviewDoc"));
-				rv.setReviewAvailable(rs.getInt("reviewAvailable"));
-				return rv;
-				} 
-			}catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return null;
-	}
-	
-	public int update(int reviewSerial, String reviewTitle, String reviewDoc) {
-		String sql = "update review set reviewTitle = ?, reviewDoc = ? where reviewSerial = ? ";
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setString(1,reviewTitle);
-			ps.setString(2,reviewDoc);
-			ps.setInt(3,reviewSerial);
-
-			return ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return -1; // 데이터 베이스 오류
-	}
-	
-	public int delete(int reviewSerial) {
-		String sql = "update review set reviewAvailable = 0 where reviewSerial = ? ";
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1,reviewSerial);
-
-			return ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return -1; // 데이터 베이스 오류
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -3,6 +3,8 @@
 <%@page import="review.ReviewVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+
 <!DOCTYPE html>
 <html> 
     <meta charset="UTF-8">
@@ -14,23 +16,11 @@
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+<script src='../js/review.js'></script>
 </head>
 
 <body>
-<%		
-	int reviewSerial = 0;
-	if (request.getParameter("reviewSerial") != null){
-		reviewSerial = Integer.parseInt(request.getParameter("reviewSerial"));
-		}
-	if (reviewSerial == 0){
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("alert('유효하지 않은 게시물입니다.')");
-		script.println("location.href = 'review.jsp'");
-		script.println("</script>");
-	}
-	ReviewVo rv = new ReviewDao().getReview(reviewSerial);
-%>
+
 <div class="review">
    	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
@@ -45,27 +35,27 @@
 	<h3>리뷰글수정</h3>
  	<div class="container">
  		<div class="row">
- 		<form action="updateAction.jsp?reviewSerial=<%=reviewSerial%>" method="post">
+ 		<form method="post" name="frm_review" class="update">
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
-	 						<td><input type="text" class="form-control" placeholder="글 제목" name="reviewTitle" maxlength="50" style="width: 100%; height: 45px;" value="<%=rv.getReviewTitle()%>"></td>
+	 						<td><input type="text" class="form-control" placeholder="글 제목" name="reviewTitle" maxlength="50" style="width: 100%; height: 45px;" value="${vo.reviewTitle }"></td>
 	 					</tr>
 	 					<tr>
-	 						<td><textarea class="form-control" placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;"><%=rv.getReviewDoc()%></textarea></td>
+	 						<td><textarea class="form-control" placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;">${vo.reviewDoc }</textarea></td>
 	 					</tr>
 	 				</tbody>
 	 			</table>
-	 				<input type="submit" class="btn-review-write" value="글수정"/>
+	 				<input type="button" class="btn-review-write" id="btnUpdate" value="글수정"/>
+	 				<input type='button' value='목록으로' id='btnSelect' />
  			</form>
  		</div>
  	</div>
       <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %> 
 </div>
-
-<script>
-	
+<script type="text/javascript">
+review()
 </script>
 </body>
 </html>

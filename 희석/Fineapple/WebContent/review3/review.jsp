@@ -1,6 +1,6 @@
 <%@page import="review.ReviewVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="review.ReviewDao"%>
+<%@page import="review.ReviewDao3"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -28,7 +28,6 @@
 	if (request.getParameter("pageNumber") != null){
 		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 	}
-
 %>
 <div id="review">
     <header>
@@ -62,9 +61,9 @@
  				</thead>
  				<tbody>
  				<%
- 					ReviewDao dao = new ReviewDao();
- 					ArrayList<ReviewVo> list = dao.getList(pageNumber);
- 					for(int i = 0; i< list.size(); i++){
+ 					ReviewDao3 dao = new ReviewDao3();
+ 				 					ArrayList<ReviewVo> list = dao.getList(pageNumber);
+ 				 					for(int i = 0; i< list.size(); i++){
  				%>
  					<tr>
  						<td><%= list.get(i).getReviewSerial() %></td>

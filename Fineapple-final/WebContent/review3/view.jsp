@@ -3,6 +3,7 @@
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html> 
     <meta charset="UTF-8">
@@ -14,23 +15,10 @@
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+<script src='../js/review.js'></script>
 </head>
 
 <body>
-<%
-	int reviewSerial = 0;
-	if (request.getParameter("reviewSerial") != null){
-		reviewSerial = Integer.parseInt(request.getParameter("reviewSerial"));
-	}
-	if (reviewSerial == 0){
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("alert('유효하지 않은 게시물입니다.')");
-		script.println("location.href = 'review.jsp'");
-		script.println("</script>");
-	}
-	ReviewVo rv = new ReviewDao().getReview(reviewSerial);
-%>
 <div class="review">
 	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
@@ -46,50 +34,67 @@
 	<h3>리뷰게시판</h3>
  	<div class="container">
  		<div class="row">
- 		<form action="writeAction.jsp" method="post">
+ 		<form action="writeAction.jsp" method="post" name="frm_review">
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
 	 						<td class="table-left">제목</td>
-	 						<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
+	 						
+	 					<%-- 	<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td> --%>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
-	 						<td class="table-right" colspan="2"><%= rv.getMemberId() %></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
+	 						<%-- <td class="table-right" colspan="2"><%= rv.getMemberId() %></td> --%>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성일자</td>
-	 						<td class="table-right" colspan="2"><%= rv.getReviewDate()%></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
+	 						<%-- <td class="table-right" colspan="2"><%= rv.getReviewDate()%></td> --%>
 	 					</tr>
 	 					<tr>
-	 						<td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td>
+							<c:choose>
+								<c:when test="${empty vo.reviewImg }">
+									<img src='http://placehold.it/200X140' width='200px' height='140px' />
+								</c:when>
+								<c:otherwise>
+									<a href='./upload/${vo.reviewImg }' download = '${vo.reviewImg }'>
+										<img src='./upload/${vo.reviewImg }' width='200px' height='140px'/>
+									</a>
+								</c:otherwise>				
+							</c:choose>		
+						<hr/>
+						</tr>
+	 					<tr>
+	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
+	 						<%-- <td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td> --%>
 	 					</tr>
+	 					
 	 				</tbody>
 	 			</table>
-	 			<%--
-	 				if(memberId != null && memberId.equals(rv.getMemberId())){
-	 					<a href="update.jsp?memberId=<% memberId%>" > 수정 </a>
-	 					<a href="deleteAction.jsp?memberId=<% memberId%>" > 삭제 </a>
-	 				}
 	 			
-	 			 --%>
+	 			<!-- buttons -->
+	<div class = 'btns'>
+		<input type='button' value='수정' id='btnModify' />
+		<input type='button' value='삭제' id='btnDelete' />
+		<input type='button' value='목록으로' id='btnSelect' />
+		<input type='hidden' name='findStr' value='${param.findStr }'/>
+		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
+		<input type='hidden' name='delFile' value='${vo.photo }' />
+	</div>
  			</form> 
  		</div>
  	</div>
- <!-- buttons -->
-	<div class = 'btns'>
-		<input class="btn-write" type="button" value="목록" onclick="location.href='review.jsp'">
-		<input class="btn-write" type="button" value="수정" onclick="location.href='update.jsp?reviewSerial=<%= rv.getReviewSerial()%>'">
-		<input class="btn-write" type="button" value="삭제" onclick="location.href='deleteAction.jsp?reviewSerial=<%= rv.getReviewSerial()%>'">
-	</div>
+ 
  
 
        
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 </div>
-<script> 
-	
+<script type="text/javascript">
+review()
 </script>
 </body>
 </html>

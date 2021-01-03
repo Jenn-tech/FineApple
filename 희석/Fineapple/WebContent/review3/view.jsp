@@ -1,4 +1,4 @@
-<%@page import="review.ReviewDao"%>
+<%@page import="review.ReviewDao3"%>
 <%@page import="review.ReviewVo"%>
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -28,7 +28,7 @@
 		script.println("location.href = 'review.jsp'");
 		script.println("</script>");
 	}
-	ReviewVo rv = new ReviewDao().getReview(reviewSerial);
+	ReviewVo rv = new ReviewDao3().getReview(reviewSerial);
 %>
 <div id="review">
     <header>

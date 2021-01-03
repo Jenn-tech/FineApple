@@ -1,5 +1,5 @@
 <%@page import="review.ReviewVo"%>
-<%@page import="review.ReviewDao" %>
+<%@page import="review.ReviewDao3" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -7,7 +7,7 @@
 	request.setCharacterEncoding("utf-8");
 %>
 
-<jsp:useBean id="dao" class="review.ReviewDao" />
+<jsp:useBean id="dao" class="review.ReviewDao3" />
 <jsp:useBean id="vo" class="review.ReviewVo"/>
 <jsp:setProperty property="*" name="vo"/>
 

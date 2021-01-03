@@ -10,9 +10,15 @@ public class ReviewVo {
 	String reviewCategory;
 	String reviewImg;
 	int reviewAvailable;
+	String delFile;
 	
 	
-	
+	public String getDelFile() {
+		return delFile;
+	}
+	public void setDelFile(String delFile) {
+		this.delFile = delFile;
+	}
 	public int getReviewSerial() {
 		return reviewSerial;
 	}

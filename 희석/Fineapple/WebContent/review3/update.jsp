@@ -1,5 +1,5 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="review.ReviewDao"%>
+<%@page import="review.ReviewDao3"%>
 <%@page import="review.ReviewVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<%		
+<%
 	int reviewSerial = 0;
 	if (request.getParameter("reviewSerial") != null){
 		reviewSerial = Integer.parseInt(request.getParameter("reviewSerial"));
@@ -28,7 +28,7 @@
 		script.println("location.href = 'review.jsp'");
 		script.println("</script>");
 	}
-	ReviewVo rv = new ReviewDao().getReview(reviewSerial);
+	ReviewVo rv = new ReviewDao3().getReview(reviewSerial);
 %>
 <div id="review">
     <header>

@@ -1,8 +1,10 @@
-<%@page import="review.ReviewDao"%>
+<%-- <%@page import="review.ReviewDao3"%>
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8");%>    
+<%
+	request.setCharacterEncoding("utf-8");
+%>    
 <jsp:useBean id="review" class="review.ReviewVo" scope="page" />
 <jsp:setProperty name="review" property="reviewTitle" />
 <jsp:setProperty name="review" property="reviewDoc" />
@@ -21,28 +23,23 @@
 		script.println("history.back()");
 		script.println("</script>");
 	} else {
-		ReviewDao rv = new ReviewDao();
+		ReviewDao3 rv = new ReviewDao3();
 		int result = rv.write(review.getReviewTitle(), review.getMemberId(), review.getReviewDoc());
 		if(result == -1){
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('글쓰기에 실패했습니다.')");
-			script.println("history.back()");
-			script.println("</script>");
+	PrintWriter script = response.getWriter();
+	script.println("<script>");
+	script.println("alert('글쓰기에 실패했습니다.')");
+	script.println("history.back()");
+	script.println("</script>");
 		} else {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('글쓰기가 완료되었습니다.')");
-			script.println("location.href = 'review.jsp'");
-			script.println("</script>");
+	PrintWriter script = response.getWriter();
+	script.println("<script>");
+	script.println("alert('글쓰기가 완료되었습니다.')");
+	script.println("location.href = 'review.jsp'");
+	script.println("</script>");
 		}
 		
 	}
-
-
-
-
-
 %>
 </body>
-</html>
+</html> --%>

@@ -16,6 +16,7 @@
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+<script src='../js/review.js'></script>
 </head>
 <style>
 
@@ -25,23 +26,22 @@
 	}
 </style>
 <body>
-<%
-	int pageNumber = 1;
-	if (request.getParameter("pageNumber") != null){
-		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-	}
-
-%>
 <div class="review">
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
+	<%
+		if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+	%>
 	<jsp:include page="../main/header1.jsp"/>
 	
-	<%} else {%>
+	<%
+			} else {
+		%>
 	
 	<jsp:include page="../main/header2.jsp"/>
 	
-	<%} %> 
+	<%
+			}
+		%> 
 <header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">커뮤니티</h1>
 		<div class="cs_category">
@@ -50,7 +50,22 @@
 			<a href="../review3/review.jsp">리뷰 게시판</a>
 		</div>
 </header>
-    <h3 class="review_h3">리뷰게시판</h3>
+<header class="cs_board_title">
+	<h1 style="font-size: 2em;">리뷰 게시판</h1>
+	</br>
+	<h2 style="font-weight: bold">믿음직한 리뷰</h2>
+</header>
+<!-- 검색하기 -->
+	<div id = 'review_search'>
+		<form name = 'frm_review' method = 'POST'>
+			<div>
+				<input type='text' name='findStr' class='findStr' value='${param.findStr}'>
+				<input type='button' name='btnFind' id='btnFind' value='검색'/>
+				<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage}'/>
+				<input type='hidden' name='reviewSerial' />
+			</div>
+		</form>
+	</div>
  	<div class="container">
  		<div class="row">
  			<table class="review-table" style="text-align: center;"> 
@@ -63,56 +78,47 @@
  					</tr>
  				</thead>
  				<tbody>
- 				<%
- 					ReviewDao dao = new ReviewDao();
- 					ArrayList<ReviewVo> list = dao.getList(pageNumber);
- 					for(int i = 0; i< list.size(); i++){
- 				%>
- 					<tr class="table-item" style = "cursor:pointer;" onclick="location.href='view.jsp?reviewSerial=<%= list.get(i).getReviewSerial()%>'">
- 						<td class="no"><%= list.get(i).getReviewSerial() %></td>
- 						<td class="title"><%= list.get(i).getReviewTitle() %></td>
- 						<td class="name"><%= list.get(i).getMemberId() %></td>
- 						<td class="date"><%= list.get(i).getReviewDate().substring(0,11) + list.get(i).getReviewDate().substring(11,13)+"시"+list.get(i).getReviewDate().substring(14,16)+"분" %></td> 
- 					</tr>
- 				<%
- 				}
- 				%>
+	 				<c:set var='no' value='${page.startNo}'/>
+					<c:forEach var='vo' items="${list}">	
+		 				<tr class="table-item" style = "cursor:pointer;" onclick="view('${vo.reviewSerial}')">
+		 					<td class="no">${no}</td>
+		 					<td class="title">${vo.reviewTitle}</td>
+		 					<td class="name">${vo.memberId}</td>
+		 					<td class="date">${vo.reviewDate}</td> 
+		 				</tr>
+	 					<c:set var='no' value = '${no=no+1}'/>
+					</c:forEach>
  				</tbody>
  			</table>
- 			<% 
- 				if(pageNumber != 1){
- 			%>
- 				<a href="review.jsp?pageNumber=<%=pageNumber - 1 %>" >이전</a>
- 			<%
- 				}if(dao.nextPage(pageNumber + 1)){
- 			%>
- 				<a href="review.jsp?pageNumber=<%=pageNumber + 1 %>" >다음</a>
- 			<%
- 				}
- 			%>
- 			
  			
  		</div>
  	</div> 
 <!-- buttons -->
 	<div class = 'btns'>
-		<input type = 'button' value = '<<'/>
-		<input type = 'button' value = '<'/>
-
-		<c:forEach var = 'i' begin = '1' end = '5'>
-			<input type = 'button'class = 'num' value = '${i }'>
-		</c:forEach>
-
-		<input type = 'button' value = '>'/>
-		<input type = 'button' value = '>>'/>
+		<c:if test="${page.startPage>1 }">
+			<input type='button' value='맨첨' id='btnFirst' onclick='goPage(1)'/>
+			<input type='button' value='이전' id='btnPrev' onclick='goPage(${page.startPage-1})'/>
+		</c:if>
 		
-		<input class="btn-write" type="button" value="글쓰기" onclick="location.href='write.jsp'">
+		<c:forEach var="i" begin='${page.startPage }' end='${page.endPage }'>	
+			<input type='button' value='${i }' 
+				${(param.nowPage==i)? 'disabled' : '' }  
+				onclick='goPage(${i})' />
+		</c:forEach>
+	
+		<c:if test="${page.endPage<page.totPage }">
+			<input type='button' value='다음' id='btnNext' onclick='goPage(${page.endPage+1})'/>
+			<input type='button' value='맨끝' id='btnLast' onclick='goPage(${page.totPage})'/>
+		</c:if>	
+		<input class="btnInsert" type="button" value="글쓰기" />
 	</div>
     
     
       <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 </div>
-
+<script>
+review()
+</script>
 </body>
 </html>
