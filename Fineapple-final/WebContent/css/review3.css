@@ -40,19 +40,19 @@
 
 .review-table>thead .title{
 	display : inline-block;
-	width :700px;
+	width :600px;
 	border-bottom: 1px solid #aaaaaa;
 }
 
 .review-table>thead .name{
 	display : inline-block;
-	width :200px;
+	width :150px;
 	border-bottom: 1px solid #aaaaaa;
 }
 
 .review-table>thead .date{
 	display : inline-block;
-	width :200px;
+	width :150px;
 	border-bottom: 1px solid #aaaaaa;
 }
 
@@ -66,21 +66,21 @@
 
 .review-table>tbody .title{
 	display : inline-block;
-	width :700px;
+	width :600px;
 	height: 35px;
 	line-height: 35px;
 }
 
 .review-table>tbody .name{
 	display : inline-block;
-	width :200px;
+	width :150px;
 	height: 35px;
 	line-height: 35px;
 }
 
 .review-table>tbody .date{
 	display : inline-block;
-	width :200px;
+	width :150px;
 	height: 35px;
 	line-height: 35px;
 }
