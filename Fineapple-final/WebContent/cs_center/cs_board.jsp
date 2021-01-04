@@ -19,7 +19,7 @@
 		
 	<form action="" name="cs_frm_board" method="post" id="frm_board">
 		<div class="cs_board_input">
-			<input type="button" name="btnInsert" value="입력" class="frm_board_btns" id="cs_btnInsert"/>
+			<input type="button" name="btnInsert" value="글쓰기" class="frm_board_btns" id="cs_btnInsert"/>
 			<div class="cs_board_input_select-box">
 			<input type="text" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
 			<input type="text" name="findStr" placeholder="검색어를 입력해주세요!" />

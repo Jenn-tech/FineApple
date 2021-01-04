@@ -1,48 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 작성</title>
+<script type="text/javascript" src="./js/inquirybook.js"></script>
 </head>
 <body>
-<form action="" method="post" name="frm_question" id="frm_question">
-<div>
-    <label for="inquiryType">문의 유형</label>
-    <input name="inquiryType" id="inquiryType" aria-placeholder="문의 유형" value="" >
+<div class="cs_notice_view_container">	
+	<form action="" name="cs_frm_board" id="frm_cs_notice" method="post">
+		<div class="frm_cs_notice_body">
+			<div class="frm_cs_notice_view_body_item">
+				<a href="cs_func_page.jsp?func=./cs_center/cs_board.jsp" style="color: rgb(91, 135, 164); font-size: 0.8em; margin-bottom: 15px; display: block;"> 게시판으로 돌아가기 > </a>
+				</br>
+				<h1>제목: ${viewVo.subject}</h1>
+				</br>
+				<div class="cs_notice_view_imfo">
+					<span>조회수: ${viewVo.hit}</span>
+					<span>작성자: ${viewVo.name}</span>
+					<span>작성 일자: ${viewVo.mdate}</span>
+				</div>
+			</div> 
+			</br>
+			<textarea rows="12" cols="70" name="doc" id="doc" readOnly style="border: 0; font-size: 1.1em; resize: none;">${viewVo.doc }</textarea>
+		</div>
+		<div class="cs_notice_view_repl">
+			<h3>첨부 사진</h3>
+			<div class="cs_notice_view_repl_form">
+				<img alt="" src="http://placehold.it/150x120" class="view_img">
+				<img alt="" src="http://placehold.it/150x120" class="view_img">
+				<img alt="" src="http://placehold.it/150x120" class="view_img">
+				<img alt="" src="http://placehold.it/150x120" class="view_img">
+			</div>
+		</div>
+		<div class="cs_center_notice_insert_send_box">
+			<input type="button" value="수정" id="cs_view_btnUpdate" class="cs_insert_btnSave">
+			<input type="button" value="삭제" id="cs_view_btnDelete" class="cs_insert_btnSave">
+			<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
+			<input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
+			<input type="text" value="${param.nowPage} 1" name="nowPage"/>
+			<input type="text" value="${param.findStr} 1" name="findStr"/>
+		</div>
+	</form>
 </div>
 
- <div>
-    <label for="ordernum">주문 번호</label>
-    <input type="text" id="ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum"/>
-    <input type="button" id="orderNumSearch" value="검색">
-</div>
 
-<div>
-    <label for="pwd">비밀 번호</label>
-    <input type="password" placeholder="비밀번호를 입력해주세요." id="pwd" size="25" name="pwd"/>
-</div>
-
-<div>
-   <label for="mid">작성자</label>
-   <input type="text" placeholder="이름을 입력해주세요." name="name" id="name" size="25"/>
-</div>
-
-   <input type="file" name="photo" id="btnPhoto"/>
-   <img alt="" src="http://placehold.it/200x140" id="photo" style="width: 200px; height: 140px;">
-<br/>
-	<input type="text" size="100" name="subject" id="subject">
-	<textarea name="doc" id="doc" cols="80" rows="10" style="width: 100%" style="text-indent: 1em;"></textarea>
-<br/>
-<div class="send_box">
-       <label for="check">비밀글</label>
-       <input type="checkbox" name="secretcheck" id="check" value="secret">
-       <input type="button" value="전송" id="btnInsert">
-       <input type="button" value="취소" id="btnCancel">
-</div>
-<input type="hidden" value="813" name="mserial" id="mserial">
-<input type="hidden" value="10" name="hit" id="hit">
-</form>
+<script type="text/javascript">
+inquiry()
+</script>
 </body>
 </html>

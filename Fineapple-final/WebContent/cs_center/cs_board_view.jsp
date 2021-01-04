@@ -18,6 +18,7 @@
 				<h1>제목: ${viewVo.subject}</h1>
 				</br>
 				<div class="cs_notice_view_imfo">
+					<span>조회수: ${viewVo.hit}</span>
 					<span>작성자: ${viewVo.name}</span>
 					<span>작성 일자: ${viewVo.mdate}</span>
 				</div>
@@ -26,17 +27,14 @@
 			<textarea rows="12" cols="70" name="doc" id="doc" readOnly style="border: 0; font-size: 1.1em; resize: none;">${viewVo.doc }</textarea>
 		</div>
 		<div class="cs_notice_view_repl">
-			<h3>댓글</h3>
+			<h3>첨부 사진</h3>
 			<div class="cs_notice_view_repl_form">
-					<p> ${viewVo.name} </p>
-					<textarea rows="3" placeholder="댓글을 남겨보세요." name="cs_notice_repl" id="cs_notice_repl"></textarea>
-					</br>
-					<input type="button" value="등록" name="cs_notice_repl" id="cs_notice_repl_insert_btn">
 			</div>
 		</div>
 		<div class="cs_center_notice_insert_send_box">
 			<input type="button" value="수정" id="cs_notice_insert_save" class="cs_center_insert_btns">
 			<input type="button" value="삭제" id="cs_notice_insert_save" class="cs_center_insert_btns">
+			<input type="button" value="답변" id="cs_notice_insert_save" class="cs_center_insert_btns">
 			<input type="button" value="목록으로" id="cs_notice_insert_cancel" class="cs_center_insert_btns">
 		</div>
 		<input type="hidden" value="insert" name="notice">

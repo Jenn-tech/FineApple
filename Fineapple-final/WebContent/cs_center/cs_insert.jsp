@@ -78,16 +78,18 @@
 	  			</div>
 	  		</div>
 		</div>
+		<div>
+		
+		</div>
 		<div class="cs_center_insert_send_box">
 			       <label for="secretcheck">비밀글</label>
 			       <input type="checkbox" name="secretcheck" id="cs_check" value="secret">
 			       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
-			       <input type="button" value="취소" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
+			       <input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 		</div>
 		<input type="number" value="10" name="hit" id="hit">
-		<input type="text" name="nowPage" value="${param.nowPage}">
-		<input type="text" name="findStr" value="${param.findStr}">
-		<input type="hidden" name="job" />
+		<input type="text" name="nowPage" value="${param.nowPage}"/>
+		<input type="text" name="findStr" value="${param.findStr}"/>
 	</form>
 </div>
 

@@ -8,13 +8,12 @@
 <script type="text/javascript" src="./js/inquirybook.js"></script>
 </head>
 <body>
-<div>	
-	<header class="cs_notice_insert_title">
-		<h2>공지사항</h2>
+<div class="cs_answer_body">	
+	<header class="cs_answer_title">
+		<h2>운영자 답변</h2>
 		</br>
-		<h3>새로운 소식을 고객님께 전달하세요!</h3>
 	</header>
-	<form action="notice.do" name="frm_cs_notice" id="frm_cs_notice">
+	<form action="notice.do" name="cs_frm_board" id="frm_cs_notice" method="post">
 		<div class="frm_cs_notice_body">
 			<div class="frm_cs_notice_body_item">
 				<label>제목</label>
@@ -23,20 +22,25 @@
 				<input type="text" name="name" id="name" value="운영관리자" readOnly>
 			</div> 
 			</br>
-			<textarea rows="12" cols="70" name="doc" id="doc" placeholder="내용을 입력해주세요."></textarea>
+			<textarea rows="20" cols="70" name="doc" id="doc" placeholder="내용을 입력해주세요."></textarea>
 		</div>
-		
+		<div class="cs_answer_attach_body">
+			<label>첨부 파일</label>
+			<div id="cs_answer_attach_box">
+			
+			</div>			
+		</div>
 		<div class="cs_center_notice_insert_send_box">
-			<input type="button" value="전송" id="cs_notice_insert_save" class="cs_center_insert_btns">
-			<input type="button" value="취소" id="cs_notice_insert_cancel" class="cs_center_insert_btns">
+			<input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
+			<input type="button" value="돌아가기" id="cs_view_btnSelect" class="cs_insert_btnCancel">
+			<input type="button" value="취소" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 		</div>
 		<input type="hidden" value="insert" name="notice">
-	</form>
+	</form> 
 </div>
 
-
 <script type="text/javascript">
-notice()
+fileUpload('cs_answer_attach_box')
 </script>
 </body>
 </html>
