@@ -81,7 +81,7 @@
 	 				<c:set var='no' value='${page.startNo}'/>
 					<c:forEach var='vo' items="${list}">	
 		 				<tr class="table-item" style = "cursor:pointer;" onclick="view('${vo.reviewSerial}')">
-		 					<td class="reviewSerial">${vo.reviewSerial}</td>
+		 					<td class="no">${no}</td>
 		 					<td class="reviewTitle">${vo.reviewTitle}</td>
 		 					<td class="memberId">${vo.memberId}</td>
 		 					<td class="reviewDate">${vo.reviewDate}</td> 
@@ -110,7 +110,7 @@
 			<input type='button' value='다음' id='btnNext' onclick='goPage(${page.endPage+1})'/>
 			<input type='button' value='맨끝' id='btnLast' onclick='goPage(${page.totPage})'/>
 		</c:if>	
-		<input class="btnInsert" type="button" value="글쓰기" />
+		<input class="btn-write" type="button" value="글쓰기" id="btnInsert"/>
 	</div>
     
     

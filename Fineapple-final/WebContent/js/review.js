@@ -27,7 +27,7 @@ var review = function(){
 			
 			win.onbeforeunload = function(){
 				if(frm.pwd.value != ''){
-					frm.action = 'review.do?job=delete';
+					frm.action = '../review.do?job=delete';
 					frm.mid.disabled=false;
 					frm.submit();
 				}
@@ -54,7 +54,7 @@ var review = function(){
 			win.onbeforeunload = function(){
 				if(frm.pwd.value != ''){
 					frm.enctype = 'multipart/form-data';
-					frm.action = 'review.do?job=update'; //수정된 정보를 저장
+					frm.action = '../review.do?job=update'; //수정된 정보를 저장
 					frm.submit();
 				}
 			}
@@ -65,7 +65,7 @@ var review = function(){
 		btnModify.onclick = function(){
 			var frm = document.frm_review;
 			frm.mid.disabled=false;
-			frm.action = 'review.do?job=modify';//수정화면이동
+			frm.action = '../review.do?job=modify';//수정화면이동
 			frm.submit();
 		}
 	}
@@ -89,7 +89,7 @@ var review = function(){
 		btnSave.onclick = function(){
 			var frm = document.frm_review;
 				frm.enctype = 'multipart/form-data';
-				frm.action = 'review.do?job=insert';
+				frm.action = '../review.do?job=insert';
 				frm.submit();
 		}
 	}
@@ -97,7 +97,7 @@ var review = function(){
 	if(btnSelect != null){//목록으로
 		btnSelect.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = 'review.do?job=select';
+			frm.action = '../review.do?job=select';
 			frm.submit();
 		}
 	}
@@ -105,7 +105,7 @@ var review = function(){
 	if(btnFind != null){//검색
 		btnFind.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = "review.do?job=select";
+			frm.action = "../review.do?job=select";
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
@@ -114,7 +114,7 @@ var review = function(){
 	if(btnInsert != null){//입력페이지
 		btnInsert.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = 'review.do?job=insert';
+			frm.action = '../review.do?job=insert';
 			frm.submit();
 		}
 	}
@@ -123,21 +123,21 @@ var review = function(){
 
 function goPage(page){
 	var frm = document.frm_review;
-	frm.action = 'review.do?select';
+	frm.action = '../review.do?select';
 	frm.nowPage.value = page;
 	frm.submit();
 }
 
 function view(reviewSerial){
 	var frm = document.frm_review;
-	frm.action = 'review.do?job=view';
+	frm.action = '../review.do?job=view';
 	frm.reviewSerial.value = reviewSerial;
 	frm.submit();
 }
 
 function productview(reviewSerial){
 	var frm = document.frm_review;
-	frm.action = 'review.do?job=product';
+	frm.action = '../review.do?job=product';
 	frm.reviewSerial.value = reviewSerial;
 	frm.submit();
 }
