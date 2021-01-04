@@ -20,7 +20,12 @@
 		SELECT * FROM dual
 	</insert>
 	
-	<select id="list" resultType="inquirybook.InquiryBookVo">
+	<select id="select" resultType="inquirybook.InquiryBookVo" parameterType="bean.CsPage">
 		SELECT * FROM inquiry
+	</select>
+	
+	<select id="tot_list_size" resultType="int" parameterType="bean.CsPage">
+		SELECT count(serial) FROM inquiry
+		WHERE subject like '%${findStr}%' or doc like '%${findStr}%' 
 	</select>
 </mapper>   

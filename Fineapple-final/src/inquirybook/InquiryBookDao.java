@@ -6,7 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -55,5 +57,29 @@ public class InquiryBookDao {
 		}
 	}
 	
+	public Map<String, Object> select(CsPage page) {
+		Map<String, Object> map = new HashMap<>();
+		List<InquiryBookVo> list = new ArrayList<>();
+		
+		try {
+			int totListSize = sqlSesstion.selectOne("inquiry.tot_list_size", page);
+			
+			page.setTotListSize(totListSize);
+			page.pageCompute();
+					
+			list = sqlSesstion.selectList("inquiry.select", page);
+			System.out.println(list);
+			map.put("page", page);
+			map.put("list", list);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSesstion.close();
+			return map;
+		}
+	}
 	
 }

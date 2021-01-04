@@ -2,6 +2,7 @@ package inquirybook;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,6 +42,7 @@ public class InquiryBookServlet extends HttpServlet {
 		FileUpload fu;
 		
 		
+		
 		if(req.getParameter("nowPage") != null) {
 			nowPage = Integer.parseInt(req.getParameter("nowPage"));
 		}
@@ -68,6 +70,18 @@ public class InquiryBookServlet extends HttpServlet {
 			System.out.println(msg);
 			rd = req.getRequestDispatcher(url + "cs_board.jsp");
 			rd.forward(req, resp);
+			break;
+		case "select":
+			Map<String, Object> map = dao.select(page);
+			
+			List<InquiryBookVo> list = (List<InquiryBookVo>) map.get("list");
+			page = (CsPage) map.get("page");
+			
+			req.setAttribute("list", list);
+			req.setAttribute("page", page);
+			rd = req.getRequestDispatcher("/cs/cs_func_page.jsp?func_board.jsp");
+			rd.forward(req, resp);
+
 			break;
 		}
 	}

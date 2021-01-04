@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<script type="text/javascript" src="../js/inquiry.js"></script>
 </head>
 <body>
 <div class="cs_board">
@@ -39,11 +38,11 @@
 	<div class="cs_board_items">
 		<c:set var="no" value="${page.startNo}"></c:set>
 			<c:forEach var="vo" items="${list}">
-				<div class="cs_board_item" onclick="view('vo.mid')">
+				<div class="cs_board_item" onclick="view(${vo.serial})">
 					<span class="no">${no}</span>
 					<span class="subject">${vo.subject}</span>
-					<span class="name">${vo.mid}</span>
-					<span class="mdate">${vo.mdate}</span>
+					<span class="name">${vo.memberName}</span>
+					<span class="mdate">${vo.created}</span>
 					<span class="hit">${vo.hit}</span>
 				</div>
 			</c:forEach>
