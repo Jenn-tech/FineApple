@@ -13,7 +13,7 @@
 	<form action="notice.do" name="frm_cs_notice" id="frm_cs_notice">
 		<div class="frm_cs_notice_body">
 			<div class="frm_cs_notice_view_body_item">
-				<a href="cs_func_page.jsp?func=./cs_center/cs_notice.jsp" style="color: rgb(91, 135, 164); font-size: 0.8em; margin-bottom: 15px; display: block;"> 공지사항으로 돌아가기 > </a>
+				<a href="cs_func_page.jsp?func=./cs_center/cs_board.jsp" style="color: rgb(91, 135, 164); font-size: 0.8em; margin-bottom: 15px; display: block;"> 게시판으로 돌아가기 > </a>
 				</br>
 				<h1>제목: ${viewVo.subject}</h1>
 				</br>

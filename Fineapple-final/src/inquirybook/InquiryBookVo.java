@@ -1,18 +1,24 @@
-package questionbook;
+package inquirybook;
+
+import java.util.List;
+
 
 public class InquiryBookVo {
-	String serial; //0 -
-	String mserial; //0 -
-	String mid; //0 - 
-	String pwd; //0 -
-	String subject; //0 - 
-	String doc; //0 - 
-	String mdate; //0 - 
-	String inquiryType; //0 - 
-	String hit; //0 - 
+	String serial; 
+	String mserial; 
+	String mid;  
+	String pwd; 
+	String subject;  
+	String doc;  
+	String mdate;  
+	String inquiryType;  
+	String hit;  
 	String pserial;
-	String orderNum; //0
-	String secretCheck; //
+	String secretCheck; 
+
+	int attCnt;
+	List<InquiryBookAttVo> attList;
+	List<InquiryBookAttVo> delFiles;
 	
 	public String getSerial() {
 		return serial;
@@ -73,12 +79,6 @@ public class InquiryBookVo {
 	}
 	public void setPserial(String pserial) {
 		this.pserial = pserial;
-	}
-	public String getOrderNum() {
-		return orderNum;
-	}
-	public void setOrderNum(String ordernum) {
-		this.orderNum = ordernum;
 	}
 	public String getSecretCheck() {
 		return secretCheck;

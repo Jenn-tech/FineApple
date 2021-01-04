@@ -516,6 +516,10 @@
 	margin-bottom: 10px;
 }
 
+.cs_notice_view_container {
+	width: 90%;
+	margin: 0 auto;
+}
 .cs_notice_view_repl_form > textarea:focus {
 	outline: none;
 } 
@@ -628,7 +632,7 @@
 }
 
 .attach_files {
-	width: 147px;
+	width: 130px;
 	height:110px; 
 	display: inline-block; 
 	position: relative;
@@ -650,9 +654,14 @@
 .attach_delBtn:hover {
 	cursor: pointer;
 }
-
+#cs_attach_box {
+	width: 570px;
+	background-color: gray;
+	margin-bottom: 20px;
+	height: 110px;
+}
 .attach_img {
-	width: 147px;
+	width: 130px;
 	height: 110px;
 }
 

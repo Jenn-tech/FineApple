@@ -1,4 +1,4 @@
-package questionbook;
+package inquirybook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

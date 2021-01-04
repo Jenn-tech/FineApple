@@ -15,7 +15,6 @@
 
 <div class="btns">
 <input type="button" value="홈으로" name="frm_question">
-<input type="button" value="홈으로" name="frm_question">
 </div>
 
 </form>

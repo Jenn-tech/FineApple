@@ -17,7 +17,7 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="board/board.xml"/>
+		<mapper resource="inquirybook/inquiry.xml"/>
 	</mappers>
 
 </configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="inquiry">
+
+	<insert id="insert" parameterType="inquirybook.InquiryBookVo">
+		INSERT ALL
+		INTO inquirybook (serial, mid, pwd, subject, mdate, hit, pSerial)
+		VALUES(seq_inquirybook.nextval, #{mid}, #{pwd}, #{subject}, #{doc}, sysdate, 0, #{pSerial})
+		<if test="attList != null">
+			<foreach collection="attList" item="att">
+				INTO inquiryAtt(serial, pserial, sysfile, orifile)
+				VALUES(seq_inquiryAtt.nextval, seq_board.currval, #{att.sysfile}, #{att.orifile})
+			</foreach>
+		</if>
+		SELECT * FROM dual
+	</insert>
+	
+	<select id="list" resultType="inquirybook.InquiryBookVo">
+		SELECT * FROM inquirybook
+	</select>
+</mapper>   

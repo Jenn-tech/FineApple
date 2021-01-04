@@ -1,4 +1,4 @@
-package questionbook;
+package inquirybook;
 
 public class FaqBookVo {
 	String subject;

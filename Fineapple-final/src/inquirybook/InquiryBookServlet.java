@@ -1,4 +1,4 @@
-package questionbook;
+package inquirybook;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import bean.CsPage;
 
 
-//ìš”ì²­ê°’ì„ ë°›ëŠ” urlì •ì˜?
+//?š”ì²?ê°’ì„ ë°›ëŠ” url? •?˜?
 @WebServlet(urlPatterns = "/inquiry.do")
 public class InquiryBookServlet extends HttpServlet {
 	InquiryBookDao dao = new InquiryBookDao();
@@ -32,15 +32,15 @@ public class InquiryBookServlet extends HttpServlet {
 		System.out.println(job);
 		RequestDispatcher rd = null;
 		
-		//Page ì´ˆê¸° ê°’ ì„¤ì •
+		//Page ì´ˆê¸° ê°? ?„¤? •
 		int nowPage = 1;
 		String findStr = "";
 		
-		//ë³€ìˆ˜ ì„ ì–¸
+		//ë³??ˆ˜ ?„ ?–¸
 		InquiryBookVo vo = new InquiryBookVo();
 		CsPage page;
 		
-		//btn ë³„ ê¸°ëŠ¥ ì„ ì–¸
+		//btn ë³? ê¸°ëŠ¥ ?„ ?–¸
 		switch(job) {
 		case "insert":
 			FileUpload photoLoad = new FileUpload(req);
@@ -51,7 +51,7 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("vo", vo);
 			rd = req.getRequestDispatcher("./cs/cs_func_page.jsp?func=../cs_center/cs_result.jsp");
 			rd.forward(req, resp);
-			System.out.println("insert ë¬¸ì œ ì—†ìŒ");
+			System.out.println("insert ë¬¸ì œ ?—†?Œ");
 			break;
 			
 		case "select": 
@@ -72,7 +72,7 @@ public class InquiryBookServlet extends HttpServlet {
 			System.out.println("111");
 			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
 			rd.forward(req, resp);
-			System.out.println("select ë¬¸ì œ ì—†ìŒ");
+			System.out.println("select ë¬¸ì œ ?—†?Œ");
 			break;
 		
 		case "selectfaq" :

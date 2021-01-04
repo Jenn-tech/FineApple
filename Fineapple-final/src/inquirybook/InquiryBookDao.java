@@ -1,4 +1,4 @@
-package questionbook;
+package inquirybook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +11,9 @@ import java.util.List;
 import bean.CsPage;
 
 public class InquiryBookDao {
-	Connection conn; // databaseì˜ ì—°ê²° ì •ë³´
-	PreparedStatement ps; //ë¬¸ìì—´ë¡œ ë˜ì–´ ìˆëŠ” ë‹´ëŠ” ì¸í„°í˜ì´ìŠ¤
-	ResultSet rs; //selectë¬¸ì˜ ì‹¤í–‰ ê²°ê³¼
+	Connection conn; // database?˜ ?—°ê²? ? •ë³?
+	PreparedStatement ps; //ë¬¸ì?—´ë¡? ?˜?–´ ?ˆ?Š” ?‹´?Š” ?¸?„°?˜?´?Š¤
+	ResultSet rs; //selectë¬¸ì˜ ?‹¤?–‰ ê²°ê³¼
 	
 	public InquiryBookDao() {
 		conn = new Application().getConn();
@@ -38,7 +38,7 @@ public class InquiryBookDao {
 	
 	
 	public String insert(InquiryBookVo vo) {
-		String msg = "ì„±ê³µì ìœ¼ë¡œ ì ‘ìˆ˜ë˜ì—ˆìŠµë‹ˆë‹¤.";
+		String msg = "?„±ê³µì ?œ¼ë¡? ? ‘?ˆ˜?˜?—ˆ?Šµ?‹ˆ?‹¤.";
 		try {
 			String sql = "INSERT INTO inquirybook"
 					+ "(serial, mid, pwd, subject, doc, mdate)"
@@ -69,7 +69,7 @@ public class InquiryBookDao {
 		List<InquiryBookVo> list = new ArrayList<>();
 		try {
 			
-			//ë„˜ê²¨ë°›ì€ ê²€ìƒ‰ì–´ë¥¼ ì‚¬ìš©í•˜ì—¬ totListSizeê°’ì„ êµ¬í•´ì•¼í•œë‹¤.
+			//?„˜ê²¨ë°›?? ê²??ƒ‰?–´ë¥? ?‚¬?š©?•˜?—¬ totListSizeê°’ì„ êµ¬í•´?•¼?•œ?‹¤.
 			String findStr = page.getFindStr();
 			page.setTotListSize(getTotListSize(findStr));
 			page.pageCompute();
