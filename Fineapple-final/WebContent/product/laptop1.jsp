@@ -33,7 +33,7 @@
 	<%} %>
     <!-- main -->
     <div class="main" id="main">
-        <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603332211000" alt="MacBook Air" width="600px" style="
+        <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1603332211000" alt="MacBook Air" width="600px" style="
     margin-top: 170px; border-radius: 23px">
         <div class="summary">
             <form name="form" method="get">
