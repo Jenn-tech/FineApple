@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
 	<!-- header영역 -->
 	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
 	%>
@@ -32,6 +33,9 @@
 	<jsp:include page="./header2.jsp"/>
 	
 	<%} %>
+	
+<!-- 팝업 -->
+<jsp:include page="../popup/popup.jsp"/>
 	
 <!-- 메인 이미지 -->	
     <div class = "container">
