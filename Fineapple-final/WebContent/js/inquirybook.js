@@ -200,3 +200,43 @@ var imagePreView = function(zone, ev) {
 		}
 	}
 } 		
+
+
+
+
+/*--------------- 페이지 이동, view 함수 설정 ---------------*/
+
+
+var goPage = function(page) {
+	var job = "inquiry.do?job=";
+	var frm = document.cs_frm_board;
+	frm.nowPage.value = page;
+	frm.action = job + "select";
+	frm.submit();	
+}
+
+var view = function(serial) {
+	var job = "inquiry.do?job=";
+	var frm = document.cs_frm_board;
+	
+	frm.serial.value = serial;
+	frm.action = job + "view";
+	frm.submit();	
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

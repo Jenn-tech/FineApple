@@ -51,15 +51,15 @@
 	
 	<div class="cs_board_paging">
 		<%-- <c:if test="${page.startPage>1}"> --%>
-			<input type="button" value="first" id="paging_btns">
+			<input type="button" value="first" id="paging_btns" onclick="goPage(1)">
 			<input type="button" value="<">
 		<%-- </c:if> --%>
-			<c:forEach var="i" begin="1" end="5">
-				<input type="button" value="${i}">
+			<c:forEach var="i" begin="${page.startPage }" end="${page.endPage }">
+				<input type="button" value="${i}" onclick="goPage(${i})">
 			</c:forEach>
 		<%-- <c:if test="${page.endPage<page.totPage }"> --%>
-			<input type="button" value=">">
-			<input type="button" value="end" id="paging_btns">
+			<input type="button" value=">" onclick="goPage(${page.endPage+1})">
+			<input type="button" value="end" id="paging_btns" onclick="goPage(${page.totPage})">
 		<%-- </c:if> --%>		
 	</div>
 </div>

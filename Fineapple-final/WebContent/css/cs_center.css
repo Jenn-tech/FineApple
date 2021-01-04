@@ -347,10 +347,16 @@
 .cs_board_article span {
 	display: inline-block;
 	padding-left: 25px;
-	font-size: 0.9em;
-}
-.cs_board_article > span {
 	font-size: 1em;
+	line-height: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.cs_board_item > span {
+	display: inline-block;
+	padding-left: 25px;
+	font-size: 0.9em;
 	line-height: 40px;
 	font-weight: bold;
 	text-align: center;
@@ -361,6 +367,12 @@
 .cs_board_article > .name {width: 200px;}
 .cs_board_article > .mdate {width: 360px;}
 .cs_board_article > .hit {width: 110px; padding-right: 25px; margin-right: 20px;}
+
+.cs_board_item > .no {width: 80px; margin-left: 20px;}
+.cs_board_item > .subject {width: 520px;}
+.cs_board_item > .name {width: 200px;}
+.cs_board_item > .mdate {width: 360px;}
+.cs_board_item > .hit {width: 110px; padding-right: 25px; margin-right: 20px;}
 
 .cs_board_article {
 	border-top: 1px solid #000000;
