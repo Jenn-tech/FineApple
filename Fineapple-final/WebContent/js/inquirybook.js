@@ -100,8 +100,7 @@ var inquiry = function() {
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
 			frm.enctype = 'multipart/form-data';
-			frm.job.value = "insert";
-			frm.action = '../inquiry.do?job=insert'
+			frm.action = '../inquiry.do?job=insertR';
 			frm.submit();
 		}
 	}

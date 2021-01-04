@@ -8,11 +8,12 @@
 
 	<insert id="insert" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
-		INTO inquirybook (serial, mid, pwd, subject, mdate, hit, pSerial)
-		VALUES(seq_inquirybook.nextval, #{mid}, #{pwd}, #{subject}, #{doc}, sysdate, 0, #{pSerial})
+		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD,
+		 SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
+		VALUES(seq_inquirybook.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, '환불', 0, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
-				INTO inquiryAtt(serial, pserial, sysfile, orifile)
+				INTO inquiry_photo(serial, pserial, sysfile, orifile)
 				VALUES(seq_inquiryAtt.nextval, seq_board.currval, #{att.sysfile}, #{att.orifile})
 			</foreach>
 		</if>
@@ -20,6 +21,6 @@
 	</insert>
 	
 	<select id="list" resultType="inquirybook.InquiryBookVo">
-		SELECT * FROM inquirybook
+		SELECT * FROM inquiry
 	</select>
 </mapper>   

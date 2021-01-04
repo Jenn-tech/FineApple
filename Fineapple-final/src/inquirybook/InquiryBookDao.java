@@ -1,5 +1,6 @@
 package inquirybook;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,107 +8,52 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 
 import bean.CsPage;
 
 public class InquiryBookDao {
-	Connection conn; // database?ùò ?ó∞Í≤? ?†ïÎ≥?
-	PreparedStatement ps; //Î¨∏Ïûê?ó¥Î°? ?êò?ñ¥ ?ûà?äî ?ã¥?äî ?ù∏?Ñ∞?éò?ù¥?ä§
-	ResultSet rs; //selectÎ¨∏Ïùò ?ã§?ñâ Í≤∞Í≥º
+	
+	SqlSession sqlSesstion;
 	
 	public InquiryBookDao() {
-		conn = new Application().getConn();
-	}
-	
-	public int getTotListSize(String findStr) throws Exception {
-		int totListSize = 0;
-		String sql = "SELECT count(serial)cnt FROM inquirybook"
-				+ " WHERE mid LIKE ? or doc LIKE ? or subject LIKE ?";
-		
-		ps = conn.prepareStatement(sql);
-		ps.setString(1, "%" + findStr +"%");
-		ps.setString(2, "%" + findStr +"%");
-		ps.setString(3, "%" + findStr +"%");
-		
-		rs = ps.executeQuery();
-		if(rs.next()) {
-			totListSize = rs.getInt("cnt");
+		try {
+			sqlSesstion = InquiryBookFactory.getFactory().openSession();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		return totListSize;
 	}
-	
 	
 	public String insert(InquiryBookVo vo) {
-		String msg = "?Ñ±Í≥µÏ†Å?úºÎ°? ?†ë?àò?êò?óà?äµ?ãà?ã§.";
+		String msg = "¿˙¿Â øœ∑·";
+		
 		try {
-			String sql = "INSERT INTO inquirybook"
-					+ "(serial, mid, pwd, subject, doc, mdate)"
-					+ " VALUES(seq_inquirybook.nextval, ?, ?, ?, ?, sysdate)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, vo.getMid());
-			ps.setString(2, vo.getPwd());
-			ps.setString(3, vo.getSubject());
-			ps.setString(4, vo.getDoc());
-			
-			int rowCnt = ps.executeUpdate();
-			if(rowCnt < 1) {
-				msg = "Î¨∏Ï†ú Î∞úÏÉù.";
+			int cnt = sqlSesstion.insert("inquiry.insert", vo);
+			if (cnt<1) {
+				throw new Exception("ø¿∑˘ πﬂª˝");
 			}
+			sqlSesstion.commit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			sqlSesstion.rollback();
+			msg = e.getMessage();
 		}
 		finally {
-			try {
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
+			sqlSesstion.close();
+			return msg;
 		}
-		return msg;
-	}	
-	
-	public List<InquiryBookVo> select(CsPage page) {
-		List<InquiryBookVo> list = new ArrayList<>();
-		try {
-			
-			//?ÑòÍ≤®Î∞õ?? Í≤??Éâ?ñ¥Î•? ?Ç¨?ö©?ïò?ó¨ totListSizeÍ∞íÏùÑ Íµ¨Ìï¥?ïº?ïú?ã§.
-			String findStr = page.getFindStr();
-			page.setTotListSize(getTotListSize(findStr));
-			page.pageCompute();
-			
-			String sql = "SELECT * FROM inquirybook "
-					+ "WHERE mid LIKE ? or doc LIKE ? or subject LIKE ?";
-			
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, "%" + findStr +"%");
-			ps.setString(2, "%" + findStr +"%");
-			ps.setString(3, "%" + findStr +"%");
-			
-			rs = ps.executeQuery();
-			while(rs.next()) {
-				InquiryBookVo vo = new InquiryBookVo();
-				vo.setSerial(rs.getString("serial"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setSubject(rs.getString("subject"));
-				vo.setDoc(rs.getString("doc"));
-				vo.setMdate(rs.getString("mdate"));
-				vo.setHit(rs.getString("hit"));
-				vo.setPserial(rs.getString("pserial"));
-				vo.setMserial(rs.getString("mserial"));
-				vo.setSecretCheck(rs.getString("secretcheck"));
-				list.add(vo);
-			}
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			try {
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
-		return list;
 	}
+	
+	public void delFile(List<InquiryBookAttVo> delList) {
+		System.out.println("delFile");
+		for(InquiryBookAttVo v : delList) {
+			System.out.println(v.getSysFile());
+			File f = new File(FileUpload.saveDir + v.getSysFile());
+			if(f.exists()) {
+				f.delete();
+			}
+		}
+	}
+	
+	
 }

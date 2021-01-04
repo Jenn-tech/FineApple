@@ -4,39 +4,76 @@ import java.util.List;
 
 
 public class InquiryBookVo {
-	String serial; 
-	String mserial; 
-	String mid;  
-	String pwd; 
-	String subject;  
-	String doc;  
-	String mdate;  
-	String inquiryType;  
-	String hit;  
-	String pserial;
-	String secretCheck; 
-
+	int serial;
+	int mserial;
+	int hit;
+	int pserial;
+	String inquiryType;
+	String memberName;
+	String pwd;
+	String subject;
+	String doc;
+	String docVisible;
+	String created;
+	
 	int attCnt;
 	List<InquiryBookAttVo> attList;
 	List<InquiryBookAttVo> delFiles;
 	
-	public String getSerial() {
+	
+	public int getAttCnt() {
+		return attCnt;
+	}
+	public void setAttCnt(int attCnt) {
+		this.attCnt = attCnt;
+	}
+	public List<InquiryBookAttVo> getAttList() {
+		return attList;
+	}
+	public void setAttList(List<InquiryBookAttVo> attList) {
+		this.attList = attList;
+	}
+	public List<InquiryBookAttVo> getDelFiles() {
+		return delFiles;
+	}
+	public void setDelFiles(List<InquiryBookAttVo> delFiles) {
+		this.delFiles = delFiles;
+	}
+	public int getSerial() {
 		return serial;
 	}
-	public void setSerial(String string) {
-		this.serial = string;
+	public void setSerial(int serial) {
+		this.serial = serial;
 	}
-	public String getMserial() {
+	public int getMserial() {
 		return mserial;
 	}
-	public void setMserial(String mserial) {
+	public void setMserial(int mserial) {
 		this.mserial = mserial;
 	}
-	public String getMid() {
-		return mid;
+	public int getHit() {
+		return hit;
 	}
-	public void setMid(String mid) {
-		this.mid = mid;
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	public int getPserial() {
+		return pserial;
+	}
+	public void setPserial(int pserial) {
+		this.pserial = pserial;
+	}
+	public String getInquiryType() {
+		return inquiryType;
+	}
+	public void setInquiryType(String inquiryType) {
+		this.inquiryType = inquiryType;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 	public String getPwd() {
 		return pwd;
@@ -56,34 +93,17 @@ public class InquiryBookVo {
 	public void setDoc(String doc) {
 		this.doc = doc;
 	}
-	public String getMdate() {
-		return mdate;
+	public String getDocVisible() {
+		return docVisible;
 	}
-	public void setMdate(String mdate) {
-		this.mdate = mdate;
+	public void setDocVisible(String docVisible) {
+		this.docVisible = docVisible;
 	}
-	public String getInquiryType() {
-		return inquiryType;
+	public String getCreated() {
+		return created;
 	}
-	public void setInquiryType(String inquiryType) {
-		this.inquiryType = inquiryType;
+	public void setCreated(String created) {
+		this.created = created;
 	}
-	public String getHit() {
-		return hit;
-	}
-	public void setHit(String hit) {
-		this.hit = hit;
-	}
-	public String getPserial() {
-		return pserial; 
-	}
-	public void setPserial(String pserial) {
-		this.pserial = pserial;
-	}
-	public String getSecretCheck() {
-		return secretCheck;
-	}
-	public void setSecretCheck(String secretCheck) {
-		this.secretCheck = secretCheck;
-	}
+	
 }

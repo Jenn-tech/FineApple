@@ -35,7 +35,6 @@
 	<%} %>
 	
 <!-- 팝업 -->
-<jsp:include page="../popup/popup.jsp"/>
 	
 <!-- 메인 이미지 -->	
     <div class = "container">
