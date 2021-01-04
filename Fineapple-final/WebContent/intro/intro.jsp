@@ -29,7 +29,7 @@
 <!-- main -->
     <div class="main">
         <div class="main-content">
-            <h2>"짭도 찐처럼."</h2>
+            <h2>"가격의 새로운 혁신."</h2>
             <h6>With FineApple.</h6>
         </div>
         <div class="main-cover"></div>
