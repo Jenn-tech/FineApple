@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,13 +13,14 @@
     crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src='../js/product.js'></script>
+	<script src='../js/review.js'></script>
     <link rel="stylesheet" href="../css/product.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/review3.css"> 
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
 </head>
 <body>
 	<!-- header영역 -->
@@ -190,43 +192,51 @@
             <span class="total-review-menu">전체 상품평</span>
             <button class="write-review-btn"><i class="fas fa-pen"></i> 상품평 작성</button>
             <div class="total-review">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut doloremque porro enim, possimus sit eaque harum rem maxime reiciendis molestiae saepe voluptatem unde, aperiam laboriosam similique! Dolorum facilis animi exercitationem!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus autem nisi natus ex obcaecati est expedita nam? Distinctio accusantium quis, minima tenetur non, dolore consectetur est voluptatem rem eum quo.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, molestiae! Porro exercitationem fugiat nobis cumque ut molestiae? Veritatis harum obcaecati temporibus recusandae quod tenetur ipsa consequuntur quisquam ducimus, sint quibusdam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt iure expedita nobis autem veritatis vitae, cupiditate aliquam, quisquam saepe neque, aspernatur dolorem beatae ipsum alias eaque nam magnam distinctio.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta dolores iste cupiditate modi officia saepe cumque necessitatibus, suscipit, doloremque quam illo rem numquam delectus. Aliquid officia amet voluptatum reiciendis!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni earum nisi accusantium deserunt architecto perferendis eos necessitatibus cum nesciunt et, veniam id natus dolorem explicabo omnis cupiditate nulla? Est!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque iure quibusdam eum voluptatibus eveniet earum quasi soluta praesentium at vitae natus itaque neque possimus aut modi, est quaerat! Dolor, est.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat saepe ipsam impedit numquam. Dolorum laboriosam, quos quae consectetur modi odio explicabo aspernatur ab aperiam voluptatibus, magni doloribus cumque saepe iure?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, itaque odio? Vitae eveniet cumque quod magnam, ea reiciendis repellendus, dolor eaque quae, suscipit repellat dolorem impedit! Quo ab illo atque?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia, numquam iusto blanditiis temporibus placeat quod aperiam voluptatum nulla dolorum fugit rem optio saepe fugiat aliquid cum doloribus facere repellendus!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet deserunt voluptatibus odit! Impedit error aliquid fugit nobis minima eligendi natus laboriosam aut in quis laborum quam incidunt id, maiores similique.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non aspernatur assumenda quis delectus doloribus. Reiciendis dolorum enim cum fugit iure laudantium numquam quidem esse, neque vitae est beatae vero atque.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maxime molestias consequuntur temporibus ut molestiae voluptatum explicabo? Velit error ratione tempore. Fuga qui maiores porro adipisci nostrum cum, voluptates nulla!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur necessitatibus asperiores dolore nobis, impedit saepe incidunt, esse aut libero temporibus beatae quia repellendus veniam quod molestiae aliquid minima qui.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a eligendi ipsa accusantium! Laudantium aliquam omnis ipsum repellendus perferendis nisi saepe? Error incidunt facere cum quam saepe cupiditate pariatur similique?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias unde fugiat in ipsam illo recusandae omnis ad cumque sed dicta asperiores mollitia sint nemo, reiciendis officia consequatur eos! Possimus, quae.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id dolores aspernatur sit, vel nihil quos, voluptatibus possimus, nam neque veritatis ex sunt sapiente eaque? Voluptates voluptatem hic dolorem numquam laborum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, est? Vel tempora sint libero non commodi atque expedita aliquam amet vitae sapiente esse accusamus quae recusandae perspiciatis, totam molestiae laboriosam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut doloremque porro enim, possimus sit eaque harum rem maxime reiciendis molestiae saepe voluptatem unde, aperiam laboriosam similique! Dolorum facilis animi exercitationem!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus autem nisi natus ex obcaecati est expedita nam? Distinctio accusantium quis, minima tenetur non, dolore consectetur est voluptatem rem eum quo.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, molestiae! Porro exercitationem fugiat nobis cumque ut molestiae? Veritatis harum obcaecati temporibus recusandae quod tenetur ipsa consequuntur quisquam ducimus, sint quibusdam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt iure expedita nobis autem veritatis vitae, cupiditate aliquam, quisquam saepe neque, aspernatur dolorem beatae ipsum alias eaque nam magnam distinctio.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta dolores iste cupiditate modi officia saepe cumque necessitatibus, suscipit, doloremque quam illo rem numquam delectus. Aliquid officia amet voluptatum reiciendis!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni earum nisi accusantium deserunt architecto perferendis eos necessitatibus cum nesciunt et, veniam id natus dolorem explicabo omnis cupiditate nulla? Est!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque iure quibusdam eum voluptatibus eveniet earum quasi soluta praesentium at vitae natus itaque neque possimus aut modi, est quaerat! Dolor, est.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat saepe ipsam impedit numquam. Dolorum laboriosam, quos quae consectetur modi odio explicabo aspernatur ab aperiam voluptatibus, magni doloribus cumque saepe iure?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, itaque odio? Vitae eveniet cumque quod magnam, ea reiciendis repellendus, dolor eaque quae, suscipit repellat dolorem impedit! Quo ab illo atque?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia, numquam iusto blanditiis temporibus placeat quod aperiam voluptatum nulla dolorum fugit rem optio saepe fugiat aliquid cum doloribus facere repellendus!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet deserunt voluptatibus odit! Impedit error aliquid fugit nobis minima eligendi natus laboriosam aut in quis laborum quam incidunt id, maiores similique.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non aspernatur assumenda quis delectus doloribus. Reiciendis dolorum enim cum fugit iure laudantium numquam quidem esse, neque vitae est beatae vero atque.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maxime molestias consequuntur temporibus ut molestiae voluptatum explicabo? Velit error ratione tempore. Fuga qui maiores porro adipisci nostrum cum, voluptates nulla!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur necessitatibus asperiores dolore nobis, impedit saepe incidunt, esse aut libero temporibus beatae quia repellendus veniam quod molestiae aliquid minima qui.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a eligendi ipsa accusantium! Laudantium aliquam omnis ipsum repellendus perferendis nisi saepe? Error incidunt facere cum quam saepe cupiditate pariatur similique?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias unde fugiat in ipsam illo recusandae omnis ad cumque sed dicta asperiores mollitia sint nemo, reiciendis officia consequatur eos! Possimus, quae.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id dolores aspernatur sit, vel nihil quos, voluptatibus possimus, nam neque veritatis ex sunt sapiente eaque? Voluptates voluptatem hic dolorem numquam laborum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, est? Vel tempora sint libero non commodi atque expedita aliquam amet vitae sapiente esse accusamus quae recusandae perspiciatis, totam molestiae laboriosam!
-                </p>
+             
+             
+             <%--review에서 가져옴 --%>
+             <div class="container">
+ 		<div class="row">
+ 		<form action="writeAction.jsp" method="post" name="frm_review">
+	 			<table class="review-table-detail" style="text-align: center;"> 
+	 				<tbody>
+	 					<tr>
+	 						<td class="table-left">제목</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">작성자</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">작성일자</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
+	 					</tr>
+	 					<tr>
+							<c:choose>
+								<c:when test="${empty vo.reviewImg }">
+									<img src='http://placehold.it/200X140' width='200px' height='140px' />
+								</c:when>
+								<c:otherwise>
+									<a href='./review3/upload/${vo.reviewImg }'>
+										<img src='./review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
+									</a>
+								</c:otherwise>				
+							</c:choose>		
+						<hr/>
+						</tr>
+	 					<tr>
+	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
+	 						<%-- <td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td> --%>
+	 					</tr>
+	 					
+	 				</tbody>
+	 			</table>
+ 			</form> 
+ 		</div>
+ 	</div>
+ 	
+ 			
             </div>
         </div>
 
@@ -303,7 +313,7 @@
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 <script>
-
+productview()
 </script>
 </body>
 </html>

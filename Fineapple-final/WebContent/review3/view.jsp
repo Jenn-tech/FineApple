@@ -59,8 +59,8 @@
 									<img src='http://placehold.it/200X140' width='200px' height='140px' />
 								</c:when>
 								<c:otherwise>
-									<a href='./upload/${vo.reviewImg }' download = '${vo.reviewImg }'>
-										<img src='./upload/${vo.reviewImg }' width='200px' height='140px'/>
+									<a href='./review3/upload/${vo.reviewImg }' download = '${vo.reviewImg }'>
+										<img src='./review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
 									</a>
 								</c:otherwise>				
 							</c:choose>		
