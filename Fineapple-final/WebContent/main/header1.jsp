@@ -36,7 +36,7 @@
 	            	<ul>
 	            		<a href="../notice/notice.jsp" >공지사항</a>
 	            		<a href="../event/event.jsp" >이벤트</a>
-	            		<a href="../review3/review.jsp" >리뷰 게시판</a>
+	            		<a href="<%=request.getContextPath() %>/review.do?job=select" >리뷰 게시판</a>
 	            	</ul>
 	            </li>
 	            <li>
