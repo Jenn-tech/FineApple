@@ -91,4 +91,33 @@ public NoticeVo view(int noticeNo){
 	}
 	return notice;
 }
+
+public String insert(NoticeVo vo) {
+	String msg = "작성되었습니다.";
+	try {
+		String sql = " insert into notice(notice_no, notice_subject, notice_doc,notice_hit, notice_date) "
+				   + " values(seq_guestbook.nextval, ?, ?, 0, sysdate )";
+		
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, vo.getNoticeSubject());
+		ps.setString(2, vo.getNoticeDoc());
+
+		int rowCnt = ps.executeUpdate(); //insert된 행수
+		if(rowCnt<1) {
+			msg = "오류발생"	;
+		}
+	} catch (Exception ex) {
+		ex.printStackTrace();
+		msg = ex.getMessage();
+	}finally {
+		
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return msg;
+	}
+}
+
 }

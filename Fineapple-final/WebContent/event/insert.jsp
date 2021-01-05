@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
@@ -24,7 +25,7 @@
 	
 <div class = 'event-container-insert'>
 	
-<form name= 'frm_member' method = 'POST' class = 'event-insert'>
+<form name= 'frm_event' method = 'POST' class = 'event-insert'>
 			<table >
 					<tr>
 						<th scope='row'>작성자</th>
@@ -33,6 +34,10 @@
 					<tr>
 						<th scope='row'>제목</th>
 						<td><input type = 'text' name= 'subject'  id = 'subject' required/></td>
+					</tr>
+					<tr>
+						<th scope='row'>작성일</th>
+						<td><output class='mdate'><%=new Date().toLocaleString() %></output></td>
 					</tr>
 					
 					<tr class = 'view'>
@@ -59,15 +64,17 @@
 			<br><br><br><br>
 			<div class = 'btns'>
 				<input type = 'button' value = '저장' id = 'btnSave' />
-				<input type = 'button' value = '목록' id = 'btnSelect' />
+				<input type = 'button' value = '목록' id = 'btnSelect' onClick="history.back()"/>
 				
 				<!-- 원래 hidden -->
 				<input type = 'hidden' name = 'findStr' value = '${param.findStr }' />
 				<input type = 'hidden' name = 'nowPage' value = '${param.nowPage }' />
+			
 			</div>
 		</form>
 </div>	
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
+<script>event()</script>
 </body>
 </html>

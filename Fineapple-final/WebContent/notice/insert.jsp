@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="notice.NoticeVo"%>
@@ -15,6 +16,7 @@
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/notice.css">
 <link rel="stylesheet" href="../css/footer.css">
+<script type="text/javascript" src="../js/notice.js"></script>
 
 </head>
 <body>
@@ -24,40 +26,54 @@
 
 	<jsp:include page="/main/header.jsp"/>
 	
-<div class = 'notice-container'>
-	<div class = 'notice_view'>
+<div class = 'notice-container-insert'>
+<form name= 'frm_notice' method = 'POST' class = 'notice-insert'>
 		<table >
 			<tr>
+				<th scope='row'>작성자</th>
+				<td><input type = 'text' name= 'mid' id = 'mid' size ='10' value = '관리자' disabled required/></td>
+			</tr>
+			<tr>
 				<th scope='row'>제목</th>
-				<td>정말 정말 긴 제목이었을 때 어떡할건데?</td>
+				<td><input type = 'text' name= 'noticeSubject'  id = 'subject' required/></td>
 			</tr>
 			<tr>
 				<th scope='row'>작성일</th>
-				<td>2020-01-10</td>
-			</tr>
-			<tr>
-				<th scope='row'>조회수</th>
-				<td>0</td>
-			</tr>
+				<td><output class='noticeDate'><%=new Date().toLocaleString() %></output></td>
+			</tr>					
 			<tr class = 'view'>
 				<td colspan ='2'>
 					<div class ='content'>
-						<img src = '../images/notice/notice_photo1.jpg'/>
+						<textarea name= 'noticeDoc' rows = '7' cols ='80'></textarea>
 					</div>				
 				</td>
 			</tr>
 		</table>
-	</div>
-</div>
-			
-	
-<!-- buttons -->
-	<div class = 'btns'>
-		<input type = 'button' value = '목록'  name = 'btnSelect' id = 'btnSelect'/>
-	</div>
-			
+		
+			<label>첨부파일</label>
+			<input type = 'file' name = 'photo' id='btnPhoto'/>
+			<br><br>
+			<label></label>
+			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
+			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
+			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
+			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
+			<br><br><br><br>
+			<div class = 'btns'>
+				<input type = 'button' value = '저장' id = 'btnSave' onclick="save()"/>
+				<input type = 'button' value = '목록' id = 'btnSelect' onClick="history.back()"/>
+				
+				<!-- 원래 hidden -->
+				<input type = 'hidden' name = 'findStr' value = '${param.findStr }' />
+				<input type = 'hidden' name = 'nowPage' value = '${param.nowPage }' />
+			</div>
+		</form>		
+	</div>	
 	
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
+<script>
+notice()
+</script>
 </body>
 </html>
