@@ -82,7 +82,7 @@ var inquiry = function() {
 	/*Q&A 작성글 삭제 키*/
 	if(cs_view_btnDelete != null) {
 		cs_view_btnDelete.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_update.jsp';
+			frm.action = 'cs_func_page.jsp?func=./cs_center/cs_update.jsp';
 			frm.submit();
 			
 		}
@@ -91,7 +91,7 @@ var inquiry = function() {
 	/*Q&A 글에서 수정으로 들어가는 키*/
 	if(cs_view_btnUpdate != null) {
 		cs_view_btnUpdate.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_update.jsp';
+			frm.action = 'inquiry.do?job=update';
 			frm.submit();
 		}
 	}
@@ -100,7 +100,7 @@ var inquiry = function() {
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
 			frm.enctype = 'multipart/form-data';
-			frm.action = '../inquiry.do?job=insertR';
+			frm.action = 'inquiry.do?job=insertR';
 			frm.submit();
 		}
 	}
@@ -116,7 +116,7 @@ var inquiry = function() {
 	/*Q&A 글쓰기 페이지로 가는 키*/
 	if(cs_btnInsert !== null) {
 		cs_btnInsert.onclick = function() {
-			frm.action = "cs_func_page.jsp?func=../cs_center/cs_insert.jsp";
+			frm.action = "cs_func_page.jsp?func=./cs_center/cs_insert.jsp";
 			frm.submit();
 		}
 	}

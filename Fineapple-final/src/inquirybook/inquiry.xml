@@ -8,13 +8,12 @@
 
 	<insert id="insert" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
-		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD,
-		 SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
-		VALUES(seq_inquirybook.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, '환불', 0, 0)
+		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
+		VALUES(seq_inquiry.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, '환불', 0, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
 				INTO inquiry_photo(serial, pserial, sysfile, orifile)
-				VALUES(seq_inquiryAtt.nextval, seq_board.currval, #{att.sysfile}, #{att.orifile})
+				VALUES(getInquiryAttSeq(), seq_inquiry.currval, #{att.sysFile}, #{att.oriFile})
 			</foreach>
 		</if>
 		SELECT * FROM dual
@@ -34,6 +33,6 @@
 	</select>
 	
 	<select id="select_att" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
-		
+		SELECT * FROM inquiry_photo WHERE pserial = #{_parameter}
 	</select>
 </mapper>   

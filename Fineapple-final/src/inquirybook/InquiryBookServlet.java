@@ -16,7 +16,7 @@ import bean.CsPage;
 
 @WebServlet(urlPatterns = "/inquiry.do")
 public class InquiryBookServlet extends HttpServlet {
-	String url = "./cs/cs_func_page.jsp?func=../cs_center/";
+	String url = "/cs/cs_func_page.jsp?func=../cs_center/";
 	InquiryBookDao dao;
 	CsPage page;
 
@@ -68,7 +68,7 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
 			System.out.println(msg);
-			rd = req.getRequestDispatcher(url + "cs_board.jsp");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
 			rd.forward(req, resp);
 			break;
 		case "select":
@@ -79,17 +79,31 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("/cs/cs_func_page.jsp?func_board.jsp");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
 			rd.forward(req, resp);
 
 			break;
 		case "view" :
 			serial = Integer.parseInt(req.getParameter("serial"));
+			vo = new InquiryBookVo(); 
 			vo = dao.view(serial);
-			
-			req.setAttribute("viewVo", vo);
+			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher(url + "cs_view.jsp");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_view.jsp");
+			System.out.println("21312213321");
+			rd.forward(req, resp);
+			break;
+			
+		case "update": 
+			serial = Integer.parseInt(req.getParameter("serial"));
+			vo = new InquiryBookVo(); 
+			vo = dao.update(serial);
+			
+			req.setAttribute("vo", vo);
+			req.setAttribute("page", page);
+			rd = req.getRequestDispatcher("cs_func_page.jsp?junc=./cs_center/cs_update.jsp");
+			rd.forward(req, resp);
+			System.out.println("업데이트 화면 전환 완료");
 			break;
 		}
 	}

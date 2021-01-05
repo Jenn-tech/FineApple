@@ -64,10 +64,9 @@
 				</div>
 				<label>기존 사진</label>
 				<div id="cs_attach_box">
-	<%-- 				<c:forEach items="vo.attList" var="att">
-						<img alt="" src="../inquriyUpload/${att.sysfile}" class="attach_img"/>
-					</c:forEach> --%>
-						<img alt="" src="http://placehold.it/130x110" class="attach_img"/>
+					<c:forEach items="${vo.attList }" var="att">
+						<img alt="" src="./inquiryUpload/${att.sysFile }" class="view_img">
+					</c:forEach>
 				</div>
 				
 				<label>변경 사진</label>	
@@ -96,7 +95,7 @@
 		<input type="number" value="10" name="hit" id="hit">
 		<input type="text" name="nowPage" value="${param.nowPage}">
 		<input type="text" name="findStr" value="${param.findStr}">
-		<input type="hidden" name="job" />
+		<input type='hidden' name='serial'  value='0'/>
 	</form>
 </div>
 

@@ -16,11 +16,11 @@ import bean.CsPage;
 
 public class InquiryBookDao {
 	
-	SqlSession sqlSesstion;
+	SqlSession sqlSession;
 	
 	public InquiryBookDao() {
 		try {
-			sqlSesstion = InquiryBookFactory.getFactory().openSession();
+			sqlSession = InquiryBookFactory.getFactory().openSession();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -31,17 +31,17 @@ public class InquiryBookDao {
 		String msg = "저장 완료";
 		
 		try {
-			int cnt = sqlSesstion.insert("inquiry.insert", vo);
+			int cnt = sqlSession.insert("inquiry.insert", vo);
 			if (cnt<1) {
 				throw new Exception("오류 발생");
 			}
-			sqlSesstion.commit();
+			sqlSession.commit();
 		} catch (Exception e) {
-			sqlSesstion.rollback();
+			sqlSession.rollback();
 			msg = e.getMessage();
 		}
 		finally {
-			sqlSesstion.close();
+			sqlSession.close();
 			return msg;
 		}
 	}
@@ -62,12 +62,12 @@ public class InquiryBookDao {
 		List<InquiryBookVo> list = new ArrayList<>();
 		
 		try {
-			int totListSize = sqlSesstion.selectOne("inquiry.tot_list_size", page);
+			int totListSize = sqlSession.selectOne("inquiry.tot_list_size", page);
 			
 			page.setTotListSize(totListSize);
 			page.pageCompute();
 					
-			list = sqlSesstion.selectList("inquiry.select", page);
+			list = sqlSession.selectList("inquiry.select", page);
 			System.out.println(list);
 			map.put("page", page);
 			map.put("list", list);
@@ -77,7 +77,7 @@ public class InquiryBookDao {
 			e.printStackTrace();
 		}
 		finally {
-			sqlSesstion.close();
+			sqlSession.close();
 			return map;
 		}
 	}
@@ -88,12 +88,27 @@ public class InquiryBookDao {
 		
 		try {
 			System.out.println(serial);
-			vo = sqlSesstion.selectOne("inquiry.view", serial);
+			vo = sqlSession.selectOne("inquiry.view", serial);
+			attList = sqlSession.selectList("inquiry.select_att", serial);
 			vo.setAttList(attList);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			sqlSesstion.close();
+			sqlSession.close();
+		}
+		return vo;
+	}
+	
+	public InquiryBookVo update(int serial) {
+		InquiryBookVo vo = null;
+		List<InquiryBookAttVo> attList = null;
+		try {
+			vo = sqlSession.selectOne("inquiry.view", serial);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
 		}
 		return vo;
 	}
