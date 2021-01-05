@@ -32,14 +32,14 @@
 			</section>
 
 			<section class="section-two">
-				<form class="frm-member" id="frm-member" action="result.jsp" method="POST">
+				<form class="frm-member" id="frm-member" name="userInfo" action="result.jsp" method="POST">
 					<div class="frm-label">
 						<label>아이디</label>
 						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-id">
-						<input type="text" name="frm-id" placeholder="아이디 입력(10자)">
-						<input type="button" name="frm-check" id="id-Check" value="중복확인">
+						<input type="text" name="frm-id" placeholder="아이디 입력(10자)" maxlength="10">
+						<input type="button" name="frm-check" id="id-Check" onclick="usernameCheck();" value="중복확인">
 					</div>
 
 					<div class="frm-label">
@@ -47,7 +47,7 @@
 						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-password">
-						<input type="password" name="frm-password" placeholder="비밀번호 자리 8~20자">
+						<input type="password" name="frm-password"  placeholder="비밀번호 자리 8~20자">
 					</div>
 						
 					<div class="frm-label">
@@ -63,15 +63,15 @@
 						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-name">
-						<input type="text" name="frm-name" placeholder="성명을 입력해주세요.">
+						<input type="text" name="frm-name"  placeholder="성명을 입력해주세요.">
 					</div>
 					
 					<div class="frm-label">
 						<label>이메일</label>
-						<span class="field-required"></span>
+						<span class="field-required" ></span>
 					</div>
 					<div class="frm-input-email">
-						<input type="text" name="frm-email" placeholder="example@gmail.com">
+						<input type="text" name="frm-email"  placeholder="example@gmail.com">
 					</div>
 					
 
@@ -83,7 +83,7 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input type="text" name="frm-phone" placeholder="3333-3333">
+						<input type="text" name="frm-phone" id="phoneNum"placeholder="3333-3333" maxlength="9">
 					</div>
 
 					<div class="frm-label">
@@ -92,7 +92,7 @@
 					<div class="frm-input-zipcode">
 						<input type="text" name="zipcode" placeholder="우편번호">
 						<input type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
-						<input type="text" name="address" placeholder="상세주소">
+						<input type="text" name="address"  placeholder="상세주소">
 					</div>
 					
 					<div class="frm-label">
@@ -135,6 +135,9 @@
 	
 	<script>
 	member();
+	phoneHypen();
+	
+	
 	</script>
 </body>
 </html>
