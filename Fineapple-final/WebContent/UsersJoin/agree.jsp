@@ -66,7 +66,7 @@
 
 				<div class="terms-box terms-box-font" >
 						<input id="check-agree-three" type="checkbox">
-						<label for="check-agree-three" >[필수] 개인정보 수집 및 이용 동의</label>
+						<label for="check-agree-three" required >[필수] 개인정보 수집 및 이용 동의</label>
 						<button class="btnLink" id="agree-service"><img src="../images/UsersJoin/arrow.png"></button>
 				</div>
 				
@@ -123,7 +123,7 @@
 				<form action="index.jsp">
 					<div class="button-next">
 						<button class="agree-btn">취소</button>
-						<button class="agree-btn">다음</button>
+						<button class="agree-btn" id="agree-btn">다음</button>
 					</div>
 				</form>
 			</div>
