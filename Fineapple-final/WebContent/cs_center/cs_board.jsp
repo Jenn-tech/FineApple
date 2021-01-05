@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<script type="text/javascript" src="../js/inquiry.js"></script>
 </head>
 <body>
 <div class="cs_board">
@@ -39,11 +38,11 @@
 	<div class="cs_board_items">
 		<c:set var="no" value="${page.startNo}"></c:set>
 			<c:forEach var="vo" items="${list}">
-				<div class="cs_board_item" onclick="view('vo.mid')">
+				<div class="cs_board_item" onclick="view(${vo.serial})">
 					<span class="no">${no}</span>
 					<span class="subject">${vo.subject}</span>
-					<span class="name">${vo.mid}</span>
-					<span class="mdate">${vo.mdate}</span>
+					<span class="name">${vo.memberName}</span>
+					<span class="mdate">${vo.created}</span>
 					<span class="hit">${vo.hit}</span>
 				</div>
 			</c:forEach>
@@ -52,15 +51,15 @@
 	
 	<div class="cs_board_paging">
 		<%-- <c:if test="${page.startPage>1}"> --%>
-			<input type="button" value="first" id="paging_btns">
+			<input type="button" value="first" id="paging_btns" onclick="goPage(1)">
 			<input type="button" value="<">
 		<%-- </c:if> --%>
-			<c:forEach var="i" begin="1" end="5">
-				<input type="button" value="${i}">
+			<c:forEach var="i" begin="${page.startPage }" end="${page.endPage }">
+				<input type="button" value="${i}" onclick="goPage(${i})">
 			</c:forEach>
 		<%-- <c:if test="${page.endPage<page.totPage }"> --%>
-			<input type="button" value=">">
-			<input type="button" value="end" id="paging_btns">
+			<input type="button" value=">" onclick="goPage(${page.endPage+1})">
+			<input type="button" value="end" id="paging_btns" onclick="goPage(${page.totPage})">
 		<%-- </c:if> --%>		
 	</div>
 </div>

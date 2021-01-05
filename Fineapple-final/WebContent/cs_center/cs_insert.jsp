@@ -46,12 +46,6 @@
 				        <option value="report">신고</option>
 				    </select>
 				</div>
-		
-				 <div>
-				    <label for="ordernum">주문 번호</label>
-				    <input type="number" id="cs_ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum" style="width: 66%; height: 30px" />
-				    <input type="button" id="cs_orderNumSearch" value="검색" style="height: 30px; width: 53px;">
-				</div>
 				
 				<div>
 		   			<label for="name">작성자</label>

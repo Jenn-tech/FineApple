@@ -20,16 +20,10 @@
 <jsp:useBean id="dao" class="event.EventDao"/>
 
 <!-- header -->
-<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="/main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="/main/header2.jsp"/>
-	
-	<%} %>
 
+	<jsp:include page="/main/header.jsp"/>
+	
+	
 
 
 <header class="cs_func_page_header">

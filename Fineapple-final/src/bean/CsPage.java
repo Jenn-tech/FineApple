@@ -8,7 +8,7 @@ public class CsPage {
 	int startNo;
 	int endNo;
 	int nowPage;
-	int listSize = 20;
+	int listSize = 10;
 	int blockSize = 5;
 	
 	String findStr;

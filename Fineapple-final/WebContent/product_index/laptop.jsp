@@ -30,7 +30,7 @@
                 <div id="detail">MacBook Air</br>1,290,000</div>
             </figure>
 			<figure class="product">
-                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16touch-space-select-201911_GEO_KR?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1573165435305" width="200px" height="200px" />
+                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406905000" width="200px" height="200px" />
                 <figcaption>
                   <h3>  더 알아보기</h3>
                   <h5>more detail</h5>
@@ -39,7 +39,7 @@
                 <div id="detail">MacBook Pro</br>2,919,000</div>
             </figure>
 			<figure class="product">
-                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16touch-silver-select-201911_GEO_KR?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1572654957673" width="200px" height="200px" />
+                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406899000" width="200px" height="200px" />
                 <figcaption>
                   <h3>  더 알아보기</h3>
                   <h5>more detail</h5>

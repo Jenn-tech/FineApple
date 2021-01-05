@@ -33,26 +33,25 @@
 	<%} %>
     <!-- main -->
     <div class="main" id="main">
-        <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406905000" alt="MacBook Pro" width="600px" style="
-    margin-top: 170px; border-radius: 23px">
+        <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-watch-active2-r830-sm-r830nzsakoo-Cloud-Silver-181228341?$PD_GALLERY_L_PNG$" alt="갤럭시 워치 액티브2" width="800px" style="margin-top: 150px; border-radius: 23px">
         <div class="summary">
             <form name="form" method="get">
-                <h1>MacBook Pro</h1><br/>
+                <h1>갤럭시 워치 액티브2</h1><br/>
                 <span>상품코드 : </span>
-                <span>MacBookPro</span><br/>
+                <span>SM-R830NZSAKOO</span><br/>
                 <span>판매가 : </span>
-                <span>2,340,000원</span><br/>
+                <span>299,200원</span><br/>
                 <div class="summary-color">
                     <span>색상 : </span>
                     <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">스페이스 그레이</label><br/>
+                    <label for="btncolor2" class="btncolor2">클라우드 실버</label><br/>
                     <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
                     <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>512 GB</span><br/>
+                    <span>케이스 크기 : </span>
+                    <span>40 mm</span><br/>
                 </div>
                 <div class="amount">
-                    수량  <input type=hidden name="sell_price" value="2340000">
+                    수량  <input type=hidden name="sell_price" value="299200">
                     <input type="button" value=" - " onclick="del();">
                     <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
                     <input type="button" value=" + " onclick="add();"><br/>
@@ -72,7 +71,7 @@
     <div class = "menubar2">
         <div class = "여백3"></div>
         <div class="item-title">
-            <a href="#main"><h2>MacBook Pro</h2></a>
+            <a href="#main"><h2>갤럭시 워치 액티브2 watch</h2></a>
             <div class="item-title2">
                 <ul>
                     <a href="#item-benefits"><li>특장점</li></a>
@@ -87,11 +86,11 @@
         <!-- 특장점 -->
         <div class="item-benefits" id="item-benefits">
             <div class="item-video">
-                <iframe width="1000" height="540" src="https://www.youtube.com/embed/PSn6uJgDmDI?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="540" src="https://www.youtube.com/embed/YIonHPCoWVk?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <br/><br/><br/><br/><br/>
-            <img class="ipone" width="1000px" src="https://thumbnail8.coupangcdn.com/thumbnails/remote/q89/image/retail/images/1329887260580812-66ee80de-adb0-4994-9fd0-a6f2f446bf1d.jpg">
+            <img class="ipone" width="1000px" src="https://thumbnail8.coupangcdn.com/thumbnails/remote/q89/image/retail/images/93512133505101-9e81996f-665c-4105-8b72-1b39edf6e4d6.jpg">
         
         <!-- 상품평 -->
         <div class="review" id="review">

@@ -16,20 +16,14 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
 	
-	<%} else {%>
+	<jsp:include page="../main/header.jsp"/>
 	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %> 
 
 <!-- main -->
     <div class="main">
         <div class="main-content">
-            <h2>"짭도 찐처럼."</h2>
+            <h2>"가격의 새로운 혁신."</h2>
             <h6>With FineApple.</h6>
         </div>
         <div class="main-cover"></div>

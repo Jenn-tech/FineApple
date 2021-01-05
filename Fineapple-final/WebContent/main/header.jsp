@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+       <script src='../js/login.js'></script>
 <script type="text/javascript" language="javascript">
     function openPop(){
         var pop_title = "popupOpener" ;
@@ -54,8 +55,14 @@
 	            		<a href="../mypage/orderlist.jsp" >주문내역</a>
 	            		<a href="../mypage/coupon.jsp" >쿠폰함</a>
 	            	</ul>
-	            </li>            
-	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>                
+	            </li>
+	            <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+					%>            
+	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>       
+	            <%} else {%>
+	             <li><input type='button' id='btnLogout' value='로그아웃' /></li>         
+	             <%} %>         
         	</div>
         </nav>  
 	</header>
+	<script>logInOut()</script>

@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Main</title>
-<link rel="stylesheet" type="text/css" href="../css/cs_center.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css">
-<link rel="stylesheet" type="text/css" href="../css/footer.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/cs_center.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/footer.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
    
@@ -16,7 +16,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous"></script>
         
-<script type="text/javascript" src="../js/inquirybook.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/js/inquirybook.js"></script>
 </head>
 
 <body>
@@ -31,24 +31,18 @@
 
 
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %> 
 
+	<jsp:include page="../main/header.jsp"/>
+	
 
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
 <div class="cs_func_page_container">
 		<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">고객 센터</h1>
 		<div class="cs_category">
-			<a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp">Q&A게시판</a>
-			<a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp">FAQ</a>
-			<a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp">오시는 길</a>
+			<a href="<%=request.getContextPath() %>/inquiry.do?job=select">Q&A게시판</a>
+			<a href="<%=request.getContextPath() %>/cs/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp">FAQ</a>
+			<a href="<%=request.getContextPath() %>/cs/cs_func_page.jsp?func=../cs_center/cs_map.jsp">오시는 길</a>
 		</div>
 		</header>
 	<section class="cs_func_page_content">
