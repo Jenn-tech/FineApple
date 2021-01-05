@@ -4,12 +4,13 @@
 function getID(id){ return document.getElementById(id)}
 
 
+// 다음 우편번호 검색 API를 사용한 주소 찾기
 var member = function() {
 	
 var btnFindZip = getID('btnFindZip');
 var idCheck = getID('id-Check');
 
-// 다음 우편번호 검색 API를 사용한 주소 찾기
+
 	if(btnFindZip != null) {
 		btnFindZip.onclick = function() {
 			var frm = document.getElementById("frm-member");
@@ -32,3 +33,32 @@ var idCheck = getID('id-Check');
 	}
 }
 
+/* 전화번호 하이픈 자동 추가하기 */
+var phoneHypen = function() {
+	var autoHypenPhone = function(str){
+	      str = str.replace(/[^0-9]/g, '');
+	      var tmp = '';
+	      if( str.length < 5){
+	          return str;
+	      }else if(str.length <= 8){
+	          tmp += str.substr(0, 4);
+	          tmp += '-';
+	          tmp += str.substr(4);
+	          return tmp;
+	      }
+	  
+	      return str;
+	}
+
+
+	var phoneNum = document.getElementById('phoneNum');
+
+	phoneNum.onkeyup = function(){
+	  console.log(this.value);
+	  this.value = autoHypenPhone( this.value ) ;  
+	}
+}
+
+
+
+	

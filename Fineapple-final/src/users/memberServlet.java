@@ -41,14 +41,15 @@ public class memberServlet extends HttpServlet {
 		String phone = request.getParameter("frm-phone");
 		String zipcode = request.getParameter("zipcode");
 		String address = request.getParameter("address");
-
+		String[] phoneFirst = request.getParameterValues("phone_first");
 
 		BoardDao dao = new BoardDao();
 
-
 		if(dao.sqlSession == null) {
 			System.out.println("연결 중 오류 ..");
+			
 		}else {
+			
 			System.out.println("연결 성공!");
 
 			MemberVo vo = new MemberVo();
@@ -57,11 +58,16 @@ public class memberServlet extends HttpServlet {
 			vo.setPwd(pwd);
 			vo.setName(name);
 			vo.setEmail(email);
-			vo.setPhone(phone);
+			
+			// 010, 017 유효검사
+			if(phoneFirst[0].equals("010")) {
+				vo.setPhone(phoneFirst[0] +"-"+ phone);
+			}else {
+				vo.setPhone(phoneFirst[1] +"-"+ phone);
+			}
+			
 			vo.setZipcode(zipcode);
 			vo.setAddress(address);
-
-
 
 			int cnt = dao.sqlSession.insert("board.insert", vo);
 			System.out.println("vo : " + vo);
@@ -76,8 +82,6 @@ public class memberServlet extends HttpServlet {
 			dao.sqlSession.close();
 			
 		}
-
-		out.printf("%s, %s, %s,%s, %s, %s,%s", mid, pwd, name, email, phone, zipcode, address);
 	
 		response.sendRedirect("../main/index.jsp");
 	}
