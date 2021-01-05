@@ -8,23 +8,6 @@ function getID(id) {
 }
 
 
-var question = function() {
-	
-	var cs_insert_btnSave= getID("cs_insert_btnSave");
-	var btnSelect = getID("btnSelect");
-	var btnCancel = getID("btnCancel");
-	if(btnCancel != null) {
-		btnCancel.onclick = function() {
-		}
-	}
-
-	$('#cs_notice_btn_insert').on('click', function() {
-		var frm = document.frm_cs_notice;
-		frm.action = 'cs_func_page.jsp?func=./cs_center/cs_notice_insert.jsp';
-		frm.submit();
-	})
-}
-
 /* --------------- func_page quick menu toggle --------------- */
 var toggleMenu = function() {
 $(document).ready(function() {
@@ -60,9 +43,20 @@ var inquiry = function() {
 	var cs_answer_btnInsert = getID('cs_answer_btnInsert');
 	var cs_update_btnSave = getID('cs_update_btnSave');
 	var cs_answer_btnInsert = getID('cs_answer_btnInsert');
+	var cs_answer_btnSave = getID('cs_answer_btnSave');
+	
 	var frm = document.cs_frm_board;
-	 
-
+	
+	
+	if(cs_answer_btnSave != null) {
+		cs_answer_btnSave.onclick = function() {
+			frm.enctype = 'multipart/form-data';
+			frm.action ='inquiry.do?job=insertA';
+			frm.submit();
+		}	
+	}
+	
+	
 	if(cs_answer_btnInsert !== null) {
 		cs_answer_btnInsert.noclick = function() {
 			var adminPwd = prompt("관리자 암호를 입력하세요.")

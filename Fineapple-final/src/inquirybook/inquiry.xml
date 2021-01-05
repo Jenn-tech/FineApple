@@ -28,6 +28,18 @@
 		SELECT * FROM dual
 	</insert>
 
+	<insert id="insertanswer" parameterType="inquirybook.InquiryBookVo">
+		INSERT ALL
+		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
+		VALUES(seq_inquiry.nextval, 0, #{memberName},'해준', #{subject}, #{doc}, 'no', sysdate, '환불', ${pserial}, 0)
+		<if test="attList != null">
+			<foreach collection="attList" item="att">
+				INTO inquiry_photo(serial, pserial, sysfile, orifile)
+				VALUES(getInquiryAttSeq(), seq_inquiry.currval, #{att.sysFile}, #{att.oriFile})
+			</foreach>
+		</if>
+		SELECT * FROM dual
+	</insert>
 	
 	<select id="select" resultType="inquirybook.InquiryBookVo" parameterType="bean.CsPage">
 		SELECT * FROM inquiry

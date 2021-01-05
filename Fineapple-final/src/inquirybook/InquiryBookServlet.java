@@ -140,6 +140,22 @@ public class InquiryBookServlet extends HttpServlet {
 			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);
 			break;
+		
+		case "insertA": 
+			fu = new FileUpload(req);
+			vo = new InquiryBookVo();
+			vo = fu.getInquiryBookVo('i');
+			
+			msg = dao.insertA(vo);
+			
+			
+			req.setAttribute("msg", msg);
+			req.setAttribute("page", page);
+			
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
+			rd.forward(req, resp);
+			
+			break;
 		}
 	}
 }

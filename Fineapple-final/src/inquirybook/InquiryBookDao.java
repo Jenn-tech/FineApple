@@ -46,6 +46,28 @@ public class InquiryBookDao {
 		}
 	} 
 	
+	public String insertA(InquiryBookVo vo) {
+		String msg = "정상적으로 등록되었습니다.";
+		
+		try {
+			System.out.println(vo.getMemberName());
+			int cnt = sqlSession.insert("inquiry.insertanswer", vo);
+			
+			if(cnt < 1) {
+				throw new Exception("오류 발생 = 답변");
+			}
+			
+			sqlSession.commit();
+		} catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return msg;
+	}
+	
 	public void delFile(List<InquiryBookAttVo> delList) {
 		System.out.println("delFile");
 		for(InquiryBookAttVo v : delList) {

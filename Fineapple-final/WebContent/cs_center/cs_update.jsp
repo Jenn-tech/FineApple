@@ -90,6 +90,11 @@
 		<input type="text" name="nowPage" value="${param.nowPage}">
 		<input type="text" name="findStr" value="${param.findStr}">
 		<input type='hidden' name='serial'  value="${param.serial}"/>
+		<input type="hidden" name="mserial" value="0"/>
+		<input type="hidden" name="inquiryType" value="0"/>
+		<input type="hidden" name="docvisible" value="0"/>
+		<input type="hidden" name="hit" value="0"/>
+		<input type="hidden" name="pserial" value="0"/>
 	</form>
 </div>
 

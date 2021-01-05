@@ -81,9 +81,14 @@
 			       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
 			       <input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 		</div>
-		<input type="number" value="10" name="hit" id="hit">
 		<input type="text" name="nowPage" value="${param.nowPage}"/>
 		<input type="text" name="findStr" value="${param.findStr}"/>
+		<input type="hidden" name="mserial" value="0"/>
+		<input type="hidden" name="inquiryType" value="0"/>
+		<input type="hidden" name="docvisible" value="0"/>
+		<input type="hidden" name="hit" value="0"/>
+		<input type="hidden" name="pserial" value="0"/>
+		<input type="hidden" name="serial" value="0"/>
 	</form>
 </div>
 
