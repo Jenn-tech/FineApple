@@ -44,7 +44,7 @@ public class InquiryBookDao {
 			sqlSession.close();
 			return msg;
 		}
-	}
+	} 
 	
 	public void delFile(List<InquiryBookAttVo> delList) {
 		System.out.println("delFile");
@@ -90,6 +90,7 @@ public class InquiryBookDao {
 			System.out.println(serial);
 			vo = sqlSession.selectOne("inquiry.view", serial);
 			attList = sqlSession.selectList("inquiry.select_att", serial);
+			System.out.println(attList);
 			vo.setAttList(attList);
 			
 		} catch (Exception e) {
@@ -112,6 +113,36 @@ public class InquiryBookDao {
 		}
 		return vo;
 	}
+	
+	public String delete(InquiryBookVo vo) {
+		String msg ="정상적으로 삭제를 완료했습니다.";
+		List<InquiryBookAttVo> attList = null;
+		try {
+			attList = sqlSession.selectList("inquiry.select_att", vo.getSerial());
+			int cnt = sqlSession.delete("inquiry.delete", vo);
+			if(cnt > 0) {
+				cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
+				if(cnt < 1) {
+					throw new Exception("오류 발생");
+				}
+				delFile(attList);
+			}
+			else {
+				throw new Exception("오류 발생 2");
+			}
+			
+			sqlSession.commit();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			sqlSession.rollback();
+		}	
+		finally {
+			sqlSession.close();
+		}
+		return msg;
+	}
+	
 }
 
 

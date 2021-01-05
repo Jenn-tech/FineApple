@@ -1,6 +1,7 @@
 package inquirybook;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -90,20 +91,43 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
 			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_view.jsp");
-			System.out.println("21312213321");
 			rd.forward(req, resp);
 			break;
 			
 		case "update": 
 			serial = Integer.parseInt(req.getParameter("serial"));
 			vo = new InquiryBookVo(); 
-			vo = dao.update(serial);
+			vo = dao.view(serial);
 			
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?junc=./cs_center/cs_update.jsp");
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_update.jsp");
 			rd.forward(req, resp);
-			System.out.println("업데이트 화면 전환 완료");
+			break;
+		case "updateR":
+			
+			break;
+		case "delete":
+			System.out.println("여기까지");
+			vo = new InquiryBookVo(); 
+			vo.setSerial(Integer.parseInt(req.getParameter("serial")));
+			vo.setPwd(req.getParameter("pwd"));
+			
+			if(req.getParameter("delFiles") != null) {
+				List<InquiryBookAttVo> delFiles = new ArrayList<>();
+				for(String s : req.getParameterValues("delFiles")) {
+					InquiryBookAttVo v = new InquiryBookAttVo();
+					v.setSysFile(s);
+					delFiles.add(v);
+				}
+				vo.setDelFiles(delFiles);
+			}
+			msg = dao.delete(vo);
+			
+			req.setAttribute("page", page);
+			req.setAttribute("msg", msg);
+			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd.forward(req, resp);
 			break;
 		}
 	}

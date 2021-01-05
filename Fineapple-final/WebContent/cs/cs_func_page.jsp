@@ -32,7 +32,7 @@
 
 	<!-- header영역 -->
 
-	<jsp:include page="./main/header.jsp"/>
+	<jsp:include page="../main/header.jsp"/>
 	
 
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
@@ -83,7 +83,7 @@
 
 
   <!-- footer영역 -->
-   	<%@include file="./main/footer.jsp" %>
+   	<%@include file="../main/footer.jsp" %>
 
 
 <!-- 스크립트 -->

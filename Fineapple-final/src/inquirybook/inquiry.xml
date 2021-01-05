@@ -35,4 +35,11 @@
 	<select id="select_att" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
 		SELECT * FROM inquiry_photo WHERE pserial = #{_parameter}
 	</select>
+	
+	<delete id="delete" parameterType="inquirybook.InquiryBookVo">
+		DELETE FROM inquiry WHERE serial = #{serial} and pwd = #{pwd}
+	</delete>
+	<delete id="delete_att_pserial" parameterType="int">
+		DELETE FROM inquiry_photo WHERE pserial = #{_parameter};
+	</delete>
 </mapper>   

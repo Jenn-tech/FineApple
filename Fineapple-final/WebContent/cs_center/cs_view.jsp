@@ -41,7 +41,8 @@
 			<input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 			<input type="text" value="${param.nowPage}" name="nowPage"/>
 			<input type="text" value="${param.findStr}" name="findStr"/>
-			<input type='hidden' name='serial'  value='0'/>
+			<input type='hidden' name='serial'  value='${vo.serial }'/>
+			<input type='hidden' name='pwd'  value='0'/>
 		</div>
 	</form>
 </div>

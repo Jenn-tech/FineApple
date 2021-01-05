@@ -82,9 +82,12 @@ var inquiry = function() {
 	/*Q&A 작성글 삭제 키*/
 	if(cs_view_btnDelete != null) {
 		cs_view_btnDelete.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=./cs_center/cs_update.jsp';
+			var pwd = prompt("삭제하시려면 암호를 입력해주세요.");
+			if(pwd != null) {
+			frm.pwd.value = pwd;				
+			frm.action = 'inquiry.do?job=delete';
 			frm.submit();
-			
+			}
 		}
 	}
 
