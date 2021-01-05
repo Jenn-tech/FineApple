@@ -13,7 +13,7 @@ var idCheck = getID('id-Check');
 
 	if(btnFindZip != null) {
 		btnFindZip.onclick = function() {
-			var frm = document.getElementById("frm-member");
+			var frm = document.getElementById("frm_member");
 			new daum.Postcode({
 				oncomplete:function(data) {
 					frm.zipcode.value = data.zonecode;
@@ -54,11 +54,16 @@ var phoneHypen = function() {
 	var phoneNum = document.getElementById('phoneNum');
 
 	phoneNum.onkeyup = function(){
-	  console.log(this.value);
 	  this.value = autoHypenPhone( this.value ) ;  
 	}
 }
 
+/* */
+function send_go(){
+			alert("이름을 입력하세요");
+	        return false;
+
+	 }
 
 
-	
+ 

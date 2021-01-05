@@ -5,6 +5,49 @@
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
+/* 버튼 */
+.trk-header-align-btn {
+	margin-top: 30px;
+	height: 100px;
+	margin: 30px auto;
+	text-align:center;
+}
+
+.trk-header-align-btn input{
+	
+	width: 500px;
+	height: 80px;
+	margin: 10px auto;
+	font-size: 25px;
+	background-color:black;
+	color:white;
+	cursor: pointer;
+	border-radius: 3px;
+	
+}
+
+.trk-header-align-btn input:hover {
+	background-color: white;
+	color: black;
+	border: 1px solid;
+	box-shadow: 0px 0px 2px 0px #202224;
+}
+
+
+/* 님 */
+.welcome-head-user {
+	text-align: center;
+	margin: 50px auto 50px auto;
+	font-size: 40px;
+}
+	
+.welcome-head-fine {
+	text-align: center;
+	margin: 50px auto 50px auto;
+	font-size: 20px;
+	color: grey;
+	border: 1px solid bo
+}
 
 /* 회원가입 영역 잡기 */
 .div-container {
@@ -13,16 +56,19 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 1500px;
 }
 
 .welcome-img {
+	margin-top: 50px;
 	text-align: center;
 }
 
+.welcome-img > img {
+	height: 150px;
+}
 .welcome-head {
 	text-align: center;
-	margin: 30px auto 0 auto;
+	margin: 50px auto 50px auto;
 	font-size: 30px;
 }
 
@@ -30,6 +76,8 @@
 	width: 600px;
 	margin: 15px auto 0 auto;
 }
+
+
 
 /* 세션 2 */
 .section-two {

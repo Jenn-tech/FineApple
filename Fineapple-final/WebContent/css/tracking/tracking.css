@@ -78,7 +78,6 @@
 }
 
 /* 마이페이지로 이동 버튼 */
-
 .trk-header-align-btn {
 	margin-top: 30px;
 	height: 100px;
@@ -86,7 +85,7 @@
 	text-align:center;
 }
 
-.trk-header-align-btn > button {
+.trk-header-align-btn > form > input{
 	width: 500px;
 	height: 80px;
 	margin: 10px auto;
@@ -98,9 +97,11 @@
 	
 }
 
-.trk-header-align-btn > button:hover {
+
+.trk-header-align-btn > form > input:hover {
 	background-color: white;
 	color: black;
 	border: 1px solid;
 	box-shadow: 0px 0px 2px 0px #202224;
 }
+
