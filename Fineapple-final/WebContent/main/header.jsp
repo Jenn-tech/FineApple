@@ -41,11 +41,11 @@
 	            	</ul>
 	            </li>
 	            <li>
-	            	<a href="<%=request.getContextPath() %>/cs/cs_func_page.jsp" class="button alt">고객지원</a>
+	            	<a href="<%=request.getContextPath() %>/inquiry.do?job=select" class="button alt">고객지원</a>
 	            	<ul>
-	            		<a href="cs_func_page.jsp?func=../cs_center/cs_board.jsp" >QnA게시판</a>
-	            		<a href="cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp" >FAQ</a></br>
-	            		<a href="cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는 길</a>
+	            		<a href="<%=request.getContextPath() %>/inquiry.do?job=select">QnA게시판</a>
+	            		<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp" >FAQ</a></br>
+	            		<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는 길</a>
 	            	</ul>
 	            </li>
 	            <li>

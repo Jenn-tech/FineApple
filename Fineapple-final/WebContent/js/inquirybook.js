@@ -40,34 +40,53 @@ var inquiry = function() {
 	var cs_view_btnUpdate = getID("cs_view_btnUpdate");
 	var cs_view_btnDelete = getID('cs_view_btnDelete')	
 	var cs_view_btnSelect = getID('cs_view_btnSelect');
-	var cs_answer_btnInsert = getID('cs_answer_btnInsert');
 	var cs_update_btnSave = getID('cs_update_btnSave');
 	var cs_answer_btnInsert = getID('cs_answer_btnInsert');
 	var cs_answer_btnSave = getID('cs_answer_btnSave');
-	
+	var cs_view_btnCancel = getID('cs_view_btnCancel');
+	var cs_answer_btnSelect = getID('cs_answer_btnSelect');
+	var cs_answer_btnCancel = getID('cs_answer_btnCancel');
+	var cs_update_btnReturn = getID('cs_update_btnReturn');
 	var frm = document.cs_frm_board;
 	
+	
+	if(cs_update_btnReturn !== null) {
+		cs_update_btnReturn.onclick = function() {
+			frm.action = 'inquiry.do?job=view';
+			frm.submit();
+		}
+	}
+	
+	if(cs_answer_btnCancel !== null) {
+		cs_answer_btnCancel.onclick = function() {
+			frm.action = '../inquiry.do?job=select';
+			frm.submit();
+		}
+	}
+	
+	if(cs_answer_btnSelect !== null) {
+		cs_answer_btnSelect.onclick = function() {
+			frm.action = '../inquiry.do?job=view';
+			frm.submit();
+		}
+	}
+	
+	/*상세보기에서 목록으로..*/
+	if(cs_view_btnCancel !== null) {
+		cs_view_btnCancel.onclick = function() {
+			frm.action = 'inquiry.do?job=select';
+			frm.submit();
+		}
+	}
 	
 	if(cs_answer_btnSave != null) {
 		cs_answer_btnSave.onclick = function() {
 			frm.enctype = 'multipart/form-data';
-			frm.action ='inquiry.do?job=insertA';
+			frm.action ='../inquiry.do?job=insertA';
 			frm.submit();
 		}	
 	}
 	
-	
-	if(cs_answer_btnInsert !== null) {
-		cs_answer_btnInsert.noclick = function() {
-			var adminPwd = prompt("관리자 암호를 입력하세요.")
-			frm.adminPwd.value = adminPwd 
-			
-			if(adminPwd !== null) {
-				frm.action = 'cs_func_page.jsp?func=./cs_center/cs_answer.jsp';
-				frm.submit();
-			}
-		}
-	}
 
 	if(cs_update_btnSave !== null) {
 		cs_update_btnSave.onclick = function() {
@@ -84,7 +103,7 @@ var inquiry = function() {
 			frm.adminPwd.value = adminPwd 
 			
 			if(adminPwd !== null) {
-				frm.action = 'cs_func_page.jsp?func=./cs_center/cs_answer.jsp';
+				frm.action = './cs_center/cs_func_page.jsp?func=cs_answer.jsp';
 				frm.submit();
 			}
 		}
@@ -93,12 +112,11 @@ var inquiry = function() {
 	/*Q&A 수정 화면에서 다시 글로 돌아가는 키*/
 	if(cs_view_btnSelect != null) {
 		cs_view_btnSelect.onclick = function() {
-			frm.action = 'inquiry.do?job=view';
+			frm.action = '../inquiry.do?job=view';
 			frm.submit();
-			
-			
 		}
 	}
+	
 	
 	/*Q&A 작성글 삭제 키*/
 	if(cs_view_btnDelete != null) {
@@ -124,7 +142,7 @@ var inquiry = function() {
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
 			frm.enctype = 'multipart/form-data';
-			frm.action = 'inquiry.do?job=insertR';
+			frm.action = '../inquiry.do?job=insertR';
 			frm.submit();
 		}
 	}
@@ -132,7 +150,7 @@ var inquiry = function() {
 	/*Q&A 글쓰기 중 다시 목록으로 돌아가는 키*/
 	if(cs_insert_btnCancel !== null) {
 		cs_insert_btnCancel.onclick = function() {
-			frm.action = 'inquiry.do?job=select';
+			frm.action = '../inquiry.do?job=select';
 			frm.submit();
 		}
 	}
@@ -140,7 +158,7 @@ var inquiry = function() {
 	/*Q&A 글쓰기 페이지로 가는 키*/
 	if(cs_btnInsert !== null) {
 		cs_btnInsert.onclick = function() {
-			frm.action = "cs_func_page.jsp?func=./cs_center/cs_insert.jsp";
+			frm.action = "./cs_center/cs_func_page.jsp?func=cs_insert.jsp";
 			frm.submit();
 		}
 	}

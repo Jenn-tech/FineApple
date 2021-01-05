@@ -65,7 +65,7 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
 			System.out.println(msg);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);
 			break;
 		
@@ -77,7 +77,7 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_board.jsp");
 			rd.forward(req, resp);
 
 			break;
@@ -88,7 +88,7 @@ public class InquiryBookServlet extends HttpServlet {
 			vo = dao.view(serial);
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_view.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_view.jsp");
 			rd.forward(req, resp);
 			break;
 			
@@ -100,7 +100,7 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_update.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_update.jsp");
 			rd.forward(req, resp);
 			break;
 			

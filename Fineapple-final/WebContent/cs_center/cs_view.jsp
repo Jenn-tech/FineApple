@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 작성</title>
-<script type="text/javascript" src="../js/inquirybook.js"></script>
 </head>
 <body>
 <div class="cs_notice_view_container">	
@@ -38,7 +37,7 @@
 			<input type="button" value="수정" id="cs_view_btnUpdate" class="cs_insert_btnSave">
 			<input type="button" value="삭제" id="cs_view_btnDelete" class="cs_insert_btnSave">
 			<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
-			<input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
+			<input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 			<input type="text" value="${param.nowPage}" name="nowPage"/>
 			<input type="text" value="${param.findStr}" name="findStr"/>
 			<input type='hidden' name='serial'  value='${vo.serial }'/>

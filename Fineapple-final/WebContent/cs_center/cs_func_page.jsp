@@ -32,7 +32,7 @@
 
 	<!-- header영역 -->
 
-	<jsp:include page="./main/header.jsp"/>
+	<jsp:include page="../main/header.jsp"/>
 	
 
 <!-- 메인 페이지 플렉스 레이아웃 설정 -->
@@ -41,8 +41,8 @@
 		<h1 style="font-size: 2em;">고객 센터</h1>
 		<div class="cs_category">
 			<a href="<%=request.getContextPath() %>/inquiry.do?job=select">Q&A게시판</a>
-			<a href="<%=request.getContextPath() %>/cs/cs_func_page.jsp?func=../cs_center/cs_FAQ.jsp">FAQ</a>
-			<a href="<%=request.getContextPath() %>/cs/cs_func_page.jsp?func=../cs_center/cs_map.jsp">오시는 길</a>
+			<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=cs_FAQ.jsp">FAQ</a>
+			<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=cs_map.jsp">오시는 길</a>
 		</div>
 		</header>
 	<section class="cs_func_page_content">
@@ -83,7 +83,7 @@
 
 
   <!-- footer영역 -->
-   	<%@include file="./main/footer.jsp" %>
+   	<%@include file="../main/footer.jsp" %>
 
 
 <!-- 스크립트 -->
