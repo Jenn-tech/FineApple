@@ -78,7 +78,8 @@ public class memberServlet extends HttpServlet {
 		}
 
 		out.printf("%s, %s, %s,%s, %s, %s,%s", mid, pwd, name, email, phone, zipcode, address);
-		response.sendRedirect("../index.jsp");
+	
+		response.sendRedirect("../main/index.jsp");
 	}
 
 }

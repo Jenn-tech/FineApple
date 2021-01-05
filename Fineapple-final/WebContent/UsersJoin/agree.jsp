@@ -15,7 +15,7 @@
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script src="../js/userjoin/userjoin.js"></script>
 		<script src="../js/userjoin/agree.js"></script>
-	
+	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	</head>
 
 	<body class="body">
@@ -38,8 +38,8 @@
 			<div class="agree-align">
 				<div class="terms-box">
 					<div>
-						<input id="check-agree" type="checkbox">
-						<label for="check-agree" class="check-agree-label">모두 동의합니다.</label>
+						<input id="check_all" type="checkbox">
+						<label for="check_all" class="check-agree-label">모두 동의합니다.</label>
 					</div>
 				</div>
 
@@ -48,7 +48,7 @@
 				</div>
 
 				<div class="terms-box terms-box-font">
-						<input id="check-agree-two" type="checkbox">
+						<input id="check-agree-two" name="agree-nec" type="checkbox">
 						<label for="check-agree-two">[필수] FineApple계정 약관</label>
 						<button class="btnLink" id="agree-id"><img src="../images/UsersJoin/arrow.png"></button>
 				</div>
@@ -65,8 +65,8 @@
 				</div>	
 
 				<div class="terms-box terms-box-font" >
-						<input id="check-agree-three" type="checkbox">
-						<label for="check-agree-three" required >[필수] 개인정보 수집 및 이용 동의</label>
+						<input id="check-agree-three" name="agree-nec" type="checkbox">
+						<label for="check-agree-three" >[필수] 개인정보 수집 및 이용 동의</label>
 						<button class="btnLink" id="agree-service"><img src="../images/UsersJoin/arrow.png"></button>
 				</div>
 				
@@ -85,7 +85,7 @@
 						<input id="check-agree-four" type="checkbox">
 						<label for="check-agree-four">
 							[선택] 위치정보 수집 및 이용 동의</label>
-						<button class="btnLink" id="agree-locate"><img src="../images/UsersJoin/arrow.png"></button>
+						<button class="btnLink" id="agree-locate" required><img src="../images/UsersJoin/arrow.png"></button>
 				</div>
 				
 				
@@ -104,7 +104,7 @@
 				<div class="terms-box terms-box-font">
 					<div>
 						<input id="check-agree-five" type="checkbox">
-						<label for="check-agree-five">[선택]FineApple 광고메시지 수신</label>
+						<label for="check-agree-five" aria-required="true">[선택]FineApple 광고메시지 수신</label>
 						<button class="btnLink" id="agree-adv"><img src="../images/UsersJoin/arrow.png"></button>
 					</div>
 				</div>
@@ -120,10 +120,10 @@
 				    <div class="modal_layer"></div>
 				</div>
 
-				<form action="index.jsp">
+				<form action="index.jsp" name="frmAgree" id="frmAgree" method="POST">
 					<div class="button-next">
 						<button class="agree-btn">취소</button>
-						<button class="agree-btn" id="agree-btn">다음</button>
+						<button class="agree-btn" id="agreeBtn"name="agree-total">다음</button>
 					</div>
 				</form>
 			</div>
@@ -139,6 +139,38 @@
 		<script>
 			member();
 			modal();
+
+
+		$(document).ready(function(){
+
+			/* */
+            $("#agreeBtn").click(function(){    
+	                if($("#check-agree-two").is(":checked") == false){
+	                    alert("필수 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+	                    return false;
+	                }else if($("#check-agree-three").is(":checked") == false){
+	                    alert("필수 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+	                    return false;
+	                }else{
+	                    $("#frmAgree").submit();
+	                }
+	         });
+
+            /*모두 동의합니다. */
+			$(".div-container").on("click", "#check_all", function () {
+				  var checked = $(this).is(":checked");
+
+				  if(checked){
+				  	$(this).parents(".div-container").find('input').prop("checked", true);
+				  } else {
+				  	$(this).parents(".div-container").find('input').prop("checked", false);
+				  }
+			});    
+			
+        }); // $(document).ready(function(){
+
+			
+						
 		</script>
 	</body>
 
