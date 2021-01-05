@@ -89,7 +89,7 @@ var review = function(){
 		btnSave.onclick = function(){
 			var frm = document.frm_review;
 				frm.enctype = 'multipart/form-data';
-				frm.action = '../review.do?job=insert';
+				frm.action = 'review.do?job=insert';
 				frm.submit();
 		}
 	}
@@ -114,7 +114,7 @@ var review = function(){
 	if(btnInsert != null){//입력페이지
 		btnInsert.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = '../review.do?job=insert';
+			frm.action = './review3/write.jsp';
 			frm.submit();
 		}
 	}
@@ -130,7 +130,7 @@ function goPage(page){
 
 function view(reviewSerial){
 	var frm = document.frm_review;
-	frm.action = '../review.do?job=view';
+	frm.action = 'review.do?job=view';
 	frm.reviewSerial.value = reviewSerial;
 	frm.submit();
 }

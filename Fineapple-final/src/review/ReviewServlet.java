@@ -53,7 +53,7 @@ public class ReviewServlet extends HttpServlet{
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("review3/review.jsp");
+			rd = req.getRequestDispatcher("/review3/review.jsp");
 			rd.forward(req, resp);
 			break;
 			
@@ -65,7 +65,7 @@ public class ReviewServlet extends HttpServlet{
 			
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("review3/result.jsp");
+			rd = req.getRequestDispatcher("/review3/result.jsp");
 			rd.forward(req, resp);
 			
 			break;
@@ -75,7 +75,7 @@ public class ReviewServlet extends HttpServlet{
 			vo = dao.view(reviewSerial);
 			
 			req.setAttribute("vo", vo);
-			rd = req.getRequestDispatcher("review3/view.jsp");
+			rd = req.getRequestDispatcher("/review3/view.jsp");
 			rd.forward(req, resp);
 			
 			break;
@@ -96,7 +96,7 @@ public class ReviewServlet extends HttpServlet{
 			
 			req.setAttribute("msg", msg);
 			
-			rd = req.getRequestDispatcher("reivew3/result.jsp");
+			rd = req.getRequestDispatcher("/reivew3/result.jsp");
 			rd.forward(req, resp);
 			break;
 			

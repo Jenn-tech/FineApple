@@ -36,15 +36,14 @@ public class ReviewFileUpload {
 	
 	public ReviewVo getReview() {
 		ReviewVo vo = new ReviewVo();
-		vo.setReviewSerial(Integer.parseInt(mul.getParameter("reviewSerial")));
-		vo.setMemberId(mul.getParameter("memberId"));
+		//vo.setMemberId(mul.getParameter("memberId"));
 		vo.setReviewTitle(mul.getParameter("reviewTitle"));
 		vo.setReviewDate(mul.getParameter("reviewDate"));
 		vo.setReviewDoc(mul.getParameter("reviewDoc"));
-		vo.setProductName(mul.getParameter("productName"));
-		vo.setReviewCategory(mul.getParameter("reviewCategory"));
+		//vo.setProductName(mul.getParameter("productName"));
+		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
 		vo.setReviewImg(mul.getParameter("reviewImg"));
-		vo.setReviewAvailable(Integer.parseInt(mul.getParameter("reviewAvailable")));
+		//vo.setReviewAvailable(Integer.parseInt(mul.getParameter("reviewAvailable")));
 		vo.setDelFile(mul.getParameter("delFile"));
 		
 		return vo;

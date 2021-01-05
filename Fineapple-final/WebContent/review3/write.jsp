@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Review</title>
-<link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/review3.css"> 
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
-<script src='../js/review.js'></script>
+<script src='<%=request.getContextPath() %>/js/review.js'></script>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 	<h3>리뷰글쓰기</h3>
  	<div class="container">
  		<div class="row">
- 		<form action="writeAction.jsp" method="post" name="frm_review">
+ 		<form method="post" name="frm_review">
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
@@ -51,6 +51,7 @@
 					 <!-- buttons -->
 	 			<div class = 'btns'>
 	 				<input type="button" class="btn-review-write" id="btnSave" value="글쓰기"/>
+	 				<input type='button' value='목록으로' id='btnSelect' />
  				</div>
  			</form>
  		</div>
