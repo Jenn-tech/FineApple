@@ -86,11 +86,11 @@ public class ReviewServlet extends HttpServlet{
 			//vo.setMid(req.getParameter("mid"));
 			//vo.setPwd(req.getParameter("pwd"));
 			vo.setDelFile(req.getParameter("delFile"));
+			
 			String temp = req.getParameter("reviewSerial");
 			int temp1 = Integer.parseInt(temp);
-			
-			
 			vo.setReviewSerial(temp1);
+			
 			msg = dao.delete(vo);
 			
 			page = new ReviewPage();

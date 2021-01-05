@@ -43,9 +43,11 @@ public class ReviewFileUpload {
 		//vo.setProductName(mul.getParameter("productName"));
 		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
 		vo.setReviewImg(mul.getParameter("reviewImg"));
+		
 		String temp = mul.getParameter("reviewAvailable");
 		int temp2 = Integer.parseInt(temp);
 		vo.setReviewAvailable(temp2);
+		
 		vo.setDelFile(mul.getParameter("delFile"));
 		
 		return vo;
