@@ -22,15 +22,8 @@
 
 <body>
 	<!-- header -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header.jsp" />
+	<jsp:include page="/main/header.jsp"/>
 
-	<%} else {%>
-
-	<jsp:include page="/main/header2.jsp" />
-
-	<%} %>
 
 	<ul class="menu">
 		<li><a href="../mypage/mypage.jsp">정보수정</a></li>
