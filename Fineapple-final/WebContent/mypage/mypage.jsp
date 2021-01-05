@@ -1,140 +1,152 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/footer.css">
+<title>회원정보 수정</title>
 <link rel="stylesheet" href="../css/header.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/UsersJoin/UsersJoin.css">
+<link rel="stylesheet" href="../css/UsersJoin/agree.css">
+<link rel="stylesheet" href="../css/indexstyle.css">
 
-</script>
+<script
+	src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="../js/userjoin/userjoin.js"></script>
+<script src="../js/userjoin/agree.js"></script>
+
 <style>
-
-.tab {
-   overflow: hidden;
-   border: 1px solid #ccc;
-   background-color: #f1f1f1;
-}
-
-.tab>div {
-   float: left;
-   width: 120px;
-   height: 50px;
-   line-height: 50px;
-   text-align: center;
-   cursor: pointer;
-   font-size: 17px;
-}
-
-.tab>div:hover {
-   background-color: #ddd;
-}
-
-.tabcontent {
-   padding: 10px;
-   border: 1px solid #ccc;
-   border-top: none;
-   display: none;
-}
 </style>
 </head>
 
 <body>
-<!-- header영역 -->
-	<jsp:include page="../main/header.jsp"/>
+	<!-- header -->
+	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+	%>
+	<jsp:include page="../main/header.jsp" />
 
-   <div class="w3-center w3-large w3-margin-top">
-      <h2>My Page</h2>
-   </div>
-   <hr>
-   <div class="tab">
-      <div class="tablink" onclick="changeTab(this);">회원정보</div>
-      <div class="tablink" onclick="changeTab(this);">주문내역</div>
-      <div class="tablink" onclick="changeTab(this);">쿠폰함</div>
-      <div class="tablink" onclick="changeTab(this);">장바구니</div>
-      
-   </div>
+	<%} else {%>
 
-   <div id="회원정보" class="tabcontent">
-      <div class="w3-content w3-container w3-margin-top">
-         <div class="w3-container w3-card-4">
-            <div class="w3-center w3-large w3-margin-top">
-               <h3>회원정보 수정</h3>
-            </div>
-            <div>
+	<jsp:include page="/main/header2.jsp" />
 
-               <p>
-                  <label>ID</label> <input class="w3-input" type="text" id="id"
-                     name="id">
-               </p>
-               <p>
-                  <label>Email</label> <input class="w3-input" type="text"
-                     id="email" name="email" required>
-               </p>
-               <p class="w3-center">
-                  <button type="submit"
-                     class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보
-                     변경</button>
-               </p>
-               <br />
-               <form id="pwForm" action="../member/update_pw.do" method="post">
-                  <input type="hidden" name="id" value="${ member.id }">
-                  <p>
-                     <label>Password</label> <input class="w3-input" id="old_pw"
-                        name="old_pw" type="password" required>
-                  </p>
-                  <p>
-                     <label>New Password</label> <input class="w3-input" id="pw"
-                        name="pw" type="password" required>
-                  </p>
-                  <p>
-                     <label>Confirm</label> <input class="w3-input" type="password"
-                        id="pw2" type="password" required>
-                  </p>
-                  <p class="w3-center">
-                     <button type="submit" id="joinBtn"
-                        class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">비밀번호
-                        변경</button>
-                  </p>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div id="주문내역" class="tabcontent">
-      <h3>주문내역</h3>
-   
-   </div>
-<div id="쿠폰함" class="tabcontent">
-   <h3>쿠폰함</h3>
+	<%} %>
 
-</div>
-<div id="장바구니" class="tabcontent">
-   <h3>장바구니</h3>
-   
-</div>
+	<ul class="menu">
+		<li><a href="../mypage/mypage.jsp">정보수정</a></li>
+		<li><a href="../mypage/cart.jsp">장바구니</a></li>
+		<li><a href="../mypage/orderlist.jsp">주문내역</a></li>
+		<li><a href="../mypage/wish.jsp">찜 목록</a></li>
+		<li><a href="../mypage/coupon.jsp">쿠폰함</a></li>
 
+	</ul>
+	
+	<div class="div-container">
 
+			<section class="section-one">	
+				<div class="section-welcome">
+					<h1 class="welcome-head">회원정보 수정</h1>
+					<hr class="section-hr">
+				</div>
+			</section>
 
+			<section class="section-two">
+				<form class="frm-member" id="frm-member" action="result.jsp" method="POST">
+					<div class="frm-label">
+						<label>아이디</label>
+						<span class="field-required"></span>
+					</div>
+					<div class="frm-input-id">
+						<input type="text" name="frm-id" placeholder="아이디 입력(10자)">
+						<input type="button" name="frm-check" id="id-Check" value="중복확인">
+					</div>
 
+					<div class="frm-label">
+						<label>현재 비밀번호</label>
+						<span class="field-required"></span>
+					</div>
+					<div class="frm-input-password">
+						<input type="password" name="frm-password" placeholder="비밀번호 자리 8~20자">
+					</div>
+						
+					<div class="frm-label">
+						<label>비밀번호 재입력</label>
+						<span class="field-required"></span>
+					</div>
+					<div class="frm-input-password">
+						<input type="password" name="frm-password" placeholder="변경할 비밀번호">
+					</div>
+						
+					<div class="frm-label">
+						<label>이름</label>
+						<span class="field-required"></span>
+					</div>
+					<div class="frm-input-name">
+						<input type="text" name="frm-name" placeholder="성명을 입력해주세요.">
+					</div>
+					
+					<div class="frm-label">
+						<label>이메일</label>
+						<span class="field-required"></span>
+					</div>
+					<div class="frm-input-email">
+						<input type="text" name="frm-email" placeholder="example@gmail.com">
+					</div>
+					
 
-<script>
-    var tabs = document.getElementsByClassName('tablink');
-    var content = document.getElementsByClassName('tabcontent');  
-    changeTab(tabs[0]) //1. 
-    function changeTab(obj){      
-      for(var i=0;i<4;i++){
-        tabs[i].style.backgroundColor="#f1f1f1";
-        content[i].style.display="none"
-      }
-      obj.style.backgroundColor="#ccc";      
-      var selectTab = document.getElementById(obj.innerHTML);
-      selectTab.style.display="block";
-    }
-  </script>
-   <!-- footer영역 -->
-   	<%@include file="../main/footer.jsp" %>
+					<div class="frm-label">
+						<label>전화번호</label>
+					</div>
+					<div class="frm-input-phone">
+						<select name="phone_first">
+							<option selected >010</option>
+							<option>017</option>
+						</select>
+						<input type="text" name="frm-phone" placeholder="3333-3333">
+					</div>
+
+					<div class="frm-label">
+						<label>주소</label>
+					</div>
+					<div class="frm-input-zipcode">
+						<input type="text" name="zipcode" placeholder="우편번호">
+						<input type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
+						<input type="text" name="address" placeholder="상세주소">
+					</div>
+					
+					<div class="frm-label">
+						<label>생년월일</label>
+					</div>
+					<div class="frm-input-birth">
+						<select>
+							
+							<% for(int i = 1900; i < 2020; i++) {%>
+							<option selected><%= i+1%>년</option>
+							<% } %>
+						</select>
+						
+						<select>
+							<% for(int i = 0; i < 31; i++) {%>
+							<option><%= i+1%>월</option>
+							<% } %>
+						</select>
+						
+						<select>
+							<% for(int i = 0; i < 12; i++) {%>
+							<option><%= i+1%>일</option>
+							<% } %>
+						</select>
+
+					</div>
+
+					<div class="frm-submit">
+						<input type="submit" name="frm-sumbit" value="가입하기">
+					</div>
+				</form>
+			</section>
+		</div>
+	
+	<!-- footer영역 -->
+	<%@include file="../main/footer.jsp"%>
 </body>
 </html>
