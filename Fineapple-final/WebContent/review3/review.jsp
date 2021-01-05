@@ -71,9 +71,9 @@
 					<c:forEach var='vo' items="${list}">	
 		 				<tr class="table-item" style = "cursor:pointer;" onclick="view('${vo.reviewSerial}')">
 		 					<td class="no">${no}</td>
-		 					<td class="reviewTitle">${vo.reviewTitle}</td>
-		 					<td class="memberId">${vo.memberId}</td>
-		 					<td class="reviewDate">${vo.reviewDate}</td> 
+		 					<td class="title">${vo.reviewTitle}</td>
+		 					<td class="name">${vo.memberId}</td>
+		 					<td class="date">${vo.reviewDate}</td> 
 		 				</tr>
 	 					<c:set var='no' value = '${no=no+1}'/>
 					</c:forEach>
