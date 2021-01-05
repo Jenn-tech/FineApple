@@ -69,12 +69,14 @@
 	 			
 	 			<!-- buttons -->
 	<div class = 'btns'>
+		<input type="hidden" name="reviewSerial" value="${vo.reviewSerial }">
+		<input type="hidden" name="reviewAvailable" value="${vo.reviewAvailable }">
 		<input type='button' value='수정' id='btnModify' />
 		<input type='button' value='삭제' id='btnDelete' />
-		<input type='button' value='목록으로' id='btnSelect' />
+		<input type='button' value='목록으로' id='btnSelect2' />
 		<input type='hidden' name='findStr' value='${param.findStr }'/>
 		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
-		<input type='hidden' name='delFile' value='${vo.photo }' />
+		<input type='hidden' name='delFile' value='${vo.reviewImg }' />
 	</div>
  			</form> 
  		</div>

@@ -41,7 +41,7 @@
 	 				</tbody>
 	 			</table>
 	 				<input type="button" class="btn-review-write" id="btnUpdate" value="글수정"/>
-	 				<input type='button' value='목록으로' id='btnSelect' />
+	 				<input type='button' value='목록으로' id='btnSelect2' />
  			</form>
  		</div>
  	</div>

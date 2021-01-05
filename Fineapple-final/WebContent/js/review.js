@@ -13,6 +13,7 @@ var review = function(){
 	var btnInsert = getID('btnInsert');
 	var btnFind   = getID('btnFind');
 	var btnSelect = getID('btnSelect');
+	var btnSelect2 = getID('btnSelect2');
 	var btnSave   = getID('btnSave');
 	var btnPhoto  = getID('btnPhoto');
 	var btnModify = getID('btnModify');
@@ -22,16 +23,18 @@ var review = function(){
 	if(btnDelete != null){//삭제하기
 		btnDelete.onclick = function(){
 			var frm = document.frm_review;
+			frm.action = 'review.do?job=delete'; //수정된 정보를 저장
+			frm.submit();
 			//var pwd = prompt("회원정보를 삭제하시려면 암호를 입력하세요");
-			var win = window.open('./review3/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
+		/*	var win = window.open('./review3/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
 			
 			win.onbeforeunload = function(){
 				if(frm.pwd.value != ''){
-					frm.action = '../review.do?job=delete';
+					frm.action = 'review.do?job=delete';
 					frm.mid.disabled=false;
 					frm.submit();
 				}
-			}
+			}*/
 			
 		}
 	}
@@ -40,7 +43,9 @@ var review = function(){
 	if(btnUpdate != null){ //수정하기
 		btnUpdate.onclick = function(){
 			var frm = document.frm_review;
-
+			frm.enctype = 'multipart/form-data';
+			frm.action = 'review.do?job=update'; //수정된 정보를 저장
+			frm.submit();
 			//암호와 암호확인의 일치여부
 			/*
 			var pwd = prompt("회원정보를 수정하시려면 암호를 입력하세요");
@@ -50,22 +55,23 @@ var review = function(){
 			frm.pwd.value = pwd;
 			*/
 			
-			var win = window.open('./review3/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
-			win.onbeforeunload = function(){
+			//var win = window.open('./review3/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
+			/*win.onbeforeunload = function(){
 				if(frm.pwd.value != ''){
 					frm.enctype = 'multipart/form-data';
-					frm.action = '../review.do?job=update'; //수정된 정보를 저장
+					frm.action = 'review.do?job=update'; //수정된 정보를 저장
 					frm.submit();
 				}
-			}
+			}*/
+			
+			
 		}
 	}
 	
 	if(btnModify != null){//수정페이지로
 		btnModify.onclick = function(){
 			var frm = document.frm_review;
-			frm.mid.disabled=false;
-			frm.action = '../review.do?job=modify';//수정화면이동
+			frm.action = 'review.do?job=modify';//수정화면이동
 			frm.submit();
 		}
 	}
@@ -89,15 +95,23 @@ var review = function(){
 		btnSave.onclick = function(){
 			var frm = document.frm_review;
 				frm.enctype = 'multipart/form-data';
-				frm.action = 'review.do?job=insert';
+				frm.action = '../review.do?job=insert';
 				frm.submit();
 		}
 	}
 
-	if(btnSelect != null){//목록으로
+	if(btnSelect != null){// write에서 목록으로
 		btnSelect.onclick = function(){
 			var frm = document.frm_review;
 			frm.action = '../review.do?job=select';
+			frm.submit();
+		}
+	}
+	
+	if(btnSelect2 != null){//view에서 목록으로
+		btnSelect2.onclick = function(){
+			var frm = document.frm_review;
+			frm.action = 'review.do?job=select';
 			frm.submit();
 		}
 	}
@@ -123,7 +137,7 @@ var review = function(){
 
 function goPage(page){
 	var frm = document.frm_review;
-	frm.action = '../review.do?select';
+	frm.action = 'review.do?job=select';
 	frm.nowPage.value = page;
 	frm.submit();
 }

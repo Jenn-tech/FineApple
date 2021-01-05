@@ -86,17 +86,22 @@ public class ReviewServlet extends HttpServlet{
 			//vo.setMid(req.getParameter("mid"));
 			//vo.setPwd(req.getParameter("pwd"));
 			vo.setDelFile(req.getParameter("delFile"));
+			String temp = req.getParameter("reviewSerial");
+			int temp1 = Integer.parseInt(temp);
 			
+			
+			vo.setReviewSerial(temp1);
 			msg = dao.delete(vo);
 			
 			page = new ReviewPage();
 			page.setFindStr(req.getParameter("findStr"));
-			page.setNowPage(Integer.parseInt(req.getParameter("nowPage")));
+			String temp2 = req.getParameter("nowPage");
+			int temp3 = Integer.parseInt(temp2);
+			page.setNowPage(temp3);
 			req.setAttribute("page", page);
-			
 			req.setAttribute("msg", msg);
 			
-			rd = req.getRequestDispatcher("/reivew3/result.jsp");
+			rd = req.getRequestDispatcher("../reivew3/result.jsp");
 			rd.forward(req, resp);
 			break;
 			

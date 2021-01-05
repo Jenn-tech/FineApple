@@ -45,7 +45,7 @@ public class ReviewDao {
 			           + "   select rownum no, m.* from ("
 			           + "     select * from review "
 					   + "     where reviewSerial like ?"
-					   + "     order by reviewSerial asc) m   "
+					   + "     order by reviewSerial desc) m   "
 					   + " ) where no between ? and ? ";
 			
 			ps = conn.prepareStatement(sql);
@@ -121,7 +121,7 @@ public class ReviewDao {
 			String sql = "update review set reviewTitle = ?, reviewDoc = ?, reviewDate = sysdate";
 			
 				if(vo.getReviewImg() != null && !vo.getReviewImg().equals("")) {
-					sql += ", photo= '" + vo.getReviewImg() + "'";
+					sql += ", reviewImg= '" + vo.getReviewImg() + "'";
 				}
 				
 				ps = conn.prepareStatement(sql);
@@ -157,6 +157,7 @@ public class ReviewDao {
 			try {
 				String sql = "update review set reviewAvailable = 0 where reviewSerial = ? ";
 				ps = conn.prepareStatement(sql);
+				System.out.println(vo.getReviewSerial());
 				ps.setInt(1,vo.getReviewSerial());
 			
 			int rowCnt = ps.executeUpdate();

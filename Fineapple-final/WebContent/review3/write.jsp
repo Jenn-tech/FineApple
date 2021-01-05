@@ -52,6 +52,7 @@
 	 			<div class = 'btns'>
 	 				<input type="button" class="btn-review-write" id="btnSave" value="글쓰기"/>
 	 				<input type='button' value='목록으로' id='btnSelect' />
+	 				<input type="hidden" name="reviewAvailable" value="1">
  				</div>
  			</form>
  		</div>
