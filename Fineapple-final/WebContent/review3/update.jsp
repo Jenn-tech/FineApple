@@ -10,13 +10,13 @@
     <meta charset="UTF-8">
 <head>
 <title>FineApple Review</title>
-<link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/review3.css"> 
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
-<script src='../js/review.js'></script>
+<script src='<%=request.getContextPath() %>/js/review.js'></script>
 </head>
 
 <body>

@@ -53,7 +53,7 @@ public class ReviewServlet extends HttpServlet{
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("review3/review.jsp");
+			rd = req.getRequestDispatcher("/review3/review.jsp");
 			rd.forward(req, resp);
 			break;
 			

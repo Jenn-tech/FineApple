@@ -56,7 +56,7 @@ public class ReviewDao {
 			
 			while(rs.next()) {
 				ReviewVo vo = new ReviewVo();
-				vo.setReviewSerial(rs.getInt("revieSerial"));
+				vo.setReviewSerial(rs.getInt("reviewSerial"));
 				vo.setMemberId(rs.getString("MemberId"));
 				vo.setReviewTitle(rs.getString("reviewTitle"));
 				vo.setReviewDate(rs.getString("reviewDate"));
@@ -65,7 +65,7 @@ public class ReviewDao {
 				vo.setReviewCategory(rs.getString("reviewCategory"));
 				vo.setReviewImg(rs.getString("reviewImg"));
 				vo.setReviewAvailable(rs.getInt("reviewAvailable"));
-				vo.setDelFile(rs.getString("delFile"));
+				//vo.setDelFile(rs.getString("delFile"));
 				list.add(vo);
 			}
 			

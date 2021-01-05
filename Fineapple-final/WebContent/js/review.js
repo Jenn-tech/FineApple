@@ -114,7 +114,7 @@ var review = function(){
 	if(btnInsert != null){//입력페이지
 		btnInsert.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = '../review.do?job=insert';
+			frm.action = './write.jsp';
 			frm.submit();
 		}
 	}
@@ -123,21 +123,21 @@ var review = function(){
 
 function goPage(page){
 	var frm = document.frm_review;
-	frm.action = '../review.do?select';
+	frm.action = '/review.do?select';
 	frm.nowPage.value = page;
 	frm.submit();
 }
 
 function view(reviewSerial){
 	var frm = document.frm_review;
-	frm.action = '../review.do?job=view';
+	frm.action = '/review.do?job=view';
 	frm.reviewSerial.value = reviewSerial;
 	frm.submit();
 }
 
 function productview(reviewSerial){
 	var frm = document.frm_review;
-	frm.action = '../review.do?job=product';
+	frm.action = '/review.do?job=product';
 	frm.reviewSerial.value = reviewSerial;
 	frm.submit();
 }
