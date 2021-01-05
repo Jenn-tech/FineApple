@@ -24,15 +24,8 @@
 <body>
 
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="./header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="./header2.jsp"/>
-	
-	<%} %>
+
+	<jsp:include page="./header.jsp"/>
 	
 <!-- 팝업 -->
 
