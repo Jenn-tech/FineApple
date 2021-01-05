@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-watch-active2-r830-sm-r830nzsakoo-Cloud-Silver-181228341?$PD_GALLERY_L_PNG$" alt="갤럭시 워치 액티브2" width="800px" style="margin-top: 150px; border-radius: 23px">

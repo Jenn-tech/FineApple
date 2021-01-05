@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-flip-5g-f707-sm-f707nznakoo-frontmysticbronze-308345243?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 플립 5G">
