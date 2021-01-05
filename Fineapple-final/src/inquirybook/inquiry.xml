@@ -18,6 +18,16 @@
 		</if>
 		SELECT * FROM dual
 	</insert>
+
+	<insert id="insert_att" parameterType="inquirybook.InquiryBookVo" >
+		INSERT ALL
+		<foreach collection="attList" item="att">
+			INTO inquiry_photo(serial, pserial, sysfile, orifile)
+			VALUES (getInquiryAttSeq(), ${serial}, #{att.sysFile}, #{att.oriFile})
+		</foreach>
+		SELECT * FROM dual
+	</insert>
+
 	
 	<select id="select" resultType="inquirybook.InquiryBookVo" parameterType="bean.CsPage">
 		SELECT * FROM inquiry
@@ -41,5 +51,19 @@
 	</delete>
 	<delete id="delete_att_pserial" parameterType="int">
 		DELETE FROM inquiry_photo WHERE pserial = #{_parameter}
+	</delete>
+	<update id="update" parameterType="inquirybook.InquiryBookVo">
+		UPDATE inquiry set subject = #{subject}, doc = #{doc} WHERE serial = #{serial} and pwd = #{pwd}
+	</update>
+	
+	
+	<delete id="delete_att" parameterType="inquirybook.InquiryBookVo">
+		DELETE FROM inquiry_photo
+		<where>
+			<foreach collection="delFiles" item="att" separator="or">
+				sysfile = #{att.sysFile}
+			</foreach>		
+
+		</where>	
 	</delete>
 </mapper>   

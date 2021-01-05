@@ -47,15 +47,9 @@
 				    </select>
 				</div>
 		
-				 <div>
-				    <label for="ordernum">주문 번호</label>
-				    <input type="number" id="cs_ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum" style="width: 66%; height: 30px" />
-				    <input type="button" id="cs_orderNumSearch" value="검색" style="height: 30px; width: 53px;">
-				</div>
-				
 				<div>
 		   			<label for="name">작성자</label>
-		  		 	<input type="text" placeholder="이름을 입력해주세요." name="name" id="cs_name" size="25" style="width: 75%; height: 30px"/>	
+		  		 	<input type="text" placeholder="이름을 입력해주세요." value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px"/>	
 				</div>
 		
 				<div>
@@ -77,25 +71,25 @@
 	  		<div class="cs_insert_frm_body">
 		  		<div style="margin-bottom: 10px;">
 					<label for="subject" style="display:inline-block; width: 10%;">제목</label>
-					<input type="text" name="subject" id="cs_subject" placeholder="제목을 입력해주세요." style="width: 89%; height: 30px;">
+					<input type="text" name="subject" value="${vo.subject }" id="cs_subject" placeholder="제목을 입력해주세요." style="width: 89%; height: 30px;">
 				</div>
 	  			<div class="cs_insert_doc">
 	  				<label for="doc" style="display:inline-block; width: 10%;">본문</label>
-	  				<textarea name="doc" id="cs_doc" rows="26" style="width: 89%; border: 1px solid #f1f1f1"></textarea>
+	  				<textarea name="doc" id="cs_doc" rows="26" style="width: 89%; border: 1px solid #f1f1f1">${vo.doc}</textarea>
 	  			</div>
 	  		</div>
 		</div>
 		<div class="cs_center_insert_send_box">
 			       <label for="secretcheck">비밀글</label>
 			       <input type="checkbox" name="secretcheck" id="cs_check" value="secret">
-			       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
+			       <input type="button" value="전송" id="cs_update_btnSave" class="cs_insert_btnSave">
 			       <input type="button" value="돌아가기" id="cs_view_btnSelect" class="cs_insert_btnCancel">
 			       <input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
 		</div>
 		<input type="number" value="10" name="hit" id="hit">
 		<input type="text" name="nowPage" value="${param.nowPage}">
 		<input type="text" name="findStr" value="${param.findStr}">
-		<input type='hidden' name='serial'  value='0'/>
+		<input type='hidden' name='serial'  value="${param.serial}"/>
 	</form>
 </div>
 

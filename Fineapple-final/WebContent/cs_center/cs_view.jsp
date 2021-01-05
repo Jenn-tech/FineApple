@@ -43,6 +43,7 @@
 			<input type="text" value="${param.findStr}" name="findStr"/>
 			<input type='hidden' name='serial'  value='${vo.serial }'/>
 			<input type='hidden' name='pwd'  value='0'/>
+			<input type="hidden" name="adminPwd" value="0">
 		</div>
 	</form>
 </div>

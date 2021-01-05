@@ -100,20 +100,6 @@ public class InquiryBookDao {
 		return vo;
 	}
 	
-	public InquiryBookVo update(int serial) {
-		InquiryBookVo vo = null;
-		List<InquiryBookAttVo> attList = null;
-		try {
-			vo = sqlSession.selectOne("inquiry.view", serial);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			sqlSession.close();
-		}
-		return vo;
-	}
-	
 	public String delete(InquiryBookVo vo) {
 		String msg ="정상적으로 삭제를 완료했습니다.";
 		List<InquiryBookAttVo> attList = null;
@@ -146,6 +132,41 @@ public class InquiryBookDao {
 		return msg;
 	}
 	
+	public String update(InquiryBookVo vo) {
+		String msg = "정상적으로 수정되었습니다.";
+		
+		try {
+			int cnt = sqlSession.update("inquiry.update", vo);
+				System.out.println(cnt);
+			if(cnt > 0) {
+				if(vo.getAttList() != null) {
+					cnt = sqlSession.insert("inquiry.insert_att", vo);
+					if(cnt < 0) {
+						throw new Exception("오류 발생 - 파일 추가중");
+					}
+				}
+				if(vo.getDelFiles() != null) {
+					cnt = sqlSession.delete("board.delete_att", vo);
+					if(cnt < 0) {
+						throw new Exception("오류 발생 - 파일 삭제중");
+					}
+					delFile(vo.getDelFiles());
+				}
+			}
+			else {
+				throw new Exception("오류 발생 업데이트");
+			}
+			sqlSession.commit();
+		} catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+			delFile(vo.getAttList());
+		}
+		finally {
+			sqlSession.close();
+		}
+		return msg;
+	}
 }
 
 
