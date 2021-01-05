@@ -28,4 +28,12 @@
 		SELECT count(serial) FROM inquiry
 		WHERE subject like '%${findStr}%' or doc like '%${findStr}%' 
 	</select>
+	
+	<select id="view" resultType="inquirybook.InquiryBookVo" parameterType="int">
+		SELECT * FROM inquiry WHERE serial = #{_parameter}
+	</select>
+	
+	<select id="select_att" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
+		
+	</select>
 </mapper>   

@@ -23,6 +23,7 @@
 			<input type="text" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
 			<input type="text" name="findStr" placeholder="검색어를 입력해주세요!" />
 			<input type="button" name="btnFind" id="btnFind" value="조회" class="frm_board_btns" />
+			<input type='hidden' name='serial'  value='0'/>
 			</div>
 		</div>
 	</form>

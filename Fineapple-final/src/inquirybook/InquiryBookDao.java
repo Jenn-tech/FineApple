@@ -82,4 +82,35 @@ public class InquiryBookDao {
 		}
 	}
 	
+	public InquiryBookVo view(int serial) {
+		InquiryBookVo vo = null;
+		List<InquiryBookAttVo> attList = null;
+		
+		try {
+			System.out.println(serial);
+			vo = sqlSesstion.selectOne("inquiry.view", serial);
+			vo.setAttList(attList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			sqlSesstion.close();
+		}
+		return vo;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

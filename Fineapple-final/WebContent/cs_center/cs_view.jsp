@@ -20,7 +20,7 @@
 				<div class="cs_notice_view_imfo">
 					<span>조회수: ${viewVo.hit}</span>
 					<span>작성자: ${viewVo.name}</span>
-					<span>작성 일자: ${viewVo.mdate}</span>
+					<span>작성 일자: ${viewVo.created}</span>
 				</div>
 			</div> 
 			</br>

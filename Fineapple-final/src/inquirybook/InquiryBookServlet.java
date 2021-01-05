@@ -83,6 +83,14 @@ public class InquiryBookServlet extends HttpServlet {
 			rd.forward(req, resp);
 
 			break;
+		case "view" :
+			serial = Integer.parseInt(req.getParameter("serial"));
+			vo = dao.view(serial);
+			
+			req.setAttribute("viewVo", vo);
+			req.setAttribute("page", page);
+			rd = req.getRequestDispatcher(url + "cs_view.jsp");
+			break;
 		}
 	}
 }

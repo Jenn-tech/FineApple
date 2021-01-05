@@ -208,7 +208,7 @@ var imagePreView = function(zone, ev) {
 
 
 var goPage = function(page) {
-	var job = "inquiry.do?job=";
+	var job = "../inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	frm.nowPage.value = page;
 	frm.action = job + "select";
@@ -220,6 +220,7 @@ var view = function(serial) {
 	var frm = document.cs_frm_board;
 	
 	frm.serial.value = serial;
+	alert(frm.serial.value);
 	frm.action = job + "view";
 	frm.submit();	
 }  
