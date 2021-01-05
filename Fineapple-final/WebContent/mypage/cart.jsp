@@ -41,14 +41,9 @@
 </head>
 <body>
 <!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면 %>
-	<jsp:include page="../main/header1.jsp"/>
+	<jsp:include page="../main/header.jsp"/>
 	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %> 
+
 <div id="장바구니" class="cart_list">
       <h2 class="cart-list-title">장바구니</h2>
       <hr>
