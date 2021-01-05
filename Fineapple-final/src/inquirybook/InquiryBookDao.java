@@ -119,18 +119,21 @@ public class InquiryBookDao {
 		List<InquiryBookAttVo> attList = null;
 		try {
 			attList = sqlSession.selectList("inquiry.select_att", vo.getSerial());
+			System.out.println(attList.size());
 			int cnt = sqlSession.delete("inquiry.delete", vo);
 			if(cnt > 0) {
-				cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
-				if(cnt < 1) {
-					throw new Exception("오류 발생");
+				if(attList.size() > 0) {
+					cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
+					System.out.println(cnt);
+					if(cnt < 1) {
+						throw new Exception("오류 발생");
+					}
+					delFile(attList);
 				}
-				delFile(attList);
 			}
 			else {
 				throw new Exception("오류 발생 2");
 			}
-			
 			sqlSession.commit();
 		}
 		catch (Exception e) {
