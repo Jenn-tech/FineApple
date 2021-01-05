@@ -22,15 +22,10 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
 	
-	<%} else {%>
+	<jsp:include page="../main/header.jsp"/>
 	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nzkakoo-frontmysticblack-308345330?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">

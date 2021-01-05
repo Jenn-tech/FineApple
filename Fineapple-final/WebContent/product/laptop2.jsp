@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406905000" alt="MacBook Pro" width="600px" style="

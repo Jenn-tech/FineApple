@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://static.coupangcdn.com/image/retail/images/1057253810087166-c7ab11df-4eff-47e5-b2f6-4a14c0323829.jpg" alt="LG gram 16" width="600px" style="

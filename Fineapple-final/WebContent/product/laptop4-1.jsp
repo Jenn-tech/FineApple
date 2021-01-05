@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/kdp/goods/2020/12/21/2c236f98-d9a6-46a0-b23b-b396c0146891.png?$PD_GALLERY_L_PNG$" alt="삼성 노트북 Plus2" width="600px" style="

@@ -22,15 +22,8 @@
 </head>
 <body>
 	<!-- header영역 -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header1.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="../main/header2.jsp"/>
-	
-	<%} %>
+		<jsp:include page="../main/header.jsp"/>
+
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MY692_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_KR?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&op_usm=0.5,0.5&.v=1599112574000,1601922170000" alt="apple watch" width="600px" style="margin-top: 150px; border-radius: 23px">
