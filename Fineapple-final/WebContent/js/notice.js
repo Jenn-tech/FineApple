@@ -25,8 +25,20 @@ var notice = function() {
 
 	if(btnSave != null){
 		btnSave.onclick = function(){
+			var checkFlag = true;
+			
+			if(!frm.noticeSubject.checkValidity()){
+				alert('제목을입력하세요');
+				checkFlag = false;
+			}else if(!frm.noticeDoc.checkValidity()){
+				alert('제목을입력하세요');
+				checkFlag = false;
+				}
+				
+			if(checkFlag){
 			frm.action = '../notice/insert_result.jsp';
 			frm.submit();
+			}
 		}
 	}	
 	

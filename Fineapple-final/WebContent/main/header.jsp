@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-       <script src='../js/login.js'></script>
+      <script src='<%=request.getContextPath() %>/js/login.js'></script>
 <script type="text/javascript" language="javascript">
     function openPop(){
         var pop_title = "popupOpener" ;
@@ -48,7 +48,17 @@
 	            		<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=../cs_center/cs_map.jsp" >오시는 길</a>
 	            	</ul>
 	            </li>
+	            
+	           
+	            
+	            <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+					%>            
 	            <li>
+	            	<a href="<%=request.getContextPath() %>/UsersJoin/agree.jsp" class="button alt">회원가입</a>     
+	            </li>
+	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>  
+	            <%} else {%>
+	             <li>
 	            	<a href="<%=request.getContextPath() %>/mypage/mypage.jsp" class="button alt">마이룸</a>
 	            	<ul>
 	            		<a href="<%=request.getContextPath() %>/mypage/cart.jsp" >장바구니</a>
@@ -56,10 +66,6 @@
 	            		<a href="<%=request.getContextPath() %>/mypage/coupon.jsp" >쿠폰함</a>
 	            	</ul>
 	            </li>
-	            <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-					%>            
-	            <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>       
-	            <%} else {%>
 	             <li><input type='button' id='btnLogout' value='로그아웃' /></li>         
 	             <%} %>         
         	</div>

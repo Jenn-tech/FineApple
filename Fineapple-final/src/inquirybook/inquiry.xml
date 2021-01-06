@@ -9,7 +9,7 @@
 	<insert id="insert" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
 		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
-		VALUES(seq_inquiry.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, '환불', 0, 0)
+		VALUES(seq_inquiry.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, #{inquiryType}, 0, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
 				INTO inquiry_photo(serial, pserial, sysfile, orifile)
@@ -31,7 +31,7 @@
 	<insert id="insertanswer" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
 		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
-		VALUES(seq_inquiry.nextval, 0, #{memberName},'해준', #{subject}, #{doc}, 'no', sysdate, '환불', ${pserial}, 0)
+		VALUES(seq_inquiry.nextval, 0, #{memberName},'해준', #{subject}, #{doc}, 'no', sysdate, #{inquiryType}, ${pserial}, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
 				INTO inquiry_photo(serial, pserial, sysfile, orifile)
@@ -42,7 +42,18 @@
 	</insert>
 	
 	<select id="select" resultType="inquirybook.InquiryBookVo" parameterType="bean.CsPage">
-		SELECT * FROM inquiry
+		<![CDATA[
+		SELECT * FROM (
+			SELECT rownum rno, m.* FROM
+			   ( SELECT b.serial , b.memberName, b.created, b.hit,
+			    	   lpad(' ', (level-1)*6+1, '&nbsp;&nbsp;') || decode(level, 1, '', '└ ') || b.subject subject,
+			    	(SELECT count(serial) cnt FROM inquiry_photo WHERE pserial=b.serial) attCnt 
+				FROM inquiry b WHERE subject LIKE '%${findStr}%' OR doc LIKE '%${findStr}%' 
+				CONNECT BY PRIOR serial = pserial
+				START WITH pserial is null
+				ORDER SIBLINGS BY serial DESC ) m
+		) WHERE rno BETWEEN #{startNo} and #{endNo}
+		]]>	 
 	</select>
 	
 	<select id="tot_list_size" resultType="int" parameterType="bean.CsPage">
@@ -65,9 +76,8 @@
 		DELETE FROM inquiry_photo WHERE pserial = #{_parameter}
 	</delete>
 	<update id="update" parameterType="inquirybook.InquiryBookVo">
-		UPDATE inquiry set subject = #{subject}, doc = #{doc} WHERE serial = #{serial} and pwd = #{pwd}
+		UPDATE inquiry set membername = #{memberName}, subject = #{subject}, doc = #{doc} WHERE serial = #{serial} and pwd = #{pwd}
 	</update>
-	
 	
 	<delete id="delete_att" parameterType="inquirybook.InquiryBookVo">
 		DELETE FROM inquiry_photo

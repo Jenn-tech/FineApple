@@ -22,7 +22,7 @@
 			<div class="cs_board_input_select-box">
 			<input type="text" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
 			<input type="text" name="findStr" placeholder="검색어를 입력해주세요!" />
-			<input type="button" name="btnFind" id="btnFind" value="조회" class="frm_board_btns" />
+			<input type="button" name="cs_board_btnFind" id="cs_board_btnFind" value="조회" class="frm_board_btns" />
 			<input type='hidden' name='serial'  value='0'/>
 			</div>
 		</div>
@@ -46,8 +46,8 @@
 					<span class="mdate">${vo.created}</span>
 					<span class="hit">${vo.hit}</span>
 				</div>
+				<c:set var="no" value="${no=no+1 }"></c:set>	
 			</c:forEach>
-		<c:set var="no" value="${no=no+1 }"></c:set>	
 	</div>
 	
 	<div class="cs_board_paging">
