@@ -114,7 +114,9 @@
 	
 		<section>
 			<div class="trk-header-align-btn">
-				<button>마이페이지로 이동하기</button>
+				<form action="" method="post">
+					<input type="submit" name="trk-submit" value="마이페이지로 이동"/>
+				</form>
 			</div>
 		</section>
 	<footer>

@@ -27,13 +27,13 @@
 		</ul>
 	</div>
 		
-	<form action="../inquiry.do" method="post" name="cs_frm_board" id="frm_question">
+	<form action="" method="post" name="cs_frm_board" id="frm_question">
 		<div class="cs_insert_frm_container">
 		    <div class="cs_insert_frm_body">
 		    	<div>
 				    <label for="inquiryType">문의 유형</label>
-				    <select name="inquiryType" id="inquiryType" aria-placeholder="문의 유형" size="1" style="width: 75%; height: 30px; border: 1px solid #f1f1f1;" >
-				        <option>문의 유형</option>
+				    <select name="inquiryType" id="inquiryType" size="1" style="width: 75%; height: 30px; border: 1px solid #f1f1f1;" required>
+				        <option value="${vo.inquiryType}">${vo.inquiryType}</option>
 				        <option value="refund">환불</option>
 				        <option value="cancel">취소(출하 전 취소)</option>
 				        <option value="delivery">배송</option>
@@ -47,21 +47,11 @@
 				    </select>
 				</div>
 		
-				 <div>
-				    <label for="ordernum">주문 번호</label>
-				    <input type="number" id="cs_ordernum" placeholder="주문 번호를 입력하세요." size="25" name="ordernum" style="width: 66%; height: 30px" />
-				    <input type="button" id="cs_orderNumSearch" value="검색" style="height: 30px; width: 53px;">
-				</div>
-				
 				<div>
 		   			<label for="name">작성자</label>
-		  		 	<input type="text" placeholder="이름을 입력해주세요." name="name" id="cs_name" size="25" style="width: 75%; height: 30px"/>	
+		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" />	
 				</div>
-		
-				<div>
-				    <label for="pwd">비밀번호</label>
-				    <input type="password" placeholder="비밀번호를 입력해주세요." id="cs_pwd" size="25" name="pwd" style="width: 75%; height: 30px"/>
-				</div>
+
 				<label>기존 사진</label>
 				<div id="cs_attach_box">
 					<c:forEach items="${vo.attList }" var="att">
@@ -77,25 +67,31 @@
 	  		<div class="cs_insert_frm_body">
 		  		<div style="margin-bottom: 10px;">
 					<label for="subject" style="display:inline-block; width: 10%;">제목</label>
-					<input type="text" name="subject" id="cs_subject" placeholder="제목을 입력해주세요." style="width: 89%; height: 30px;">
+					<input type="text" name="subject" value="${vo.subject }" id="cs_subject" placeholder="제목을 입력해주세요." style="width: 89%; height: 30px;" required>
 				</div>
 	  			<div class="cs_insert_doc">
 	  				<label for="doc" style="display:inline-block; width: 10%;">본문</label>
-	  				<textarea name="doc" id="cs_doc" rows="26" style="width: 89%; border: 1px solid #f1f1f1"></textarea>
+	  				<textarea name="doc" id="cs_doc" rows="26" style="width: 89%; border: 1px solid #f1f1f1" required>${vo.doc}</textarea>
 	  			</div>
 	  		</div>
 		</div>
 		<div class="cs_center_insert_send_box">
 			       <label for="secretcheck">비밀글</label>
 			       <input type="checkbox" name="secretcheck" id="cs_check" value="secret">
-			       <input type="button" value="전송" id="cs_insert_btnSave" class="cs_insert_btnSave">
-			       <input type="button" value="돌아가기" id="cs_view_btnSelect" class="cs_insert_btnCancel">
-			       <input type="button" value="목록으로" id="cs_insert_btnCancel" class="cs_insert_btnCancel">
+			       <input type="button" value="전송" id="cs_update_btnSave" class="cs_insert_btnSave">
+			       <input type="button" value="돌아가기" id="cs_update_btnReturn" class="cs_insert_btnCancel">
+			       <input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 		</div>
 		<input type="number" value="10" name="hit" id="hit">
 		<input type="text" name="nowPage" value="${param.nowPage}">
 		<input type="text" name="findStr" value="${param.findStr}">
-		<input type='hidden' name='serial'  value='0'/>
+		<input type='hidden' name='serial'  value="${param.serial}"/>
+		<input type="hidden" name="mserial" value="0"/>
+		<input type="hidden" name="inquiryType" value="0"/>
+		<input type="hidden" name="docvisible" value="0"/>
+		<input type="hidden" name="hit" value="0"/>
+		<input type="hidden" name="pserial" value="0"/>
+		<input type="hidden" name="pwd" value="${vo.pwd}">
 	</form>
 </div>
 

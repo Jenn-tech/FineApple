@@ -64,7 +64,7 @@ public class ReviewDao {
 				vo.setProductName(rs.getString("ProductName"));
 				vo.setReviewCategory(rs.getString("reviewCategory"));
 				vo.setReviewImg(rs.getString("reviewImg"));
-				vo.setReviewAvailable(rs.getInt("reviewAvailable"));
+				//vo.setReviewAvailable(rs.getInt("reviewAvailable"));
 				//vo.setDelFile(rs.getString("delFile"));
 				list.add(vo);
 			}
@@ -81,8 +81,8 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 저장되었습니다.";
 		
 		try {
-			String sql = "insert into review(reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, productName, reviewcategory, reviewImg, reviewAvailable)"
-					+ "values(seq_reviewSerial.nextval,?,?,sysdate,?,?,?,?,?)";
+			String sql = "insert into review(reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, productName, reviewcategory, reviewImg)"
+					+ "values(seq_reviewSerial.nextval,?,?,sysdate,?,?,?,?)";
 			
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, vo.getMemberId());
@@ -91,7 +91,7 @@ public class ReviewDao {
 				ps.setString(4, vo.getProductName());
 				ps.setString(5, vo.getReviewCategory());
 				ps.setString(6, vo.getReviewImg());
-				ps.setInt(7, vo.getReviewAvailable());
+				
 				
 				int rowCnt = ps.executeUpdate();
 				if (rowCnt<1) {
@@ -118,7 +118,7 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 수정되었습니다.";
 		
 		try {
-			String sql = "update review set reviewTitle = ?, reviewDoc = ?, reviewDate = sysdate";
+			String sql = "update review set reviewTitle = ?, reviewDoc = ?, reviewDate = sysdate where reviewSerial = ? " ;
 			
 				if(vo.getReviewImg() != null && !vo.getReviewImg().equals("")) {
 					sql += ", reviewImg= '" + vo.getReviewImg() + "'";
@@ -127,6 +127,7 @@ public class ReviewDao {
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, vo.getReviewTitle());
 				ps.setString(2, vo.getReviewDoc());
+				ps.setInt(3, vo.getReviewSerial());
 				
 				int rowCnt = ps.executeUpdate();
 				if (rowCnt<1) {
@@ -155,7 +156,7 @@ public class ReviewDao {
 	public String delete(ReviewVo vo){
 		String msg = "리뷰가 정상적으로 삭제되었습니다.";
 			try {
-				String sql = "update review set reviewAvailable = 0 where reviewSerial = ? ";
+				String sql = "delete from review where reviewSerial = ? ";
 				ps = conn.prepareStatement(sql);
 				System.out.println(vo.getReviewSerial());
 				ps.setInt(1,vo.getReviewSerial());
@@ -179,10 +180,30 @@ public class ReviewDao {
 		}
 	}
 	
+	public String delete2(int reviewSerial){
+		String msg = "리뷰가 정상적으로 삭제되었습니다.";
+			try {
+				String sql = "delete from review where reviewSerial = ? ";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1,reviewSerial);
+			
+			int rowCnt = ps.executeUpdate();
+			if(rowCnt<1) {
+				throw new Exception("회원 정보 삭제중 오류 발생");
+			}
+			
+		}catch(Exception ex) {
+			msg = ex.getMessage();
+		}finally {
+			disConn();
+			return msg;
+		}
+	}
+	
 	public ReviewVo view(int reviewSerial){
 		ReviewVo vo = new ReviewVo();
 		try {
-			String sql = "select * from review where reviewSerial=?";
+			String sql = "select * from review where reviewSerial = ? ";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, reviewSerial);
 			rs = ps.executeQuery();

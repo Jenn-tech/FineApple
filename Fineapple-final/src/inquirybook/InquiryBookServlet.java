@@ -55,11 +55,7 @@ public class InquiryBookServlet extends HttpServlet {
 		page.setFindStr(findStr);
 		
 		switch(job) {
-		case "insert": 
-			
-			break;
-		
-		case "insertR":
+		case "insertR": 
 			fu = new FileUpload(req);
 			vo = new InquiryBookVo(); 
 			vo = fu.getInquiryBookVo('i');
@@ -69,9 +65,10 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
 			System.out.println(msg);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);
 			break;
+		
 		case "select":
 			Map<String, Object> map = dao.select(page);
 			
@@ -80,33 +77,47 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_board.jsp");
 			rd.forward(req, resp);
 
 			break;
+			
 		case "view" :
 			serial = Integer.parseInt(req.getParameter("serial"));
 			vo = new InquiryBookVo(); 
 			vo = dao.view(serial);
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_view.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_view.jsp");
 			rd.forward(req, resp);
 			break;
 			
 		case "update": 
 			serial = Integer.parseInt(req.getParameter("serial"));
+			System.out.println(serial);
 			vo = new InquiryBookVo(); 
 			vo = dao.view(serial);
 			
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_update.jsp");
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_update.jsp");
 			rd.forward(req, resp);
 			break;
-		case "updateR":
 			
+		case "updateR":
+			System.out.println("업데이트 서블렛 진입");
+			fu = new FileUpload(req);
+			vo = fu.getInquiryBookVo('u');
+			page = fu.getPage();
+			msg = dao.update(vo);
+			
+			req.setAttribute("msg", msg);
+			req.setAttribute("page", page);
+			
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
+			rd.forward(req, resp);
 			break;
+			
 		case "delete":
 			System.out.println("여기까지");
 			vo = new InquiryBookVo(); 
@@ -126,8 +137,24 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("page", page);
 			req.setAttribute("msg", msg);
-			rd = req.getRequestDispatcher("cs_func_page.jsp?func=./cs_center/cs_board.jsp");
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);
+			break;
+		
+		case "insertA": 
+			fu = new FileUpload(req);
+			vo = new InquiryBookVo();
+			vo = fu.getInquiryBookVo('i');
+			
+			msg = dao.insertA(vo);
+			
+			
+			req.setAttribute("msg", msg);
+			req.setAttribute("page", page);
+			
+			rd = req.getRequestDispatcher("inquiry.do?job=select");
+			rd.forward(req, resp);
+			
 			break;
 		}
 	}

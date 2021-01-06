@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Application;
+import gbook.GuestBookVo;
 
 public class ProductDao {
 	Connection conn; 
@@ -105,4 +106,39 @@ public class ProductDao {
 			}
 			return list;
 		}
-		}
+		
+		
+		
+		public String update(NoticeVo vo) {
+			String msg = "방명록 내용을 수정하였습니다.";
+			
+			try {
+				String sql = "update guestbook set doc=? where serial=? and pwd=?";
+				
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, vo.getDoc());
+				ps.setInt(2, vo.getSerial());
+				ps.setString(3, vo.getPwd());
+				
+				int rowCnt = ps.executeUpdate();
+				if(rowCnt < 1) {
+					msg = "방명록 수정 중 오류발생";
+				}
+				
+			} catch (Exception ex) {
+				msg = ex.getMessage();
+			}finally {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				return msg;
+			}
+		}		
+		
+		
+		
+		
+		
+}

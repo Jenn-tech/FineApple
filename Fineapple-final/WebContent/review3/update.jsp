@@ -40,6 +40,7 @@
 	 					</tr>
 	 				</tbody>
 	 			</table>
+	 				<input type="text" name="reviewSerial" value="${vo.reviewSerial }">
 	 				<input type="button" class="btn-review-write" id="btnUpdate" value="글수정"/>
 	 				<input type='button' value='목록으로' id='btnSelect2' />
  			</form>

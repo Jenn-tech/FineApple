@@ -29,7 +29,7 @@
 	 				<tbody>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
-	 						<td class="table-right" colspan="2"><input type="text"  placeholder="작성자" name="memberId" style="width: 100%; height: 45px;" maxlength="50" readonly="readonly"></td>
+	 						<td class="table-right" colspan="2"><input type="text"  placeholder="작성자" name="memberId" style="width: 100%; height: 45px;" maxlength="50" value="jeong" readonly="readonly"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">제목</td>
@@ -37,7 +37,7 @@
 	 					</tr>
 	 					<tr>
 							<td class="table-left">사진</td>
-							<td class="table-right" colspan="2"><input type='file' name='photo' id='btnPhoto'/>
+							<td class="table-right" colspan="2"><input type='file' name='reviewImg' id='btnPhoto'/>
 							<img src='http://placehold.it/200x140' id='photo' width='200px' height='140px'/>
 							<hr/>
 							</td>
@@ -52,7 +52,6 @@
 	 			<div class = 'btns'>
 	 				<input type="button" class="btn-review-write" id="btnSave" value="글쓰기"/>
 	 				<input type='button' value='목록으로' id='btnSelect' />
-	 				<input type="hidden" name="reviewAvailable" value="1">
  				</div>
  			</form>
  		</div>

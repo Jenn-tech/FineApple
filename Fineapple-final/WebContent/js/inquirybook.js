@@ -8,23 +8,6 @@ function getID(id) {
 }
 
 
-var question = function() {
-	
-	var cs_insert_btnSave= getID("cs_insert_btnSave");
-	var btnSelect = getID("btnSelect");
-	var btnCancel = getID("btnCancel");
-	if(btnCancel != null) {
-		btnCancel.onclick = function() {
-		}
-	}
-
-	$('#cs_notice_btn_insert').on('click', function() {
-		var frm = document.frm_cs_notice;
-		frm.action = 'cs_func_page.jsp?func=./cs_center/cs_notice_insert.jsp';
-		frm.submit();
-	})
-}
-
 /* --------------- func_page quick menu toggle --------------- */
 var toggleMenu = function() {
 $(document).ready(function() {
@@ -57,27 +40,99 @@ var inquiry = function() {
 	var cs_view_btnUpdate = getID("cs_view_btnUpdate");
 	var cs_view_btnDelete = getID('cs_view_btnDelete')	
 	var cs_view_btnSelect = getID('cs_view_btnSelect');
+	var cs_update_btnSave = getID('cs_update_btnSave');
 	var cs_answer_btnInsert = getID('cs_answer_btnInsert');
-	
+	var cs_answer_btnSave = getID('cs_answer_btnSave');
+	var cs_view_btnCancel = getID('cs_view_btnCancel');
+	var cs_answer_btnSelect = getID('cs_answer_btnSelect');
+	var cs_answer_btnCancel = getID('cs_answer_btnCancel');
+	var cs_update_btnReturn = getID('cs_update_btnReturn');
+	var cs_board_btnFind = getID('cs_board_btnFind');
 	var frm = document.cs_frm_board;
-	 
+	
+	if(cs_board_btnFind != null) {
+		cs_board_btnFind.onclick = function() {
+			frm.action = 'inquiry.do?job=select';
+			frm.submit();
+		}
+	}
+	
+	if(cs_update_btnReturn !== null) {
+		cs_update_btnReturn.onclick = function() {
+			frm.action = 'inquiry.do?job=view';
+			frm.submit();
+		}
+	}
+	
+	if(cs_answer_btnCancel !== null) {
+		cs_answer_btnCancel.onclick = function() {
+			frm.action = '../inquiry.do?job=select';
+			frm.submit();
+		}
+	}
+	
+	if(cs_answer_btnSelect !== null) {
+		cs_answer_btnSelect.onclick = function() {
+			frm.action = '../inquiry.do?job=view';
+			frm.submit();
+		}
+	}
+	
+	/*상세보기에서 목록으로..*/
+	if(cs_view_btnCancel !== null) {
+		cs_view_btnCancel.onclick = function() {
+			frm.action = 'inquiry.do?job=select';
+			frm.submit();
+		}
+	}
+	
+	if(cs_answer_btnSave != null) {
+		cs_answer_btnSave.onclick = function() {
+			frm.enctype = 'multipart/form-data';
+			frm.action ='../inquiry.do?job=insertA';
+			frm.submit();
+		}	
+	}
+
+	if(cs_update_btnSave !== null) {
+		cs_update_btnSave.onclick = function() {
+			checkFlag = true;
+		if(!frm.subject.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('본문에 내용을 입력해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
+			frm.enctype = 'multipart/form-data';
+			frm.action = 'inquiry.do?job=updateR';
+			frm.submit();
+			}
+		}
+	}
 
 	if(cs_answer_btnInsert != null) {
 		cs_answer_btnInsert.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_answer.jsp';
-			frm.submit();
+			var adminPwd = prompt("관리자 암호를 입력하세요.")
+			frm.adminPwd.value = adminPwd 
+			
+			if(adminPwd !== null) {
+				frm.action = './cs_center/cs_func_page.jsp?func=cs_answer.jsp';
+				frm.submit();
+			}
 		}
 	}
 
 	/*Q&A 수정 화면에서 다시 글로 돌아가는 키*/
 	if(cs_view_btnSelect != null) {
 		cs_view_btnSelect.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_view.jsp';
+			frm.action = '../inquiry.do?job=view';
 			frm.submit();
-			
-			
 		}
 	}
+	
 	
 	/*Q&A 작성글 삭제 키*/
 	if(cs_view_btnDelete != null) {
@@ -102,16 +157,46 @@ var inquiry = function() {
 	/*Q&A 작성 후 servlet으로 전송하는 키*/
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
+		var checkFlag = true;
+		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
+		
+		if(!frm.inquiryType.checkValidity() || frm.inquiryType.value === 'null') {
+			alert("문의 유형을 설정해주세요.");
+			checkFlag = false;
+		}
+		else if(!frm.name.checkValidity() || frm.name.value === "") {
+			alert("작성자 이름을 입력해주세요.");
+			checkFlag = false;
+		}
+		else if(!frm.pwd.checkValidity()) {
+			alert('패스워드를 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.subject.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('본문에 내용을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.inquiryType.checkValidity()){
+			alert('문의 유형을 설정해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
-			frm.action = 'inquiry.do?job=insertR';
+			frm.action = '../inquiry.do?job=insertR';
 			frm.submit();
+			}
 		}
 	}
+
 	
 	/*Q&A 글쓰기 중 다시 목록으로 돌아가는 키*/
 	if(cs_insert_btnCancel !== null) {
 		cs_insert_btnCancel.onclick = function() {
-			frm.action = 'cs_func_page.jsp?func=../cs_center/cs_board.jsp';
+			frm.action = '../inquiry.do?job=select';
 			frm.submit();
 		}
 	}
@@ -119,11 +204,10 @@ var inquiry = function() {
 	/*Q&A 글쓰기 페이지로 가는 키*/
 	if(cs_btnInsert !== null) {
 		cs_btnInsert.onclick = function() {
-			frm.action = "cs_func_page.jsp?func=./cs_center/cs_insert.jsp";
+			frm.action = "./cs_center/cs_func_page.jsp?func=cs_insert.jsp";
 			frm.submit();
 		}
 	}
-	
 }
 
 
@@ -211,7 +295,7 @@ var imagePreView = function(zone, ev) {
 
 
 var goPage = function(page) {
-	var job = "../inquiry.do?job=";
+	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	frm.nowPage.value = page;
 	frm.action = job + "select";
@@ -223,7 +307,6 @@ var view = function(serial) {
 	var frm = document.cs_frm_board;
 	
 	frm.serial.value = serial;
-	alert(frm.serial.value);
 	frm.action = job + "view";
 	frm.submit();	
 }  

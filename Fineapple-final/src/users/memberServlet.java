@@ -14,14 +14,19 @@ import org.apache.jasper.tagplugins.jstl.core.Out;
 /**
  * Servlet implementation class memberServlet
  */
-@WebServlet("/UsersJoin/result.jsp")
+@WebServlet("/UsersJoin/result")
 public class memberServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Hello");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
 
 
+		
+		
 	}
 
 
@@ -31,59 +36,70 @@ public class memberServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
+
 		
 		System.out.println("doPost() 실행");
-		
-		String mid = request.getParameter("frm-id");
-		String pwd = request.getParameter("frm-password");
-		String name = request.getParameter("frm-name");
-		String email = request.getParameter("frm-email");
-		String phone = request.getParameter("frm-phone");
+
+		String mid = request.getParameter("frm_id");
+		String pwd = request.getParameter("frm_password");
+		String name = request.getParameter("frm_name");
+		String email = request.getParameter("frm_email");
+		String phone = request.getParameter("frm_phone");
 		String zipcode = request.getParameter("zipcode");
 		String address = request.getParameter("address");
 		String[] phoneFirst = request.getParameterValues("phone_first");
+
+		/* 아이디 체크 */
 
 		BoardDao dao = new BoardDao();
 
 		if(dao.sqlSession == null) {
 			System.out.println("연결 중 오류 ..");
-			
+
 		}else {
-			
+
 			System.out.println("연결 성공!");
 
+			/* 중복체크 */
 			MemberVo vo = new MemberVo();
-			
+		
+
+			/* insert */
 			vo.setMid(mid);
 			vo.setPwd(pwd);
 			vo.setName(name);
 			vo.setEmail(email);
-			
+
 			// 010, 017 유효검사
 			if(phoneFirst[0].equals("010")) {
 				vo.setPhone(phoneFirst[0] +"-"+ phone);
 			}else {
 				vo.setPhone(phoneFirst[1] +"-"+ phone);
 			}
-			
+
 			vo.setZipcode(zipcode);
 			vo.setAddress(address);
 
 			int cnt = dao.sqlSession.insert("board.insert", vo);
 			System.out.println("vo : " + vo);
-			
+
 			if( cnt > 0 ) {
 				System.out.println("INSERT : " + vo);
+
 				dao.sqlSession.commit();
+
 			}else {
 				System.out.println("Insert 오류");
 			}
 
-			dao.sqlSession.close();
-			
-		}
-	
-		response.sendRedirect("../main/index.jsp");
+		} //else {
+
+		response.sendRedirect("../UsersJoin/complete.jsp");
+		dao.sqlSession.close();
+
 	}
 
+
 }
+
+

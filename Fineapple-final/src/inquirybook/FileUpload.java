@@ -49,17 +49,21 @@ public class FileUpload {
 	
 	public InquiryBookVo getInquiryBookVo(char mode) {
 		InquiryBookVo vo = new InquiryBookVo();
-		//vo.setMserial(mul.getParameter("mserial"));
+		int pserial = Integer.parseInt(mul.getParameter("pserial"));
+		int serial = Integer.parseInt(mul.getParameter("serial"));
+		int hit = Integer.parseInt(mul.getParameter("hit"));
+		vo.setSerial(serial);
+		vo.setMserial(Integer.parseInt(mul.getParameter("mserial")));
 		vo.setMemberName(mul.getParameter("name"));
 		vo.setPwd(mul.getParameter("pwd"));
 		vo.setSubject(mul.getParameter("subject"));
 		vo.setDoc(mul.getParameter("doc"));
-		//vo.setInquiryType(mul.getParameter("inquirytype"));
-		//vo.setHit(mul.getParameter("hit"));
-		//vo.setPserial(mul.getParameter("pserial"));
-		//vo.setDocVisible(mul.getParameter());
+		vo.setInquiryType(mul.getParameter("inquiryType"));
+		vo.setHit(hit);
+		vo.setPserial(pserial);
+		vo.setDocVisible(mul.getParameter("docvisible"));
 		
-		
+		System.out.println(attList.size());
 		if(mul.getParameter("serial") != null) {
 			vo.setPserial(Integer.parseInt(mul.getParameter("serial")));
 		}
@@ -70,7 +74,7 @@ public class FileUpload {
 		if(attList.size() > 0) {
 			vo.setAttList(attList);
 		}
-		
+		System.out.println(vo.getAttList());
 		if(mode == 'u' || mode == 'd') {
 			vo.setSerial(Integer.parseInt(mul.getParameter("serial")));
 			if(mul.getParameterValues("delFiles") != null) {
@@ -84,6 +88,7 @@ public class FileUpload {
 				vo.setDelFiles(delFiles);
 			}
 		}
+		
 		return vo;
 	}
 	

@@ -43,7 +43,12 @@
 <!-- 검색하기 -->	
 	<div id = 'notice_search'>
 		<form name = 'frm_notice' method = 'POST'>
-			<input type = 'hidden'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
+		
+		<%if(session.getAttribute("mid")!=null){
+		if(session.getAttribute("mid").equals("kim")){ 
+		%> 
+			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
+		<%}} %>
 			<div>
 				<input type = 'text' name = 'findStr' id = 'findStr'/>
 				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
@@ -102,5 +107,6 @@ if(request.getParameter("findStr") != null) {
 	
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
+<script>notice()</script>
 </body>
 </html>

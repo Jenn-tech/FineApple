@@ -123,15 +123,6 @@
 						<span class = 'subject' >Merry holiday event</span>	
 					</div>
 				</li>
-				
-				
-				
-				
-				
-				
-				
-				
-						
 			</ul>
 		</div>	
 	

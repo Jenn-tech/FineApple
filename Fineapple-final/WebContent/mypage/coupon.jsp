@@ -51,15 +51,8 @@ h4{
 
 </head>
 <!-- header -->
-<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
-	<jsp:include page="../main/header.jsp"/>
-	
-	<%} else {%>
-	
-	<jsp:include page="/main/header2.jsp"/>
-	
-	<%} %>
+	<jsp:include page="/main/header.jsp"/>
+
 <body class="cart_body" id="cart_body">
 
 	<header class="cs_func_page_header">

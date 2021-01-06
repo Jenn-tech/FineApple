@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,12 @@ import org.apache.tomcat.util.http.fileupload.FileUpload;
 @WebServlet("/review.do") 
 public class ReviewServlet extends HttpServlet{
 	ReviewDao dao;
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,8 +66,9 @@ public class ReviewServlet extends HttpServlet{
 			
 		case "insert":
 			ReviewFileUpload fu = new ReviewFileUpload(req);
-			vo = fu.getReview();
+			vo = fu.getReview1();
 			page = fu.getPage();
+			
 			msg = dao.insert(vo);
 			
 			req.setAttribute("msg", msg);
@@ -71,7 +79,9 @@ public class ReviewServlet extends HttpServlet{
 			break;
 			
 		case "view":
-			int reviewSerial = Integer.parseInt(req.getParameter("reviewSerial"));
+			String temp = req.getParameter("reviewSerial");
+			int temp1 = Integer.parseInt(temp);
+			int reviewSerial = temp1;
 			vo = dao.view(reviewSerial);
 			
 			req.setAttribute("vo", vo);
@@ -86,23 +96,27 @@ public class ReviewServlet extends HttpServlet{
 			//vo.setMid(req.getParameter("mid"));
 			//vo.setPwd(req.getParameter("pwd"));
 			vo.setDelFile(req.getParameter("delFile"));
-			String temp = req.getParameter("reviewSerial");
-			int temp1 = Integer.parseInt(temp);
 			
+			String temp11 = req.getParameter("reviewSerial");
+			int temp22 = Integer.parseInt(temp11);
+			vo.setReviewSerial(temp22);
 			
-			vo.setReviewSerial(temp1);
-			msg = dao.delete(vo);
+			msg = dao.delete2(temp22);
 			
-			page = new ReviewPage();
-			page.setFindStr(req.getParameter("findStr"));
-			String temp2 = req.getParameter("nowPage");
-			int temp3 = Integer.parseInt(temp2);
-			page.setNowPage(temp3);
-			req.setAttribute("page", page);
+//			page.setFindStr(req.getParameter("findStr"));
+			
+//			page = new ReviewPage();
+//			String temp2 = req.getParameter("nowPage");
+//			int temp3 = Integer.parseInt(temp2);
+//			page.setNowPage(temp3);
+			
+//			req.setAttribute("page", page);
 			req.setAttribute("msg", msg);
 			
-			rd = req.getRequestDispatcher("../reivew3/result.jsp");
-			rd.forward(req, resp);
+			resp.sendRedirect("review3/deleteResult.jsp");
+			
+//			rd = req.getRequestDispatcher("../review3/result.jsp");
+//			rd.forward(req, resp);
 			break;
 			
 		case "modify":

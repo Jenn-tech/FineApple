@@ -9,9 +9,10 @@
 <script src='<%=request.getContextPath() %>/js/review.js'></script>
 </head>
 <body>
+<% String msg =(String) request.getAttribute("msg"); %>
 <div id='review'>
 	<div class='result_msg'>
-		작업이 처리 되었습니다.
+		<%=msg %>
 	</div>
 	<form name='frm_reivew' method='post'>
 <%-- 		<input type='hidden' name='findStr' value='${page.findStr }'/>
