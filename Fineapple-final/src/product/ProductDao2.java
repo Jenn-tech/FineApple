@@ -9,16 +9,16 @@ import java.util.List;
 
 import bean.Application;
 
-public class ProductDao {
+public class ProductDao2 {
 	Connection conn; 
 	PreparedStatement ps; 
 	ResultSet rs;
-	public ProductDao() {
+	public ProductDao2() {
 	}
 
-		private static ProductDao instance = new ProductDao();
+		private static ProductDao2 instance = new ProductDao2();
 		
-		public static ProductDao getInstance() {
+		public static ProductDao2 getInstance() {
 			return instance;
 		}
 
@@ -40,9 +40,9 @@ public class ProductDao {
 		
 		
 		//c Read u d
-		public List<ProductVo> selectAllProducts(){
-			//최근 등록한 상품 먼저 출력하기
-			String sql = "select * from product order by code ";
+		public List<ProductVo> selectPricelist(){
+			//낮은 가격 순
+			String sql = "select * from product order by price asc";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
@@ -70,18 +70,19 @@ public class ProductDao {
 			}
 			return list;
 		}
-
 		
-		public List<ProductVo> select(String findStr) {
+		
+		public List<ProductVo> selectPricelistdesc(){
+			//높은가격 순
+			String sql = "select * from product order by price desc";
 			List<ProductVo> list = new ArrayList<ProductVo>();
+			
+			
 			try {
-				
 				conn = new Application().getConn();
-				
-				String sql = "SELECT * FROM product WHERE name LIKE ?";
 				ps = conn.prepareStatement(sql);
-				ps.setString(1, "%" + findStr + "%");
-				rs= ps.executeQuery();
+				rs = ps.executeQuery();
+				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
 					vo.setCode(rs.getInt("code"));
@@ -92,19 +93,18 @@ public class ProductDao {
 					vo.setLinkUrl(rs.getString("linkurl"));
 					list.add(vo);
 				}
-
+				
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				Application.close(conn, ps, rs);
 			}
+			System.out.println("list에 add완료");
 			return list;
 		}
+
+		
 		
 		
 		
