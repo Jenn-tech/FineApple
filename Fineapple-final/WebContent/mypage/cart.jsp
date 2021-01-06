@@ -57,7 +57,7 @@ h4{
 	
 	<%} else {%>
 	
-	<jsp:include page="/main/header2.jsp"/>
+	<jsp:include page="../main/header.jsp"/>
 	
 	<%} %>
 	<header class="cs_func_page_header">
