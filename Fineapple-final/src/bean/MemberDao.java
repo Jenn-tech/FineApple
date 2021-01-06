@@ -17,13 +17,13 @@ public class MemberDao {
 	
 	}
 	
-	public boolean login(String mid, String pwd) {
+	public boolean login(String member_mid, String member_pwd) {
 		boolean b = false; //기본 : 로그인되지 않았어
 		try {
-			String sql = "select count(mid) cnt from members where mid=? and pwd=? ";
+			String sql = "select count(member_mid) cnt from members where member_mid=? and member_pwd=? ";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, mid); //index는 1부터 시작
-			ps.setString(2, pwd);
+			ps.setString(1, member_mid); //index는 1부터 시작
+			ps.setString(2, member_pwd);
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
