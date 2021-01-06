@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,12 @@ import org.apache.tomcat.util.http.fileupload.FileUpload;
 @WebServlet("/review.do") 
 public class ReviewServlet extends HttpServlet{
 	ReviewDao dao;
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -94,18 +101,22 @@ public class ReviewServlet extends HttpServlet{
 			int temp22 = Integer.parseInt(temp11);
 			vo.setReviewSerial(temp22);
 			
-			msg = dao.delete(vo);
+			msg = dao.delete2(temp22);
 			
-			page = new ReviewPage();
-			page.setFindStr(req.getParameter("findStr"));
-			String temp2 = req.getParameter("nowPage");
-			int temp3 = Integer.parseInt(temp2);
-			page.setNowPage(temp3);
-			req.setAttribute("page", page);
+//			page.setFindStr(req.getParameter("findStr"));
+			
+//			page = new ReviewPage();
+//			String temp2 = req.getParameter("nowPage");
+//			int temp3 = Integer.parseInt(temp2);
+//			page.setNowPage(temp3);
+			
+//			req.setAttribute("page", page);
 			req.setAttribute("msg", msg);
 			
-			rd = req.getRequestDispatcher("../reivew3/result.jsp");
-			rd.forward(req, resp);
+			resp.sendRedirect("review3/deleteResult.jsp");
+			
+//			rd = req.getRequestDispatcher("../review3/result.jsp");
+//			rd.forward(req, resp);
 			break;
 			
 		case "modify":

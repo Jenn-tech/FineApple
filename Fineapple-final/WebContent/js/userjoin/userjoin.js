@@ -9,7 +9,7 @@ var member = function() {
 	
 var btnFindZip = getID('btnFindZip');
 var idCheck = getID('id-Check');
-
+var userInfo = getID('frm_member');
 
 	if(btnFindZip != null) {
 		btnFindZip.onclick = function() {
@@ -26,9 +26,19 @@ var idCheck = getID('id-Check');
 	}
 	
 	if(idCheck != null) {
+			
 			idCheck.onclick = function() {
-			window.open("idCheckForm.jsp", "idwin", "width=400, height=350");
-
+			if(document.userInfo.frm_id.value == "") {
+				alert("아이디를 입력하세요.");
+				return;
+			}
+		
+			var userInfo = document.userInfo;
+			var user_id =  userInfo.frm_id.value;
+			console.log(user_id);
+			userInfo.action = "/Fineapple-final/UsersJoin/formCheck";
+			userInfo.method="POST";
+			userInfo.submit();
 		}
 	}
 }
@@ -58,12 +68,90 @@ var phoneHypen = function() {
 	}
 }
 
-/* */
+/* 
 function send_go(){
 			alert("이름을 입력하세요");
 	        return false;
 
 	 }
 
-
+*/
  
+/* 회원가입 데이터 없을 시 alert 창 */
+
+
+
+function joinCheck(obj) {
+	if(!obj.frm_id.value || obj.frm_id.value.trim().length == 0) {
+		alert('아이디를 입력해주세요.');
+		obj.frm_id.value ="";
+		obj.frm_id.focus();
+		return false;
+	}
+	
+	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0) {
+		alert('비밀번호를 입력해주세요.');
+		obj.frm_password.value ="";
+		obj.frm_password.focus();
+		return false;
+	}
+	
+	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0) {
+		alert('비밀번호를 입력해주세요.');
+		obj.frm_password.value ="";
+		obj.frm_password.focus();
+		return false;
+	}
+	
+	if(!obj.re_frm_password || obj.re_frm_password.value.trim().length == 0){
+		alert('비밀번호를 재입력해주세요.');
+		obj.re_frm_password.value ="";
+		obj.re_frm_password.focus();
+		return false;
+	}
+	
+	if(!obj.frm_name || obj.frm_name.value.trim().length == 0){
+		alert('이름을 입력해주세요.');
+		obj.frm_name ="";
+		obj.frm_name.focus();
+		return false;
+	}
+	
+	if(!obj.frm_email || obj.frm_email.value.trim().length == 0){
+		alert('이메일을 입력해주세요.');
+		obj.frm_email ="";
+		obj.frm_email.focus();
+		return false;
+	}
+	
+	if(!obj.frm_phone || obj.frm_phone.value.trim().length == 0){
+		alert('전화번호를 입력해주세요.');
+		obj.frm_phone = "";
+		obj.frm_phone.focus();
+		return false;
+	}
+	
+	if(!obj.zipcode || obj.zipcode.value.trim().length == 0) {
+		alert('우편번호를 입력해주세요.')
+		obj.zipcode = "";
+		obj.zipcode.focus();
+		return false;
+	}
+	
+		if(!obj.btnZipcode || obj.btnZipcode.value.trim().length == 0) {
+		alert('상세 주소를 입력해주세요.')
+		obj.btnZipcode = "";
+		obj.btnZipcode.focus();
+		return false;
+	}
+	
+		if(!obj.address || obj.address.value.trim().length == 0) {
+		alert('우편번호를 입력해주세요.')
+		obj.address = "";
+		obj.address.focus();
+		return false;
+	}
+	
+	
+	return true;
+}

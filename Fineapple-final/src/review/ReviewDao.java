@@ -156,7 +156,7 @@ public class ReviewDao {
 	public String delete(ReviewVo vo){
 		String msg = "리뷰가 정상적으로 삭제되었습니다.";
 			try {
-				String sql = "delete review from where reviewSerial = ? ";
+				String sql = "delete from review where reviewSerial = ? ";
 				ps = conn.prepareStatement(sql);
 				System.out.println(vo.getReviewSerial());
 				ps.setInt(1,vo.getReviewSerial());
@@ -170,6 +170,26 @@ public class ReviewDao {
 			File file = new File(ReviewFileUpload.saveDir + vo.getDelFile());
 			if(file.exists()) {
 				file.delete();
+			}
+			
+		}catch(Exception ex) {
+			msg = ex.getMessage();
+		}finally {
+			disConn();
+			return msg;
+		}
+	}
+	
+	public String delete2(int reviewSerial){
+		String msg = "리뷰가 정상적으로 삭제되었습니다.";
+			try {
+				String sql = "delete from review where reviewSerial = ? ";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1,reviewSerial);
+			
+			int rowCnt = ps.executeUpdate();
+			if(rowCnt<1) {
+				throw new Exception("회원 정보 삭제중 오류 발생");
 			}
 			
 		}catch(Exception ex) {
