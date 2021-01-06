@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Application;
-import gbook.GuestBookVo;
 
 public class ProductDao {
 	Connection conn; 
