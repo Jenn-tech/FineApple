@@ -114,6 +114,14 @@
 	
 <!-- buttons -->
 	<div class = 'btns'>
+	
+		<input type = 'hidden' value = '삭제'  name = 'btnDelete' id = 'btnDelete' />
+		<input type = 'hidden' value = '수정'  name = 'btnModify' id = 'btnModify' />
+		<%if(session.getAttribute("mid").equals("kim")){ //mid의 속성이 없으면 로그인 이전화면
+	%> 
+		<input type = 'button' value = '삭제'  name = 'btnDelete' id = 'btnDelete' />
+		<input type = 'button' value = '수정'  name = 'btnModify' id = 'btnModify' />
+		<%} %>
 		<input type = 'button' value = '목록'  name = 'btnSelect' id = 'btnSelect' onClick = "history.back()"/>
 	</div>
 			

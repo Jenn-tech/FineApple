@@ -44,7 +44,7 @@
 			<tr class = 'view'>
 				<td colspan ='2'>
 					<div class ='content'>
-						<textarea name= 'noticeDoc' rows = '7' cols ='80'></textarea>
+						<textarea name= 'noticeDoc' rows = '7' cols ='80' required></textarea>
 					</div>				
 				</td>
 			</tr>
@@ -60,7 +60,7 @@
 			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
 			<br><br><br><br>
 			<div class = 'btns'>
-				<input type = 'button' value = '저장' id = 'btnSave' onclick="save()"/>
+				<input type = 'submit' value = '저장' id = 'btnSave' onclick="save()"/>
 				<input type = 'button' value = '목록' id = 'btnSelect' onClick="history.back()"/>
 				
 				<!-- 원래 hidden -->
