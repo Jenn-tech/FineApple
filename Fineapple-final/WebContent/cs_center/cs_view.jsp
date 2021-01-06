@@ -41,8 +41,9 @@
 			<input type="hidden" value="${param.nowPage}" name="nowPage"/>
 			<input type="hidden" value="${param.findStr}" name="findStr"/>
 			<input type='hidden' name='serial'  value='${vo.serial }'/>
-			<input type='hidden' name='pwd'  value='0'/>
-			<input type="hidden" name="adminPwd" value="0">
+			<input type='hidden' name='pwd'  value='${vo.pwd}'/>
+			<input type="hidden" name="docvisible" value="${vo.docVisible}"/>
+			<input type="hidden" name="hit" value="${vo.hit}"/>
 		</div>
 	</form>
 </div>

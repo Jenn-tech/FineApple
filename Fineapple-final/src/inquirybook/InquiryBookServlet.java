@@ -1,6 +1,7 @@
 package inquirybook;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import bean.CsPage;
 
 
 @WebServlet(urlPatterns = "/inquiry.do")
@@ -27,6 +26,7 @@ public class InquiryBookServlet extends HttpServlet {
 	}
 
 	@Override
+	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
@@ -65,6 +65,7 @@ public class InquiryBookServlet extends HttpServlet {
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
 			System.out.println(msg);
+			
 			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);
 			break;
@@ -77,6 +78,7 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
+			System.out.println("select" + list);
 			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_board.jsp");
 			rd.forward(req, resp);
 
@@ -105,7 +107,6 @@ public class InquiryBookServlet extends HttpServlet {
 			break;
 			
 		case "updateR":
-			System.out.println("업데이트 서블렛 진입");
 			fu = new FileUpload(req);
 			vo = fu.getInquiryBookVo('u');
 			page = fu.getPage();
