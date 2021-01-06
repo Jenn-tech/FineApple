@@ -33,7 +33,7 @@ public class ReviewFileUpload {
 		}
 	}
 
-	public ReviewVo getReview1() {
+	public ReviewVo getReview1() { //servlet insert
 		ReviewVo vo = new ReviewVo();
 		vo.setMemberId(mul.getParameter("memberId"));
 		vo.setReviewTitle(mul.getParameter("reviewTitle"));
@@ -50,7 +50,7 @@ public class ReviewFileUpload {
 		return vo;
 	}
 	
-	public ReviewVo getReview() {
+	public ReviewVo getReview() { //servlet update
 		ReviewVo vo = new ReviewVo();
 		vo.setMemberId(mul.getParameter("memberId"));
 		vo.setReviewTitle(mul.getParameter("reviewTitle"));

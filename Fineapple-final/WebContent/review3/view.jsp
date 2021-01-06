@@ -47,6 +47,8 @@
 	 						<%-- <td class="table-right" colspan="2"><%= rv.getReviewDate()%></td> --%>
 	 					</tr>
 	 					<tr>
+	 						<td class="table-left">사진</td>
+	 						<td  class="table-right" colspan="2">
 							<c:choose>
 								<c:when test="${empty vo.reviewImg }">
 									<img src='http://placehold.it/200X140' width='200px' height='140px' />
@@ -56,7 +58,8 @@
 										<img src='./review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
 									</a>
 								</c:otherwise>				
-							</c:choose>		
+							</c:choose>	
+							</td>	
 						<hr/>
 						</tr>
 	 					<tr>
