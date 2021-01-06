@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="mypage.CartVo"%>
+<%@page import="java.util.ArrayList" %>
+<%
+request.setCharacterEncoding("utf-8");
+ArrayList<CartVo> cart = null;
+
+Object obj = session.getAttribute("cart");	//세션 객체에서 cart 값을 가져온다.
+
+if(obj == null) {	//주문한 제품이 없으면 배열을 생성 
+	cart = new ArrayList<CartVo>();	
+} else {			//주문한 제품이 있으면 강제로 캐스팅 
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>

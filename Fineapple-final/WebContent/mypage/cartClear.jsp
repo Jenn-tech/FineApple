@@ -132,7 +132,7 @@ function fnGo(){
 	<!--END-->
 	<div class="bottom-btn">
 		<input type="button" id="cart-btn"
-			onclick="location.href='orderlist.jsp' " style='cursor: pointer;'
+			onclick="location.href='../main/index.jsp' " style='cursor: pointer;'
 			value="상품 보러가기">
 	</div>
 
