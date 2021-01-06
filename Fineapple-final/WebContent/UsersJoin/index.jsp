@@ -34,7 +34,7 @@
 		</section>
 
 		<section class="section-two">
-			<form class="frm-member" id="frm_member" onsubmit="return joinCheck(this)" action=""
+			<form class="frm-member" id="frm_member" onsubmit="return joinCheck(this)" action="/Fineapple-final/UsersJoin/result"
 				name="userInfo" method="POST">
 				<div class="frm-label">
 					<label for="reg-id">아이디</label> <span class="field-required"></span><br>
