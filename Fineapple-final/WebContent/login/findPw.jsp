@@ -18,7 +18,7 @@
 	
 	
 <div class = "container">
-	<form name="pwfindscreen" method = "POST">
+	<form name="pwfindscreen" action ="../Findpw" method = "post" onsubmit="return pw_search()">
 			<div class = "search-title">
 				<h3>등록한 정보로 인증</h3>
 			</div>
@@ -29,13 +29,17 @@
 			<br>
 			</div>
 			<div class = "find-phone">
+				<label>이메일</label>
+				<input type="text" name="member_email" class = "btn-phone" placeholder = "example@gmail.com">
+			</div>
+	<!-- <div class = "find-phone">
 				<label>번호</label>
 				<input type="text" onKeyup = "addHypen(this);" name="member_phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
-			</div>
+			</div> -->
 			<br>
 	</section>
 	<div class ="btnSearch">
-		<input type="button" name="enter" value="찾기"  onClick="pw_search()">
+		<input type="submit" name="enter" value="찾기"  >
 		<input type="button" name="cancle" value="취소" onClick="history.back()">
  	</div>
  </form>
