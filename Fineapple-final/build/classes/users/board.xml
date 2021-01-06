@@ -10,4 +10,8 @@
 	<select id="CheckId" resultType="int">
 		SELECT count(*) FROM membervo WHERE mid = #{id}  
 	</select>
+
+	<select id="one_id" resultType="String">
+		SELECT mid FROM membervo WHERE mid = #{id}
+	</select>
 </mapper>

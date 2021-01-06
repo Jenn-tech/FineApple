@@ -2,6 +2,8 @@ package users;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,8 +30,6 @@ public class IdCheckServlet extends HttpServlet {
 		String id = request.getParameter("frm_id");
 		// song 
 		
-		out.println(id);
-
 		/* 커넥션 연결 */
 		
 		BoardDao dao = new BoardDao();
@@ -42,33 +42,35 @@ public class IdCheckServlet extends HttpServlet {
 			
 			/* select */
 			MemberVo vo = new MemberVo();
-			
-			vo.setMid(id);
-			
-			MemberVo vo1 = new MemberVo();
-			
-			
-			String getMemberID = vo.getMid();
-			request.setAttribute("getID", getMemberID);
-			
+
 			
 			/* 콘솔 출력 */
-			System.out.println(vo.getMid());
+
+			String getID = dao.sqlSession.selectOne("board.one_id", id);
 			
+			System.out.println(getID);
 			
+			if(getID == null || getID.equals("")) {
+				vo.setMid(null);
+			}else {
+				vo.setMid(getID);
+			}
+			request.setAttribute("list", vo);
 			
+		
+			/* count 
 			int cnt = dao.sqlSession.selectOne("board.CheckId", id);
 			
+			request.setAttribute("getID", cnt);
 			
 			
-			if( cnt > 0 ) {
-				
-				System.out.println("중복 아이디 : " + cnt);
+			if( cnt > 0) {
+				System.out.println("중복 아이디 갯수" + cnt);
 				dao.sqlSession.commit();
 
 			}else {
 				System.out.println("select 오류");
-			}
+			}*/
 		
 		}
 		
