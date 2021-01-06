@@ -23,17 +23,7 @@ public class memberServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		
-		String id = request.getParameter("frm-check");
-		String id2 = request.getParameter("frm_id");
-		String id3 = request.getParameter("frm_phone");
-		out.println(id);
-		out.println(id2);
-		out.println(id3);
-		
-		//window.open("/Fineapple-final/UsersJoin/result", "idwin", "width=400, height=350");
-		
-		MemberVo vo = new MemberVo();
+
 
 		
 		
@@ -104,7 +94,7 @@ public class memberServlet extends HttpServlet {
 
 		} //else {
 
-		//response.sendRedirect("../UsersJoin/complete.jsp");
+		response.sendRedirect("../UsersJoin/complete.jsp");
 		dao.sqlSession.close();
 
 	}

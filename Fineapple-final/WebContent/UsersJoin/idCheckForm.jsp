@@ -1,3 +1,4 @@
+<%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,7 +20,10 @@
 </head>
 <%
 
+MemberVo vo = new MemberVo();
 String user_id = request.getParameter("frm_id");
+
+
 %>
 <body class="body">
 	<!-- header영역 -->
@@ -30,21 +34,22 @@ String user_id = request.getParameter("frm_id");
 		<section class="section-one">
 			<div class="section-welcome">
 				<div class="welcome-img">
-					<%if (user_id.equals("AAA")) {%>
+					<%if (user_id.equals(request.getAttribute("getID"))) {%>
 					<img src="../images/UsersJoin/important.png">
 					<% }else {%>
 					<img src="../images/UsersJoin/smile.png">
 					<% } %>
 				</div>
 				<h1 class="welcome-head"><%=user_id %></h1>
-				<%if(user_id.equals("AAA")) { %>
+				<%if(user_id.equals(request.getAttribute("getID"))) { %>
 				<h1 class="welcome-head">아이디가 중복입니다.</h1>
 				
 				<% }else { %>
-				<h1 class="welcome-head">아이디를 사용 가능합니다.</h1>
+				<h1 class="welcome-head">사용 가능합니다.</h1>
 				<% } %>
 			</div>
 		</section>
+		
 				<div class="frm-submit">
 					<form action="index.jsp">
 					<input type="submit" name="frmSubmit" value="돌아가기">

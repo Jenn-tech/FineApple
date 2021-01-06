@@ -15,23 +15,6 @@ import javax.websocket.SendResult;
 @WebServlet("/UsersJoin/formCheck")
 public class IdCheckServlet extends HttpServlet {
 	  
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=utf-8");
-		request.setCharacterEncoding("UTF-8");
-		
-		PrintWriter out = response.getWriter();
-		
-		out.println("중복 확인 검사창");
-
-		String id = request.getParameter("frm_id");
-		String id2 = request.getParameter("frm-check");
-		out.println(id);
-		response.sendRedirect("/Fineapple-final/UsersJoin/index.jsp");
-		
-	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,15 +22,45 @@ public class IdCheckServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
-		
 		PrintWriter out = response.getWriter();
-		out.println("중복 확인 검사창");
+
 
 		String id = request.getParameter("frm_id");
-		String id2 = request.getParameter("frm-check");
+		
 		out.println(id);
-		out.println(id2);
-		System.out.println(id);
+
+		/* 커넥션 연결 */
+		
+		BoardDao dao = new BoardDao();
+
+		if(dao.sqlSession == null) {
+			System.out.println("연결 중 오류 ..");
+
+		}else {
+			System.out.println("연결 성공");
+			
+			/* select */
+			MemberVo vo = new MemberVo();
+			vo.setMid(id);
+			
+			String getMemberID = vo.getMid();
+			
+			request.setAttribute("getID", getMemberID);
+			
+			int cnt = dao.sqlSession.selectOne("board.CheckId", id);
+			
+			
+			if( cnt > 0 ) {
+				
+				System.out.println("중복 아이디 : " + cnt);
+				dao.sqlSession.commit();
+
+			}else {
+				System.out.println("select 오류");
+			}
+		
+		}
+		
 		RequestDispatcher dis = request.getRequestDispatcher("idCheckForm.jsp");
 		dis.forward(request, response);
 		
