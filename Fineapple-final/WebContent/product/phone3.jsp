@@ -17,8 +17,13 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    
+    <script src='cart/cart.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
+	
 </head>
 <body>
 	<!-- header영역 -->
@@ -28,7 +33,7 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
-            <form name="form" method="get">
+            <form name="form" method="get" action="order">
                 <h1>iPhone 12 Pro Max</h1><br/>
                 <span>상품코드 : </span>
                 <span>iPhone12ProMax</span><br/>
@@ -50,13 +55,13 @@
                     <input type="button" value=" + " onclick="add();"><br/>
                     금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
                 </div>
-            </form>
             <br/>
 
-            <div class="btns">
-                <a href="#"><input type="submit" value="장바구니" class="btn1"/></a>
-                <a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-            </div>
+            </form>
+	            <div class="btns">
+	                <input type="submit" value="장바구니" class="btn1"/>
+	                <a href="order.jsp"><input type="submit" value="바로구매" class="btn2"/></a>
+	            </div>
         </div>
     </div>
 
