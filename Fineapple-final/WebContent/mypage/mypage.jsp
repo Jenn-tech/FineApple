@@ -17,6 +17,45 @@
 <script src="../js/userjoin/agree.js"></script>
 
 <style>
+.table{
+	margin : 0 auto;
+	text-align :center;
+}
+
+.cs_func_page_header {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	padding-top: 55px; 
+	border-bottom: 3px solid #000000;
+}
+
+.cs_category {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	margin: 49px auto 0 auto;
+	height: 50px;
+}
+.cs_category > a {
+	display: inline-block;
+	width: 150px;
+	padding-bottom: 10px;
+	color : black;
+	text-decoration : none;
+}
+.cs_category > a:hover {
+	border-bottom:6px solid #000000;
+}
+
+.cs_category > a:visited {
+	color: #000000;
+	
+}
+
 </style>
 </head>
 
@@ -31,15 +70,15 @@
 	<jsp:include page="/main/header2.jsp" />
 
 	<%} %>
-
-	<ul class="menu">
-		<li><a href="../mypage/mypage.jsp">정보수정</a></li>
-		<li><a href="../mypage/cart.jsp">장바구니</a></li>
-		<li><a href="../mypage/orderlist.jsp">주문내역</a></li>
-		<li><a href="../mypage/wish.jsp">찜 목록</a></li>
-		<li><a href="../mypage/coupon.jsp">쿠폰함</a></li>
-
-	</ul>
+	<header class="cs_func_page_header">
+		<h1 style="font-size: 2em;">마이페이지</h1>
+		<div class="cs_category">
+			<a href="../mypage/mypage.jsp">정보수정</a>
+			<a href="../mypage/cart.jsp">장바구니</a>
+			<a href="../mypage/orderlist.jsp">주문내역</a>
+			<a href="../mypage/coupon.jsp">쿠폰함</a>
+		</div>
+	</header>
 	
 	<div class="div-container">
 

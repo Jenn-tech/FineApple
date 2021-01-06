@@ -51,6 +51,7 @@
 	            <li>
 	            	<a href="../mypage/mypage.jsp" class="button alt">마이룸</a>
 	            	<ul>
+	            		<a href="../mypage/mypage.jsp" >정보수정</a>
 	            		<a href="../mypage/cart.jsp" >장바구니</a>
 	            		<a href="../mypage/orderlist.jsp" >주문내역</a>
 	            		<a href="../mypage/coupon.jsp" >쿠폰함</a>

@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+.table{
+	margin : 0 auto;
+	text-align :center;
+}
+
 .cart-box-title{
 	font-size : 15px;
 }
@@ -18,6 +23,8 @@
 	background-color : black;
 	color : white;
 	font-size:18px;
+	height : 30px;
+	width : 130px;
 }
 .bottom-btn>#cart-btn{
 	background-color : black;
@@ -26,7 +33,7 @@
 	margin-right: 5px; 
 	font-size : 20px;
 	height : 50px;
-	width : 120px;
+	width : 130px;
 	}
 h4{
  text-align : center;
@@ -40,11 +47,7 @@ h4{
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" type="text/css"
-	href="https://vendor-cdn.imweb.me/minify_css/vendor_blue_10.css?1577687557">
-<link rel="stylesheet" type="text/css"
 	href="https://vendor-cdn.imweb.me/css/site/site2.css?1608687536">
-<link rel="stylesheet" type="text/css"
-	href="https://vendor-cdn.imweb.me/css/site/iefix2.css?1590627710">
 
 </head>
 <!-- header -->
@@ -57,20 +60,21 @@ h4{
 	<jsp:include page="/main/header2.jsp"/>
 	
 	<%} %>
+	<header class="cs_func_page_header">
+		<h1 style="font-size: 2em;">장바구니</h1>
+		<div class="cs_category">
+			<a href="../mypage/mypage.jsp">정보수정</a>
+			<a href="../mypage/cart.jsp">장바구니</a>
+			<a href="../mypage/orderlist.jsp">주문내역</a>
+			<a href="../mypage/coupon.jsp">쿠폰함</a>
+		</div>
+	</header>
 <body class="cart_body" id="cart_body">
 
-	<ul class="menu">
-       			<li><a href="../mypage/mypage.jsp">정보수정</a></li>
-                <li><a href="../mypage/cart.jsp">장바구니</a></li>
-                <li><a href="../mypage/orderlist.jsp">주문내역</a></li>
-                <li><a href="../mypage/wish.jsp">찜 목록</a></li>
-                <li><a href="../mypage/coupon.jsp">쿠폰함</a></li>
-                
-       </ul>
  
-       <h4 style="padding : 30px 0px 30px 0px;">장바구니</h4>
+       <h4 style="padding : 30px 0px 30px 0px;"> </h4>
 	<!--장바구니 아이템 리스트 가져옴-->
-	<div class="cart_list_wrap holder">
+	<div class="cart_list_wrap_holder">
 		<table class="table no-margin shop-table">
 			<colgroup>
 				<col style="width: 40px">
@@ -91,7 +95,7 @@ h4{
 							</label>
 						</div>
 					</th>
-					<th class="item-info"><span class="cart-box-title">item</span>
+					<th class="item-info"><span class="cart-box-title" style="width: 40px">item</span>
 						<span class="hidden-lg hidden-md"></span></th>
 					
 					<th class="amount"><span class="cart-box-title">수량</span></th>
@@ -101,6 +105,7 @@ h4{
 					<th></th>
 				</tr>
 			</thead>
+			
 			<tbody>
 				<tr class="content" style="overflow: visible;">
 					<td class="slt">
@@ -118,8 +123,8 @@ h4{
 									width="70" height="70" alt="cart item">
 							</div>
 
-							<p class="cart-item-title" style="font-size: 20px;"
-								id="shop_cart_title">iPhone 12 Pro</p>
+							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
+								id="shop_cart_title"> iPhone 12 Pro</p>
 					</a></td>
 					<td class="amount-td">
 						<div class="text-13 title text-center">
@@ -145,10 +150,10 @@ h4{
 						</div></td>
 					<td class="cart-product-price">1,350,000원</td>
 					<td class="cart-order-btn">
-					<input type="button" id="cart-btn" value="주문">
-					<input type="button" id="cart-btn" value="삭제"></td>
+					<input type="button" id="cart-btn" onclick="location.href='order.jsp' " style='cursor:pointer;' value="주문">
+					<input type="button" id="cart-btn" onclick="location.href='delete.jsp' " style='cursor:pointer;'value="삭제">
+					</td>
 				</tr>
-				
 				
 				<tr class="content" style="overflow: visible;">
 					<td class="slt">
@@ -166,7 +171,7 @@ h4{
 									width="70" height="70" alt="cart item">
 							</div>
 
-							<p class="cart-item-title" style="font-size: 20px;"
+							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
 								id="shop_cart_title">iPhone 12</p>
 					</a></td>
 					<td class="amount-td">
@@ -193,8 +198,8 @@ h4{
 						</div></td>
 					<td class="cart-product-price">950,000원</td>
 					<td class="cart-order-btn">
-					<input type="button" id="cart-btn" value="주문">
-					<input type="button" id="cart-btn" value="삭제"></td>
+					<input type="button" id="cart-btn" onclick="location.href='order.jsp' " style='cursor:pointer;' value="주문">
+					<input type="button" id="cart-btn" onclick="location.href='delete.jsp' " style='cursor:pointer;' value="삭제"></td>
 				</tr>
 				
 				
@@ -214,7 +219,7 @@ h4{
 									width="70" height="70" alt="cart item">
 							</div>
 
-							<p class="cart-item-title" style="font-size: 20px;"
+							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
 								id="shop_cart_title">iPhone 11</p>
 					</a></td>
 					<td class="amount-td">
@@ -241,8 +246,8 @@ h4{
 						</div></td>
 					<td class="cart-product-price">850,000원</td>
 					<td class="cart-order-btn">
-					<input type="button" id="cart-btn" value="주문">
-					<input type="button" id="cart-btn" value="삭제"></td>
+					<input type="button" id="cart-btn" onclick="location.href='order.jsp' " style='cursor:pointer;' value="주문">
+					<input type="button" id="cart-btn" onclick="location.href='delete.jsp' " style='cursor:pointer;' value="삭제"></td>
 				</tr>
 				
 		
@@ -269,8 +274,8 @@ h4{
 			<tfoot>
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
-					<input type="button" id="cart-btn" value="선택상품 삭제">
-					<input type="button" id="cart-btn" value="위시리스트 담기"></td>
+					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="선택 상품 삭제">
+					<input type="button" id="cart-btn" onclick="location.href='index.jsp' " style='cursor:pointer;' value="다른 상품 보기"></td>
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
@@ -284,11 +289,11 @@ h4{
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" value="주문하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="주문하기"> 
 	</div>
 	
+	</body>
 	 <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
    	
-</body>
 </html>
