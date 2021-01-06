@@ -89,7 +89,7 @@ public class memberServlet extends HttpServlet {
 
 		} //else {
 
-		response.sendRedirect("../UsersJoin/complete.jsp");
+		//response.sendRedirect("../UsersJoin/complete.jsp");
 		dao.sqlSession.close();
 
 	}

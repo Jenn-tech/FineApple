@@ -7,7 +7,7 @@
 	<insert id="insert" parameterType="users.MemberVo">
 		INSERT INTO membervo(seqno, mid, pwd, name, email, phone, zipcode, address, joindate)VALUES(seq_seqno.nextval, '${mid}', '${pwd}', '${name}', '${email}', '${phone}', '${zipcode}', '${address}', sysdate)
 	</insert>
-	<select id="CheckId" parameterType="users.MemberVo">
-		SELECT mid FROM membervo WHERE mid = #{mid}  
+	<select id="CheckId" resultType="int">
+		SELECT count(*) FROM membervo WHERE mid = #{id}  
 	</select>
 </mapper>

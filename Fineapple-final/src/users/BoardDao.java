@@ -14,6 +14,15 @@ public class BoardDao {
 		
 	}
 	
-	
+	public int idCheck(String id) {
+		sqlSession = BoardFactory.getFactory().openSession();
+		
+		// mapper에게
+		int result = sqlSession.selectOne("board.CheckId", id);
+		sqlSession.close();
+		
+		// 결과는 1 아니면 0
+		return result;
+	}
 	
 }
