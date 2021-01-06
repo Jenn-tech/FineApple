@@ -140,7 +140,7 @@
 						</div></td>
 					<td class="cart-product-price">1,350,000원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn" onclick="location.href='cart.jsp' " style='cursor:pointer;' value="배송지 정보">
+					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 				</tr>
 				
 				<tr class="content" style="overflow: visible;">
@@ -186,7 +186,7 @@
 						</div></td>
 					<td class="cart-product-price">950,000원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn" onclick="location.href='cart.jsp' " style='cursor:pointer;' value="배송지 정보">
+					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 					</td> 
 				</tr>
 				
@@ -234,7 +234,7 @@
 						</div></td>
 					<td class="cart-product-price">850,000원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn" onclick="location.href='cart.jsp' " style='cursor:pointer;' value="배송지 정보">
+					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 					</td>
 				</tr>
 				
