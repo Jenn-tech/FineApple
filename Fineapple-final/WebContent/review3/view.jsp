@@ -70,7 +70,6 @@
 	 			<!-- buttons -->
 	<div class = 'btns'>
 		<input type="hidden" name="reviewSerial" value="${vo.reviewSerial }">
-		<input type="hidden" name="reviewAvailable" value="${vo.reviewAvailable }">
 		<input type='button' value='수정' id='btnModify' />
 		<input type='button' value='삭제' id='btnDelete' />
 		<input type='button' value='목록으로' id='btnSelect2' />
