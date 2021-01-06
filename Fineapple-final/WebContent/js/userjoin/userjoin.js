@@ -9,7 +9,7 @@ var member = function() {
 	
 var btnFindZip = getID('btnFindZip');
 var idCheck = getID('id-Check');
-
+var userInfo = getID('frm_member');
 
 	if(btnFindZip != null) {
 		btnFindZip.onclick = function() {
@@ -26,9 +26,19 @@ var idCheck = getID('id-Check');
 	}
 	
 	if(idCheck != null) {
+			
 			idCheck.onclick = function() {
-			window.open("idCheckForm.jsp", "idwin", "width=400, height=350");
-
+			if(document.userInfo.frm_id.value == "") {
+				alert("아이디를 입력하세요.");
+				return;
+			}
+		
+			var userInfo = document.userInfo;
+			var user_id =  userInfo.frm_id.value;
+			console.log(user_id);
+			userInfo.action = "/Fineapple-final/UsersJoin/formCheck";
+			userInfo.method="POST";
+			userInfo.submit();
 		}
 	}
 }
@@ -67,29 +77,8 @@ function send_go(){
 
 */
  
-function fn_validate() {
-	
-	var userInfo = document.userInfo;
-	var frm_id = userInfo.frm_id.value;
-	var frm_password = userInfo.frm_password.value;
-	
-	if((frm_id.length == 0 || frm_id == "")) {
-		alert('아이디를 입력해주세요.');
-		userInfo.frm_id.focus();
-		return;
-	}else if (frm_password == 0 || frm_password == ""){
-		alert('비밀번호를 입력해주세요.');
-		userInfo.frm_password.focus();
-		return;
-	}else if(re_frm_password == 0 || re_frm_password == ""){
-		alert('비밀번호를 재입력해주세요.');
-		userInfo.re_frm_password.focus();
-		return;
-	}
-	
-	userInfo.action = "www.daum.net";
-	userInfo.submit();
-}
+/* 회원가입 데이터 없을 시 alert 창 */
+
 
 
 function joinCheck(obj) {

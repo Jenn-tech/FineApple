@@ -34,7 +34,7 @@
 		</section>
 
 		<section class="section-two">
-			<form class="frm-member" id="frm_member" onsubmit="return joinCheck(this)" action="complete.jsp"
+			<form class="frm-member" id="frm_member" onsubmit="return joinCheck(this)" action=""
 				name="userInfo" method="POST">
 				<div class="frm-label">
 					<label for="reg-id">아이디</label> <span class="field-required"></span><br>
@@ -43,7 +43,7 @@
 				<div class="frm-input-id">
 					<input type="text" name="frm_id" id="reg-id"
 						placeholder="한글과 영문만 가능(10자)" maxlength="10"> 
-						<input type="button" name="frm-check" id="id-Check" value="중복확인">
+					<input type="button" name="frm-check" id="id-Check" value="중복확인">
 				</div>
 				<div class="frm-label">
 					<label>비밀번호</label> 

@@ -14,14 +14,29 @@ import org.apache.jasper.tagplugins.jstl.core.Out;
 /**
  * Servlet implementation class memberServlet
  */
-@WebServlet("/UsersJoin/result.jsp")
+@WebServlet("/UsersJoin/result")
 public class memberServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Hello");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		String id = request.getParameter("frm-check");
+		String id2 = request.getParameter("frm_id");
+		String id3 = request.getParameter("frm_phone");
+		out.println(id);
+		out.println(id2);
+		out.println(id3);
+		
+		//window.open("/Fineapple-final/UsersJoin/result", "idwin", "width=400, height=350");
+		
+		MemberVo vo = new MemberVo();
 
-
+		
+		
 	}
 
 
@@ -32,7 +47,7 @@ public class memberServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 
-
+		
 		System.out.println("doPost() 실행");
 
 		String mid = request.getParameter("frm_id");
