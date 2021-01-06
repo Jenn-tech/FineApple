@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import bean.CsPage;
 
 public class FileUpload {
 	public static final String saveDir = "C:\\Users\\USER\\FineApple\\Fineapple-final\\WebContent\\inquiryUpload\\";
@@ -52,29 +51,28 @@ public class FileUpload {
 		int pserial = Integer.parseInt(mul.getParameter("pserial"));
 		int serial = Integer.parseInt(mul.getParameter("serial"));
 		int hit = Integer.parseInt(mul.getParameter("hit"));
+		
 		vo.setSerial(serial);
-		vo.setMserial(Integer.parseInt(mul.getParameter("mserial")));
+		vo.setInquiryType(mul.getParameter("inquiryType"));
 		vo.setMemberName(mul.getParameter("name"));
 		vo.setPwd(mul.getParameter("pwd"));
 		vo.setSubject(mul.getParameter("subject"));
 		vo.setDoc(mul.getParameter("doc"));
-		vo.setInquiryType(mul.getParameter("inquiryType"));
-		vo.setHit(hit);
-		vo.setPserial(pserial);
 		vo.setDocVisible(mul.getParameter("docvisible"));
+		vo.setPserial(pserial);
+		vo.setHit(hit);
+		vo.setMserial(Integer.parseInt(mul.getParameter("mserial")));
 		
-		System.out.println(attList.size());
 		if(mul.getParameter("serial") != null) {
 			vo.setPserial(Integer.parseInt(mul.getParameter("serial")));
 		}
 		if(mul.getParameter("hit") != null) {
 			vo.setHit(Integer.parseInt(mul.getParameter("hit")));
-		}
-		
+		}	
 		if(attList.size() > 0) {
 			vo.setAttList(attList);
 		}
-		System.out.println(vo.getAttList());
+
 		if(mode == 'u' || mode == 'd') {
 			vo.setSerial(Integer.parseInt(mul.getParameter("serial")));
 			if(mul.getParameterValues("delFiles") != null) {
@@ -83,7 +81,6 @@ public class FileUpload {
 					InquiryBookAttVo v = new InquiryBookAttVo();
 					v.setSysFile(s);
 					delFiles.add(v);
-					
 				}
 				vo.setDelFiles(delFiles);
 			}
@@ -104,7 +101,6 @@ public class FileUpload {
 		else {
 			page.setNowPage(1);
 		}
-		
 		return page;
 	}
 

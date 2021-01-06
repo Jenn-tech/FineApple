@@ -17,13 +17,13 @@ public class MemberDao {
 	
 	}
 	
-	public boolean login(String mid, String pwd) {
+	public boolean login(String member_mid, String member_pwd) {
 		boolean b = false; //기본 : 로그인되지 않았어
 		try {
-			String sql = "select count(mid) cnt from members where mid=? and pwd=? ";
+			String sql = "select count(member_mid) cnt from members where member_mid=? and member_pwd=? ";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, mid); //index는 1부터 시작
-			ps.setString(2, pwd);
+			ps.setString(1, member_mid); //index는 1부터 시작
+			ps.setString(2, member_pwd);
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
@@ -40,19 +40,19 @@ public class MemberDao {
 	}
 	
 	
-	public String findId(String name, String phone) {
+	public String findId(String member_name, String member_phone) {
 		String mid = null;
 		
 		try {
-			String sql = "select mid from members where name=? and phone=? ";
+			String sql = "select member_mid from members where member_name=? and member_phone=? ";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, name);
-			ps.setString(2, phone);
+			ps.setString(1, member_name);
+			ps.setString(2, member_phone);
 			
 			rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				mid = rs.getString("mid");
+				mid = rs.getString("member_mid");
 			}
 				
 		} catch (Exception e) {
@@ -61,18 +61,18 @@ public class MemberDao {
 		return mid;
 	}
 	
-	public String findPw(String mid, String phone) {
+	public String findPw(String member_mid, String member_phone) {
 		String pwd = null;
 		try {
-			String sql = "select pwd from members where mid=? and phone=? ";
+			String sql = "select member_pwd from members where member_mid=? and member_phone=? ";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, mid);
-			ps.setString(2, phone);
+			ps.setString(1, member_mid);
+			ps.setString(2, member_phone);
 			
 			rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				pwd = rs.getString("pwd");
+				pwd = rs.getString("member_pwd");
 			}
 				
 		} catch (Exception e) {

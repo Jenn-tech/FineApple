@@ -7,12 +7,12 @@
 function id_search1() { 
 	 	var frm = document.idfindscreen;
 
-	 	if (frm.name.value.length < 1) {
+	 	if (frm.member_name.value.length < 1) {
 		  alert("이름을 입력해주세요");
 		  return;
 		 }
 
-		 if (frm.phone.value.length != 13) {
+		 if (frm.member_phone.value.length != 13) {
 			  alert("핸드폰번호를 정확하게 입력해주세요");
 			  return;
 		 }
@@ -28,12 +28,12 @@ function id_search1() {
 
   var frm=document.pwfindscreen;
 
-  if(frm.mid.value.length<3){
+  if(frm.member_mid.value.length<3){
    alert("아이디를 올바르게 입력해주세요");
    return;
   }
 
-   if (frm.phone.value.length != 13) {
+   if (frm.member_phone.value.length != 13) {
 			  alert("핸드폰번호를 정확하게 입력해주세요");
 			  return;
 		 }
@@ -77,7 +77,7 @@ function login() {
 	}
 	}
 }
-  function joinin() { //회원가입 창으로 이동(수정필요)
+  function joinin() {
 		if(btnjoin != null){
 	btnjoin.onclick = function(){
 		location.href = '../UsersJoin/index.jsp';

@@ -51,7 +51,7 @@
                
               
                
-               <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+               <%if( session.getAttribute("member_mid")== null){ //mid의 속성이 없으면 로그인 이전화면
                %>            
                <li>
                   <a href="<%=request.getContextPath() %>/UsersJoin/agree.jsp" class="button alt">회원가입</a>     

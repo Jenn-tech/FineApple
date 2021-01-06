@@ -20,12 +20,12 @@
         <section class="form-write">
 			<form name='form_log' method='post'>
                 <div class="align">
-                    <input type="text" id="mid" name = "mid" placeholder="FineApple ID">
+                    <input type="text" id="mid" name = "member_mid" placeholder="FineApple ID">
                      <div class="text-id">
                        
                     </div> 
                     <label></label>
-                    <input type="password" id="pwd" name = "pwd" placeholder="암호">
+                    <input type="password" id="pwd" name = "member_pwd" placeholder="암호">
                    <div class="text-id">
                         
                     </div> 

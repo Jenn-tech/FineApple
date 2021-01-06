@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <%
-	session.removeAttribute("mid");
+	session.removeAttribute("member_mid");
 	response.sendRedirect("../main/index.jsp");
 %>

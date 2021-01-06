@@ -21,7 +21,7 @@
 <%
 
 String user_id = request.getParameter("frm_id");
-
+MemberVo vo = (MemberVo)request.getAttribute("list");
 
 %>
 <body class="body">
@@ -33,23 +33,20 @@ String user_id = request.getParameter("frm_id");
 		<section class="section-one">
 			<div class="section-welcome">
 				<div class="welcome-img">
-					<%if(user_id.equals("kim")) {%>
+					
+					
+					<%if(vo.getMember_mid() != null) {%>
 					<img src="../images/UsersJoin/important.png">
-					<h1 class="welcome-head">중복입니다.</h1>
+					<h1 class="welcome-head-id"><%=user_id %></h1>
+					<h1 class="welcome-head">아이디가 중복입니다.</h1>
+					
 					<% }else {%>
 					<img src="../images/UsersJoin/smile.png">
+					<h1 class="welcome-head-id"><%=user_id %></h1>
 					<h1 class="welcome-head">사용 가능한 아이디 입니다.</h1>
 					<% } %>
-					<h1 class="welcome-head"><%=user_id %></h1>
+					
 				</div>
-				
-				
-				
-				<%if(user_id.equals(request.getAttribute("getID"))) { %>
-				
-				<% }else { %>
-				
-				<% } %>
 			</div>
 		</section>
 		

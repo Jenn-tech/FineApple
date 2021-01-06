@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-import bean.CsPage;
+
 
 public class InquiryBookDao {
 	
@@ -88,8 +88,11 @@ public class InquiryBookDao {
 			int totListSize = sqlSession.selectOne("inquiry.tot_list_size", page);
 			page.setTotListSize(totListSize);
 			page.pageCompute();
-					
+			
+			System.out.println(page.getStartNo());
+			System.out.println(page.getEndNo());
 			list = sqlSession.selectList("inquiry.select", page);
+			System.out.println(list + "+select");
 			map.put("page", page);
 			map.put("list", list);
 			
@@ -134,7 +137,7 @@ public class InquiryBookDao {
 					}
 					delFile(attList);
 				}
-			}
+			} 
 			else {
 				throw new Exception("오류 발생 2");
 			}
