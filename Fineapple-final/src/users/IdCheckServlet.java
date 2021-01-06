@@ -26,6 +26,7 @@ public class IdCheckServlet extends HttpServlet {
 
 
 		String id = request.getParameter("frm_id");
+		// song 
 		
 		out.println(id);
 
@@ -41,13 +42,23 @@ public class IdCheckServlet extends HttpServlet {
 			
 			/* select */
 			MemberVo vo = new MemberVo();
+			
 			vo.setMid(id);
 			
-			String getMemberID = vo.getMid();
+			MemberVo vo1 = new MemberVo();
 			
+			
+			String getMemberID = vo.getMid();
 			request.setAttribute("getID", getMemberID);
 			
+			
+			/* 콘솔 출력 */
+			System.out.println(vo.getMid());
+			
+			
+			
 			int cnt = dao.sqlSession.selectOne("board.CheckId", id);
+			
 			
 			
 			if( cnt > 0 ) {
