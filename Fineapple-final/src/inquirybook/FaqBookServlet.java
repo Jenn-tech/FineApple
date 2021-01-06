@@ -14,7 +14,7 @@ import bean.CsPage;
 
 
 //요청값을 받는 url정의?
-@WebServlet(urlPatterns = "/inquiry.do")
+@WebServlet(urlPatterns = "/faqbook.do")
 public class FaqBookServlet extends HttpServlet {
 	InquiryBookDao dao = new InquiryBookDao();
 	
@@ -41,19 +41,20 @@ public class FaqBookServlet extends HttpServlet {
 		
 		//btn 별 기능 선언
 		switch(qa) {
-		case "selectfaq":
+		case "selectFaq":
 			
-			String faqStr = "";
-			List<FaqBookVo> faqlist;
+			List<FaqBookVo> list;
 			if(req.getParameter("faqStr") != null) {
-				faqStr = req.getParameter(faqStr);
+				findStr = req.getParameter("faqStr");
 			}
 			
-			faqlist = new FaqBookDao().select(faqStr);
+			list = new FaqBookDao().select(findStr);
 			
-			req.setAttribute("list", faqlist);
-			rd = req.getRequestDispatcher("");
+			req.setAttribute("list", list);
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_FAQ.jsp");
 			rd.forward(req, resp);
+			System.out.println(list);
+			System.out.println("FAQ 도착");
 			break;
 		}
 	}

@@ -25,9 +25,8 @@
 			<div style="">
 			</div>
 			<div class="faq_category">
-				<form action="inquiry.do?qa=select" name="frm_faqbook">
-					<input type="hidden" name="faqStr" value="주문결제">
-					<input type="hidden" name="qa" value="selectfaq">
+				<form action="" name="frm_faqbook" method="post">
+					<input type="hidden" name="findStr" value="주문결제">
 					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="배송안내" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="주문취소" class="btnFaq" onclick="gofaq(this.value)">
@@ -37,16 +36,17 @@
 				</form>
 			</div>
 			<c:forEach var="vo" items="${list }">
-				<ul>
-					<li class="collapsible">
-						<h4 class="title" id="title-first">
-							<a href="#">${vo.subject }</a>
-						</h4>
-						<div class="content">
-							<p>${vo.doc}</p>
-						</div>
-					</li>
-				</ul>
+			<ul class="cs_FAQ_item">
+				<h4 class="cs_FAQ_title" id="cs_FAQ_title-first">
+					<a href="#html5">
+					<span>${vo.subject}</span>
+					<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
+					</a>
+				</h4>
+				<div class="cs_FAQ_content">
+					<p>${vo.doc}</p>
+				</div>
+			</ul>
 			</c:forEach>
 			
 			<ul class="cs_FAQ_item">

@@ -346,8 +346,9 @@ var view = function(serial) {
 
 var gofaq = function(value) {
 	var frm = document.frm_faqbook;
-	frm.faqStr.value = value;
-	frm.action = 'inquiry.do?qa=selectFaq';
+	var findStr = value;
+	frm.findStr.value = findStr;
+	frm.action = '../faqbook.do?qa=selectFaq';
 	frm.submit();
 }
 
