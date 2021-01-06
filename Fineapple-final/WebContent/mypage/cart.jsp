@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script src='../js/pay.js'></script>
 <style>
 .table{
 	margin : 0 auto;
@@ -48,7 +50,19 @@ h4{
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" type="text/css"
 	href="https://vendor-cdn.imweb.me/css/site/site2.css?1608687536">
-
+<script type="text/javascript">
+funcfion fnPay(){
+	alert("결제 API를 발급받으시기 바랍니다.");
+}
+function fnClear(){
+	if(confirm("장바구니를 비우시겠습니까?")){
+			location.href="cartClear.jsp"
+		}
+}
+function fnGo(){
+	location.href="../main/index.jsp";
+}
+</script>
 </head>
 <!-- header -->
 <%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
@@ -274,7 +288,7 @@ h4{
 			<tfoot>
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
-					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="선택 상품 삭제">
+					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="전체 상품 삭제">
 					<input type="button" id="cart-btn" onclick="location.href='index.jsp' " style='cursor:pointer;' value="다른 상품 보기"></td>
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
@@ -289,7 +303,7 @@ h4{
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="주문하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
 	
 	</body>
