@@ -49,7 +49,6 @@ public class FileUpload {
 	
 	public InquiryBookVo getInquiryBookVo(char mode) {
 		InquiryBookVo vo = new InquiryBookVo();
-		System.out.println(mul.getParameter("pserial"));
 		int pserial = Integer.parseInt(mul.getParameter("pserial"));
 		int serial = Integer.parseInt(mul.getParameter("serial"));
 		int hit = Integer.parseInt(mul.getParameter("hit"));

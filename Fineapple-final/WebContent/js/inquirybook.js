@@ -47,8 +47,15 @@ var inquiry = function() {
 	var cs_answer_btnSelect = getID('cs_answer_btnSelect');
 	var cs_answer_btnCancel = getID('cs_answer_btnCancel');
 	var cs_update_btnReturn = getID('cs_update_btnReturn');
+	var cs_board_btnFind = getID('cs_board_btnFind');
 	var frm = document.cs_frm_board;
 	
+	if(cs_board_btnFind != null) {
+		cs_board_btnFind.onclick = function() {
+			frm.action = 'inquiry.do?job=select';
+			frm.submit();
+		}
+	}
 	
 	if(cs_update_btnReturn !== null) {
 		cs_update_btnReturn.onclick = function() {
@@ -86,14 +93,23 @@ var inquiry = function() {
 			frm.submit();
 		}	
 	}
-	
 
 	if(cs_update_btnSave !== null) {
 		cs_update_btnSave.onclick = function() {
-			
+			checkFlag = true;
+		if(!frm.subject.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('본문에 내용을 입력해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action = 'inquiry.do?job=updateR';
 			frm.submit();
+			}
 		}
 	}
 
@@ -141,11 +157,41 @@ var inquiry = function() {
 	/*Q&A 작성 후 servlet으로 전송하는 키*/
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
+		var checkFlag = true;
+		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
+		
+		if(!frm.inquiryType.checkValidity() || frm.inquiryType.value === 'null') {
+			alert("문의 유형을 설정해주세요.");
+			checkFlag = false;
+		}
+		else if(!frm.name.checkValidity() || frm.name.value === "") {
+			alert("작성자 이름을 입력해주세요.");
+			checkFlag = false;
+		}
+		else if(!frm.pwd.checkValidity()) {
+			alert('패스워드를 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.subject.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('본문에 내용을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.inquiryType.checkValidity()){
+			alert('문의 유형을 설정해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action = '../inquiry.do?job=insertR';
 			frm.submit();
+			}
 		}
 	}
+
 	
 	/*Q&A 글쓰기 중 다시 목록으로 돌아가는 키*/
 	if(cs_insert_btnCancel !== null) {
@@ -162,7 +208,6 @@ var inquiry = function() {
 			frm.submit();
 		}
 	}
-	
 }
 
 
@@ -250,7 +295,7 @@ var imagePreView = function(zone, ev) {
 
 
 var goPage = function(page) {
-	var job = "../inquiry.do?job=";
+	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	frm.nowPage.value = page;
 	frm.action = job + "select";
@@ -262,7 +307,6 @@ var view = function(serial) {
 	var frm = document.cs_frm_board;
 	
 	frm.serial.value = serial;
-	alert(frm.serial.value);
 	frm.action = job + "view";
 	frm.submit();	
 }  

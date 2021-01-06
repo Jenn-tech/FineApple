@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-       <script src='../js/login.js'></script>
+      <script src='<%=request.getContextPath() %>/js/login.js'></script>
 <script type="text/javascript" language="javascript">
     function openPop(){
         var pop_title = "popupOpener" ;

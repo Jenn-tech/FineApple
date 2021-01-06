@@ -31,6 +31,7 @@ public class InquiryBookDao {
 		String msg = "저장 완료";
 		
 		try {
+			System.out.println(vo.getInquiryType());
 			int cnt = sqlSession.insert("inquiry.insert", vo);
 			if (cnt<1) {
 				throw new Exception("오류 발생");
@@ -85,15 +86,12 @@ public class InquiryBookDao {
 		
 		try {
 			int totListSize = sqlSession.selectOne("inquiry.tot_list_size", page);
-			
 			page.setTotListSize(totListSize);
 			page.pageCompute();
 					
 			list = sqlSession.selectList("inquiry.select", page);
-			System.out.println(list);
 			map.put("page", page);
 			map.put("list", list);
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,10 +107,8 @@ public class InquiryBookDao {
 		List<InquiryBookAttVo> attList = null;
 		
 		try {
-			System.out.println(serial);
 			vo = sqlSession.selectOne("inquiry.view", serial);
 			attList = sqlSession.selectList("inquiry.select_att", serial);
-			System.out.println(attList);
 			vo.setAttList(attList);
 			
 		} catch (Exception e) {
