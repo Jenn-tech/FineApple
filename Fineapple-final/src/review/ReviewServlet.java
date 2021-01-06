@@ -59,8 +59,9 @@ public class ReviewServlet extends HttpServlet{
 			
 		case "insert":
 			ReviewFileUpload fu = new ReviewFileUpload(req);
-			vo = fu.getReview();
+			vo = fu.getReview1();
 			page = fu.getPage();
+			
 			msg = dao.insert(vo);
 			
 			req.setAttribute("msg", msg);
@@ -71,7 +72,9 @@ public class ReviewServlet extends HttpServlet{
 			break;
 			
 		case "view":
-			int reviewSerial = Integer.parseInt(req.getParameter("reviewSerial"));
+			String temp = req.getParameter("reviewSerial");
+			int temp1 = Integer.parseInt(temp);
+			int reviewSerial = temp1;
 			vo = dao.view(reviewSerial);
 			
 			req.setAttribute("vo", vo);
@@ -87,9 +90,9 @@ public class ReviewServlet extends HttpServlet{
 			//vo.setPwd(req.getParameter("pwd"));
 			vo.setDelFile(req.getParameter("delFile"));
 			
-			String temp = req.getParameter("reviewSerial");
-			int temp1 = Integer.parseInt(temp);
-			vo.setReviewSerial(temp1);
+			String temp11 = req.getParameter("reviewSerial");
+			int temp22 = Integer.parseInt(temp11);
+			vo.setReviewSerial(temp22);
 			
 			msg = dao.delete(vo);
 			

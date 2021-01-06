@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import bean.MemberVo;
-
 public class ReviewFileUpload {
 	public static final String saveDir = "C:\\Users\\USER\\FineApple\\Fineapple-final\\WebContent\\review3\\upload\\";
 	int maxSize = 1024*1024*100;//100Mb;
@@ -23,6 +21,7 @@ public class ReviewFileUpload {
 			//업로드된 파일명
 			Enumeration<String> en = mul.getFileNames();
 			while(en.hasMoreElements()) {
+				System.out.println(sysFile);
 				String tag = (String)en.nextElement();
 				sysFile = mul.getFilesystemName(tag); // 수정된 파일명
 				oriFile = mul.getOriginalFileName(tag); //원본 파일명
@@ -30,26 +29,41 @@ public class ReviewFileUpload {
 			
 			
 		}catch(Exception ex) {
-			
+			ex.printStackTrace();
 		}
 	}
-	
-	public ReviewVo getReview() {
+
+	public ReviewVo getReview1() {
 		ReviewVo vo = new ReviewVo();
-		//vo.setMemberId(mul.getParameter("memberId"));
+		vo.setMemberId(mul.getParameter("memberId"));
 		vo.setReviewTitle(mul.getParameter("reviewTitle"));
 		vo.setReviewDate(mul.getParameter("reviewDate"));
 		vo.setReviewDoc(mul.getParameter("reviewDoc"));
 		//vo.setProductName(mul.getParameter("productName"));
 		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
 		vo.setReviewImg(mul.getParameter("reviewImg"));
-		
-		String temp = mul.getParameter("reviewAvailable");
-		int temp2 = Integer.parseInt(temp);
-		vo.setReviewAvailable(temp2);
-		
 		vo.setDelFile(mul.getParameter("delFile"));
-		
+//		String temp = mul.getParameter("reviewSerial");
+//		int temp1 = Integer.parseInt(temp);
+//		vo.setReviewSerial(temp1);
+
+		return vo;
+	}
+	
+	public ReviewVo getReview() {
+		ReviewVo vo = new ReviewVo();
+		vo.setMemberId(mul.getParameter("memberId"));
+		vo.setReviewTitle(mul.getParameter("reviewTitle"));
+		vo.setReviewDate(mul.getParameter("reviewDate"));
+		vo.setReviewDoc(mul.getParameter("reviewDoc"));
+		//vo.setProductName(mul.getParameter("productName"));
+		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
+		vo.setReviewImg(mul.getParameter("reviewImg"));
+		vo.setDelFile(mul.getParameter("delFile"));
+		String temp = mul.getParameter("reviewSerial");
+		int temp1 = Integer.parseInt(temp);
+		vo.setReviewSerial(temp1);
+
 		return vo;
 	}
 	
