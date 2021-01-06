@@ -35,7 +35,7 @@ MemberVo vo = (MemberVo)request.getAttribute("list");
 				<div class="welcome-img">
 					
 					
-					<%if(vo.getMid() != null) {%>
+					<%if(vo.getMember_mid() != null) {%>
 					<img src="../images/UsersJoin/important.png">
 					<h1 class="welcome-head-id"><%=user_id %></h1>
 					<h1 class="welcome-head">아이디가 중복입니다.</h1>

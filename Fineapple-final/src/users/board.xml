@@ -5,13 +5,15 @@
 
 <mapper namespace="board">
 	<insert id="insert" parameterType="users.MemberVo">
-		INSERT INTO membervo(seqno, mid, pwd, name, email, phone, zipcode, address, joindate)VALUES(seq_seqno.nextval, '${mid}', '${pwd}', '${name}', '${email}', '${phone}', '${zipcode}', '${address}', sysdate)
+		INSERT INTO members(member_serial, member_mid, member_pwd, member_name, member_email, member_phone, member_zipcode, member_address, member_signup_date)VALUES(seq_members.nextval, '${member_mid}', '${member_pwd}', '${member_name}', '${member_email}', '${member_phone}', '${member_zipcode}', '${member_address}', sysdate) 
 	</insert>
-	<select id="CheckId" resultType="int">
+	
+	
+	<!--  <select id="CheckId" resultType="int">
 		SELECT count(*) FROM membervo WHERE mid = #{id}  
-	</select>
+	</select>-->
 
 	<select id="one_id" resultType="String">
-		SELECT mid FROM membervo WHERE mid = #{id}
+		SELECT member_mid FROM members WHERE member_mid = #{id}
 	</select>
 </mapper>

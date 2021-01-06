@@ -65,20 +65,21 @@ public class memberServlet extends HttpServlet {
 		
 
 			/* insert */
-			vo.setMid(mid);
-			vo.setPwd(pwd);
-			vo.setName(name);
-			vo.setEmail(email);
+			vo.setMember_mid(mid);
+			System.out.println(mid);
+			vo.setMember_pwd(pwd);
+			vo.setMember_name(name);
+			vo.setMember_email(email);
 
 			// 010, 017 유효검사
 			if(phoneFirst[0].equals("010")) {
-				vo.setPhone(phoneFirst[0] +"-"+ phone);
+				vo.setMember_phone(phoneFirst[0] +"-"+ phone);
 			}else {
-				vo.setPhone(phoneFirst[1] +"-"+ phone);
+				vo.setMember_phone(phoneFirst[1] +"-"+ phone);
 			}
 
-			vo.setZipcode(zipcode);
-			vo.setAddress(address);
+			vo.setMember_zipcode(zipcode);
+			vo.setMember_address(address);
 
 			int cnt = dao.sqlSession.insert("board.insert", vo);
 			System.out.println("vo : " + vo);

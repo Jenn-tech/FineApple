@@ -51,9 +51,9 @@ public class IdCheckServlet extends HttpServlet {
 			System.out.println(getID);
 			
 			if(getID == null || getID.equals("")) {
-				vo.setMid(null);
+				vo.setMember_mid(null);
 			}else {
-				vo.setMid(getID);
+				vo.setMember_mid(getID);
 			}
 			request.setAttribute("list", vo);
 			
