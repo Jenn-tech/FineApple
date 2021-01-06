@@ -12,7 +12,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 
 public class FileUpload {
-	public static final String saveDir = "C:\\Users\\정해준\\Documents\\FineApple\\Fineapple-final\\WebContent\\inquiryUpload\\";
+	public static final String saveDir = "C:\\Users\\USER\\FineApple\\Fineapple-final\\WebContent\\inquiryUpload\\";
 	int maxSize = 1024*1024*100;
 	String encoding = "utf-8";
 	MultipartRequest mul;
@@ -59,7 +59,6 @@ public class FileUpload {
 		vo.setSubject(mul.getParameter("subject"));
 		vo.setDoc(mul.getParameter("doc"));
 		vo.setDocVisible(mul.getParameter("docvisible"));
-		System.out.println(vo.getDocVisible());
 		vo.setPserial(pserial);
 		vo.setHit(hit);
 		vo.setMserial(Integer.parseInt(mul.getParameter("mserial")));

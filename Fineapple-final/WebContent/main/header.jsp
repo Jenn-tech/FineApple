@@ -56,7 +56,7 @@
                <li>
                   <a href="<%=request.getContextPath() %>/UsersJoin/agree.jsp" class="button alt">회원가입</a>     
                </li>
-               <li><a href="../login/loginfo.jsp" class="button alt">로그인</a></li>  
+               <li><a href="<%=request.getContextPath() %>/login/loginfo.jsp" class="button alt">로그인</a></li>  
                <%} else {%>
                 <li>
                   <a href="<%=request.getContextPath() %>/mypage/mypage.jsp" class="button alt">마이룸</a>
