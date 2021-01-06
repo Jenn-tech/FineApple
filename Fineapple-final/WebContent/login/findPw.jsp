@@ -25,12 +25,12 @@
 		<section class = "form-search">
 			<div class = "find-id">
 				<label>아이디</label>
-				<input type="text" name="mid" class = "btn-name" placeholder = "FineApple ID">
+				<input type="text" name="member_mid" class = "btn-name" placeholder = "FineApple ID">
 			<br>
 			</div>
 			<div class = "find-phone">
 				<label>번호</label>
-				<input type="text" onKeyup = "addHypen(this);" name="phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
+				<input type="text" onKeyup = "addHypen(this);" name="member_phone" class = "btn-phone" placeholder = "휴대폰번호를 '-'없이 입력">
 			</div>
 			<br>
 	</section>

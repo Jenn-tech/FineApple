@@ -3,11 +3,11 @@
     pageEncoding="UTF-8"%>
     <%
  request.setCharacterEncoding("UTF-8");
-    String name = request.getParameter("name");
-     String phone = request.getParameter("phone");
+    String member_name = request.getParameter("member_name");
+     String member_phone = request.getParameter("member_phone");
      
 MemberDao dao = new MemberDao();
- String mid = dao.findId(name, phone); //아이디를 디비에서 가져옴..실패시 널
+ String member_mid = dao.findId(member_name, member_phone); //아이디를 디비에서 가져옴..실패시 널
  
 %>
 <!DOCTYPE html>
@@ -29,13 +29,13 @@ MemberDao dao = new MemberDao();
 
   <form name="idsearch" method="post">
       <%
-       if (mid != null) {
+       if (member_mid != null) {
       %>
       
       <div class = "container">
       	<div class = "found-success">
 	      <h4>  회원님의 아이디는 </h4>  
-	      <div class ="found-id"><%=mid%></div>
+	      <div class ="found-id"><%=member_mid%></div>
 	      <h4>  입니다 </h4>
 	     </div>
 	     <div class = "found-login">

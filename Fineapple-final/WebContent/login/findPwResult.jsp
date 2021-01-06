@@ -3,11 +3,11 @@
     pageEncoding="UTF-8"%>
     <%
  request.setCharacterEncoding("UTF-8");
-    String mid = request.getParameter("mid");     
-    String phone = request.getParameter("phone");
+    String member_mid = request.getParameter("member_mid");     
+    String member_phone = request.getParameter("member_phone");
      
 MemberDao dao = new MemberDao();
- String pwd = dao.findPw(mid, phone); //아이디를 디비에서 가져옴..실패시 널
+ String pwd = dao.findPw(member_mid, member_phone); //아이디를 디비에서 가져옴..실패시 널
  
 %>
 <!DOCTYPE html>
