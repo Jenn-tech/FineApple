@@ -88,4 +88,24 @@
 
 		</where>	
 	</delete>
-</mapper>   
+	
+	<resultMap type="inquirybook.InquiryBookVo" id="voResult">
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_type"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+		<result property="" column="inquiry_serial"/>
+	
+	
+	
+	
+	</resultMap>
+</mapper>  

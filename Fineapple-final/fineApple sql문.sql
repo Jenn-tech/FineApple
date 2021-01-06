@@ -23,6 +23,7 @@ CREATE TABLE Inquiry
 	inquiry_doc nvarchar2(2000) NOT NULL,
 	inqyiry_visible nvarchar2(50),
 	inquiry_date date NOT NULL,
+    	inquiry_pserial NUMBER DEFAULT 0,
 	PRIMARY KEY (inquiry_serial)
 );
 
@@ -187,3 +188,6 @@ ROLLBACK;
 SELECT OWNER,OBJECT_TYPE FROM DBA_OBJECTS WHERE OBJECT_NAME='members';
 
 SELECT OWNER,OBJECT_TYPE FROM DBA_OBJECTS WHERE OBJECT_NAME='notice';
+
+SELECT * FROM notice;
+SELECT * FROM members;
