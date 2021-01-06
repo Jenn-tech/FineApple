@@ -28,15 +28,12 @@
 				<form action="inquiry.do?qa=select" name="frm_faqbook">
 					<input type="hidden" name="faqStr" value="주문결제">
 					<input type="hidden" name="qa" value="selectfaq">
-					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)" name="btn">
+					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="배송안내" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="주문취소" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="교환" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="환불" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="상품관련" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="적립금" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="회원관련" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="기타" class="btnFaq" onclick="gofaq(this.value)">
 				</form>
 			</div>
 			<c:forEach var="vo" items="${list }">

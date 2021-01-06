@@ -88,18 +88,44 @@ var inquiry = function() {
 	
 	if(cs_answer_btnSave != null) {
 		cs_answer_btnSave.onclick = function() {
-			alert(frm.docvisible.value)
+			checkFlag = true;
+			alert(frm.docvisible.value);
+			
+		if(!frm.name.subject.checkValidity()) {
+			alert('작성자를입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action ='../inquiry.do?job=insertA';
 			frm.submit();
+		}
 		}	
 	}
 
 	if(cs_update_btnSave !== null) {
 		cs_update_btnSave.onclick = function() {
 			checkFlag = true;
+			
+		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
+		
+		if($('#cs_check').is(":checked")) {
+			frm.docvisible.value = 'yes'; 
+		}
+		else {
+			frm.docvisible.value = 'no'; 
+		}				
+		
 		if(!frm.subject.checkValidity()){
 			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.name.value.checkValidity()) {
+			alert('작성자를입력해주세요.');
 			checkFlag=false;
 		}
 		else if(!frm.doc.checkValidity()){
@@ -316,7 +342,14 @@ var view = function(serial) {
 }  
 
 
+/*-------------------- faq--------------*/
 
+var gofaq = function(value) {
+	var frm = document.frm_faqbook;
+	frm.faqStr.value = value;
+	frm.action = 'inquiry.do?qa=selectFaq';
+	frm.submit();
+}
 
 
 

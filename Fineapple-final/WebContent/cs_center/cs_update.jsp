@@ -49,7 +49,7 @@
 		
 				<div>
 		   			<label for="name">작성자</label>
-		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" />	
+		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" required/>	
 				</div>
 
 				<label>기존 사진</label>

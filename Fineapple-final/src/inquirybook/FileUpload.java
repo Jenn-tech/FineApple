@@ -12,7 +12,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 
 public class FileUpload {
-	public static final String saveDir = "C:\\Users\\Á¤ÇØÁØ\\Documents\\FineApple\\Fineapple-final\\WebContent\\inquiryUpload\\";
+	public static final String saveDir = "C:\\Users\\ì •í•´ì¤€\\Documents\\FineApple\\Fineapple-final\\WebContent\\inquiryUpload\\";
 	int maxSize = 1024*1024*100;
 	String encoding = "utf-8";
 	MultipartRequest mul;
@@ -28,8 +28,8 @@ public class FileUpload {
 			Enumeration<String> en = mul.getFileNames();
 			while(en.hasMoreElements()) {
 				String tag = (String) en.nextElement();
-				sysFile = mul.getFilesystemName(tag); // ¼öÁ¤µÈ ÆÄÀÏ¸í
-				oriFile = mul.getOriginalFileName(tag); // ¿øº» ÆÄÀÏ¸í
+				sysFile = mul.getFilesystemName(tag); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½
+				oriFile = mul.getOriginalFileName(tag); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½
 				if(oriFile == null) {
 					continue;
 				}
@@ -41,7 +41,7 @@ public class FileUpload {
 			
 			
 		} catch (Exception e) {
-			System.out.println("FileUpload ½ÇÆÐ");
+			System.out.println("FileUpload ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}
 	}
@@ -59,6 +59,7 @@ public class FileUpload {
 		vo.setSubject(mul.getParameter("subject"));
 		vo.setDoc(mul.getParameter("doc"));
 		vo.setDocVisible(mul.getParameter("docvisible"));
+		System.out.println(vo.getDocVisible());
 		vo.setPserial(pserial);
 		vo.setHit(hit);
 		vo.setMserial(Integer.parseInt(mul.getParameter("mserial")));

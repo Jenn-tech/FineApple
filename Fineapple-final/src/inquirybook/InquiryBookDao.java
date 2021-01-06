@@ -70,9 +70,8 @@ public class InquiryBookDao {
 	}
 	
 	public void delFile(List<InquiryBookAttVo> delList) {
-		System.out.println("delFile");
+		System.out.println(delList.size()+"11111");
 		for(InquiryBookAttVo v : delList) {
-			System.out.println(v.getSysFile());
 			File f = new File(FileUpload.saveDir + v.getSysFile());
 			if(f.exists()) {
 				f.delete();
@@ -126,10 +125,10 @@ public class InquiryBookDao {
 		List<InquiryBookAttVo> attList = null;
 		try {
 			attList = sqlSession.selectList("inquiry.select_att", vo.getSerial());
-			System.out.println(attList.size());
 			int cnt = sqlSession.delete("inquiry.delete", vo);
 			if(cnt > 0) {
 				if(attList.size() > 0) {
+					System.out.println(vo.getSerial());
 					cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
 					System.out.println(cnt);
 					if(cnt < 1) {
