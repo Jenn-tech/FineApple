@@ -4,6 +4,11 @@
  */
 
 
+function funcCart(){
+	var frm = document.form;
+	frm.action = "../mypage/cart.jsp";
+	frm.submit();
+}
 
 $().ready(function () {
    $(".btn1").click(function () {
@@ -17,7 +22,7 @@ $().ready(function () {
          cancelButtonText: '쇼핑 계속하기'
       }).then((result) => {
           if (result.isConfirmed) {
-             Swal.fire(document.location.href = "../mypage/cart.jsp")
+             funcCart();
                
          }else if(result.isCanceled){
             Swal.fire(history.go(-1))

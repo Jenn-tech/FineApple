@@ -30,7 +30,7 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
-           <form method="get" name="form">
+           <form method="get" name="form" onsubmit="funcCart()">
 	            <div class="테두리">
 	               <h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
 	               상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
