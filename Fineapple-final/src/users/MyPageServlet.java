@@ -44,7 +44,6 @@ public class MyPageServlet extends HttpServlet {
 
 			/* select */
 			HttpSession session = request.getSession();
-			
 			String name = (String) session.getAttribute("member_mid");
 			System.out.println(name);
 			

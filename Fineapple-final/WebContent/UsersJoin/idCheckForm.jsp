@@ -19,10 +19,8 @@
 
 </head>
 <%
-
 String user_id = request.getParameter("frm_id");
 MemberVo vo = (MemberVo)request.getAttribute("list");
-
 %>
 <body class="body">
 	<!-- header영역 -->

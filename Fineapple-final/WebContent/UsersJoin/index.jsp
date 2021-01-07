@@ -20,7 +20,11 @@
 <body class="body">
 	<!-- header영역 -->
 	<jsp:include page="../main/header.jsp" />
+<%
+String id = (String)session.getAttribute("member_mid");
+String member_pwd = (String)session.getAttribute("member_pwd");
 
+%>
 	<div class="div-container">
 
 		<section class="section-one">
@@ -28,6 +32,8 @@
 				<div class="welcome-img">
 					<img src="../images/UsersJoin/img_welcome.png">
 				</div>
+				
+				
 				<h1 class="welcome-head">FINE APPLE에 오신 것을 환영합니다!</h1>
 				<hr class="section-hr">
 			</div>

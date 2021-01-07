@@ -18,7 +18,7 @@
 	</select>-->
 
 	<select id="one_id" resultType="String">
-		SELECT member_mid FROM members WHERE member_mid = #{id}
+		SELECT member_mid FROM members WHERE member_mid = #{frm_id}
 	</select>
 	
 	<select id="users" resultType="users.MemberVo" parameterType="users.MemberVo">

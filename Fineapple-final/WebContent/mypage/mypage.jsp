@@ -181,7 +181,7 @@
 					</div>
 
 					<div class="frm-submit">
-						<input type="submit" onclick="check_Pwd()" name="frm-sumbit" value="수정하기">
+						<input type="button" onclick="check_Pwd()" name="frm-sumbit" value="수정하기">
 					</div>
 				</form>
 			</section>
@@ -191,6 +191,7 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
+
 
 	
 	</script>
