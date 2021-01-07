@@ -8,6 +8,13 @@
 <title>공지사항 작성</title>
 </head>
 <body>
+<%
+	request.setCharacterEncoding("urf-8");
+	String modal = "cs_modal.jsp";
+	if(request.getParameter("modal") != null)  {
+		modal = 
+	}
+%>
 <div class="cs_notice_view_container">	
 	<form action="" name="cs_frm_board" id="frm_cs_notice" method="post">
 		<div class="frm_cs_notice_body">
@@ -46,6 +53,7 @@
 			<input type="hidden" name="hit" value="${vo.hit}"/>
 			<input type="hidden" name="pserial" value="${vo.pserial }">
 		</div>
+		<jsp:include page="cs_modal.jsp"></jsp:include>
 	</form>
 </div>
 
