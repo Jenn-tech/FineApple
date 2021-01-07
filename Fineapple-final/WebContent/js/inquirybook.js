@@ -347,8 +347,10 @@ var view = function(serial) {
 var gofaq = function(value) {
 	var frm = document.frm_faqbook;
 	var findStr = value;
-	frm.findStr.value = findStr;
-	frm.action = '../faqbook.do?qa=selectFaq';
+	if(findStr !== "전체보기") {
+		frm.findStr.value = findStr;
+	}
+	frm.action = 'faqbook.do?qa=selectFaq';
 	frm.submit();
 }
 

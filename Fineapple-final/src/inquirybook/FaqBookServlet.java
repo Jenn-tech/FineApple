@@ -44,8 +44,8 @@ public class FaqBookServlet extends HttpServlet {
 		case "selectFaq":
 			
 			List<FaqBookVo> list;
-			if(req.getParameter("faqStr") != null) {
-				findStr = req.getParameter("faqStr");
+			if(req.getParameter("findStr") != null) {
+				findStr = req.getParameter("findStr");
 			}
 			
 			list = new FaqBookDao().select(findStr);
@@ -53,8 +53,6 @@ public class FaqBookServlet extends HttpServlet {
 			req.setAttribute("list", list);
 			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_FAQ.jsp");
 			rd.forward(req, resp);
-			System.out.println(list);
-			System.out.println("FAQ 도착");
 			break;
 		}
 	}
