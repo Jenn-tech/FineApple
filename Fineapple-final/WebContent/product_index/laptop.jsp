@@ -36,7 +36,7 @@
                   <h5>more detail</h5>
                 </figcaption>
                 <a href="../product/laptop2.jsp"></a>
-                <div id="detail">MacBook Pro</br>2,919,000</div>
+                <div id="detail">MacBook Pro</br>2,340,000</div>
             </figure>
 			<figure class="product">
                 <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406899000" width="200px" height="200px" />
@@ -45,7 +45,7 @@
                   <h5>more detail</h5>
                 </figcaption>
                 <a href="../product/laptop2-1.jsp"></a>
-                <div id="detail">MacBook Pro</br>2,919,000</div>
+                <div id="detail">MacBook Pro</br>2,340,000</div>
             </figure>
 			
 			<figure class="product">
@@ -55,7 +55,7 @@
                   <h5>more detail</h5>
                 </figcaption>
                 <a href="../product/laptop3.jsp"></a>
-                <div id="detail">LG gram 16</br>2,340,000</div>
+                <div id="detail">LG gram 16</br>1,919,000</div>
             </figure>	
 			<figure class="product">
                 <img src="https://static.coupangcdn.com/image/retail/images/1057253810087166-c7ab11df-4eff-47e5-b2f6-4a14c0323829.jpg" width="250px" height="250px" />
@@ -64,7 +64,7 @@
                   <h5>more detail</h5>
                 </figcaption>
                 <a href="../product/laptop3-1.jsp"></a>
-                <div id="detail">LG gram 16</br>2,340,000</div>
+                <div id="detail">LG gram 16</br>1,919,000</div>
             </figure>	
             
             	<figure class="product">

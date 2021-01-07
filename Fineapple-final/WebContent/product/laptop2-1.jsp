@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
 </head>
 <body>
 	<!-- header영역 -->
@@ -29,23 +30,16 @@
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-silver-select-202011?wid=452&hei=420&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1603406899000" alt="MacBook Pro" width="600px" style="
     margin-top: 170px; border-radius: 23px">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>MacBook Pro</h1><br/>
-                <span>상품코드 : </span>
-                <span>MacBookPro</span><br/>
-                <span>판매가 : </span>
-                <span>2,919,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">실버</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>512 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>MacBook Pro</h1><input type= hidden name="product_name" value= "MacBook Pro"><br>
+	               상품코드 : MacBookPro<input type=hidden name="product_serial" value= "MacBookPro"><br>
+	               판매가 : 2,340,000원<br>
+	               색상 : 실버<input type=hidden name="product_color" value= "실버"><br>
+	               메모리 : 512 GB<br>
+	            </div> 
                 <div class="amount">
-                    수량  <input type=hidden name="sell_price" value="2919000">
+                    수량  <input type=hidden name="sell_price" value="2340000">
                     <input type="button" value=" - " onclick="del();">
                     <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
                     <input type="button" value=" + " onclick="add();"><br/>

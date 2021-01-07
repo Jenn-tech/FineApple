@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
 </head>
 <body>
 	<!-- header영역 -->
@@ -30,20 +31,14 @@
     margin-top: 220px; border-radius: 23px">
         <div class="summary">
             <form name="form" method="get">
-                <h1>삼성 노트북 Plus2</h1><br/>
-                <span>상품코드 : </span>
-                <span>NT550XDA-KC35G</span><br/>
-                <span>판매가 : </span>
-                <span>900,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">블레이드블랙</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>삼성 노트북 Plus2</h1><input type= hidden name="product_name" value= "삼성 노트북 Plus2"><br>
+	               상품코드 : NT550XDA-KC35W<input type=hidden name="product_serial" value= "NT550XDA-KC35W"><br>
+	               판매가 : 900,000원<br>
+	               색상 : 퓨어 화이트<input type=hidden name="product_color" value= "퓨어 화이트"><br>
+	               메모리 : 256 GB<br>
+	            </div> 
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="900000">
                     <input type="button" value=" - " onclick="del();">

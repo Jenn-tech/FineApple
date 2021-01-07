@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
 </head>
 <body>
 	<!-- header영역 -->
@@ -28,21 +29,14 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-graphite-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>iPhone 12 Pro Max</h1><br/>
-                <span>상품코드 : </span>
-                <span>iPhone12ProMax</span><br/>
-                <span>판매가 : </span>
-                <span>1,490,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">그래파이트</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
+	               상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
+	               판매가 : 1,490,000원<br>
+	               색상 : 그래파이트<input type=hidden name="product_color" value= "그래파이트"><br>
+	               메모리 : 256 GB<br>
+	            </div>
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="1490000">
                     <input type="button" value=" - " onclick="del();">

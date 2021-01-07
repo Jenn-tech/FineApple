@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
-
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
@@ -29,21 +30,14 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-yellow-select-2019?wid=470&hei=556&fmt=png-alpha&.v=1568141245782" alt="iPhone 11" width="600px" style="margin-top: 40px;">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>iPhone 11</h1><br/>
-                <span>상품코드 : </span>
-                <span>iPhone11</span><br/>
-                <span>판매가 : </span>
-                <span>1,060,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">옐로</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>iPhone 11</h1><input type= hidden name="product_name" value= "iPhone 11"><br>
+	               상품코드 : iPhone11<input type=hidden name="product_serial" value= "iPhone11"><br>
+	               판매가 : 1,060,000원<br>
+	               색상 : 옐로<input type=hidden name="product_color" value= "옐로"><br>
+	               메모리 : 256 GB<br>
+	            </div>
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="106000">
                     <input type="button" value=" - " onclick="del();">

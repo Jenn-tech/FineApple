@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
 </head>
 <body>
 	<!-- header영역 -->
@@ -29,21 +30,14 @@
         <img class="phone-img" src="https://static.coupangcdn.com/image/retail/images/1057253810087166-c7ab11df-4eff-47e5-b2f6-4a14c0323829.jpg" alt="LG gram 16" width="600px" style="
     margin-top: 170px; border-radius: 23px">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>LG gram 16</h1><br/>
-                <span>상품코드 : </span>
-                <span>16ZD90P-GX7BK</span><br/>
-                <span>판매가 : </span>
-                <span>1,919,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">옵시디안블랙</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>LG gram 16</h1><input type= hidden name="product_name" value= "LG gram 16"><br>
+	               상품코드 : 16ZD90P-GX7BK<input type=hidden name="product_serial" value= "16ZD90P-GX7BK"><br>
+	               판매가 : 1,919,000원<br>
+	               색상 : 옵시디안블랙<input type=hidden name="product_color" value= "옵디시안블랙"><br>
+	               메모리 : 512 GB<br>
+	            </div> 
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="1919000">
                     <input type="button" value=" - " onclick="del();">

@@ -17,49 +17,40 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
-    
-	<script src='../js/go_cart.js'></script>  
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-	
+   
 </head>
 <body>
-	<!-- header영역 -->
-		<jsp:include page="../main/header.jsp"/>
+   <!-- header영역 -->
+      <jsp:include page="../main/header.jsp"/>
 
     <!-- main -->
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
-        	<form method="get" action="orderServlet" name="form">
-
-				<div class="테두리">
-					<h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
-					상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
-					판매가 : 1,490,000원<br>
-					색상 : 퍼시픽블루<input type=hidden name="product_color" value= "퍼시픽블루"><br>
-					메모리 : 256 GB<br>
-				</div>
-	
-                <div class="amount">
-                    수량  <input type=hidden name="sell_price" value="1490000">
-                    <input type="button" value=" - " onclick="del();">
-                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
-                    <input type="button" value=" + " onclick="add();"><br/>
-                    금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
-                </div>
-				<br>
-					<div class="btns">
-					<input type="submit" value="장바구니" class="btn1"/> 
-					<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-				</div>
-			</form>
-				<div class="btns">
-					<input type="submit" value="장바구니" class="btn1"/> 
-					<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-				</div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
+	               상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
+	               판매가 : 1,490,000원<br>
+	               색상 : 퍼시픽블루<input type=hidden name="product_color" value= "퍼시픽블루"><br>
+	               메모리 : 256 GB<br>
+	            </div>
+	                <div class="amount">
+	                    수량  <input type=hidden name="sell_price" value="1490000">
+	                    <input type="button" value=" - " onclick="del();">
+	                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
+	                    <input type="button" value=" + " onclick="add();"><br/>
+	                    금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
+	                </div><br>
+	                
+	               <div class="btns">
+	               		<input type="button" value="장바구니" class="btn1"/>
+	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               </div>
+         	</form>
         </div>
     </div>
 
@@ -214,7 +205,7 @@
         </div>
         
    <!-- footer영역 -->
-   	<%@include file="../main/footer.jsp" %>
+      <%@include file="../main/footer.jsp" %>
 <script>
 
 </script>
