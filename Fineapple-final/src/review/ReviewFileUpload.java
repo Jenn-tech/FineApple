@@ -21,10 +21,12 @@ public class ReviewFileUpload {
 			//업로드된 파일명
 			Enumeration<String> en = mul.getFileNames();
 			while(en.hasMoreElements()) {
-				System.out.println(sysFile);
 				String tag = (String)en.nextElement();
 				sysFile = mul.getFilesystemName(tag); // 수정된 파일명
 				oriFile = mul.getOriginalFileName(tag); //원본 파일명
+				System.out.println("1sys"+sysFile);
+				System.out.println("1ori"+oriFile);
+
 			}
 			
 			
@@ -42,6 +44,8 @@ public class ReviewFileUpload {
 		//vo.setProductName(mul.getParameter("productName"));
 		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
 		vo.setReviewImg(mul.getParameter("reviewImg"));
+		System.out.println("2sys"+sysFile);
+
 		vo.setDelFile(mul.getParameter("delFile"));
 //		String temp = mul.getParameter("reviewSerial");
 //		int temp1 = Integer.parseInt(temp);
@@ -58,8 +62,8 @@ public class ReviewFileUpload {
 		vo.setReviewDoc(mul.getParameter("reviewDoc"));
 		//vo.setProductName(mul.getParameter("productName"));
 		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
-		vo.setReviewImg(mul.getParameter("reviewImg"));
-		vo.setDelFile(mul.getParameter("delFile"));
+		vo.setReviewImg(sysFile);
+		vo.setDelFile(oriFile);
 		String temp = mul.getParameter("reviewSerial");
 		int temp1 = Integer.parseInt(temp);
 		vo.setReviewSerial(temp1);
