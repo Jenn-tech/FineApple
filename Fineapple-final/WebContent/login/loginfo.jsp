@@ -60,7 +60,7 @@
             </div>
             <div class="button-login">
                 <button class="btn-naver" >
-                    <a href="#">NAVER 로그인</a>
+                    <a href="naverlogin.jsp">NAVER 로그인</a>
                 </button>
             </div>
         </section>
