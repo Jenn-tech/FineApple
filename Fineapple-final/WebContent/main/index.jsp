@@ -83,12 +83,11 @@
 		</div>
 
 
-       
+<div id = "chat">
+	<a href="../login/chat.jsp"><img src="../images/chat.png" /></a>
+</div>
    <!-- footer영역 -->
    	<%@include file="footer.jsp" %>
-   
-
-    
 </div>
 <script>
 logInOut();

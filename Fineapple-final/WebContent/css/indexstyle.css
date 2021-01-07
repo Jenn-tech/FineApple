@@ -359,3 +359,13 @@
 	color : black;
 	
 }
+
+#chat img{
+	position: fixed;
+        right: 50px;
+        bottom: 50px;
+
+
+	width : 110px; 
+	height: 100px;
+}

@@ -45,7 +45,7 @@
 
     <div class="footer-align">
         <hr>
-        <div class="help-box">도움이 더 필요하신가요? <a href="#">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
+        <div class="help-box">도움이 더 필요하신가요? <a href="chat.jsp">지금 채팅하기</a> 또는 080-330-8877 번호로 문의하세요.</div>
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
         </div>
