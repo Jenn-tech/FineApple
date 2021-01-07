@@ -36,7 +36,13 @@
 	 						<td><input type="text" class="form-control" placeholder="글 제목" name="reviewTitle" maxlength="50" style="width: 100%; height: 45px;" value="${vo.reviewTitle }"></td>
 	 					</tr>
 	 					<tr>
-	 						<td><textarea class="form-control" placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;">${vo.reviewDoc }</textarea></td>
+							<td class="table-left">사진</td>
+							<td class="table-right" colspan="2"><input type='file' name='reviewImg' id='btnPhoto'/>
+							<img src='review3/upload/${vo.reviewImg}' id='photo' width='200px' height='140px'/>
+							</td>
+						</tr>
+	 					<tr>
+	 						<td colspan="2"><textarea class="form-control" placeholder="글 내용" name="reviewDoc" maxlength="2000" style="height: 350px; width: 100%;">${vo.reviewDoc }</textarea></td>
 	 					</tr>
 	 				</tbody>
 	 			</table>

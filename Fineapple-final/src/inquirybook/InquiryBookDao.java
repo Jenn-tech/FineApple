@@ -28,13 +28,13 @@ public class InquiryBookDao {
 	}
 	
 	public String insert(InquiryBookVo vo) {
-		String msg = "ÀúÀå ¿Ï·á";
+		String msg = "ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½";
 		
 		try {
 			System.out.println(vo.getInquiryType());
 			int cnt = sqlSession.insert("inquiry.insert", vo);
 			if (cnt<1) {
-				throw new Exception("¿À·ù ¹ß»ý");
+				throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½");
 			}
 			sqlSession.commit();
 		} catch (Exception e) {
@@ -48,14 +48,14 @@ public class InquiryBookDao {
 	} 
 	
 	public String insertA(InquiryBookVo vo) {
-		String msg = "Á¤»óÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.";
+		String msg = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 		
 		try {
 			System.out.println(vo.getMemberName());
 			int cnt = sqlSession.insert("inquiry.insertanswer", vo);
 			
 			if(cnt < 1) {
-				throw new Exception("¿À·ù ¹ß»ý = ´äº¯");
+				throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ = ï¿½äº¯");
 			}
 			
 			sqlSession.commit();
@@ -121,7 +121,7 @@ public class InquiryBookDao {
 	}
 	
 	public String delete(InquiryBookVo vo) {
-		String msg ="Á¤»óÀûÀ¸·Î »èÁ¦¸¦ ¿Ï·áÇß½À´Ï´Ù.";
+		String msg ="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.";
 		List<InquiryBookAttVo> attList = null;
 		try {
 			attList = sqlSession.selectList("inquiry.select_att", vo.getSerial());
@@ -132,13 +132,13 @@ public class InquiryBookDao {
 					cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
 					System.out.println(cnt);
 					if(cnt < 1) {
-						throw new Exception("¿À·ù ¹ß»ý");
+						throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½");
 					}
 					delFile(attList);
 				}
 			} 
 			else {
-				throw new Exception("¿À·ù ¹ß»ý 2");
+				throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ 2");
 			}
 			sqlSession.commit();
 		}
@@ -153,7 +153,7 @@ public class InquiryBookDao {
 	}
 	
 	public String update(InquiryBookVo vo) {
-		String msg = "Á¤»óÀûÀ¸·Î ¼öÁ¤µÇ¾ú½À´Ï´Ù.";
+		String msg = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.";
 		
 		try {
 			int cnt = sqlSession.update("inquiry.update", vo);
@@ -162,19 +162,19 @@ public class InquiryBookDao {
 				if(vo.getAttList() != null) {
 					cnt = sqlSession.insert("inquiry.insert_att", vo);
 					if(cnt < 0) {
-						throw new Exception("¿À·ù ¹ß»ý - ÆÄÀÏ Ãß°¡Áß");
+						throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½");
 					}
 				}
 				if(vo.getDelFiles() != null) {
 					cnt = sqlSession.delete("board.delete_att", vo);
 					if(cnt < 0) {
-						throw new Exception("¿À·ù ¹ß»ý - ÆÄÀÏ »èÁ¦Áß");
+						throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 					}
 					delFile(vo.getDelFiles());
 				}
 			}
 			else {
-				throw new Exception("¿À·ù ¹ß»ý ¾÷µ¥ÀÌÆ®");
+				throw new Exception("ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®");
 			}
 			sqlSession.commit();
 		} catch (Exception e) {

@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
     
-    <script src='cart/cart.js'></script>
+	<script src='../js/go_cart.js'></script>  
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
@@ -33,21 +33,16 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
-            <form name="form" method="get" action="order">
-                <h1>iPhone 12 Pro Max</h1><br/>
-                <span>상품코드 : </span>
-                <span>iPhone12ProMax</span><br/>
-                <span>판매가 : </span>
-                <span>1,490,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">퍼시픽블루</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+        	<form method="get" action="orderServlet" name="form">
+
+				<div class="테두리">
+					<h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
+					상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
+					판매가 : 1,490,000원<br>
+					색상 : 퍼시픽블루<input type=hidden name="product_color" value= "퍼시픽블루"><br>
+					메모리 : 256 GB<br>
+				</div>
+	
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="1490000">
                     <input type="button" value=" - " onclick="del();">
@@ -55,13 +50,16 @@
                     <input type="button" value=" + " onclick="add();"><br/>
                     금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
                 </div>
-            <br/>
-
-            </form>
-	            <div class="btns">
-	                <input type="submit" value="장바구니" class="btn1"/>
-	                <a href="order.jsp"><input type="submit" value="바로구매" class="btn2"/></a>
-	            </div>
+				<br>
+					<div class="btns">
+					<input type="submit" value="장바구니" class="btn1"/> 
+					<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+				</div>
+			</form>
+				<div class="btns">
+					<input type="submit" value="장바구니" class="btn1"/> 
+					<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+				</div>
         </div>
     </div>
 

@@ -91,7 +91,7 @@ var inquiry = function() {
 			checkFlag = true;
 			alert(frm.docvisible.value);
 			
-		if(!frm.name.subject.checkValidity()) {
+		if(!frm.name.checkValidity()) {
 			alert('작성자를입력해주세요.');
 			checkFlag=false;
 		}
@@ -124,7 +124,7 @@ var inquiry = function() {
 			alert('제목을 입력해주세요.');
 			checkFlag=false;
 		}
-		else if(!frm.name.value.checkValidity()) {
+		else if(!frm.name.checkValidity()) {
 			alert('작성자를입력해주세요.');
 			checkFlag=false;
 		}
@@ -135,6 +135,7 @@ var inquiry = function() {
 		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action = 'inquiry.do?job=updateR';
+			alert("정상적으로 수정되었습니다.")
 			frm.submit();
 			}
 		}
@@ -163,6 +164,7 @@ var inquiry = function() {
 			if(pwd != null) {
 			frm.pwd.value = pwd;				
 			frm.action = 'inquiry.do?job=delete';
+			alert("정상적으로 삭제되었습니다.")
 			frm.submit();
 			}
 		}

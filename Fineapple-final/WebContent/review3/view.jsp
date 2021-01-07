@@ -49,16 +49,19 @@
 	 					<tr>
 	 						<td class="table-left">사진</td>
 	 						<td  class="table-right" colspan="2">
-							<c:choose>
+	 						<a href='review3/upload/${vo.reviewImg}' download = '${vo.reviewImg }'>
+										<img src='review3/upload/${vo.reviewImg}' width='200px' height='140px'/>
+									</a>
+						<%-- 	<c:choose>
 								<c:when test="${empty vo.reviewImg }">
 									<img src='http://placehold.it/200X140' width='200px' height='140px' />
 								</c:when>
 								<c:otherwise>
-									<a href='./review3/upload/${vo.reviewImg }' download = '${vo.reviewImg }'>
-										<img src='./review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
+									<a href='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg }' download = '${vo.reviewImg }'>
+										<img src='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
 									</a>
 								</c:otherwise>				
-							</c:choose>	
+							</c:choose>	 --%>
 							</td>	
 						<hr/>
 						</tr>

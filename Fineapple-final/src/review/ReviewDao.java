@@ -113,11 +113,12 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 수정되었습니다.";
 		
 		try {
-			String sql = "update review set review_subject = ?, review_doc = ?, review_date = sysdate where review_no = ? " ;
+			String sql = "update review set review_subject = ?, review_doc = ?, review_date = sysdate ";
 			
 				if(vo.getReviewImg() != null && !vo.getReviewImg().equals("")) {
 					sql += ", review_photo= '" + vo.getReviewImg() + "'";
 				}
+				sql +=  "where review_no = ?";
 				
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, vo.getReviewTitle());
@@ -208,6 +209,7 @@ public class ReviewDao {
 				vo.setReviewTitle(rs.getString("review_subject"));
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
+				vo.setReviewImg(rs.getString("review_photo"));
 			}
 		}catch(Exception ex) {
 			ex.printStackTrace();
