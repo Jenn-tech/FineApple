@@ -151,7 +151,8 @@ function view(reviewSerial){
 
 function productview(reviewSerial){
 	var frm = document.frm_review;
+	var serial = document.getElementsByName("reviewSerial");
 	frm.action = '../review.do?job=product';
-	frm.reviewSerial.value = reviewSerial;
+	reviewSerial = serial;
 	frm.submit();
 }

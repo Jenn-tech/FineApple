@@ -12,13 +12,13 @@
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
     crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src='../js/product.js'></script>
+    <script src='<%=request.getContextPath() %>/js/product.js'></script>
 	<script src='../js/review.js'></script>
-    <link rel="stylesheet" href="../css/product.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/review3.css"> 
-    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/product.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
+    <link rel="shortcut icon" href="<%=request.getContextPath() %>/images/favicon.png">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
@@ -183,48 +183,49 @@
                 </ul>
             </div>
             <span class="total-review-menu">전체 상품평</span>
-            <button class="write-review-btn"><i class="fas fa-pen"></i> 상품평 작성</button>
+            <button class="write-review-btn" onclick="location.href='./review3/write.jsp'"><i class="fas fa-pen"></i> 상품평 작성</button>
             <div class="total-review">
              
              
              <%--review에서 가져옴 --%>
-             <div class="container">
+        <div class="container">
  		<div class="row">
- 		<form action="writeAction.jsp" method="post" name="frm_review">
+ 		<form method="post" name="frm_review">
 	 			<table class="review-table-detail" style="text-align: center;"> 
 	 				<tbody>
 	 					<tr>
 	 						<td class="table-left">제목</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
+	 						
+	 					<%-- 	<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td> --%>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
+	 						<%-- <td class="table-right" colspan="2"><%= rv.getMemberId() %></td> --%>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성일자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
+	 						<%-- <td class="table-right" colspan="2"><%= rv.getReviewDate()%></td> --%>
 	 					</tr>
 	 					<tr>
-							<c:choose>
-								<c:when test="${empty vo.reviewImg }">
-									<img src='http://placehold.it/200X140' width='200px' height='140px' />
-								</c:when>
-								<c:otherwise>
-									<a href='./review3/upload/${vo.reviewImg }'>
-										<img src='./review3/upload/${vo.reviewImg }' width='200px' height='140px'/>
+	 						<td class="table-left">사진</td>
+	 						<td  class="table-right" colspan="2">
+	 						<a href='review3/upload/${vo.reviewImg}' download = '${vo.reviewImg }'>
+										<img src='review3/upload/${vo.reviewImg}' width='200px' height='140px'/>
 									</a>
-								</c:otherwise>				
-							</c:choose>		
+							</td>	
 						<hr/>
 						</tr>
 	 					<tr>
 	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
 	 						<%-- <td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td> --%>
 	 					</tr>
-	 					
+	 						
 	 				</tbody>
 	 			</table>
+	 			<input type="hidden" name="reviewSerial" value="6">
  			</form> 
  		</div>
  	</div>
