@@ -10,37 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
-
-import jdk.jshell.SourceCodeAnalysis.Completeness;
-
 /**
- * Servlet implementation class memberServlet
+ * Servlet implementation class complete
  */
-@WebServlet("/UsersJoin/result")
-public class memberServlet extends HttpServlet {
-
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=utf-8");
-		request.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
-
-
-		
-		
-	}
-
+@WebServlet("/UsersJoin/complete")
+public class completeServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 
-		
+
 		System.out.println("doPost() 실행");
 
 		String mid = request.getParameter("frm_id");
@@ -65,7 +47,7 @@ public class memberServlet extends HttpServlet {
 
 			/* 중복체크 */
 			MemberVo vo = new MemberVo();
-		
+
 
 			/* insert */
 			vo.setMember_mid(mid);
@@ -86,10 +68,10 @@ public class memberServlet extends HttpServlet {
 
 			int cnt = dao.sqlSession.insert("board.insert", vo);
 			System.out.println("vo : " + vo);
-
+			request.setAttribute("vo", vo);
 			if( cnt > 0 ) {
 				System.out.println("INSERT : " + vo);
-
+				
 				dao.sqlSession.commit();
 
 			}else {
@@ -98,13 +80,13 @@ public class memberServlet extends HttpServlet {
 
 		} //else {
 
-
-		response.sendRedirect("../UsersJoin/complete");
+		
+		RequestDispatcher dis = request.getRequestDispatcher("/UsersJoin/complete.jsp");
+		dis.forward(request, response);
+		
 		dao.sqlSession.close();
 
 	}
 
 
 }
-
-

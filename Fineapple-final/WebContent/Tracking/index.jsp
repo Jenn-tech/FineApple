@@ -114,7 +114,7 @@
 	
 		<section>
 			<div class="trk-header-align-btn">
-				<form action="" method="post">
+				<form action="../mypage/orderlist.jsp" method="post">
 					<input type="submit" name="trk-submit" value="마이페이지로 이동"/>
 				</form>
 			</div>

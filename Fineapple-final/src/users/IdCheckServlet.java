@@ -45,7 +45,7 @@ public class IdCheckServlet extends HttpServlet {
 
 			
 			/* 콘솔 출력 */
-
+			
 			String getID = dao.sqlSession.selectOne("board.one_id", id);
 			
 			System.out.println(getID);

@@ -1,3 +1,4 @@
+<%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,8 +27,7 @@
 					<div class="welcome-img">
 						<img src="../images/UsersJoin/complete.png">
 					</div>
-					
-					<h1 class="welcome-head-user">연주님</h1>
+					<h1 class="welcome-head-user">${vo.getMember_mid()}</h1>
 					<h1 class="welcome-head">회원가입이 완료되었습니다.</h1>
 					<div class="welcome-head-fine" > FineApple MAKES INNOVATION<br>
 						혁신을 만들어갑니다.

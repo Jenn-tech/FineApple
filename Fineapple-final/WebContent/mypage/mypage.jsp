@@ -6,12 +6,11 @@
 <title>회원정보 수정</title>
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/UsersJoin/UsersJoin.css">
+<link rel="stylesheet" href="../css/UsersJoin/mypage.css">
 <link rel="stylesheet" href="../css/UsersJoin/agree.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
-<script
-	src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 <script src="../js/userjoin/agree.js"></script>
@@ -56,6 +55,14 @@
 	
 }
 
+.div-container {
+	width: 800px;
+	margin: 100px auto 0 auto;
+	border: 1px solid #d2d6dc;
+	box-shadow: 0px 0px 10px 10px white;
+	background-color: white;
+	height: 1300px;
+}
 </style>
 </head>
 
@@ -93,16 +100,13 @@
 				<form class="frm-member" id="frm-member" action="result.jsp" method="POST">
 					<div class="frm-label">
 						<label>아이디</label>
-						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-id">
-						<input type="text" name="frm-id" placeholder="아이디 입력(10자)">
-						<input type="button" name="frm-check" id="id-Check" value="중복확인">
+						<input type="text" name="frm-id" readonly="readonly" value="kim">
 					</div>
 
 					<div class="frm-label">
 						<label>현재 비밀번호</label>
-						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-password">
 						<input type="password" name="frm-password" placeholder="비밀번호 자리 8~20자">
@@ -110,7 +114,6 @@
 						
 					<div class="frm-label">
 						<label>비밀번호 재입력</label>
-						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-password">
 						<input type="password" name="frm-password" placeholder="변경할 비밀번호">
@@ -118,7 +121,6 @@
 						
 					<div class="frm-label">
 						<label>이름</label>
-						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-name">
 						<input type="text" name="frm-name" placeholder="성명을 입력해주세요.">
@@ -126,7 +128,6 @@
 					
 					<div class="frm-label">
 						<label>이메일</label>
-						<span class="field-required"></span>
 					</div>
 					<div class="frm-input-email">
 						<input type="text" name="frm-email" placeholder="example@gmail.com">
@@ -179,7 +180,7 @@
 					</div>
 
 					<div class="frm-submit">
-						<input type="submit" name="frm-sumbit" value="가입하기">
+						<input type="submit" name="frm-sumbit" value="수정하기">
 					</div>
 				</form>
 			</section>
