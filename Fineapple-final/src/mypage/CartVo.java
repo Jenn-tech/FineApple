@@ -9,14 +9,7 @@ public class CartVo{
 	private String linkUrl;
 	private Integer cnt; //수량
 
-	public CartVo(int code, String name, int price, int cnt, String pictureUrl) {
-		super();
-		this.code=code;
-		this.name=name;
-		this.price=price;
-		this.cnt=cnt;
-		this.pictureUrl=pictureUrl;
-	}
+	
 	
 	public String getLinkUrl() {
 		return linkUrl;

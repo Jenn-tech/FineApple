@@ -58,8 +58,7 @@ public class CartDao {
 				vo.setCode(rs.getInt("code"));
 				vo.setName(rs.getString("name"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setPictureUrl(rs.getString("PICTUREURL"));
-				vo.setDescription(rs.getString("DESCRIPTION"));
+				vo.setCnt(rs.getInt("cnt"));
 				vo.setLinkUrl(rs.getString("linkurl"));
 				list.add(vo);
 			}
@@ -90,8 +89,7 @@ public class CartDao {
 				vo.setCode(rs.getInt("code"));
 				vo.setName(rs.getString("name"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setPictureUrl(rs.getString("PICTUREURL"));
-				vo.setDescription(rs.getString("DESCRIPTION"));
+				vo.setCnt(rs.getInt("cnt"));
 				vo.setLinkUrl(rs.getString("linkurl"));
 				list.add(vo);
 			}
