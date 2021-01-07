@@ -33,6 +33,7 @@ public class IdCheckServlet extends HttpServlet {
 		/* 커넥션 연결 */
 		
 		BoardDao dao = new BoardDao();
+		
 
 		if(dao.sqlSession == null) {
 			System.out.println("연결 중 오류 ..");

@@ -8,6 +8,10 @@
 		INSERT INTO members(member_serial, member_mid, member_pwd, member_name, member_email, member_phone, member_zipcode, member_address, member_signup_date)VALUES(seq_members.nextval, '${member_mid}', '${member_pwd}', '${member_name}', '${member_email}', '${member_phone}', '${member_zipcode}', '${member_address}', sysdate) 
 	</insert>
 	
+	<select id="complete_id" resultType="String">
+		SELECT member_mid FROM members WHERE member_mid $'{id}'
+	</select>
+	
 	
 	<!--  <select id="CheckId" resultType="int">
 		SELECT count(*) FROM membervo WHERE mid = #{id}  
@@ -16,4 +20,12 @@
 	<select id="one_id" resultType="String">
 		SELECT member_mid FROM members WHERE member_mid = #{id}
 	</select>
+	
+	<select id="users" resultType="users.MemberVo">
+		 SELECT * FROM members WHERE member_mid = #{member_mid};
+	</select>
+	
+	<update id="update_users" parameterType="users.MemberVo">
+	 	UPDATE members SET member_pwd = #{member_pwd}, member_name = #{member_name}, member_email = #{member_email}, member_phone = #{member_phone}, member_zipcode= #{member_zipcode}, member_address = #{member_address} WHERE member_mid = ${member_mid};
+	</update>
 </mapper>

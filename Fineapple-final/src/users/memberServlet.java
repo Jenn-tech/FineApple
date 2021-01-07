@@ -89,17 +89,17 @@ public class memberServlet extends HttpServlet {
 
 			if( cnt > 0 ) {
 				System.out.println("INSERT : " + vo);
-
 				dao.sqlSession.commit();
 
 			}else {
 				System.out.println("Insert 오류");
+				dao.sqlSession.rollback();
 			}
 
 		} //else {
 
-
-		response.sendRedirect("../UsersJoin/complete");
+		
+		response.sendRedirect("/Fineapple-final/UsersJoin/complete");
 		dao.sqlSession.close();
 
 	}

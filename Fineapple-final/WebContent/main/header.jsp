@@ -8,7 +8,8 @@
         frmData.action = "../product_list/select.jsp" ;
         frmData.submit() ;
     }
- 
+
+
 </script>
 <header id="header">
       <nav class="left">
@@ -59,7 +60,7 @@
                <li><a href="<%=request.getContextPath() %>/login/loginfo.jsp" class="button alt">로그인</a></li>  
                <%} else {%>
                 <li>
-                  <a href="<%=request.getContextPath() %>/mypage/mypage.jsp" class="button alt">마이룸</a>
+                  <a href="<%=request.getContextPath() %>/mypage/mypage" class="button alt">마이룸</a>
                   <ul>
                      <a href="<%=request.getContextPath() %>/mypage/cart.jsp" >장바구니</a>
                      <a href="<%=request.getContextPath() %>/mypage/orderlist.jsp" >주문내역</a>

@@ -1,3 +1,4 @@
+<%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -68,15 +69,13 @@
 
 <body>
 	<!-- header -->
-	<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+	<jsp:include page="../main/header.jsp"/>
+	
+	<% 
+	String id = (String)session.getAttribute("member_mid");
+	
+	
 	%>
-	<jsp:include page="../main/header.jsp" />
-
-	<%} else {%>
-
-	<jsp:include page="../main/header.jsp" />
-
-	<%} %>
 	<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">마이페이지</h1>
 		<div class="cs_category">
@@ -95,14 +94,13 @@
 					<hr class="section-hr">
 				</div>
 			</section>
-
 			<section class="section-two">
 				<form class="frm-member" id="frm-member" action="result.jsp" method="POST">
 					<div class="frm-label">
-						<label>아이디</label>
+						<label>아이디 <%=session.getAttribute("mid") %></label>
 					</div>
 					<div class="frm-input-id">
-						<input type="text" name="frm-id" readonly="readonly" value="kim">
+						<input type="text" name="frm-id" readonly="readonly" value="<%= id%>">
 					</div>
 
 					<div class="frm-label">
