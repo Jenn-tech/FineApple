@@ -41,5 +41,13 @@ var notice = function() {
 			}
 		}
 	}	
+	var btnFind= document.getElementById('btnFind');
+
+	if(btnFind != null){
+		btnFind.onclick = function(){
+			frm.action = "../notice/notice.jsp";
+			frm.submit();
+		}
+	}
 	
 }

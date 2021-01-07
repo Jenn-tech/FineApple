@@ -5,6 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
+<%	request.setCharacterEncoding("UTF-8"); %>
 
 <!DOCTYPE html>
 <html>
@@ -50,20 +51,23 @@
 			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
 		<%}} %>
 			<div>
-				<input type = 'text' name = 'findStr' id = 'findStr'/>
-				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색'/>
+				<input type = 'text' name = 'findNotice' id = 'findStr' value = '${param.findNotice }'/>
+				<input type = 'button' name = 'btnFind' id = 'btnFind' value='검색'/>
 				<input type="hidden" name="noticeNo" size="5" >
 				
 			</div>
 		</form>
 	</div>
 	
-<%		String findStr = "";
-if(request.getParameter("findStr") != null) {
-	findStr = request.getParameter("findStr");
+<%		
+
+
+String findNotice = "";
+if(request.getParameter("findNotice") != null) {
+	findNotice = request.getParameter("findNotice");
 }
 	
-		List<NoticeVo> list = dao.select("");
+		List<NoticeVo> list = dao.select(findNotice);
 		request.setAttribute("list", list);
 
 	%>	
@@ -79,6 +83,7 @@ if(request.getParameter("findStr") != null) {
 	</div>
 	
 <!-- notice 글 list -->
+	<form name = 'frm_temp' method = 'POST'>
 
 		<div class = 'notice_items'>
 				<c:forEach var ='notice' items ='${list }'>
@@ -91,7 +96,7 @@ if(request.getParameter("findStr") != null) {
 			</div>
 			</c:forEach>
 		</div>	
-		
+	</form>
 		
 </div>			
 
