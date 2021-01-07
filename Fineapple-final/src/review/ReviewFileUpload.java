@@ -43,7 +43,7 @@ public class ReviewFileUpload {
 		vo.setReviewDoc(mul.getParameter("reviewDoc"));
 		//vo.setProductName(mul.getParameter("productName"));
 		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
-		vo.setReviewImg(mul.getParameter("reviewImg"));
+		vo.setReviewImg(sysFile);
 		System.out.println("2sys"+sysFile);
 
 		vo.setDelFile(mul.getParameter("delFile"));
