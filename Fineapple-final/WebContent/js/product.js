@@ -6,7 +6,6 @@
 $(document).ready(function(){
     init();
 }) 
-var color;
 var sell_price;
 var amount;
 
@@ -43,6 +42,7 @@ function change () {
         }
     sum.value = parseInt(hm.value) * sell_price;
 }
+
 
 /* item-title 상단 고정*/
 $(document).ready(function() {
