@@ -70,7 +70,8 @@
 		</div>
 		
 		<div id="product_order_list">
-			<p><a href="#">최신순</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+			<p>
+			<a href="javascript:recentlist();">최신순</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
 			<a href="javascript:pricelist();">낮은가격</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
 			<a href="javascript:pricelistdesc();">높은가격</a> </p>
 		</div>

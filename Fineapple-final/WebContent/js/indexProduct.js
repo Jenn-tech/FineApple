@@ -134,3 +134,22 @@ var pricelistdesc = function(url){
 	});
 };
 
+
+var recentlist = function(url){
+	if(url == '/'){
+		location.reload(true);
+		return;
+	}
+	$.ajax({
+		type: 'get',
+		url: "../Recentlist",
+		data: "",
+		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+		success: function(data) {
+			$('#product_list').html(data);
+		},
+		error: function(request, status, error) {
+			alert(error);
+		}
+	});
+};

@@ -103,6 +103,39 @@ public class ProductDao2 {
 			System.out.println("list에 add완료");
 			return list;
 		}
+		
+		
+		public List<ProductVo> selectRecentlist(){
+			//높은가격 순
+			String sql = "select * from product order by code ";
+			List<ProductVo> list = new ArrayList<ProductVo>();
+			
+			
+			try {
+				conn = new Application().getConn();
+				ps = conn.prepareStatement(sql);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					ProductVo vo = new ProductVo();
+					vo.setCode(rs.getInt("code"));
+					vo.setName(rs.getString("name"));
+					vo.setPrice(rs.getInt("price"));
+					vo.setPictureUrl(rs.getString("PICTUREURL"));
+					vo.setDescription(rs.getString("DESCRIPTION"));
+					vo.setLinkUrl(rs.getString("linkurl"));
+					list.add(vo);
+				}
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				Application.close(conn, ps, rs);
+			}
+			System.out.println("list에 add완료");
+			return list;
+		}
 
 		
 		
