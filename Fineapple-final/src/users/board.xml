@@ -24,6 +24,9 @@
 	<select id="users" resultType="users.MemberVo" parameterType="users.MemberVo">
 		SELECT * FROM members WHERE member_mid = #{name}
 	</select>
-
+	
+	<select id="findPhone" resultType="String">
+	 SELECT SUBSTR(member_phone, 5) FROM members WHERE member_mid = #{name}
+	</select>
 	
 </mapper>

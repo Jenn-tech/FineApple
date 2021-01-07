@@ -18,7 +18,7 @@ import jdk.jshell.SourceCodeAnalysis.Completeness;
  * Servlet implementation class memberServlet
  */
 @WebServlet("/UsersJoin/result")
-public class memberServlet extends HttpServlet {
+public class MemberServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

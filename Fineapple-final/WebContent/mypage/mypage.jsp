@@ -14,7 +14,7 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
-<script src="../js/userjoin/agree.js"></script>
+<script src="../js/userjoin/mypage.js"></script>
 
 <style>
 .table{
@@ -96,19 +96,19 @@
 				</div>
 			</section>
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" action="result.jsp" method="POST">
+				<form class="frm-member" id="frm_member" name="frm_member" action="" method="POST">
 					<div class="frm-label">
 						<label>아이디</label>
 					</div>
 					<div class="frm-input-id">
-						<input type="text" name="frm-id" readonly="readonly" value="<%= id%>">
+						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="<%= id%>">
 					</div>
 
 					<div class="frm-label">
 						<label>현재 비밀번호</label>
 					</div>
 					<div class="frm-input-password">
-						<input type="password" name="frm-password" placeholder="비밀번호 자리 8~20자">
+						<input type="password" name="frm_password" placeholder="비밀번호 자리 8~20자">
 					</div>
 						
 					<div class="frm-label">
@@ -116,7 +116,7 @@
 						
 					</div>
 					<div class="frm-input-password">
-						<input type="password" name="frm-password" placeholder="변경할 비밀번호" value="">
+						<input type="password" name="re_frm_password" placeholder="변경할 비밀번호" value="">
 						
 					</div>
 						
@@ -124,14 +124,14 @@
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input type="text" name="frm-name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
+						<input style="font-weight:bold" type="text" name="frm-name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
 					</div>
 					
 					<div class="frm-label">
 						<label>이메일</label>
 					</div>
 					<div class="frm-input-email">
-						<input type="text" name="frm-email" placeholder="example@gmail.com" value="${userInfo.getMember_email() }">
+						<input style="font-weight:bold" type="text" name="frm-email" placeholder="example@gmail.com" value="${userInfo.getMember_email() }">
 					</div>
 					
 
@@ -143,16 +143,16 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
+						<input style="font-weight:bold" type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
 					</div>
 
 					<div class="frm-label">
 						<label>주소</label>
 					</div>
 					<div class="frm-input-zipcode">
-						<input type="text" name="zipcode" placeholder="우편번호" value="${userInfo.getMember_zipcode() }">
-						<input type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
-						<input type="text" name="address" placeholder="상세주소" value="${userInfo.getMember_address() }">
+						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호" value="${userInfo.getMember_zipcode() }">
+						<input style="font-weight:bold" type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
+						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소" value="${userInfo.getMember_address() }">
 					</div>
 					
 					<div class="frm-label">
@@ -181,7 +181,7 @@
 					</div>
 
 					<div class="frm-submit">
-						<input type="submit" name="frm-sumbit" value="수정하기">
+						<input type="button" onclick="check_Pwd()" name="frm-sumbit" value="수정하기">
 					</div>
 				</form>
 			</section>
@@ -191,6 +191,8 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
+
+	
 	</script>
 </body>
 </html>

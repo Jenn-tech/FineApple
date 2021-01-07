@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,15 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
-
-import bean.Application;
 
 /**
  * Servlet implementation class myPageServlet
  */
 @WebServlet("/mypage/mypage")
-public class myPageServlet extends HttpServlet {
+public class MyPageServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	@Override
@@ -54,10 +50,13 @@ public class myPageServlet extends HttpServlet {
 			
 			request.setAttribute("name", name);
 			
-			/* 마이바티스 쿼리문 */
+			/* 마이바티스 유저 정보 검색 쿼리문 */
 			List<MemberVo> list = dao.sqlSession.selectList("board.users", name);
 			
-			/* 객체 저장 */
+			/* 핸드폰 번호 쿼리문 */
+			String findPhone = dao.sqlSession.selectOne("board.findPhone", name);
+			
+			/* 유저 객체 저장 */
 			for(MemberVo vo : list) {
 				MemberVo userInfo = new MemberVo();
 				
@@ -67,7 +66,7 @@ public class myPageServlet extends HttpServlet {
 				userInfo.setMember_pwd(vo.getMember_pwd());
 				userInfo.setMember_name(vo.getMember_name());
 				userInfo.setMember_email(vo.getMember_email());
-				userInfo.setMember_phone(vo.getMember_phone());
+				userInfo.setMember_phone(findPhone);
 				userInfo.setMember_zipcode(vo.getMember_zipcode());
 				userInfo.setMember_address(vo.getMember_address());
 				
