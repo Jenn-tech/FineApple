@@ -41,7 +41,7 @@
 		<h1 style="font-size: 2em;">고객 센터</h1>
 		<div class="cs_category">
 			<a href="<%=request.getContextPath() %>/inquiry.do?job=select">Q&A게시판</a>
-			<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=cs_FAQ.jsp">FAQ</a>
+			<a href="<%=request.getContextPath() %>/faqbook.do?qa=selectFaq"">FAQ</a>
 			<a href="<%=request.getContextPath() %>/cs_center/cs_func_page.jsp?func=cs_map.jsp">오시는 길</a>
 		</div>
 		</header>

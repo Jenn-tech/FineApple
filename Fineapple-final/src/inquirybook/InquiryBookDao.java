@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
-import bean.CsPage;
+
 
 public class InquiryBookDao {
 	
@@ -70,9 +70,8 @@ public class InquiryBookDao {
 	}
 	
 	public void delFile(List<InquiryBookAttVo> delList) {
-		System.out.println("delFile");
+		System.out.println(delList.size()+"11111");
 		for(InquiryBookAttVo v : delList) {
-			System.out.println(v.getSysFile());
 			File f = new File(FileUpload.saveDir + v.getSysFile());
 			if(f.exists()) {
 				f.delete();
@@ -88,8 +87,11 @@ public class InquiryBookDao {
 			int totListSize = sqlSession.selectOne("inquiry.tot_list_size", page);
 			page.setTotListSize(totListSize);
 			page.pageCompute();
-					
+			
+			System.out.println(page.getStartNo());
+			System.out.println(page.getEndNo());
 			list = sqlSession.selectList("inquiry.select", page);
+			System.out.println(list + "+select");
 			map.put("page", page);
 			map.put("list", list);
 			
@@ -123,10 +125,10 @@ public class InquiryBookDao {
 		List<InquiryBookAttVo> attList = null;
 		try {
 			attList = sqlSession.selectList("inquiry.select_att", vo.getSerial());
-			System.out.println(attList.size());
 			int cnt = sqlSession.delete("inquiry.delete", vo);
 			if(cnt > 0) {
 				if(attList.size() > 0) {
+					System.out.println(vo.getSerial());
 					cnt = sqlSession.delete("inquiry.delete_att_pserial", vo.getSerial());
 					System.out.println(cnt);
 					if(cnt < 1) {
@@ -134,7 +136,7 @@ public class InquiryBookDao {
 					}
 					delFile(attList);
 				}
-			}
+			} 
 			else {
 				throw new Exception("오류 발생 2");
 			}

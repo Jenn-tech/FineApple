@@ -25,99 +25,55 @@
 			<div style="">
 			</div>
 			<div class="faq_category">
-				<form action="inquiry.do?qa=select" name="frm_faqbook">
-					<input type="hidden" name="faqStr" value="주문결제">
-					<input type="hidden" name="qa" value="selectfaq">
-					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)" name="btn">
+				<form action="" name="frm_faqbook" method="post">
+					<input type="hidden" name="findStr" value="">
+					<input type="button" value="전체보기" class="btnFaq" onclick="gofaq(this.value)">
+					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="배송안내" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="주문취소" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="교환" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="환불" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="상품관련" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="적립금" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="회원관련" class="btnFaq" onclick="gofaq(this.value)">
-					<input type="button" value="기타" class="btnFaq" onclick="gofaq(this.value)">
 				</form>
 			</div>
 			<c:forEach var="vo" items="${list }">
-				<ul>
-					<li class="collapsible">
-						<h4 class="title" id="title-first">
-							<a href="#">${vo.subject }</a>
-						</h4>
-						<div class="content">
-							<p>${vo.doc}</p>
-						</div>
-					</li>
-				</ul>
-			</c:forEach>
-			
 			<ul class="cs_FAQ_item">
 				<h4 class="cs_FAQ_title" id="cs_FAQ_title-first">
 					<a href="#html5">
-					<span>Q. 복합결제가 가능한가요?</span>
-					<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
+					<span>Q. ${vo.subject}</span>
+					 <img alt="" src="<%=request.getContextPath() %>/images/arrow_bottom.png" id="cs_faq_change_img">
 					</a>
 				</h4>
 				<div class="cs_FAQ_content">
-					<p>복합결제는 현재 지원하지 않습니다. 0구매를 희망하시는 고객님들께서는 한 가지의 결제수단을 이용해 주시기
-						바랍니다. 복합결제는 현재 지원하지 않습니다. 구매를 희망하시는 고객님들께서는 한 가지의 결제수단을 이용해 주시기
-						바랍니다.</p>
+					<p>${vo.doc}</p>
 				</div>
 			</ul>
-			<ul>
-				<li class="collapsible">
-					<h4 class="cs_FAQ_title">
-						<a href="#html5">
-						<span>Q. 복합결제가 가능한가요?</span>
-						<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
-						</a>
-					</h4>
-					<p class="cs_FAQ_content">복합결제는 현재 지원하지 않습니다. 구매를 희망하시는 고객님들께서는 한 가지의
-						결제수단을 이용해 주시기 바랍니다.</p>
-				</li>
-			</ul>
-			<ul>
-				<li class="collapsible">
-					<h4 class="cs_FAQ_title">
-						<a href="#html5">
-						<span>Q. 복합결제가 가능한가요?</span>
-						<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
-						</a>
-					</h4>
-					<p class="cs_FAQ_content">복합결제는 현재 지원하지 않습니다. 구매를 희망하시는 고객님들께서는 한 가지의
-						결제수단을 이용해 주시기 바랍니다.</p>
-				</li>
-			</ul>
-			<ul>
-				<li class="collapsible">
-					<h4 class="cs_FAQ_title">
-						<a href="#html5">
-						<span>Q. 복합결제가 가능한가요?</span>
-						<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
-						</a>
-					</h4>
-					<p class="cs_FAQ_content">복합결제는 현재 지원하지 않습니다. 구매를 희망하시는 고객님들께서는 한 가지의
-						결제수단을 이용해 주시기 바랍니다.</p>
-				</li>
-			</ul>
-			<ul>
-				<li class="collapsible">
-					<h4 class="cs_FAQ_title">
-						<a href="#html5">
-						<span>Q. 복합결제가 가능한가요?</span>
-						<img alt="" src="../images/arrow_bottom.png" id="cs_faq_change_img">
-						</a>
-					</h4>
-					<p class="cs_FAQ_content">복합결제는 현재 지원하지 않습니다. 구매를 희망하시는 고객님들께서는 한 가지의
-						결제수단을 이용해 주시기 바랍니다.</p>
-				</li>
-			</ul>
+			</c:forEach>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-toggleMenu()
+var toggleMenu = function() {
+	$(document).ready(function() {
+		$(".cs_FAQ_title a").on('click', function() {
+			
+			var submenu = $(this).parent().next();
+			
+			if(submenu.is(":visible")) {
+				$(this).css("color", "#000000");
+				submenu.slideUp();
+				$(this).children('img').attr("src", "<%=request.getContextPath() %>/images/arrow_bottom.png")
+			}
+			else {
+				$(this).css("color", "rgb(91, 135, 164)");
+				submenu.slideDown();
+				$(this).children('img').attr("src", "<%=request.getContextPath() %>/images/arrow_top.png")
+					
+			}
+		})
+	});
+}
+toggleMenu();
 </script>
 </body>
 

@@ -34,10 +34,10 @@
 <header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">커뮤니티</h1>
 		<div class="cs_category">
-			<a href="../notice/notice.jsp">공지사항</a>
-			<a href="../event/event.jsp">이벤트</a>
-			<a href="../review3/review.jsp">리뷰 게시판</a>
-		</div>
+			<a href="<%=request.getContextPath() %>/notice/notice.jsp">공지사항</a>
+			<a href="<%=request.getContextPath() %>/event/event.jsp">이벤트</a>
+			<a href="review.do?job=select">리뷰 게시판</a>
+		</div> 
 </header>
 <header class="cs_board_title">
 	<h1 style="font-size: 2em;">리뷰 게시판</h1>

@@ -4,6 +4,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -76,7 +79,7 @@
 	                  <h5>more detail</h5>
 	                </figcaption>
 	                <a href="${vo.linkUrl }"></a>
-	                <div id="detail">${vo.name}</br>${vo.price }</div>
+	                <div id="detail">${vo.name}</br><fmt:formatNumber value="${vo.price }" pattern="#,###" /></div>
 				</figure>
 			</c:forEach>
 			<%} %>

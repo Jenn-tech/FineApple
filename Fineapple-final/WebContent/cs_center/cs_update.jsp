@@ -34,22 +34,22 @@
 				    <label for="inquiryType">문의 유형</label>
 				    <select name="inquiryType" id="inquiryType" size="1" style="width: 75%; height: 30px; border: 1px solid #f1f1f1;" required>
 				        <option value="${vo.inquiryType}">${vo.inquiryType}</option>
-				        <option value="refund">환불</option>
-				        <option value="cancel">취소(출하 전 취소)</option>
-				        <option value="delivery">배송</option>
-				        <option value="AS">불량/AS</option>
-				        <option value="order">주문/결제</option>
-				        <option value="product">상품/재입고</option>
-				        <option value="accumlatedMoney">적립금</option>
-				        <option value="membership">회원 관련</option>
-				        <option value="etc">기타 문의</option>
-				        <option value="report">신고</option>
+				        <option value="환불">환불</option>
+				        <option value="취소">취소(출하 전 취소)</option>
+				        <option value="배송">배송</option>
+				        <option value="불량/AS">불량/AS</option>
+				        <option value="주문/결제">주문/결제</option>
+				        <option value="상품/재입고">상품/재입고</option>
+				        <option value="적립금">적립금</option>
+				        <option value="회원 관련">회원 관련</option>
+				        <option value="기타 문의">기타 문의</option>
+				        <option value="신고">신고</option>
 				    </select>
 				</div>
 		
 				<div>
 		   			<label for="name">작성자</label>
-		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" />	
+		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" required/>	
 				</div>
 
 				<label>기존 사진</label>
@@ -82,16 +82,15 @@
 			       <input type="button" value="돌아가기" id="cs_update_btnReturn" class="cs_insert_btnCancel">
 			       <input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 		</div>
-		<input type="number" value="10" name="hit" id="hit">
-		<input type="text" name="nowPage" value="${param.nowPage}">
-		<input type="text" name="findStr" value="${param.findStr}">
+		<input type="hidden" name="nowPage" value="${param.nowPage}">
+		<input type="hidden" name="findStr" value="${param.findStr}">
 		<input type='hidden' name='serial'  value="${param.serial}"/>
 		<input type="hidden" name="mserial" value="0"/>
-		<input type="hidden" name="inquiryType" value="0"/>
-		<input type="hidden" name="docvisible" value="0"/>
+		<input type="hidden" name="inquiryType" value=""/> 
+		<input type="hidden" name="docvisible" value="${param.docVisible}"/>
 		<input type="hidden" name="hit" value="0"/>
 		<input type="hidden" name="pserial" value="0"/>
-		<input type="hidden" name="pwd" value="${vo.pwd}">
+		<input type="hidden" name="pwd" value="${param.pwd}">
 	</form>
 </div>
 

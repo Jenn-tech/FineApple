@@ -4,18 +4,30 @@ import java.util.List;
 
 
 public class InquiryBookVo {
-	int serial;
+	int serial; //
+	String inquiryType; //
+	String memberName; //
+	String pwd;//
+	String subject;//
+	String doc; // 
+	String docVisible; //
+	String created; //
+	int pserial; //
+	int hit; //
 	int mserial;
-	int hit;
-	int pserial;
-	String inquiryType;
-	String memberName;
-	String pwd;
-	String subject;
-	String doc;
-	String docVisible;
-	String created;
 	
+	public int getMserial() {
+		return mserial;
+	}
+	public void setMserial(int mserial) {
+		this.mserial = mserial;
+	}
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
 	int attCnt;
 	List<InquiryBookAttVo> attList;
 	List<InquiryBookAttVo> delFiles;
@@ -44,18 +56,6 @@ public class InquiryBookVo {
 	}
 	public void setSerial(int serial) {
 		this.serial = serial;
-	}
-	public int getMserial() {
-		return mserial;
-	}
-	public void setMserial(int mserial) {
-		this.mserial = mserial;
-	}
-	public int getHit() {
-		return hit;
-	}
-	public void setHit(int hit) {
-		this.hit = hit;
 	}
 	public int getPserial() {
 		return pserial;

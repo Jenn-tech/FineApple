@@ -21,7 +21,7 @@ public class ReviewDao {
 	
 	public int getTotListSize(String findStr) throws Exception{
 		int totListSize = 0;
-		String sql = "select count(reviewSerial) cnt from review where reviewSerial like ?";
+		String sql = "select count(review_no) cnt from review where review_no like ?";
 		ps = conn.prepareStatement(sql);
 		ps.setString(1,  "%" + findStr + "%");
 		
@@ -44,8 +44,8 @@ public class ReviewDao {
 			String sql = " select * from ("
 			           + "   select rownum no, m.* from ("
 			           + "     select * from review "
-					   + "     where reviewSerial like ?"
-					   + "     order by reviewSerial desc) m   "
+					   + "     where review_no like ?"
+					   + "     order by review_no desc) m   "
 					   + " ) where no between ? and ? ";
 			
 			ps = conn.prepareStatement(sql);
@@ -56,15 +56,12 @@ public class ReviewDao {
 			
 			while(rs.next()) {
 				ReviewVo vo = new ReviewVo();
-				vo.setReviewSerial(rs.getInt("reviewSerial"));
-				vo.setMemberId(rs.getString("MemberId"));
-				vo.setReviewTitle(rs.getString("reviewTitle"));
-				vo.setReviewDate(rs.getString("reviewDate"));
-				vo.setReviewDoc(rs.getString("reviewDoc"));
-				vo.setProductName(rs.getString("ProductName"));
-				vo.setReviewCategory(rs.getString("reviewCategory"));
-				vo.setReviewImg(rs.getString("reviewImg"));
-				//vo.setReviewAvailable(rs.getInt("reviewAvailable"));
+				vo.setReviewSerial(rs.getInt("review_no"));
+				vo.setMemberId(rs.getString("review_mid"));
+				vo.setReviewTitle(rs.getString("review_subject"));
+				vo.setReviewDate(rs.getString("review_date"));
+				vo.setReviewDoc(rs.getString("review_doc"));
+				vo.setReviewImg(rs.getString("review_photo"));
 				//vo.setDelFile(rs.getString("delFile"));
 				list.add(vo);
 			}
@@ -81,16 +78,14 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 저장되었습니다.";
 		
 		try {
-			String sql = "insert into review(reviewSerial, memberId, reviewTitle, reviewDate, reviewDoc, productName, reviewcategory, reviewImg)"
-					+ "values(seq_reviewSerial.nextval,?,?,sysdate,?,?,?,?)";
+			String sql = "insert into review(review_no, review_mid, review_subject, review_date, review_doc, review_photo)"
+					+ "values(seq_review.nextval,?,?,sysdate,?,?)";
 			
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, vo.getMemberId());
 				ps.setString(2, vo.getReviewTitle());
 				ps.setString(3, vo.getReviewDoc());
-				ps.setString(4, vo.getProductName());
-				ps.setString(5, vo.getReviewCategory());
-				ps.setString(6, vo.getReviewImg());
+				ps.setString(4, vo.getReviewImg());
 				
 				
 				int rowCnt = ps.executeUpdate();
@@ -118,10 +113,10 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 수정되었습니다.";
 		
 		try {
-			String sql = "update review set reviewTitle = ?, reviewDoc = ?, reviewDate = sysdate where reviewSerial = ? " ;
+			String sql = "update review set review_subject = ?, review_doc = ?, review_date = sysdate where review_no = ? " ;
 			
 				if(vo.getReviewImg() != null && !vo.getReviewImg().equals("")) {
-					sql += ", reviewImg= '" + vo.getReviewImg() + "'";
+					sql += ", review_photo= '" + vo.getReviewImg() + "'";
 				}
 				
 				ps = conn.prepareStatement(sql);
@@ -156,7 +151,7 @@ public class ReviewDao {
 	public String delete(ReviewVo vo){
 		String msg = "리뷰가 정상적으로 삭제되었습니다.";
 			try {
-				String sql = "delete from review where reviewSerial = ? ";
+				String sql = "delete from review where review_no = ? ";
 				ps = conn.prepareStatement(sql);
 				System.out.println(vo.getReviewSerial());
 				ps.setInt(1,vo.getReviewSerial());
@@ -183,7 +178,7 @@ public class ReviewDao {
 	public String delete2(int reviewSerial){
 		String msg = "리뷰가 정상적으로 삭제되었습니다.";
 			try {
-				String sql = "delete from review where reviewSerial = ? ";
+				String sql = "delete from review where review_no = ? ";
 				ps = conn.prepareStatement(sql);
 				ps.setInt(1,reviewSerial);
 			
@@ -203,17 +198,16 @@ public class ReviewDao {
 	public ReviewVo view(int reviewSerial){
 		ReviewVo vo = new ReviewVo();
 		try {
-			String sql = "select * from review where reviewSerial = ? ";
+			String sql = "select * from review where review_no = ? ";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, reviewSerial);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				vo.setReviewSerial(rs.getInt("reviewSerial"));
-				vo.setMemberId(rs.getString("memberId"));
-				vo.setReviewTitle(rs.getString("reviewTitle"));
-				vo.setReviewDate(rs.getString("reviewDate"));
-				vo.setReviewDoc(rs.getString("reviewDoc"));
-				vo.setReviewAvailable(rs.getInt("reviewAvailable"));
+				vo.setReviewSerial(rs.getInt("review_no"));
+				vo.setMemberId(rs.getString("review_mid"));
+				vo.setReviewTitle(rs.getString("review_subject"));
+				vo.setReviewDate(rs.getString("review_date"));
+				vo.setReviewDoc(rs.getString("review_doc"));
 			}
 		}catch(Exception ex) {
 			ex.printStackTrace();

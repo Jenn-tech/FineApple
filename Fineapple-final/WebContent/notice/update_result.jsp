@@ -8,8 +8,8 @@
 <jsp:setProperty property="*" name = "vo" />
 
 <%
-	String msg = dao.update(vo);
-	request.setAttribute("msg", msg);
+	//String msg = dao.update(vo);
+	//request.setAttribute("msg", msg);
 
 
 %>

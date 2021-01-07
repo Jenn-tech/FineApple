@@ -28,20 +28,46 @@ function id_search1() {
 
   var frm=document.pwfindscreen;
 
-  if(frm.member_mid.value.length<3){
+//id 유효성검사	
+	if(frm.member_mid.value.length<3){
    alert("아이디를 올바르게 입력해주세요");
    return;
   }
+//email유효성검사	
+	else if (frm.member_email.value.length <1) {             
+		alert("이메일을 입력하세요");
+		frm.member_email.focus();	
+		return;
+	}               
+	else if(!CheckEmail(frm.member_email.value)){
+			alert("이메일 형식이 잘못되었습니다");
+			frm.member_email.focus();
+			return;
+	}                
 
-   if (frm.member_phone.value.length != 13) {
-			  alert("핸드폰번호를 정확하게 입력해주세요");
-			  return;
-		 }
-	
-  frm.method="post";
-  frm.action="findPwResult.jsp"; //넘어간화면
-  frm.submit(); //등록이 될수 있는 조건이면, 정보를 보내겠다.
+
+
+ //  if (frm.member_phone.value.length != 13) {
+//			  alert("핸드폰번호를 정확하게 입력해주세요");
+//			  return;
+//		 }
+	else {
+	return true;
+	}
+  
   }
+
+//이메일 유효성 검사
+function CheckEmail(str){                                                 
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+     if(!reg_email.test(str)) {                            
+          return false;         
+     }                            
+     else {                       
+          return true;         
+     }                            
+}           
 
 
  function addHypen(obj) {

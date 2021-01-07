@@ -88,17 +88,44 @@ var inquiry = function() {
 	
 	if(cs_answer_btnSave != null) {
 		cs_answer_btnSave.onclick = function() {
+			checkFlag = true;
+			alert(frm.docvisible.value);
+			
+		if(!frm.name.subject.checkValidity()) {
+			alert('작성자를입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.doc.checkValidity()){
+			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action ='../inquiry.do?job=insertA';
 			frm.submit();
+		}
 		}	
 	}
 
 	if(cs_update_btnSave !== null) {
 		cs_update_btnSave.onclick = function() {
 			checkFlag = true;
+			
+		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
+		
+		if($('#cs_check').is(":checked")) {
+			frm.docvisible.value = 'yes'; 
+		}
+		else {
+			frm.docvisible.value = 'no'; 
+		}				
+		
 		if(!frm.subject.checkValidity()){
 			alert('제목을 입력해주세요.');
+			checkFlag=false;
+		}
+		else if(!frm.name.value.checkValidity()) {
+			alert('작성자를입력해주세요.');
 			checkFlag=false;
 		}
 		else if(!frm.doc.checkValidity()){
@@ -115,13 +142,8 @@ var inquiry = function() {
 
 	if(cs_answer_btnInsert != null) {
 		cs_answer_btnInsert.onclick = function() {
-			var adminPwd = prompt("관리자 암호를 입력하세요.")
-			frm.adminPwd.value = adminPwd 
-			
-			if(adminPwd !== null) {
 				frm.action = './cs_center/cs_func_page.jsp?func=cs_answer.jsp';
 				frm.submit();
-			}
 		}
 	}
 
@@ -158,8 +180,15 @@ var inquiry = function() {
 	if(cs_insert_btnSave != null) {
 		cs_insert_btnSave.onclick = function() {
 		var checkFlag = true;
+		var reg_pwd = /[\w!$\-]{4}/;
 		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
 		
+		if($('#cs_check').is(":checked")) {
+			frm.docvisible.value = 'yes'; 
+		}
+		else {
+			frm.docvisible.value = 'no'; 
+		}
 		if(!frm.inquiryType.checkValidity() || frm.inquiryType.value === 'null') {
 			alert("문의 유형을 설정해주세요.");
 			checkFlag = false;
@@ -172,6 +201,10 @@ var inquiry = function() {
 			alert('패스워드를 입력해주세요.');
 			checkFlag=false;
 		}
+		else if(!reg_pwd.test(frm.pwd.value)) {
+			alert("패스워드를 4자 이상 입력해주세요.")
+			checkFlag=false;	
+		}
 		else if(!frm.subject.checkValidity()){
 			alert('제목을 입력해주세요.');
 			checkFlag=false;
@@ -180,14 +213,11 @@ var inquiry = function() {
 			alert('본문에 내용을 입력해주세요.');
 			checkFlag=false;
 		}
-		else if(!frm.inquiryType.checkValidity()){
-			alert('문의 유형을 설정해주세요.');
-			checkFlag=false;
-		}
 		if(checkFlag) {
 			frm.enctype = 'multipart/form-data';
 			frm.action = '../inquiry.do?job=insertR';
 			frm.submit();
+			alert("정상적으로 등록 되었습니다.")
 			}
 		}
 	}
@@ -312,7 +342,17 @@ var view = function(serial) {
 }  
 
 
+/*-------------------- faq--------------*/
 
+var gofaq = function(value) {
+	var frm = document.frm_faqbook;
+	var findStr = value;
+	if(findStr !== "전체보기") {
+		frm.findStr.value = findStr;
+	}
+	frm.action = 'faqbook.do?qa=selectFaq';
+	frm.submit();
+}
 
 
 

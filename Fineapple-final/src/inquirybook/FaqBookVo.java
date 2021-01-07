@@ -2,7 +2,6 @@ package inquirybook;
 
 public class FaqBookVo {
 	String subject;
-	
 	String doc;
 	public String getSubject() {
 		return subject;

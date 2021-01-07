@@ -95,3 +95,42 @@ var accessory = function(url){
 	});
 };
 
+//pricelist
+var pricelist = function(url){
+	if(url == '/'){
+		location.reload(true);
+		return;
+	}
+	$.ajax({
+		type: 'get',
+		url: "../Pricelist",
+		data: "",
+		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+		success: function(data) {
+			$('#product_list').html(data);
+		},
+		error: function(request, status, error) {
+			alert(error);
+		}
+	});
+
+};
+var pricelistdesc = function(url){
+	if(url == '/'){
+		location.reload(true);
+		return;
+	}
+	$.ajax({
+		type: 'get',
+		url: "../PricelistDesc",
+		data: "",
+		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+		success: function(data) {
+			$('#product_list').html(data);
+		},
+		error: function(request, status, error) {
+			alert(error);
+		}
+	});
+};
+

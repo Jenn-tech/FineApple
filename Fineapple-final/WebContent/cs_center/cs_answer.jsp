@@ -16,12 +16,12 @@
 		<div class="frm_cs_notice_body">
 			<div class="frm_cs_notice_body_item">
 				<label>제목</label>
-				<input type="text" name="subject" id="subject" placeholder="제목을 입력해주세요.">
+				<input type="text" name="subject" id="subject" placeholder="제목을 입력해주세요." required>
 				<label>작성자</label>
 				<input type="text" name="name" id="name" value="운영관리자" readOnly>
 			</div> 
 			</br>
-			<textarea rows="20" cols="70" name="doc" id="doc" placeholder="내용을 입력해주세요."></textarea>
+			<textarea rows="20" cols="70" name="doc" id="doc" placeholder="내용을 입력해주세요." required></textarea>
 		</div>
 		<div class="cs_answer_attach_body">
 			<label>첨부 파일</label>
@@ -40,9 +40,10 @@
 		<input type="hidden" name="findStr" value="${param.findStr}"/>
 		<input type="hidden" name="mserial" value="0"/>
 		<input type="hidden" name="inquiryType" value="0"/>
-		<input type="hidden" name="docvisible" value="0"/>
-		<input type="hidden" name="hit" value="0"/>
+		<input type="hidden" name="docvisible" value="${param.docvisible}"/>
+		<input type="hidden" name="hit" value="${param.hit}"/>
 		<input type="hidden" name="pwd" value="0"/>
+		<input type="hidden" name="pserial" value="0"/>
 	</form> 
 </div>
 

@@ -16,23 +16,25 @@ public class FaqBookDao {
 		conn = new Application().getConn();
 	}
 	
-	public List<FaqBookVo> select(String faqStr) {
-		List<FaqBookVo> list = new ArrayList<>();
+	public List<FaqBookVo> select(String findStr) {
+		List<FaqBookVo> list = new ArrayList<FaqBookVo>();
 		try {
-			String sql = "SELECT * FROM faqbook"
-					+ " WHERE doctype LIKE ?";
-			
+			String sql = "SELECT * FROM faqbook WHERE doctype LIKE ?";
+
+			System.out.println(findStr);
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, "%"+faqStr+"%");
-			
+			ps.setString(1, "%"+findStr+"%");
 			rs = ps.executeQuery();
+			
 
 			while(rs.next()) {
+				System.out.println(rs.getString("subject"));
 				FaqBookVo vo = new FaqBookVo();
 				vo.setSubject(rs.getString("subject"));
 				vo.setDoc(rs.getString("doc"));
 				list.add(vo);
 			}
+			System.out.println(list);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

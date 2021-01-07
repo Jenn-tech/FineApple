@@ -8,11 +8,11 @@
 
 	<insert id="insert" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
-		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
-		VALUES(seq_inquiry.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, 'no', sysdate, #{inquiryType}, 0, 0)
+		INTO inquiry (INQUIRY_SERIAL, INQUIRY_MSERIAL, INQUIRY_MID, INQUIRY_PWD, INQUIRY_SUBJECT, INQUIRY_DOC, INQYIRY_VISIBLE, INQUIRY_DATE, INQUIRY_TYPE, INQUIRY_PSERIAL, INQUIRY_HIT)
+		VALUES(seq_inquiry.nextval, 0, #{memberName}, #{pwd}, #{subject}, #{doc}, #{docVisible},sysdate, #{inquiryType}, null, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
-				INTO inquiry_photo(serial, pserial, sysfile, orifile)
+				INTO inquiry_photo(photo_serial, photo_pserial, photo_sysfile, photo_orifile)
 				VALUES(getInquiryAttSeq(), seq_inquiry.currval, #{att.sysFile}, #{att.oriFile})
 			</foreach>
 		</if>
@@ -22,7 +22,7 @@
 	<insert id="insert_att" parameterType="inquirybook.InquiryBookVo" >
 		INSERT ALL
 		<foreach collection="attList" item="att">
-			INTO inquiry_photo(serial, pserial, sysfile, orifile)
+			INTO inquiry_photo(photo_serial, photo_pserial, photo_sysfile, photo_orifile)
 			VALUES (getInquiryAttSeq(), ${serial}, #{att.sysFile}, #{att.oriFile})
 		</foreach>
 		SELECT * FROM dual
@@ -30,82 +30,79 @@
 
 	<insert id="insertanswer" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
-		INTO inquiry (SERIAL, MSERIAL, MEMBERNAME, PWD, SUBJECT, DOC, DOCVISIBLE, CREATED, INQUIRYTYPE, PSERIAL, HIT)
-		VALUES(seq_inquiry.nextval, 0, #{memberName},'해준', #{subject}, #{doc}, 'no', sysdate, #{inquiryType}, ${pserial}, 0)
+		INTO inquiry (INQUIRY_SERIAL, INQUIRY_MSERIAL, INQUIRY_MID, INQUIRY_PWD, INQUIRY_SUBJECT, INQUIRY_DOC, INQUIRY_VISIBLE, INQUIRY_DATE, INQUIRY_TYPE, INQUIRY_PSERIAL, INQUIRY_HIT)
+		VALUES(seq_inquiry.nextval, 0, '운영관리자', 'fineapple', '${subject}', '${doc}', '${docVisible}', sysdate, '${inquiryType}', ${pserial}, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
-				INTO inquiry_photo(serial, pserial, sysfile, orifile)
+				INTO inquiry_photo(photo_serial, photo_pserial, photo_sysfile, photo_orifile)
 				VALUES(getInquiryAttSeq(), seq_inquiry.currval, #{att.sysFile}, #{att.oriFile})
 			</foreach>
 		</if>
 		SELECT * FROM dual
 	</insert>
 	
-	<select id="select" resultType="inquirybook.InquiryBookVo" parameterType="bean.CsPage">
+	<select id="select" resultMap="voResult" parameterType="inquirybook.CsPage" resultType="inquirybook.InquiryBookVo">
 		<![CDATA[
-		SELECT * FROM (
+			SELECT * FROM (
 			SELECT rownum rno, m.* FROM
-			   ( SELECT b.serial , b.memberName, b.created, b.hit,
-			    	   lpad(' ', (level-1)*6+1, '&nbsp;&nbsp;') || decode(level, 1, '', '└ ') || b.subject subject,
-			    	(SELECT count(serial) cnt FROM inquiry_photo WHERE pserial=b.serial) attCnt 
-				FROM inquiry b WHERE subject LIKE '%${findStr}%' OR doc LIKE '%${findStr}%' 
-				CONNECT BY PRIOR serial = pserial
-				START WITH pserial is null
-				ORDER SIBLINGS BY serial DESC ) m
-		) WHERE rno BETWEEN #{startNo} and #{endNo}
+			(SELECT b.inquiry_serial, b.inquiry_subject, b.inquiry_mid, b.inquiry_date, b.inquiry_hit, 
+			lpad(' ', (level-1)*6+1, '&nbsp;&nbsp;') || decode(level, 1, '', '└ [답변 완료]') || b.inquiry_subject subject,
+			(select count(photo_serial) cnt from inquiry_photo where photo_pserial=b.inquiry_serial) attCnt 
+			FROM inquiry b WHERE inquiry_subject LIKE '%${findStr}%' OR inquiry_doc LIKE '%${findStr}%'
+			START WITH inquiry_pserial IS NULL
+			CONNECT BY PRIOR inquiry_serial = inquiry_pserial
+			ORDER SIBLINGS BY inquiry_serial DESC) m
+			) WHERE rno between #{startNo} and #{endNo}
+
 		]]>	 
 	</select>
 	
 	<select id="tot_list_size" resultType="int" parameterType="bean.CsPage">
-		SELECT count(serial) FROM inquiry
-		WHERE subject like '%${findStr}%' or doc like '%${findStr}%' 
+		SELECT count(INQUIRY_SERIAL) FROM inquiry
+		WHERE INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%' 
 	</select>
 	
-	<select id="view" resultType="inquirybook.InquiryBookVo" parameterType="int">
-		SELECT * FROM inquiry WHERE serial = #{_parameter}
+	<select id="view" resultType="inquirybook.InquiryBookVo" parameterType="int" resultMap="voResult">
+		SELECT * FROM inquiry WHERE INQUIRY_SERIAL = #{_parameter}
 	</select>
 	
 	<select id="select_att" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
-		SELECT * FROM inquiry_photo WHERE pserial = #{_parameter}
+		SELECT * FROM inquiry_photo WHERE photo_pserial = #{_parameter}
 	</select>
 	
 	<delete id="delete" parameterType="inquirybook.InquiryBookVo">
-		DELETE FROM inquiry WHERE serial = #{serial} and pwd = #{pwd}
+		DELETE FROM inquiry WHERE INQUIRY_SERIAL = #{serial} and INQUIRY_PWD = #{pwd}
 	</delete>
 	<delete id="delete_att_pserial" parameterType="int">
-		DELETE FROM inquiry_photo WHERE pserial = #{_parameter}
+		DELETE FROM inquiry_photo WHERE photo_pserial = #{_parameter}
 	</delete>
 	<update id="update" parameterType="inquirybook.InquiryBookVo">
-		UPDATE inquiry set membername = #{memberName}, subject = #{subject}, doc = #{doc} WHERE serial = #{serial} and pwd = #{pwd}
+		UPDATE inquiry set INQUIRY_MID = #{memberName}, INQUIRY_SUBJECT = #{subject}, INQUIRY_DOC = #{doc} WHERE INQUIRY_SERIAL = #{serial} and INQUIRY_PWD = #{pwd}
 	</update>
 	
 	<delete id="delete_att" parameterType="inquirybook.InquiryBookVo">
 		DELETE FROM inquiry_photo
 		<where>
 			<foreach collection="delFiles" item="att" separator="or">
-				sysfile = #{att.sysFile}
+				photo_sysfile = #{att.sysFile}
 			</foreach>		
 
 		</where>	
 	</delete>
 	
 	<resultMap type="inquirybook.InquiryBookVo" id="voResult">
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_type"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-		<result property="" column="inquiry_serial"/>
-	
-	
-	
-	
+		<result property="serial" column="INQUIRY_SERIAL"/>
+		<result property="inquiryType" column="INQUIRY_TYPE"/>
+		<result property="memberName" column="INQUIRY_MID"/>
+		<result property="pwd" column="INQUIRY_PWD"/>
+		<result property="subject" column="INQUIRY_SUBJECT"/>
+		<result property="doc" column="INQUIRY_DOC"/>
+		<result property="docVisible" column="INQYIRY_VISIBLE"/>
+		<result property="created" column="INQUIRY_DATE"/>
+		<result property="pserial" column="INQUIRY_PSERIAL"/>
+		<result property="mserial" column="INQUIRY_MSERIAL"/>
+		<result property="hit" column="INQUIRY_HIT"/>
 	</resultMap>
+	
+	<resultMap type="inquirybook.InquiryBookVo" id=""></resultMap>
 </mapper>  
