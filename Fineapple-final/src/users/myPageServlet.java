@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.Session;
+
 import bean.Application;
 
 /**
@@ -20,63 +22,17 @@ import bean.Application;
  */
 @WebServlet("/mypage/mypage")
 public class myPageServlet extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-@Override
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	response.setCharacterEncoding("UTF-8");
-	response.setContentType("text/html; charset=utf-8");
-	request.setCharacterEncoding("UTF-8");
-	PrintWriter out = response.getWriter();
-
-
-	
-	// song 
-
-	/* 커넥션 연결 */
-
-	BoardDao dao = new BoardDao();
-
-
-	if(dao.sqlSession == null) {
-		System.out.println("연결 중 오류 ..");
-
-	}else {
-		System.out.println("연결 성공");
-
-		/* select */
-
-		HttpSession session = request.getSession();
-		String mid = (String) session.getAttribute("member_mid");
-		out.println(mid);
-		
-		/* 콘솔 출력 
-		List<MemberVo> listUsers = dao.sqlSession.selectList("board.users");
-		for(MemberVo vo: listUsers) {
-			System.out.println(vo);
-			
-		}*/
-		MemberVo vo = new MemberVo();
-	
-		
-
-		
-		String a = "hello";
-		RequestDispatcher dis = request.getRequestDispatcher("/mypage/mypage.jsp");
-		dis.forward(request, response);
-
-	}
-	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 
 
-		
+
 		// song 
 
 		/* 커넥션 연결 */
@@ -91,27 +47,41 @@ public class myPageServlet extends HttpServlet {
 			System.out.println("연결 성공");
 
 			/* select */
-
 			HttpSession session = request.getSession();
-			String mid = (String) session.getAttribute("member_mid");
-			out.println(mid);
 			
-			/* 콘솔 출력 
-			List<MemberVo> listUsers = dao.sqlSession.selectList("board.users");
-			for(MemberVo vo: listUsers) {
-				System.out.println(vo);
+			String name = (String) session.getAttribute("member_mid");
+			System.out.println(name);
+			
+			request.setAttribute("name", name);
+			
+			/* 마이바티스 쿼리문 */
+			List<MemberVo> list = dao.sqlSession.selectList("board.users", name);
+			
+			/* 객체 저장 */
+			for(MemberVo vo : list) {
+				MemberVo userInfo = new MemberVo();
 				
-			}*/
-			MemberVo vo = new MemberVo();
+				request.setAttribute("list", list);
+				
+				userInfo.setMember_mid(vo.getMember_mid());
+				userInfo.setMember_pwd(vo.getMember_pwd());
+				userInfo.setMember_name(vo.getMember_name());
+				userInfo.setMember_email(vo.getMember_email());
+				userInfo.setMember_phone(vo.getMember_phone());
+				userInfo.setMember_zipcode(vo.getMember_zipcode());
+				userInfo.setMember_address(vo.getMember_address());
+				
+				
+				request.setAttribute("userInfo", userInfo);
+				request.setAttribute("pwd", vo.getMember_pwd());
 		
-			
+			}
 
-			
-			String a = "hello";
 			RequestDispatcher dis = request.getRequestDispatcher("/mypage/mypage.jsp");
 			dis.forward(request, response);
 
 		}
 	}
+
 }
 

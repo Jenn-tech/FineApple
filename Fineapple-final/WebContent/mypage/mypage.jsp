@@ -73,9 +73,10 @@
 	
 	<% 
 	String id = (String)session.getAttribute("member_mid");
-	
+	String member_pwd = (String)session.getAttribute("member_pwd");
 	
 	%>
+	
 	<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">마이페이지</h1>
 		<div class="cs_category">
@@ -95,9 +96,9 @@
 				</div>
 			</section>
 			<section class="section-two">
-				<form class="frm-member" id="frm-member" action="result.jsp" method="POST">
+				<form class="frm-member" id="frm_member" action="result.jsp" method="POST">
 					<div class="frm-label">
-						<label>아이디 <%=session.getAttribute("mid") %></label>
+						<label>아이디</label>
 					</div>
 					<div class="frm-input-id">
 						<input type="text" name="frm-id" readonly="readonly" value="<%= id%>">
@@ -112,23 +113,25 @@
 						
 					<div class="frm-label">
 						<label>비밀번호 재입력</label>
+						
 					</div>
 					<div class="frm-input-password">
-						<input type="password" name="frm-password" placeholder="변경할 비밀번호">
+						<input type="password" name="frm-password" placeholder="변경할 비밀번호" value="">
+						
 					</div>
 						
 					<div class="frm-label">
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input type="text" name="frm-name" placeholder="성명을 입력해주세요.">
+						<input type="text" name="frm-name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
 					</div>
 					
 					<div class="frm-label">
 						<label>이메일</label>
 					</div>
 					<div class="frm-input-email">
-						<input type="text" name="frm-email" placeholder="example@gmail.com">
+						<input type="text" name="frm-email" placeholder="example@gmail.com" value="${userInfo.getMember_email() }">
 					</div>
 					
 
@@ -140,16 +143,16 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input type="text" name="frm-phone" placeholder="3333-3333">
+						<input type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
 					</div>
 
 					<div class="frm-label">
 						<label>주소</label>
 					</div>
 					<div class="frm-input-zipcode">
-						<input type="text" name="zipcode" placeholder="우편번호">
+						<input type="text" name="zipcode" placeholder="우편번호" value="${userInfo.getMember_zipcode() }">
 						<input type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
-						<input type="text" name="address" placeholder="상세주소">
+						<input type="text" name="address" placeholder="상세주소" value="${userInfo.getMember_address() }">
 					</div>
 					
 					<div class="frm-label">
@@ -186,5 +189,8 @@
 	
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
+	<script>
+	member();
+	</script>
 </body>
 </html>

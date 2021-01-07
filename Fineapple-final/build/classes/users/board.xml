@@ -21,11 +21,9 @@
 		SELECT member_mid FROM members WHERE member_mid = #{id}
 	</select>
 	
-	<select id="users" resultType="users.MemberVo">
-		 SELECT * FROM members WHERE member_mid = #{member_mid};
+	<select id="users" resultType="users.MemberVo" parameterType="users.MemberVo">
+		SELECT * FROM members WHERE member_mid = #{name}
 	</select>
+
 	
-	<update id="update_users" parameterType="users.MemberVo">
-	 	UPDATE members SET member_pwd = #{member_pwd}, member_name = #{member_name}, member_email = #{member_email}, member_phone = #{member_phone}, member_zipcode= #{member_zipcode}, member_address = #{member_address} WHERE member_mid = ${member_mid};
-	</update>
 </mapper>
