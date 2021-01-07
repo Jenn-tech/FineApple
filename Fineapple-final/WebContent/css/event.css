@@ -36,6 +36,7 @@
 .event-container .item li {
     width: 30.83336%;
         display: inline-block;
+	cursor: pointer;
 }
 
 

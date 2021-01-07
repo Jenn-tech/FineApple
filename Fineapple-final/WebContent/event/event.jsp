@@ -81,42 +81,42 @@
 <div class = "event-container">
 		<div class = 'event_items'>
 			<ul class = 'item' onclick="view('${vo.serial}')">
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');" class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/12/24/8c5365d26fda2b251faa3df172a5692b.jpg' class='photo' />	
 						<br>		
 						<span class = 'subject' >Merry holiday event</span>	
 					</div>
 				</li>
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');" class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2021/01/03/bea36eae062daf97b794e021f4bc8739.jpg' class='photo' />	
 						<br>		
 						<span class = 'subject' >스마일페이 결제시 할인</span>	
 					</div>
 				</li>
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');" class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/09/15/72ad5b5e6f225dfc39c274ec9f0ff348.jpg' class='photo' />	
 						<br>		
 						<span class = 'subject' >전품목세일 이벤트</span>	
 					</div>
 				</li>
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');"class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/08/18/1cb8d197f47598054c5f1db88b31d6ef.jpg' class='photo' />	
 						<br>		
 						<span class = 'subject' >Free Shipping Service</span>	
 					</div>
 				</li>
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');" class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/08/18/ed6e76c30402c9ac7a24a9dfed47899b.jpg' class='photo' />	
 						<br>		
 						<span class = 'subject' >6월 신규회원 무료배송 쿠폰 증정</span>	
 					</div>
 				</li>
-				<li onclick="view('${vo.serial}')" class='items-lecord'>
+				<li onclick="javascript:alert('마감된 이벤트입니다.');" class='items-lecord'>
 					<div class='box' >
 						<img src = 'https://stylenanda.com/file_data/nandaglobal//2020/08/18/62ad3b1cf822112c4b1bfb5e280bfc33.jpg' class='photo' />	
 						<br>		
@@ -141,5 +141,13 @@
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
 <script>event()</script>
+<script>
+function endevent(){
+	alert("마감된 이벤트입니다")
+	return;
+}
+
+
+</script>
 </body>
 </html>
