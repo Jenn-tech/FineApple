@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 
 @WebServlet(urlPatterns = "/inquiry.do")
@@ -78,7 +79,6 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			req.setAttribute("page", page);
-			System.out.println("select" + list);
 			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_board.jsp");
 			rd.forward(req, resp);
 
@@ -96,7 +96,6 @@ public class InquiryBookServlet extends HttpServlet {
 			
 		case "update": 
 			serial = Integer.parseInt(req.getParameter("serial"));
-			System.out.println(serial);
 			vo = new InquiryBookVo(); 
 			vo = dao.view(serial);
 			
@@ -106,7 +105,21 @@ public class InquiryBookServlet extends HttpServlet {
 			rd.forward(req, resp);
 			break;
 			
+		case "Aupdate": 
+			serial = Integer.parseInt(req.getParameter("serial"));
+			System.out.println(serial);
+			vo = new InquiryBookVo(); 
+			vo = dao.view(serial);
+			
+			req.setAttribute("vo", vo);
+			System.out.println(vo.getAttList());
+			req.setAttribute("page", page);
+			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_answer_update.jsp");
+			rd.forward(req, resp);
+			break;
+			
 		case "updateR":
+			System.err.println("ë‹µë³€ ìˆ˜ì •ì¤‘");
 			fu = new FileUpload(req);
 			vo = fu.getInquiryBookVo('u');
 			page = fu.getPage();
@@ -120,7 +133,7 @@ public class InquiryBookServlet extends HttpServlet {
 			break;
 			
 		case "delete":
-			System.out.println("¿©±â±îÁö");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			vo = new InquiryBookVo(); 
 			vo.setSerial(Integer.parseInt(req.getParameter("serial")));
 			vo.setPwd(req.getParameter("pwd"));

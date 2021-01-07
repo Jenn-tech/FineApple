@@ -35,7 +35,7 @@
 				    <select name="cs_inquiryType" id="cs_inquiryType" aria-placeholder="문의 유형" size="1" style="width: 75%; height: 30px; border: 1px solid #f1f1f1;" required>
 				       
 				        <option value="null">문의 유형</option>
-				        <option value="환붛">환불</option>
+				        <option value="환불">환불</option>
 				        <option value="취소">취소(출하 전 취소)</option>
 				        <option value="배송">배송</option>
 				        <option value="불량/AS">불량/AS</option>

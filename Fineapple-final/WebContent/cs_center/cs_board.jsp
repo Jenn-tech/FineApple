@@ -40,13 +40,27 @@
 	<div class="cs_board_items">
 		<c:set var="no" value="${page.startNo}"></c:set>
 			<c:forEach var="vo" items="${list}">
-				<div class="cs_board_item" onclick="view(${vo.serial})">
-					<span class="no">${no}</span>
-					<span class="subject">${vo.subject}</span>
-					<span class="name">${vo.memberName}</span>
-					<span class="mdate">${vo.created}</span>
-					<span class="hit">${vo.hit}</span>
-				</div>
+				<c:set var="visible" value="${vo.docVisible}"></c:set>
+				<c:choose>
+					<c:when test="${visible == 'yes'}">
+						<div class="cs_board_item" onclick="secretview(${vo.serial },'${vo.pwd}')">
+							<span class="no">${no}</span>
+							<span class="subject">[비밀글]${vo.subject}</span>
+							<span class="name">${vo.memberName}</span>
+							<span class="mdate">${vo.created}</span>
+							<span class="hit">${vo.hit} </span>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="cs_board_item" onclick="view('${vo.serial}')">
+							<span class="no">${no}</span>
+							<span class="subject">${vo.subject}</span>
+							<span class="name">${vo.memberName}</span>
+							<span class="mdate">${vo.created}</span>
+							<span class="hit">${vo.hit}</span>
+						</div>
+					</c:otherwise>
+				</c:choose>	
 				<c:set var="no" value="${no=no+1 }"></c:set>	
 			</c:forEach>
 	</div>

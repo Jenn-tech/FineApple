@@ -42,7 +42,7 @@
 		<input type="hidden" name="inquiryType" value="0"/>
 		<input type="hidden" name="docvisible" value="${param.docvisible}"/>
 		<input type="hidden" name="hit" value="${param.hit}"/>
-		<input type="hidden" name="pwd" value="0"/>
+		<input type="hidden" name="pwd" value="${param.pwd}"/>
 		<input type="hidden" name="pserial" value="0"/>
 	</form> 
 </div>

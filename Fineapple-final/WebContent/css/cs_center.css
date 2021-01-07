@@ -531,7 +531,7 @@
 .view_img {
 	display: inline-block;
 	width: 150px;
-	height: 120px;
+	height: 110px;
 	margin-right: 5px;
 }
 
@@ -708,8 +708,21 @@
 	height: 130px;
 	margin-top: 30px;
 }
+
+#cs_attach_box_answer, #cs_attach_box_ori_answer {
+	width: 570px;
+	margin-bottom: 40px;
+	height: 130px;
+	margin-top: 30px;
+}
+
+
+.cs_attach_container {
+	width: 90%;
+	margin: 0 auto;
+}
 .attach_img {
-	width: 130px;
+	width: 150px;
 	height: 110px;
 }
 
@@ -736,7 +749,7 @@
 .att_file_box > input {
 	position: absolute;
 	right: 5px;
-	bottom: 0px;
+	bottom: 5px;
 	width: 25px;
 	height: 25px;
 	border: 1px solid #bcbcbc;

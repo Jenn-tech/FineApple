@@ -44,6 +44,7 @@
 			<input type='hidden' name='pwd'  value='${vo.pwd}'/>
 			<input type="hidden" name="docvisible" value="${vo.docVisible}"/>
 			<input type="hidden" name="hit" value="${vo.hit}"/>
+			<input type="hidden" name="pserial" value="${vo.pserial }">
 		</div>
 	</form>
 </div>

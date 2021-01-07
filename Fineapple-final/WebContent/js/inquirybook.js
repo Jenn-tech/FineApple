@@ -48,7 +48,31 @@ var inquiry = function() {
 	var cs_answer_btnCancel = getID('cs_answer_btnCancel');
 	var cs_update_btnReturn = getID('cs_update_btnReturn');
 	var cs_board_btnFind = getID('cs_board_btnFind');
+	var cs_update_answer_btnSave = getID('cs_update_answer_btnSave');
 	var frm = document.cs_frm_board;
+	
+	
+	if(cs_update_answer_btnSave != null) {
+		cs_update_answer_btnSave.onclick = function() {
+			var checkFlag = true;
+			
+			if(!frm.subject.checkValidity()) {
+				alert("제목을 입력하세요.")
+				checkFlag = false;
+			}
+			else if(!frm.doc.checkValidity()) {
+				alert("본문에 내용을 입력하세요.")
+				checkFlag = false;
+			}
+			
+			if(checkFlag) {
+				frm.enctype = 'multipart/form-data';
+				frm.action = 'inquiry.do?job=updateR';
+				alert("정상적으로 수정되었습니다.")
+				frm.submit();
+			}
+		}
+	}
 	
 	if(cs_board_btnFind != null) {
 		cs_board_btnFind.onclick = function() {
@@ -173,8 +197,16 @@ var inquiry = function() {
 	/*Q&A 글에서 수정으로 들어가는 키*/
 	if(cs_view_btnUpdate != null) {
 		cs_view_btnUpdate.onclick = function() {
-			frm.action = 'inquiry.do?job=update';
-			frm.submit();
+			var pserial = frm.pserial.value;
+			if(pserial === '0') {
+				frm.action = 'inquiry.do?job=update';
+				frm.submit();
+			}
+			else {
+				frm.action = 'inquiry.do?job=Aupdate';
+				frm.submit();
+			}
+
 		}
 	}
 
@@ -334,13 +366,31 @@ var goPage = function(page) {
 	frm.submit();	
 }
 
-var view = function(serial) {
+var view = function(serial, visible) {
+	var check = visible;
+	
 	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	
 	frm.serial.value = serial;
 	frm.action = job + "view";
 	frm.submit();	
+}  
+var secretview = function(serial, visible) {
+	var job = "inquiry.do?job=";
+	var frm = document.cs_frm_board;
+	var pwd = prompt('비밀글입니다. 암호를 입력해주세요.');
+	var docpwd = visible;
+	if(docpwd === pwd) {
+		frm.serial.value = serial;
+		frm.action = job + "view";
+		frm.submit();	
+	}
+	else {
+		alert("잘못 입력하셨습니다. 다시 시도해주세요.");
+		return;
+	}
+	
 }  
 
 

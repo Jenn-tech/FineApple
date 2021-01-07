@@ -70,7 +70,6 @@ public class InquiryBookDao {
 	}
 	
 	public void delFile(List<InquiryBookAttVo> delList) {
-		System.out.println(delList.size()+"11111");
 		for(InquiryBookAttVo v : delList) {
 			File f = new File(FileUpload.saveDir + v.getSysFile());
 			if(f.exists()) {
@@ -153,7 +152,7 @@ public class InquiryBookDao {
 	}
 	
 	public String update(InquiryBookVo vo) {
-		String msg = "���������� �����Ǿ����ϴ�.";
+		String msg = "정상적으로 수정되었습니다.";
 		
 		try {
 			int cnt = sqlSession.update("inquiry.update", vo);
@@ -174,10 +173,11 @@ public class InquiryBookDao {
 				}
 			}
 			else {
-				throw new Exception("���� �߻� ������Ʈ");
+				throw new Exception("123123");
 			}
 			sqlSession.commit();
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			sqlSession.rollback();
 			e.printStackTrace();
 			delFile(vo.getAttList());
