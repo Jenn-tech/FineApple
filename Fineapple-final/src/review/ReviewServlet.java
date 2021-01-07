@@ -143,7 +143,9 @@ public class ReviewServlet extends HttpServlet{
 			break;
 			
 		case "product":
-			int reviewSerial3 = Integer.parseInt(req.getParameter("reviewSerial"));
+			String temp88 = req.getParameter("reviewSerial");
+			int temp99 = Integer.parseInt(temp88);
+			int reviewSerial3 = temp99;
 			vo = dao.view(reviewSerial3);
 			
 			req.setAttribute("vo", vo);
