@@ -30,8 +30,8 @@
 
 	<insert id="insertanswer" parameterType="inquirybook.InquiryBookVo">
 		INSERT ALL
-		INTO inquiry (INQUIRY_SERIAL, INQUIRY_MSERIAL, INQUIRY_MID, INQUIRY_PWD, INQUIRY_SUBJECT, INQUIRY_DOC, INQUIRY_VISIBLE, INQUIRY_DATE, INQUIRY_TYPE, INQUIRY_PSERIAL, INQUIRY_HIT)
-		VALUES(seq_inquiry.nextval, 0, '운영관리자', 'fineapple', '${subject}', '${doc}', '${docVisible}', sysdate, '${inquiryType}', ${pserial}, 0)
+		INTO inquiry (INQUIRY_SERIAL, INQUIRY_MSERIAL, INQUIRY_MID, INQUIRY_PWD, INQUIRY_SUBJECT, INQUIRY_DOC, INQYIRY_VISIBLE, INQUIRY_DATE, INQUIRY_TYPE, INQUIRY_PSERIAL, INQUIRY_HIT)
+		VALUES(seq_inquiry.nextval, 0, '운영관리자', 'fineapple', '${subject}', '${doc}', #{docVisible}, sysdate, '${inquiryType}', ${pserial}, 0)
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
 				INTO inquiry_photo(photo_serial, photo_pserial, photo_sysfile, photo_orifile)
@@ -46,7 +46,7 @@
 			SELECT * FROM (
 			SELECT rownum rno, m.* FROM
 			(SELECT b.inquiry_serial, b.inquiry_subject, b.inquiry_mid, b.inquiry_date, b.inquiry_hit, 
-			lpad(' ', (level-1)*6+1, '&nbsp;&nbsp;') || decode(level, 1, '', '└ [답변 완료]') || b.inquiry_subject subject,
+			(lpad(' ', (level-1)*6+1, ' ') || decode(LEVEL, 1, ' ', '└ [답변 완료]') || b.inquiry_subject) subject,
 			(select count(photo_serial) cnt from inquiry_photo where photo_pserial=b.inquiry_serial) attCnt 
 			FROM inquiry b WHERE inquiry_subject LIKE '%${findStr}%' OR inquiry_doc LIKE '%${findStr}%'
 			START WITH inquiry_pserial IS NULL
@@ -95,7 +95,7 @@
 		<result property="inquiryType" column="INQUIRY_TYPE"/>
 		<result property="memberName" column="INQUIRY_MID"/>
 		<result property="pwd" column="INQUIRY_PWD"/>
-		<result property="subject" column="INQUIRY_SUBJECT"/>
+		<result property="subject" column="subject"/>
 		<result property="doc" column="INQUIRY_DOC"/>
 		<result property="docVisible" column="INQYIRY_VISIBLE"/>
 		<result property="created" column="INQUIRY_DATE"/>
