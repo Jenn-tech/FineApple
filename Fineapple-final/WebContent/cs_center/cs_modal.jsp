@@ -15,8 +15,9 @@
 		<div class="cs_modal_content">
 			<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
 			<input type="password" name="pwd" id="cs_modal_input"  required="required">
-			<input type="button" value="전송" id="cs_modal_save_btns" class="cs_modal_btns"/>
+			<input type="button" value="전송" id="cs_modal_save_btn" class="cs_modal_btns"/>
 			<input type="button" value="취소" id="cs_modal_close_btns" class="cs_modal_btns"/>
+			<input type="button" value="취소" id="cs_modal_btnOpen" class="cs_modal_btns" style="display: none;"/>
 		</div>
 		<div class="modal_layer"></div>
 	</div>

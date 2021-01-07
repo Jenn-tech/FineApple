@@ -8,13 +8,6 @@
 <title>공지사항 작성</title>
 </head>
 <body>
-<%
-	request.setCharacterEncoding("urf-8");
-	String modal = "cs_modal.jsp";
-	if(request.getParameter("modal") != null)  {
-		modal = 
-	}
-%>
 <div class="cs_notice_view_container">	
 	<form action="" name="cs_frm_board" id="frm_cs_notice" method="post">
 		<div class="frm_cs_notice_body">
@@ -42,7 +35,7 @@
 		</div>
 		<div class="cs_center_notice_insert_send_box">
 			<input type="button" value="수정" id="cs_view_btnUpdate" class="cs_insert_btnSave">
-			<input type="button" value="삭제" id="cs_view_btnDelete" class="cs_insert_btnSave">
+			<input type="button" value="삭제" id="cs_modal_btnOpen" class="cs_insert_btnSave">
 			<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
 			<input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 			<input type="hidden" value="${param.nowPage}" name="nowPage"/>
@@ -53,13 +46,22 @@
 			<input type="hidden" name="hit" value="${vo.hit}"/>
 			<input type="hidden" name="pserial" value="${vo.pserial }">
 		</div>
-		<jsp:include page="cs_modal.jsp"></jsp:include>
+		<div id="cs_modal">
+			<div class="cs_modal_content">
+				<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
+				<input type="password" name="checkpwd" id="cs_modal_input"  required="required">
+				<input type="button" value="전송" id="cs_view_btnDelete" class="cs_modal_btns"/>
+				<input type="button" value="취소" id="cs_modal_close_btns" class="cs_modal_btns"/>
+			</div>
+			<div class="modal_layer"></div>
+		</div>
 	</form>
-</div>
+</div>document.getElementById("cs_modal").style.display="none";
 
 
 <script type="text/javascript">
 inquiry()
+modal()
 </script>
 </body>
 </html>

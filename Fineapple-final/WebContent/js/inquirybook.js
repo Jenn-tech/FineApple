@@ -184,13 +184,16 @@ var inquiry = function() {
 	/*Q&A 작성글 삭제 키*/
 	if(cs_view_btnDelete != null) {
 		cs_view_btnDelete.onclick = function() {
-			var pwd = prompt("삭제하시려면 암호를 입력해주세요.");
-			if(pwd != null) {
-			frm.pwd.value = pwd;				
+			if(frm.pwd.value === frm.checkpwd.value) {
+			document.getElementById("cs_modal").style.display="none";
 			frm.action = 'inquiry.do?job=delete';
-			alert("정상적으로 삭제되었습니다.")
 			frm.submit();
 			}
+			else {
+				alert("다시 입력해주세요.")
+				return;
+			}
+			alert("정상적으로 삭제되었습니다.")
 		}
 	}
 
@@ -376,22 +379,29 @@ var view = function(serial, visible) {
 	frm.action = job + "view";
 	frm.submit();	
 }  
+
 var secretview = function(serial, visible) {
 	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
-	var pwd = prompt('비밀글입니다. 암호를 입력해주세요.');
 	var docpwd = visible;
-	if(docpwd === pwd) {
-		frm.serial.value = serial;
-		frm.action = job + "view";
-		frm.submit();	
-	}
-	else {
-		alert("잘못 입력하셨습니다. 다시 시도해주세요.");
-		return;
-	}
 	
-}  
+	document.getElementById("cs_modal").style.display="block";
+	cs_update_btnSave.onclick = function() {
+		if(docpwd === frm.checkpwd.value) {
+			frm.serial.value = serial;
+			frm.action = job + "view";
+			frm.submit();	
+		}
+		else {
+			alert("잘못 입력하셨습니다. 다시 시도해주세요.");
+			return;
+		}
+	} 
+	document.getElementById("cs_modal_close_btns").onclick = function() {
+    document.getElementById("cs_modal").style.display="none";
+	}
+}
+ 
 
 
 /*-------------------- faq--------------*/
@@ -407,11 +417,16 @@ var gofaq = function(value) {
 }
 
 
+/*--------------- modal  ---------------*/
 
-
-
-
-
+var modal = function() {
+	 document.getElementById("cs_modal_btnOpen").onclick = function() {
+        document.getElementById("cs_modal").style.display="block";
+    }
+	document.getElementById("cs_modal_close_btns").onclick = function() {
+        document.getElementById("cs_modal").style.display="none";
+	}
+}
 
 
 

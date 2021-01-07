@@ -27,6 +27,16 @@
 			<input type='hidden' name='hit'  value='0'/>
 			</div>
 		</div>
+		<div id="cs_modal">
+			<div class="cs_modal_content">
+				<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
+				<input type="password" name="checkpwd" id="cs_modal_input"  required="required">
+				<input type="button" value="전송" id="cs_update_btnSave" class="cs_modal_btns"/>
+				<input type="button" value="취소" id="cs_modal_close_btns" class="cs_modal_btns"/>
+			</div>
+			<div class="modal_layer">
+			</div>
+		</div>
 	</form>
 	
 	<div class="cs_board_article">
@@ -78,6 +88,7 @@
 			<input type="button" value="end" id="paging_btns" onclick="goPage(${page.totPage})">
 		<%-- </c:if> --%>		
 	</div>
+
 </div>
 <script type="text/javascript">
 inquiry()

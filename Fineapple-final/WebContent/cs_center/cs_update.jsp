@@ -84,7 +84,7 @@
 		<div class="cs_center_insert_send_box">
 			       <label for="secretcheck">비밀글</label>
 			       <input type="checkbox" name="secretcheck" id="cs_check" value="secret">
-			       <input type="button" value="전송" id="cs_update_btnSave" class="cs_insert_btnSave">
+			       <input type="button" value="전송" id="cs_modal_btnOpen" class="cs_insert_btnSave">
 			       <input type="button" value="돌아가기" id="cs_update_btnReturn" class="cs_insert_btnCancel">
 			       <input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 		</div>
@@ -97,11 +97,22 @@
 		<input type="hidden" name="hit" value="0"/>
 		<input type="hidden" name="pserial" value="0"/>
 		<input type="hidden" name="pwd" value="${param.pwd}">
+		
+		<div id="cs_modal">
+			<div class="cs_modal_content">
+				<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
+				<input type="password" name="checkpwd" id="cs_modal_input"  required="required">
+				<input type="button" value="전송" id="cs_update_btnSave" class="cs_modal_btns"/>
+				<input type="button" value="취소" id="cs_modal_close_btns" class="cs_modal_btns"/>
+			</div>
+			<div class="modal_layer"></div>
+		</div>
 	</form>
 </div>
 
 <script type="text/javascript">
 fileUpload('cs_attach_box')
+modal()
 </script>
 </body>
 </html>
