@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
@@ -28,21 +30,14 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MY692_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_KR?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&op_usm=0.5,0.5&.v=1599112574000,1601922170000" alt="apple watch" width="600px" style="margin-top: 150px; border-radius: 23px">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>apple watch</h1><br/>
-                <span>상품코드 : </span>
-                <span>applewatch</span><br/>
-                <span>판매가 : </span>
-                <span>599,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">핑크 펀치</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>케이스 크기 : </span>
-                    <span>40 mm</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>apple watch</h1><input type= hidden name="product_name" value= "apple watch"><br>
+	               상품코드 : applewatch<input type=hidden name="product_serial" value= "applewatch"><br>
+	               판매가 : 599,000원<br>
+	               색상 : 핑크펀치<input type=hidden name="product_color" value= "핑크펀치"><br>
+	               케이스 크기 : 40 mm<br>
+	            </div>
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="599000">
                     <input type="button" value=" - " onclick="del();">
@@ -50,13 +45,13 @@
                     <input type="button" value=" + " onclick="add();"><br/>
                     금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
                 </div>
-            </form>
             <br/>
 
-            <div class="btns">
-                <a href="#"><input type="submit" value="장바구니" class="btn1"/></a>
-                <a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-            </div>
+	               <div class="btns">
+	               		<input type="button" value="장바구니" class="btn1"/>
+	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               </div>
+            </form>
         </div>
     </div>
 

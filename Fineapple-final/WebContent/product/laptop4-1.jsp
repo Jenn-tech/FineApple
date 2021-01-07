@@ -46,13 +46,13 @@
                     <input type="button" value=" + " onclick="add();"><br/>
                     금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
                 </div>
-            </form>
             <br/>
 
-            <div class="btns">
-                <a href="#"><input type="submit" value="장바구니" class="btn1"/></a>
-                <a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-            </div>
+	               <div class="btns">
+	               		<input type="button" value="장바구니" class="btn1"/>
+	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               </div>
+            </form>
         </div>
     </div>
 
