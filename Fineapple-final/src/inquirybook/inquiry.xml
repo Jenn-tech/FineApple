@@ -66,7 +66,7 @@
 		SELECT iq.*, iq.inquiry_subject subject FROM inquiry iq WHERE INQUIRY_SERIAL = #{_parameter}
 	</select>
 	
-	<select id="select_att" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
+	<select id="select_att"  resultMap="attResult" resultType="inquirybook.InquiryBookAttVo" parameterType="int">
 		SELECT * FROM inquiry_photo WHERE photo_pserial = #{_parameter}
 	</select>
 	
@@ -104,6 +104,12 @@
 		<result property="mserial" column="INQUIRY_MSERIAL"/>
 		<result property="hit" column="INQUIRY_HIT"/>
 	</resultMap>
-	
+		
+	<resultMap type="inquirybook.InquiryBookAttVo" id="attResult">
+		<result property="serial" column="photo_serial"/>
+		<result property="pSerial" column="photo_pserial"/>
+		<result property="oriFile" column="photo_orifile"/>
+		<result property="sysFile" column="photo_sysfile"/>
+	</resultMap>
 	<resultMap type="inquirybook.InquiryBookVo" id=""></resultMap>
 </mapper>  

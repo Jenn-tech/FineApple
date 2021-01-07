@@ -52,16 +52,22 @@
 		  		 	<input type="text" value="${vo.memberName }" name="name" id="cs_name" size="25" style="width: 75%; height: 30px" required/>	
 				</div>
 
-				<label>기존 사진</label>
-				<div id="cs_attach_box">
+				<div id="cs_attach_box_ori">
+				<label style="display: inline-block;">기존 사진</label>
+				<span>(삭제하시려면 아래 체크 박스를 클릭해주세요.)</span>
+				</br>
 					<c:forEach items="${vo.attList }" var="att">
-						<img alt="" src="./inquiryUpload/${att.sysFile }" class="view_img">
+						<div class="att_file_box">
+							<img alt="" src="./inquiryUpload/${att.sysFile }" class="view_img">
+							<input type="checkbox" name='delFiles'  value='${att.sysFile }' style="background-image: url('<%=request.getContextPath() %>/images/xxxx.png');"/>
+						</div>
 					</c:forEach>
 				</div>
 				
-				<label>변경 사진</label>	
 				<div id="cs_attach_box">
-						
+				<label style="display: inline-block;">변경 사진</label>	
+				<span>(추가하시려면 아래 포토 박스를 클릭해주세요.)</span>
+				</br>
 				</div>
 	  		</div>
 	  		<div class="cs_insert_frm_body">

@@ -57,8 +57,10 @@
 				    <label for="pwd">비밀번호</label>
 				    <input type="password" placeholder="4자 이상 입력해주세요." id="cs_pwd" size="25" name="pwd" style="width: 75%; height: 30px" required />
 				</div>
-				<label>사진</label>	
 				<div id="cs_attach_box">
+				<label style="display: inline-block; margin-bottom: 5px;;">사진</label>
+				<span>(추가하시려면 아래 포토 박스를 클릭해주세요.)</span>
+				</br>	
 						
 				</div>
 	  		</div>

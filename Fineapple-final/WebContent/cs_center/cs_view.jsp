@@ -29,7 +29,7 @@
 			<h3>첨부 사진</h3>
 			<div class="cs_notice_view_repl_form">
 				<c:forEach items="${vo.attList }" var="att">
-				<img alt="" src="./inquiryUpload/${att.sysFile }" class="view_img">
+				<img alt="" src="<%=request.getContextPath() %>/inquiryUpload/${att.sysFile}" class="view_img">
 				</c:forEach>
 			</div>
 		</div>

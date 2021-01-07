@@ -114,7 +114,7 @@ var inquiry = function() {
 		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
 		
 		if($('#cs_check').is(":checked")) {
-			frm.docvisible.value = 'yes'; 
+			frm.docvisible.value = 'yes';
 		}
 		else {
 			frm.docvisible.value = 'no'; 
@@ -282,7 +282,7 @@ function append(zone) {
 		if(zone.childNodes.length <= 1) {
 			return;
 		}
-		
+
 		var ele = ev.srcElement;
 		var p = ele.parentNode;
 		var file = p.getElementsByClassName("attfile").item(0);

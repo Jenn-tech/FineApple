@@ -166,7 +166,7 @@ public class InquiryBookDao {
 					}
 				}
 				if(vo.getDelFiles() != null) {
-					cnt = sqlSession.delete("board.delete_att", vo);
+					cnt = sqlSession.delete("inquiry.delete_att", vo);
 					if(cnt < 0) {
 						throw new Exception("���� �߻� - ���� ������");
 					}
@@ -188,19 +188,4 @@ public class InquiryBookDao {
 		return msg;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
