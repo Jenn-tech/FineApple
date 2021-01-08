@@ -94,7 +94,7 @@
 		<input type="hidden" name="mserial" value="0"/>
 		<input type="hidden" name="inquiryType" value=""/> 
 		<input type="hidden" name="docvisible" value="${param.docVisible}"/>
-		<input type="hidden" name="hit" value="0"/>
+		<input type="hidden" name="hit" value="${param.hit}"/>
 		<input type="hidden" name="pserial" value="0"/>
 		<input type="hidden" name="pwd" value="${param.pwd}">
 		

@@ -113,7 +113,6 @@ var inquiry = function() {
 	if(cs_answer_btnSave != null) {
 		cs_answer_btnSave.onclick = function() {
 			checkFlag = true;
-			alert(frm.docvisible.value);
 			
 		if(!frm.name.checkValidity()) {
 			alert('작성자를입력해주세요.');
@@ -369,24 +368,27 @@ var goPage = function(page) {
 	frm.submit();	
 }
 
-var view = function(serial, visible) {
-	var check = visible;
+var view = function(serial, hit) {
 	
 	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	
+	frm.hit.value = hit;
 	frm.serial.value = serial;
+	
 	frm.action = job + "view";
 	frm.submit();	
 }  
 
-var secretview = function(serial, visible) {
+var secretview = function(serial, visible, hit) {
 	var job = "inquiry.do?job=";
 	var frm = document.cs_frm_board;
 	var docpwd = visible;
+	frm.hit.value = hit;
+	
 	
 	document.getElementById("cs_modal").style.display="block";
-	cs_update_btnSave.onclick = function() {
+	cs_view_btnGoPage.onclick = function() {
 		if(docpwd === frm.checkpwd.value) {
 			frm.serial.value = serial;
 			frm.action = job + "view";

@@ -119,6 +119,24 @@ public class InquiryBookDao {
 		return vo;
 	}
 	
+	public String updateHit(InquiryHitVo vo) {
+		String msg = "정상적으로 조회수 업데이트가 완료되었음.";
+		try {
+			int cnt = sqlSession.update("inquiry.updateHit", vo);
+			if(cnt < 1) {
+				throw new Exception("조회수 업데이트 중 오류 발생");
+			}
+			sqlSession.commit();
+		} catch (Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+		}
+		finally {
+		}
+		return msg;
+	}
+	
+	
 	public String delete(InquiryBookVo vo) {
 		String msg ="���������� ������ �Ϸ��߽��ϴ�.";
 		List<InquiryBookAttVo> attList = null;

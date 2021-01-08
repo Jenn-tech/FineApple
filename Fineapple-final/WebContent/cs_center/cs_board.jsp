@@ -31,7 +31,7 @@
 			<div class="cs_modal_content">
 				<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
 				<input type="password" name="checkpwd" id="cs_modal_input"  required="required">
-				<input type="button" value="전송" id="cs_update_btnSave" class="cs_modal_sava_btn"/>
+				<input type="button" value="전송" id="cs_view_btnGoPage" class="cs_modal_sava_btn"/>
 				<input type="button" value="취소" id="cs_modal_close_btns" class="cs_modal_cancel_btn"/>
 			</div>
 			<div class="modal_layer">
@@ -53,7 +53,7 @@
 				<c:set var="visible" value="${vo.docVisible}"></c:set>
 				<c:choose>
 					<c:when test="${visible == 'yes'}">
-						<div class="cs_board_item" onclick="secretview(${vo.serial },'${vo.pwd}')">
+						<div class="cs_board_item" onclick="secretview('${vo.serial }','${vo.pwd}', '${vo.hit}')">
 							<span class="no">${no}</span>
 							<span class="subject">[비밀글]${vo.subject}</span>
 							<span class="name">${vo.memberName}</span>
@@ -62,7 +62,7 @@
 						</div>
 					</c:when>
 					<c:otherwise>
-						<div class="cs_board_item" onclick="view('${vo.serial}')">
+						<div class="cs_board_item" onclick="view('${vo.serial}', '${vo.hit}')">
 							<span class="no">${no}</span>
 							<span class="subject">${vo.subject}</span>
 							<span class="name">${vo.memberName}</span>

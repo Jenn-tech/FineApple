@@ -363,13 +363,13 @@
 }
 
 .cs_board_article > .no {width: 80px; margin-left: 20px; margin-right: 30px;}
-.cs_board_article > .subject {width: 520px;}
+.cs_board_article > .subject {width: 494px;}
 .cs_board_article > .name {width: 200px;}
 .cs_board_article > .mdate {width: 360px;}
 .cs_board_article > .hit {width: 110px; padding-right: 25px; margin-right: 20px;}
 
 .cs_board_item > .no {width: 80px; margin-left: 20px; margin-right: 30px;}
-.cs_board_item > .subject {width: 520px; text-align: left;}
+.cs_board_item > .subject {width: 494px; text-align: left;}
 .cs_board_item > .name {width: 200px;}
 .cs_board_item > .mdate {width: 360px;}
 .cs_board_item > .hit {width: 110px; padding-right: 25px; margin-right: 20px;}
@@ -745,6 +745,7 @@
 #cs_attach_box > span {
 	font-size: 0.8em;
 	margin-left: -15px;
+	margin-bottom: 10px;
 }
 .att_file_box > input {
 	position: absolute;
@@ -759,12 +760,7 @@
 .add_file_box > input:checked {
 	opacity: 1;
 }
-#cs_attach_box > span {
-	font-size: 0.8em;
-	margin-left: -40px;
-	margin-bottom: 10px;
-}
-	
+
 /* ----------------------------------------------------- */
 
 

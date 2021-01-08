@@ -86,7 +86,13 @@ public class InquiryBookServlet extends HttpServlet {
 			
 		case "view" :
 			serial = Integer.parseInt(req.getParameter("serial"));
+			int hit = Integer.parseInt(req.getParameter("hit"));
 			vo = new InquiryBookVo(); 
+			InquiryHitVo vo2 = new InquiryHitVo();
+			int hitup = hit + 1;
+			vo2.setHit(hitup);
+			vo2.setSerial(serial);
+			msg = dao.updateHit(vo2);
 			vo = dao.view(serial);
 			req.setAttribute("vo", vo);
 			req.setAttribute("page", page);
@@ -133,7 +139,6 @@ public class InquiryBookServlet extends HttpServlet {
 			break;
 			
 		case "delete":
-			System.out.println("�������");
 			vo = new InquiryBookVo(); 
 			vo.setSerial(Integer.parseInt(req.getParameter("serial")));
 			vo.setPwd(req.getParameter("pwd"));

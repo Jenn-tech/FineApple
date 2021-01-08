@@ -81,6 +81,12 @@
 		UPDATE inquiry set INQUIRY_MID = #{memberName}, INQUIRY_SUBJECT = #{subject}, INQUIRY_DOC = #{doc} WHERE INQUIRY_SERIAL = #{serial} and INQUIRY_PWD = #{pwd}
 	</update>
 	
+	<update id="updateHit" parameterType="inquirybook.InquiryHitVo">
+		UPDATE inquiry SET INQUIRY_HIT = #{hit} WHERE INQUIRY_SERIAL = #{serial}
+	
+	</update>
+	
+	
 	<delete id="delete_att" parameterType="inquirybook.InquiryBookVo">
 		DELETE FROM inquiry_photo
 		<where>
