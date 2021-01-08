@@ -48,7 +48,7 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 
 				<div class="frm-input-id">
 					<input type="text" name="frm_id" id="reg-id"
-						placeholder="영문자와 한글,숫자만을 입력(15자 이내)" maxlength="15"> 
+						placeholder="영문자와 한글,숫자만을 입력(15자 이내)" maxlength="15" value="${param.frm_id }"> 
 					<input type="button" name="frm-check" id="id-Check" value="중복확인">
 				</div>
 				<div class="frm-label">
@@ -114,12 +114,12 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 						<% } %>
 					</select> <select>
 						<% for(int i = 0; i < 31; i++) {%>
-						<option><%= i+1%>월
+						<option><%= i+1%>일
 						</option>
 						<% } %>
 					</select> <select>
 						<% for(int i = 0; i < 12; i++) {%>
-						<option><%= i+1%>일
+						<option><%= i+1%>월
 						</option>
 						<% } %>
 					</select>
