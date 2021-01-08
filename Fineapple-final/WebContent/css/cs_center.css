@@ -1160,13 +1160,17 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 	width: 400px;
 	height: 150px;
 	margin: 300px auto;
-	padding: 30px 10px 0 10px;
+	padding: 40px 10px 0 10px;
 	background: #fff;
 	border: 2px solid #666;
 	text-align: center;
 	border-radius: 10px;
 	right: 38%;
 	top: 0%;
+	box-shadow: 0px 1px 10px #000000;
+}
+.cs_modal_content > h3 {
+	margin-bottom: 10px;
 }
 
 #cs_modal .modal_layer {
@@ -1188,8 +1192,24 @@ width: 100%; height: 100%; display: block; margin: 0 0 -50px  0;
 	height: 35px;
 }
 
+.cs_modal_sava_btn {
+	border: 1px solid #000000;
+	background-color: #000000;
+	color: #ffffff;
+	width: 50px;
+	height: 32px;
+}
+.cs_modal_cancel_btn {
+	border: 1px solid #f1f1f1;
+	background-color: #f1f1f1;
+	color: #000000;
+	width: 50px;
+	height: 32px;
+}
 
-
+.cs_modal_sava_btn:focus, .cs_modal_sava_btn:focus {
+	cursor:pointer;
+}
 
 
 
