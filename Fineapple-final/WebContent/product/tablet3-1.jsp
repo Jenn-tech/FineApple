@@ -47,9 +47,9 @@
                 </div>
             <br/>
 
- 	               <div class="btns">
+	               <div class="btns">
 	               		<input type="button" value="장바구니" class="btn1"/>
-	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               		<input type="button" value="바로구매" class="btn2" onclick="funcPO"/>
 	               </div>
             </form>
         </div>
