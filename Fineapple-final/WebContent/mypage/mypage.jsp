@@ -169,13 +169,13 @@
 						
 						<select>
 							<% for(int i = 0; i < 31; i++) {%>
-							<option><%= i+1%>월</option>
+							<option><%= i+1%>일</option>
 							<% } %>
 						</select>
 						
 						<select>
 							<% for(int i = 0; i < 12; i++) {%>
-							<option><%= i+1%>일</option>
+							<option><%= i+1%>월</option>
 							<% } %>
 						</select>
 

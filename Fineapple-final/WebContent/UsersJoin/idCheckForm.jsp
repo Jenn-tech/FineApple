@@ -44,6 +44,7 @@ MemberVo vo = (MemberVo)request.getAttribute("list");
 					<h1 class="welcome-head">사용 가능한 아이디 입니다.</h1>
 					<% } %>
 					
+					 
 				</div>
 			</div>
 		</section>
@@ -51,6 +52,7 @@ MemberVo vo = (MemberVo)request.getAttribute("list");
 				<div class="frm-submit">
 					<form action="index.jsp">
 					<input type="submit" name="frmSubmit" value="돌아가기">
+					<input type="hidden" name="frm_id" id="reg-id"  maxlength="15" value="${param.frm_id }">
 					</form>
 				</div>
 	</div>
