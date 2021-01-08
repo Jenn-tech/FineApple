@@ -73,57 +73,11 @@
         <!-- 특장점 -->
         <div class="item-benefits" id="item-benefits">
             <div class="item-video">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/WlQLhYE9WQY?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="540" src="https://www.youtube.com/embed/WlQLhYE9WQY?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            
-            <h1>폰의 미래를 새롭게</h1>
-            <p>유연한 유리 소재로 매끄럽게 접히고 펴지는 Ultra Thin Glass 디스플레이, 삼각대 없이도 세워둘 수 있는 카메라,<br/>
-                인텔리전트 듀얼 배터리와 초고속 5G를 위한 강력한 성능까지. 갤럭시 Z 플립 5G는 스마트폰의 미래를 새롭게 정의합니다.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296456104?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-            
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>볼수록 빠져드는 매혹적인 컬러</h1>
-            <p>우아하고 매혹적인 미스틱 브론즈, 미스틱 화이트, 미스틱 그레이 세 가지 컬러는<br/>
-                갤럭시 Z 플립 5G의 매력적인 외관을 더욱 돋보이게 해줍니다.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501562?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-            <p class="small-str2">* 이해를 돕기 위해 연출된 이미지이며, 실 사용시 차이가 있을 수 있습니다.</p>
-            
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>아담한 크기에 담긴 대담한 혁신</h1>
-            <p>170.1 mm의 대화면이 이렇게까지 작아질 수 있다니, 정말 놀랍지 않나요?<br/>
-                갤럭시 Z 플립 5G를 반으로 접으면 바지나 셔츠 주머니에도 부담 없이 넣을 수 있는 크기가 됩니다.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501567?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>주머니에 쏙 들어가는 대화면</h1>
-            <p>갤럭시 Z 플립 5G의 인피니티 플렉스 디스플레이는 다이내믹 아몰레드를 사용해 정확한 컬러를 보여주면서도 블루 라이트는<br/>
-                줄였습니다. 노치 없이 얇은 베젤 덕분에 높은 몰입도를 경험할 수 있습니다.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501589?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-            <p class="small-str2">* 화면을 직각화해 측정한 크기는 170.1 mm이며 직각화하지 않고 측정한 크기는 165.8 mm입니다. 둥근 모서리와 전면 카메라 홀로 인해 실제 보이는 영역은 화면 사이즈보다 작습니다.<br/>
-                
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>유리를 접었습니다</h1>
-            <p>유연한 유리 소재를 활용한 대형 디스플레이를 탑재했습니다.<br/>
-                Ultra Thin Glass 기술 덕분에 여러 번 접었다 펴도 주름 없이 매끈한 디스플레이를 완성할 수 있었죠.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501595?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-            <p class="small-str2">
-            
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>스마트폰의 홀로서기</h1>
-            <p>갤럭시 Z 플립 5G는 원하는 각도로 접을 수 있습니다. 프리 스탠드 기능 덕분이죠.<br/>
-                평평한 곳이면 어디든 세워둘 수 있으니까 영상 통화할 때도, 사진을 찍을 때도 정말 편리합니다.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501627?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G">
-            <p class="small-str2">* 플렉스 모드가 동작하는 각도는 75˚~115˚입니다. 해당 범위를 벗어날 경우 제품이 완전히 펼쳐지거나 접힐 수 있습니다.<br/>
-                * 이동 중에는 흔들림과 같은 충격으로 플렉스 모드 유지가 어려울 수 있습니다. 가급적 정지된 상태에서 사용하시기를 권장합니다.<br/>
-                      
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <h1>사진 촬영의 새로운 관점</h1>
-            <p>갤럭시 Z 플립 5G를 다양한 각도로 접어서 촬영해보세요. 감각적인 로우앵글 셀피는 물론 지금까지 찍었던 사진과는<br/>
-                전혀 다른 결과물을 얻을 수도 있겠죠. 어쩌면 당신만의 셀피 각도를 찾아낼 수 있을지도 모르겠네요.</p><br/>
-            <img src="https://images.samsung.com/is/image/samsung/sec-feature-galaxy-z-flip-5g-296501633?$FB_TYPE_A_JPG$" alt="갤럭시 Z 플립 5G"> 
-            <p class="small-str2">* 각도가 일정범위를 벗어날 경우 제품이 완전히 펼쳐지거나 접힐 수 있습니다.<br/>
+            <br/><br/><br/><br/><br/>
+            <img class="ipone" width="1000px" src="https://thumbnail8.coupangcdn.com/thumbnails/remote/q89/image/retail/images/22093741123109-f835fb90-c2a5-4937-a5dd-2bb4c89966e7.jpg">
         
         <!-- 상품평 -->
         <div class="review" id="review">
