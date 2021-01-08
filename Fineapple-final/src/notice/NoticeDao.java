@@ -1,11 +1,19 @@
 package notice;
 
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import java.io.IOException;
+import java.io.Reader;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import bean.Application;
 
@@ -14,10 +22,13 @@ public class NoticeDao {
 	PreparedStatement ps; //문자열로 되어있는 sql문장을 sql실행문장으로 만들어주는statement
 	ResultSet rs; //select문의 실행결과
 	
+
+	
 	public NoticeDao() {
 		conn = new Application().getConn();
 	
 	}
+	
 	public int getNext() {
 		String sql = "select notice_subject from notice ";
 		try {
@@ -146,7 +157,5 @@ public String delete(NoticeVo vo) {
 		return msg;
 	}
 }
-
-
 
 }

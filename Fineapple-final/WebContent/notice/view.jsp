@@ -16,10 +16,12 @@
 <link rel="stylesheet" href="../css/notice.css">
 <link rel="stylesheet" href="../css/footer.css">
 <script type="text/javascript" src="../js/notice.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.js" 
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+		crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:useBean id="dao" class="notice.NoticeDao"/>
+<!--<jsp:useBean id="dao" class="notice.NoticeDao"/>-->
 
 <!-- header -->
 	<jsp:include page="/main/header.jsp"/>
@@ -115,6 +117,7 @@
 					</tr>
 				</table>
 			</div>
+
 </div>
 			
 	
@@ -141,6 +144,29 @@
    <!-- footer영역 -->
    	<%@include file="/main/footer.jsp" %>	
 <script>notice()</script>
+<script>
+/* $("#reply_btn").click(function(){
+	if($("#reply_content").val().trim() === ""){
+		alert("댓글을 입력하세요.");
+		$("#reply_content").val("").focus();
+	}else{
+		$.ajax({
+			url: "/ReplyWriteAction.do",
+            type: "POST",
+            data: {
+                no : $("#no").val(),
+                id : $("#id").val(),
+                reply_content : $("#reply_content").val()
+            },
+            success: function () {
+            	alert("댓글 등록 완료");
+            	$("#reply_content").val("");
+            	getReply();
+            },
+		})
+	}
+}) */
+</script>
 </body>
 
 </html>

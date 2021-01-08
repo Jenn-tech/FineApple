@@ -44,7 +44,10 @@
 			<tr class = 'view'>
 				<td colspan ='2'>
 					<div class ='content'>
-						<textarea name= 'noticeDoc' rows = '7' cols ='80' required></textarea>
+						<!-- <textarea name= 'noticeDoc' rows = '7' cols ='80' required></textarea> -->
+						   		<jsp:include page="note.jsp"/>
+
+						
 					</div>				
 				</td>
 			</tr>
@@ -61,7 +64,7 @@
 			<br><br><br><br>
 			<div class = 'btns'>
 				<input type = 'submit' value = '저장' id = 'btnSave' onclick="save()"/>
-				<input type = 'button' value = '목록' id = 'btnSelect' onClick="history.back()"/>
+				<input type = 'button' value = '목록' id = 'btnBack' onClick="history.back()"/>
 				
 				<!-- 원래 hidden -->
 				<input type = 'hidden' name = 'findStr' value = '${param.findStr }' />

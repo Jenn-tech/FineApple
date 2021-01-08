@@ -165,7 +165,9 @@ table-layout: fixed;
 
 .btns #btnSelect,
 .btns #btnDelete,
-.btns #btnModify {
+.btns #btnModify,
+.btns #btnSave,
+.btns #btnBack {
 	width : 60px;
 	height : 35px;
 }

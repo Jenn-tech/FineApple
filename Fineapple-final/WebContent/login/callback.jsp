@@ -1,10 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="kr">
-
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>NaverLoginSDK</title>
 </head>
 
@@ -22,6 +20,7 @@
 			{
 				clientId: "{fyPzWAkiT_459mrRrsXD}",
 				callbackUrl: "{http://localhost:9090/Fineapple-final/login/callback.jsp}",
+							
 				isPopup: false,
 				callbackHandle: true
 				/* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */
@@ -44,7 +43,7 @@
 						return;
 					}
 
-					window.location.replace("http://" + window.location.hostname + ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/fineapple-final/login.jsp");
+					window.location.replace("http://" + window.location.hostname + ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/Fineapple-final/login/naverlogin.jsp");
 				} else {
 					console.log("callback 처리에 실패하였습니다.");
 				}

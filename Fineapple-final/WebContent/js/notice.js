@@ -75,3 +75,43 @@ var notice = function() {
 	}
 	}
 }
+
+
+
+
+	$(document).ready( function() {				
+		$(".hide").hide();		
+		$("#favorite").click(function(){			
+			
+			$.post(
+					"/favorite"
+					, {"articleId" : "${article.articleId}"}	
+					, function(data){
+												
+						var jsonData3 = {};
+						try {
+							jsonData3 = JSON.parse(data);
+						}catch(e) {
+							jsonData3.result = false;
+						}
+						console.log(jsonData3);
+						
+						if ( jsonData3.result ){
+							var text = $("#favorite").text();
+							if (jsonData3.isFavorite){
+								$("#favorite").text("♥");
+							}
+							else if (text == "♥"){
+									$("#favorite").text("♡");
+							} 
+						}
+						else {
+							/* alert("세션이 만료되었습니다. 다시 로그인해주세요.");
+							location.href = "/"; */
+						}
+					}
+			);
+		});
+		
+
+	} );
