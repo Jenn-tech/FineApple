@@ -74,13 +74,13 @@
 	<% 
 	String id = (String)session.getAttribute("member_mid");
 	String member_pwd = (String)session.getAttribute("member_pwd");
-	
+
 	%>
 	
 	<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">마이페이지</h1>
 		<div class="cs_category">
-			<a href="../mypage/mypage.jsp">정보수정</a>
+			<a href="../mypage/mypage">정보수정</a>
 			<a href="../mypage/cart.jsp">장바구니</a>
 			<a href="../mypage/orderlist.jsp">주문내역</a>
 			<a href="../mypage/coupon.jsp">쿠폰함</a>
@@ -96,7 +96,7 @@
 				</div>
 			</section>
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" name="frm_member" action="" method="POST">
+				<form class="frm-member" id="frm_member" name="frm_member" action="/mypage/mypage" method="POST">
 					<div class="frm-label">
 						<label>아이디</label>
 					</div>
