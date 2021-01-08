@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,6 +56,8 @@ public class MyPageServlet extends HttpServlet {
 			/* 핸드폰 번호 쿼리문 */
 			String findPhone = dao.sqlSession.selectOne("board.findPhone", name);
 			
+			ServletContext app = request.getServletContext();
+			
 			/* 유저 객체 저장 */
 			for(MemberVo vo : list) {
 				MemberVo userInfo = new MemberVo();
@@ -72,6 +75,9 @@ public class MyPageServlet extends HttpServlet {
 				
 				request.setAttribute("userInfo", userInfo);
 				request.setAttribute("pwd", vo.getMember_pwd());
+				
+				/* 앱에 저장 */
+				app.setAttribute("Info", userInfo);
 		
 			}
 

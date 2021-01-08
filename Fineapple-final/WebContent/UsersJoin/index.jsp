@@ -48,7 +48,7 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 
 				<div class="frm-input-id">
 					<input type="text" name="frm_id" id="reg-id"
-						placeholder="한글과 영문만 가능(10자)" maxlength="10"> 
+						placeholder="영문자와 한글,숫자만을 입력(15자 이내)" maxlength="15"> 
 					<input type="button" name="frm-check" id="id-Check" value="중복확인">
 				</div>
 				<div class="frm-label">
@@ -56,8 +56,7 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 					<span class="field-required"></span>
 				</div>
 				<div class="frm-input-password">
-					<input type="password" name="frm_password"
-						placeholder="비밀번호 자리 8~20자">
+					<input type="password" name="frm_password" placeholder="숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상">
 				</div>
 
 				<div class="frm-label">
@@ -128,7 +127,7 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 				</div>
 
 				<div class="frm-submit">
-					<input type="submit" name="frmSubmit" value="가입하기">
+					<input type="submit"  name="frmSubmit" value="가입하기">
 				</div>
 			</form>
 		</section>

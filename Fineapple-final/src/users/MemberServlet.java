@@ -99,8 +99,8 @@ public class MemberServlet extends HttpServlet {
 		} //else {
 
 		
-		response.sendRedirect("/Fineapple-final/UsersJoin/complete");
-		dao.sqlSession.close();
+		response.sendRedirect("/Fineapple-final/UsersJoin/complete.jsp");
+		
 
 	}
 
