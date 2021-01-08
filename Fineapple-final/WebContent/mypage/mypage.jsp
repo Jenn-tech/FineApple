@@ -1,3 +1,4 @@
+<%@page import="org.apache.tomcat.util.http.fileupload.RequestContext"%>
 <%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -96,7 +97,7 @@
 				</div>
 			</section>
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" name="frm_member" action="/mypage/userProfileServlet" method="POST">
+				<form class="frm-member" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
 						<label>아이디</label>
 					</div>
@@ -191,9 +192,6 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
-
-
-	
 	</script>
 </body>
 </html>
