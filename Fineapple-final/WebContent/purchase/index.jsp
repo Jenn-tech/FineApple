@@ -1,3 +1,4 @@
+
 <%@page import="org.apache.tomcat.util.http.fileupload.RequestContext"%>
 <%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,7 +9,7 @@
 <title>회원정보 수정</title>
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/UsersJoin/mypage.css">
+<link rel="stylesheet" href="../css/purchase/purchase.css">
 <link rel="stylesheet" href="../css/UsersJoin/agree.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
@@ -16,53 +17,15 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 <script src="../js/userjoin/mypage.js"></script>
+
 <style>
-.table{
-	margin : 0 auto;
-	text-align :center;
-}
-
-.cs_func_page_header {
-	width: 100%;
-	height: 200px;
-	text-align: center;
-	padding-top: 55px; 
-	border-bottom: 3px solid #000000;
-}
-
-.cs_category {
-	font-size: 1.5em;
-	font-weight: bold;
-	margin-top: 40px;
-	display: flex;
-	justify-content: space-around;
-	width: 60%;
-	margin: 49px auto 0 auto;
-	height: 50px;
-}
-.cs_category > a {
-	display: inline-block;
-	width: 150px;
-	padding-bottom: 10px;
-	color : black;
-	text-decoration : none;
-}
-.cs_category > a:hover {
-	border-bottom:6px solid #000000;
-}
-
-.cs_category > a:visited {
-	color: #000000;
-	
-}
-
 .div-container {
 	width: 800px;
 	margin: 100px auto 0 auto;
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 1300px;
+	height: 180vh;
 }
 </style>
 </head>
@@ -78,12 +41,10 @@
 	%>
 	
 	<header class="cs_func_page_header">
-		<h1 style="font-size: 2em;">마이페이지</h1>
 		<div class="cs_category">
-			<a href="../mypage/mypage">정보수정</a>
-			<a href="../mypage/cart.jsp">장바구니</a>
-			<a href="../mypage/orderlist.jsp">주문내역</a>
-			<a href="../mypage/coupon.jsp">쿠폰함</a>
+			<a href="#">구매하기</a>
+			<a href="#">결제하기</a>
+			<a href="#">구매정보</a>
 		</div>
 	</header>
 	
@@ -91,35 +52,20 @@
 
 			<section class="section-one">	
 				<div class="section-welcome">
-					<h1 class="welcome-head">회원정보 수정</h1>
+					<h1 class="welcome-head">구매하기</h1>
 					<hr class="section-hr">
 				</div>
 			</section>
 			<section class="section-two">
 				<form class="frm-member" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
-						<label>아이디</label>
+						<label>주문상품</label>
 					</div>
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="<%= id%>">
+						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="아보카도 중대과 175g 내외 10개입">
 					</div>
 
-					<div class="frm-label">
-						<label>현재 비밀번호</label>
-					</div>
-					<div class="frm-input-password">
-						<input type="password" name="frm_password" placeholder="비밀번호 자리 8~20자">
-					</div>
-						
-					<div class="frm-label">
-						<label>비밀번호 재입력</label>
-						
-					</div>
-					<div class="frm-input-password">
-						<input type="password" name="re_frm_password" placeholder="변경할 비밀번호" value="">
-						
-					</div>
-						
+
 					<div class="frm-label">
 						<label>이름</label>
 					</div>
@@ -127,14 +73,6 @@
 						<input style="font-weight:bold" type="text" name="frm-name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
 					</div>
 					
-					<div class="frm-label">
-						<label>이메일</label>
-					</div>
-					<div class="frm-input-email">
-						<input style="font-weight:bold" type="text" name="frm-email" placeholder="example@gmail.com" value="${userInfo.getMember_email() }">
-					</div>
-					
-
 					<div class="frm-label">
 						<label>전화번호</label>
 					</div>
@@ -145,44 +83,61 @@
 						</select>
 						<input style="font-weight:bold" type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
 					</div>
-
+					
 					<div class="frm-label">
-						<label>주소</label>
+						<label>배송정보</label>
 					</div>
 					<div class="frm-input-zipcode">
 						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호" value="${userInfo.getMember_zipcode() }">
-						<input style="font-weight:bold" type="button" name="btnZipcode" id="btnFindZip" value="우편번호검색">
+						<input style="font-weight:bold" type="button" name="btnZipcode" id="btnFindZip" value="신규 배송지">
 						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소" value="${userInfo.getMember_address() }">
+					</div>
+						
+					<div class="frm-label">
+						<label>배송메세지</label>
+					</div>
+					<div class="frm-input-moving">
+						<select>
+						<option>배송메세지를 선택해 주세요.</option>
+						<option>부재시 문 앞에 부탁드립니다.</option>
+						<option>배송 전 연락바랍니다.</option>
+						<option>경비실에 맡겨주세요.</option>
+						<option>택배함에 놔주세요.</option>
+						</select>
+						<input type="button" name="frm_moving" value="선택">
+						
 					</div>
 					
 					<div class="frm-label">
-						<label>생년월일</label>
+						<label>할인쿠폰</label>
 					</div>
-					<div class="frm-input-birth">
+					<div class="frm-input-cupon">
 						<select>
-							
-							<% for(int i = 1900; i < 2020; i++) {%>
-							<option selected><%= i+1%>년</option>
-							<% } %>
+						<option>FineApple 임직원 30% 할인</option>
+						<option>FineApple 오픈 기념 10% 할인</option>
 						</select>
-						
-						<select>
-							<% for(int i = 0; i < 31; i++) {%>
-							<option><%= i+1%>일</option>
-							<% } %>
-						</select>
-						
-						<select>
-							<% for(int i = 0; i < 12; i++) {%>
-							<option><%= i+1%>월</option>
-							<% } %>
-						</select>
+						<input type="button" name="frm_sales" value="선택">
+					</div>
 
+					<div class="frm-label">
+						<label>쿠폰 할인 금액</label>
+					</div>
+					<div class="frm_coupon_pay">
+						<input style="font-weight:bold" type="text" name="frm_coupon_pay" placeholder="성명을 입력해주세요." value="0원">
+					</div>
+					
+					<hr class="section-hr">
+
+					<div class= "finalPay frm-label">
+						<div>최종 결제 금액 
+						<input style="font-weight:bold" type="text" name="frm_final_pay" placeholder="성명을 입력해주세요." value="0원">
+						</div>
 					</div>
 
 					<div class="frm-submit">
-						<input type="button" onclick="check_Pwd()" name="frm-sumbit" value="수정하기">
+						<input type="button" onclick="check_Pwd()" name="frm_submit" value="결제하기">
 					</div>
+
 				</form>
 			</section>
 		</div>
