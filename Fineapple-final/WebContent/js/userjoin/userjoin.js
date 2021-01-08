@@ -77,34 +77,44 @@ function send_go(){
 
 */
  
-/* 회원가입 데이터 없을 시 alert 창 */
+	
+function onlyEng(objtext1) {
+  var inText = objtext1.value;
+
+  if (deny_pattern.test(inText)) {
+    alert("영문자와 한글,숫자만을 입력하세요");
+    objtext1.value = "";
+    objtext1.focus();
+    return false;
+  }
+  return true;
+}
 
 
 
 function joinCheck(obj) {
-	if(!obj.frm_id.value || obj.frm_id.value.trim().length == 0) {
-		alert('아이디를 입력해주세요.');
+	
+   var deny_char = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/
+   var regExpPw = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
+   var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+	if(!obj.frm_id.value || obj.frm_id.value.trim().length == 0 && (obj.frm_id.value != deny_char)) {
+		alert('영문자와 한글,숫자만을 입력하세요');
 		obj.frm_id.value ="";
 		obj.frm_id.focus();
 		return false;
 	}
 	
-	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0) {
-		alert('비밀번호를 입력해주세요.');
+	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0 && (obj.frm_password.value != regExpPw)) {
+		alert('숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상 입력하세요');
 		obj.frm_password.value ="";
 		obj.frm_password.focus();
 		return false;
 	}
 	
-	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0) {
-		alert('비밀번호를 입력해주세요.');
-		obj.frm_password.value ="";
-		obj.frm_password.focus();
-		return false;
-	}
-	
-	if(!obj.re_frm_password || obj.re_frm_password.value.trim().length == 0){
-		alert('비밀번호를 재입력해주세요.');
+
+	if(obj.re_frm_password.value != obj.frm_password.value){
+		alert('비밀번호가 다릅니다.');
 		obj.re_frm_password.value ="";
 		obj.re_frm_password.focus();
 		return false;
@@ -118,7 +128,7 @@ function joinCheck(obj) {
 	}
 	
 	if(!obj.frm_email || obj.frm_email.value.trim().length == 0){
-		alert('이메일을 입력해주세요.');
+		alert('이메일을 입력해주세요');
 		obj.frm_email ="";
 		obj.frm_email.focus();
 		return false;

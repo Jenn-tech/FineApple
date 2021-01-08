@@ -96,7 +96,7 @@
 				</div>
 			</section>
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" name="frm_member" action="/mypage/mypage" method="POST">
+				<form class="frm-member" id="frm_member" name="frm_member" action="/mypage/userProfileServlet" method="POST">
 					<div class="frm-label">
 						<label>아이디</label>
 					</div>
