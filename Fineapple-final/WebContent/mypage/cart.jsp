@@ -1,3 +1,6 @@
+<%@page import="mypage.CartDao"%>
+<%@page import="product.ProductVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@page import="java.text.DecimalFormat"%>
@@ -136,6 +139,23 @@ function fnGo(){
 			
 			<tbody>
 			<%
+			//해당 상품정보 받아오기
+			CartDao dao = new CartDao();
+			String temp=request.getParameter("product_serial");
+			int temp1= Integer.parseInt(temp);
+			
+			int product_serial=temp1;
+			int product_amount=Integer.parseInt(request.getParameter("product_amount"));
+			String product_color=request.getParameter("product_color");
+			ProductVo vo =new ProductVo();
+			vo = dao.basket(product_serial);
+			
+			
+			//카트 리스트에 추가하기
+			
+			
+			
+			
 		if(cart.size() == 0) {
 			out.println("<tr align='center'>");
 				out.println("<td colspan= '5'>");
