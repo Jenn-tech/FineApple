@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
     <link rel="shortcut icon" href="<%=request.getContextPath() %>/images/favicon.png">
     <link rel="icon" href="favicon.ico">
+    <script src='../js/go_cart.js'></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
@@ -30,21 +32,14 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
         <div class="summary">
-            <form name="form" method="get">
-                <h1>갤럭시 Z 폴드2 5G</h1><br/>
-                <span>상품코드 : </span>
-                <span>SM-F916NZKAKOO</span><br/>
-                <span>판매가 : </span>
-                <span>2,398,000원</span><br/>
-                <div class="summary-color">
-                    <span>색상 : </span>
-                    <!-- <label for="btncolor1" class="btncolor1">미스틱블랙</label><br/> -->
-                    <label for="btncolor2" class="btncolor2">미스틱브론즈</label><br/>
-                    <!-- <input type="button" id="btncolor1" onclick='border()'/><br/> -->
-                    <!-- <input type="button" id="btncolor2" onclick='border()'/> <br/> -->
-                    <span>메모리 : </span>
-                    <span>256 GB</span><br/>
-                </div>
+           <form method="get" name="form">
+	            <div class="테두리">
+	               <h1>갤럭시 Z 폴드2 5G</h1><input type= hidden name="product_name" value= "갤럭시 Z 폴드2 5G"><br>
+	               상품코드 : SM-F916NZKAKOO<input type=hidden name="product_serial" value= "SM-F916NZKAKOO"><br>
+	               판매가 : 2,398,000원<br>
+	               색상 : 미스틱브론즈<input type=hidden name="product_color" value= "미스틱브론즈"><br>
+	               메모리 : 256 GB<br>
+	            </div>
                 <div class="amount">
                     수량  <input type=hidden name="sell_price" value="2398000">
                     <input type="button" value=" - " onclick="del();">
@@ -52,13 +47,13 @@
                     <input type="button" value=" + " onclick="add();"><br/>
                     금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
                 </div>
-            </form>
             <br/>
 
-            <div class="btns">
-                <a href="#"><input type="submit" value="장바구니" class="btn1"/></a>
-                <a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
-            </div>
+	               <div class="btns">
+	               		<input type="button" value="장바구니" class="btn1"/>
+	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               </div>
+            </form>
         </div>
     </div>
 
