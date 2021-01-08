@@ -96,7 +96,7 @@ public String insert(NoticeVo vo) {
 	String msg = "작성되었습니다.";
 	try {
 		String sql = " insert into notice(notice_no, notice_subject, notice_doc,notice_hit, notice_date) "
-				   + " values(seq_guestbook.nextval, ?, ?, 0, sysdate )";
+				   + " values(seq_notice.nextval, ?, ?, 0, sysdate )";
 		
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, vo.getNoticeSubject());
@@ -119,5 +119,34 @@ public String insert(NoticeVo vo) {
 		return msg;
 	}
 }
+
+public String delete(NoticeVo vo) {
+	String msg = "방명록이 삭제되었습니다.";
+	try {
+		String sql = "delete from notice where notice_no=? ";
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, vo.getNoticeNo());
+		System.out.println(vo.getNoticeNo());
+		System.out.println("noticeno설정");
+		
+		int rowCnt = ps.executeUpdate();
+		System.out.println(rowCnt);
+		if(rowCnt<1) {
+			msg = "방명록 삭제 중 오류발생";
+		}
+		
+	} catch (Exception ex) {
+		msg = ex.getMessage();
+	} finally {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return msg;
+	}
+}
+
+
 
 }

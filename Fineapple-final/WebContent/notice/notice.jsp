@@ -45,8 +45,8 @@
 	<div id = 'notice_search'>
 		<form name = 'frm_notice' method = 'POST'>
 		
-		<%if(session.getAttribute("mid")!=null){
-		if(session.getAttribute("mid").equals("kim")){ 
+		<%if(session.getAttribute("member_mid")!=null){
+		if(session.getAttribute("member_mid").equals("kim")){ 
 		%> 
 			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
 		<%}} %>

@@ -50,4 +50,28 @@ var notice = function() {
 		}
 	}
 	
+
+
+	var btnDelete = document.getElementById('btnDelete');
+		if(btnDelete !=null) {
+			btnDelete.onclick = function(){
+			let pwd = prompt("암호입력");
+			if(pwd==12341234){
+				alert('관리자 확인 완료');
+				frm.action = '../notice/delete_result.jsp'
+				frm.submit();
+			}else {
+		alert('암호를 다시 확인하세요');
+		return;
+	}
+	}
+	}
+	var btnModify = document.getElementById('btnModify');
+		if(btnModify !=null) {
+			btnModify.onclick = function(){
+				frm.action = '../notice/update.jsp'
+				frm.submit();
+			
+	}
+	}
 }
