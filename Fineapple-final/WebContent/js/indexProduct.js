@@ -26,11 +26,14 @@ var phone = function(url){
 	}
 	$.ajax({
 		type: 'get',
-		url: "../productList.do",
+		url: "../productList.do?desc=휴대폰",
 		data: "",
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {
 			$('#product_list').html(data);
+			alert("okokokokokokokok");
+			var a = "1234";
+			
 		},
 		error: function(request, status, error) {
 			alert(error);

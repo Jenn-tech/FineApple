@@ -40,15 +40,16 @@ public class ProductDao {
 		
 		
 		//c Read u d
-		public List<ProductVo> selectAllProducts(){
+		public List<ProductVo> selectAllProducts(String description){
 			//최근 등록한 상품 먼저 출력하기
-			String sql = "select * from product order by code ";
+			String sql = "select * from product where description = ? order by code ";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
 			try {
 				conn = new Application().getConn();
 				ps = conn.prepareStatement(sql);
+				ps.setString(1, description);
 				rs = ps.executeQuery();
 				
 				while(rs.next()) {

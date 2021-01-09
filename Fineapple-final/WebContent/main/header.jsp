@@ -8,7 +8,11 @@
         frmData.action = "../product_list/select.jsp" ;
         frmData.submit() ;
     }
+<%
 
+	String user_id = (String) session.getAttribute("member_mid");
+	session.setAttribute("user_id", user_id);
+%>
 
 </script>
 <header id="header">

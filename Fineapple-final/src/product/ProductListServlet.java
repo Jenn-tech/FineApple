@@ -17,7 +17,9 @@ public class ProductListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductDao dao = ProductDao.getInstance();
 		
-		List<ProductVo> productList = dao.selectAllProducts();
+		String description = request.getParameter("desc");
+		System.out.println(description);
+		List<ProductVo> productList = dao.selectAllProducts(description);
 		request.setAttribute("productList", productList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("product_index/phone2.jsp");
