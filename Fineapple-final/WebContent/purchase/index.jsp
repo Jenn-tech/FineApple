@@ -63,7 +63,14 @@
 						<label>주문상품</label>
 					</div>
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="아보카도 중대과 175g 내외 10개입">
+						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="아보카도 중대과 175g 내외 10개입">
+					</div>
+					
+					<div class="frm-label">
+						<label>주문번호</label>
+					</div>
+					<div class="frm-input-id">
+						<input style="font-weight:bold" type="text" name="frm_num" readonly="readonly" value="20210109FIANAPPLECODE">
 					</div>
 
 
@@ -71,7 +78,7 @@
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input style="font-weight:bold" type="text" name="frm-name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
+						<input style="font-weight:bold" type="text" name="frm_name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
 					</div>
 					
 					<div class="frm-label">
@@ -82,7 +89,7 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
+						<input style="font-weight:bold" type="text" name="frm_phone" placeholder="0000-0000" value="${userInfo.getMember_phone() }">
 					</div>
 					
 					<div class="frm-label">
@@ -152,7 +159,7 @@
 							</div>
 					</div>
 					<div class="frm-submit">
-						<input type="button" onclick="check_Pwd()" name="frm_submit" value="결제하기">
+						<input type="button" onclick="location.href='/Fineapple-final/purchase/paying.jsp'" name="frm_submit" value="결제하기">
 					</div>
 					
 					
@@ -163,7 +170,6 @@
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
-	member();
 	</script>
 </body>
 </html>

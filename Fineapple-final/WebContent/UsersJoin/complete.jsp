@@ -16,12 +16,6 @@
 <script src="../js/userjoin/userjoin.js"></script>
 
 </head>
-
-<%
-MemberVo vo = (MemberVo)request.getAttribute("vo");
-
-%>
-
 <body class="body">
 <!-- header영역 -->
 		<jsp:include page="../main/header.jsp"/>
