@@ -85,7 +85,7 @@
 
   <!-- footer영역 -->
 <footer>
-   	<%@include file="../main/cs_footer.jsp" %>
+   	<%@include file="../main/footer.jsp" %>
 </footer>
 
 <!-- 스크립트 -->

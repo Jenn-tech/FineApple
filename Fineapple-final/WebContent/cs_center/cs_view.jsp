@@ -36,7 +36,11 @@
 		<div class="cs_center_notice_insert_send_box">
 			<input type="button" value="수정" id="cs_view_btnUpdate" class="cs_insert_btnSave">
 			<input type="button" value="삭제" id="cs_modal_btnOpen" class="cs_insert_btnSave">
-			<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
+			<%if(session.getAttribute("member_mid")!=null){
+				if(session.getAttribute("member_mid").equals("kim")){ 
+			%> 
+				<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
+			<%}} %>
 			<input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 			<input type="hidden" value="${param.nowPage}" name="nowPage"/>
 			<input type="hidden" value="${param.findStr}" name="findStr"/>
@@ -56,7 +60,7 @@
 			<div class="modal_layer"></div>
 		</div>
 	</form>
-</div>document.getElementById("cs_modal").style.display="none";
+</div>
 
 
 <script type="text/javascript">

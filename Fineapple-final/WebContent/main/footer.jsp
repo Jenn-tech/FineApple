@@ -25,11 +25,11 @@
 		    	<li>
 		            <h4>제품 알아보기</h4>
 		        </li>
-		        <li><a href="<%=request.getContextPath() %>/product_index/laptop.jsp">휴대폰</a></li>
-		        <li><a href="javascript:laptop();">노트북</a></li>
-		        <li><a href="javascript:tablet()">태블릿PC</a></li>
-		        <li><a href="javascript:watch()">스마트 워치</a></li>
-		        <li><a href="javascript:accessory()">악세서리</a></li>
+		        <li><a href="/Fineapple-final/productList.do?desc=휴대폰">휴대폰</a></li>
+		        <li><a href="/Fineapple-final/productList.do?desc=노트북">노트북</a></li>
+		        <li><a href="/Fineapple-final/productList.do?desc=태블릿">태블릿PC</a></li>
+		        <li><a href="/Fineapple-final/productList.do?desc=스마트워치">스마트 워치</a></li>
+		        <li><a href="/Fineapple-final/productList.do?desc=악세서리">악세서리</a></li>
 		    </ul>
 		</div>
 		<div>
