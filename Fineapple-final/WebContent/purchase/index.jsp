@@ -25,7 +25,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 180vh;
+	height: 170vh;
 }
 </style>
 </head>
@@ -116,18 +116,18 @@
 						<option>FineApple 임직원 30% 할인</option>
 						<option>FineApple 오픈 기념 10% 할인</option>
 						</select>
-						<input type="button" name="frm_sales" value="선택">
+						<input type="button" name="frm_sales" value="적용">
 					</div>
 
-					<div class="frm-label">
-						<label>쿠폰 할인 금액</label>
-					</div>
-					<div class="frm_coupon_pay">
-						<input style="font-weight:bold" type="text" name="frm_coupon_pay" placeholder="성명을 입력해주세요." value="0원">
-					</div>
 					
 					<hr class="section-hr">
-
+					
+					<div class= "finalPay_dis frm-label">
+						<div style="font-size: 14px;">쿠폰 할인 금액
+						<input style="font-weight:bold"  type="text" name="frm_final_dis" placeholder="성명을 입력해주세요." value="0원">
+						</div>
+					</div>
+						
 					<div class= "finalPay frm-label">
 						<div>최종 결제 금액 
 						<input style="font-weight:bold" type="text" name="frm_final_pay" placeholder="성명을 입력해주세요." value="0원">
