@@ -61,7 +61,7 @@
 							<span class="hit">${vo.hit} </span>
 						</div>
 					</c:when>
-					<c:otherwise>
+					<c:otherwise>   
 						<div class="cs_board_item" onclick="view('${vo.serial}', '${vo.hit}')">
 							<span class="no">${no}</span>
 							<span class="subject">${vo.subject}</span>

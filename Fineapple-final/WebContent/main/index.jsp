@@ -87,7 +87,7 @@
 	<a href="../login/chat.jsp"><img src="../images/chat.png" /></a>
 </div>
    <!-- footer영역 -->
-   	<%@include file="footer.jsp" %>
+   	<%@include file="cs_footer.jsp" %>
 </div>
 <script>
 logInOut();
