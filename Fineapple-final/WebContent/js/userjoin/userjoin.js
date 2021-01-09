@@ -97,23 +97,37 @@ function joinCheck(obj) {
    var deny_char = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/
    var regExpPw = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
    var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+   
+	var userInfo = document.userInfo;
 
-	if(!obj.frm_id.value || obj.frm_id.value.trim().length == 0 && (obj.frm_id.value != deny_char)) {
+         /* example(html 태그에 pattern속성 미 사용시)
+         var reg_mid = /[\w!$\-]{4,10}/;
+         if( !reg_mid.test(frm.mid.value) ){
+            alert('mid');
+            checkFlag=false;
+         }
+		*/ 
+		
+	if(!deny_char.test(obj.frm_id.value)) {
 		alert('영문자와 한글,숫자만을 입력하세요');
 		obj.frm_id.value ="";
 		obj.frm_id.focus();
 		return false;
 	}
 	
-	if(!obj.frm_password.value || obj.frm_password.value.trim().length == 0 && (obj.frm_password.value != regExpPw)) {
+	
+	
+	if(!regExpPw.test(obj.frm_password.value)) {
 		alert('숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상 입력하세요');
 		obj.frm_password.value ="";
 		obj.frm_password.focus();
 		return false;
 	}
 	
-
-	if(obj.re_frm_password.value != obj.frm_password.value){
+	var pwd = userInfo.frm_password.value;
+	var re_pwd = userInfo.re_frm_password.value;
+	
+	if(re_pwd != pwd){
 		alert('비밀번호가 다릅니다.');
 		obj.re_frm_password.value ="";
 		obj.re_frm_password.focus();
@@ -127,8 +141,10 @@ function joinCheck(obj) {
 		return false;
 	}
 	
-	if(!obj.frm_email || obj.frm_email.value.trim().length == 0){
-		alert('이메일을 입력해주세요');
+	
+	
+	if(!regExpEm.test(obj.frm_email.value)){
+		alert('이메일 형식에 맞지 않습니다.');
 		obj.frm_email ="";
 		obj.frm_email.focus();
 		return false;
@@ -140,6 +156,7 @@ function joinCheck(obj) {
 		obj.frm_phone.focus();
 		return false;
 	}
+	
 	
 	if(!obj.zipcode || obj.zipcode.value.trim().length == 0) {
 		alert('우편번호를 입력해주세요.')
@@ -154,14 +171,6 @@ function joinCheck(obj) {
 		obj.btnZipcode.focus();
 		return false;
 	}
-	
-		if(!obj.address || obj.address.value.trim().length == 0) {
-		alert('우편번호를 입력해주세요.')
-		obj.address = "";
-		obj.address.focus();
-		return false;
-	}
-	
 	
 	return true;
 }

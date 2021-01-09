@@ -44,7 +44,7 @@
 		<div class="cs_category">
 			<p>구매하기</p>
 			<p>결제하기</p>
-			<p>구매정보</p>
+			<p>결제완료</p>
 		</div>
 	</header>
 	
