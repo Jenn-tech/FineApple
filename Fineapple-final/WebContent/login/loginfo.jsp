@@ -16,6 +16,7 @@
 	<jsp:include page="/main/header.jsp"/>
 
     <div class="container">
+    <h3>로그인</h3>
         <section class="form-write">
 			<form name='form_log' method='post'>
                 <div class="align">
@@ -51,17 +52,12 @@
         
         
         <section class="login-write">
-            <div class="button-login">
-                <button class="btn-kakao">
-                    <a href="#"> KAKAO 로그인</a>
-                   
-                </button>
+            <div class="button-login" align ="center" >
+                <a id="kakao-login-btn" >
+    <img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="83%" height ="50px" />
+    </a>
             </div>
-            <div class="button-login">
-                <button class="btn-naver" >
-                    <a href="naverlogin.jsp">NAVER 로그인</a>
-                </button>
-            </div>
+            
         </section>
     </div>
     <div class="footer-align">
@@ -71,6 +67,46 @@
    	<%@include file="../main/footer.jsp" %>
     </div>
     <script>logInOut()</script>
-    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type='text/javascript'>
+Kakao.init('362fc9db35abfa51480830ded68d8130');
+
+
+$("#kakao-login-btn").on("click", function(){
+    //1. 로그인 시도
+    Kakao.Auth.login({
+        success: function(authObj) {
+          //console.log(JSON.stringify(authObj));
+          //console.log(Kakao.Auth.getAccessToken());
+          //2. 로그인 성공시, API를 호출합니다.
+          Kakao.API.request({
+            url: '/v2/user/me',
+            success: function(res) {
+              //console.log(JSON.stringify(res));
+              console.log(res);
+              var id = res.id;
+			  scope : 'account_email';
+			alert('로그인성공');
+              //var email = res.kakao_account.email;
+			  //var name = res.properties.nickname;
+			  location.href="test.jsp";
+		
+
+              
+        }
+          })
+          console.log(authObj);
+          var token = authObj.access_token;
+        },
+        fail: function(err) {
+          alert(JSON.stringify(err));
+        }
+      });
+        
+}) //e.o.kakao
+
+
+</script>
 </body>
 </html>
