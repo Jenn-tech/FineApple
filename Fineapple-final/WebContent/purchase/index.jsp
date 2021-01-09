@@ -170,6 +170,7 @@
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
+	member();
 	</script>
 </body>
 </html>

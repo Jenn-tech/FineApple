@@ -19,7 +19,7 @@
 <style>
 .div-container {
 	width: 800px;
-	margin: 100px auto 0 auto;
+	margin: 200px auto 300px auto;
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
@@ -61,6 +61,7 @@
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
+
 	</script>
 </body>
 </html>
