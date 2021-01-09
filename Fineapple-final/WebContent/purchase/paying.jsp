@@ -89,7 +89,7 @@
     }, function(rsp) {
         if ( rsp.success ) {
             var msg = '결제가 완료되었습니다.';
-            location.href='http://localhost:9091/Fineapple-final/purchase/payComplete.jsp';
+            location.href='<%=request.getContextPath() %>/purchase/payComplete.jsp';
         } else {
             var msg = '결제에 실패하였습니다.';
             msg += '에러내용 : ' + rsp.error_msg;

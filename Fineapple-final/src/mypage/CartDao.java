@@ -86,8 +86,8 @@ public class CartDao {
 			sql += "'seq_cart.nextVal', ";}
 			else{ 
 			sql += "'seq_cart.currval', ";
-			sql += "'0', ?, ?, ?";
 			}
+			sql += "'0', ?, ?, ?";
 			
 			conn = new Application().getConn();
 			ps = conn.prepareStatement(sql);
@@ -138,8 +138,8 @@ public class CartDao {
 	public List<CartListVo> CartList(String user_id){
 		List<CartListVo> list = new ArrayList<CartListVo>();
 		try {
-			String sql = "select * from cart"
-					+ "join product on cart.product_code=product.product_serial"
+			String sql = "select * from cart "
+					+ "join product on cart.product_code=product.product_serial "
 					+ "where userid=? and cart_statement=0";
 			
 			conn = new Application().getConn();
@@ -165,7 +165,6 @@ public class CartDao {
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			Application.close(conn, ps, rs);
 			return list;
 		}			
 	}
