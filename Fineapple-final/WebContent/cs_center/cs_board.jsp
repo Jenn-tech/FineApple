@@ -55,7 +55,8 @@
 					<c:when test="${visible == 'yes'}">
 						<div class="cs_board_item" onclick="secretview('${vo.serial }','${vo.pwd}', '${vo.hit}')">
 							<span class="no">${no}</span>
-							<span class="subject">[비밀글]${vo.subject}</span>
+							<span class="subject">
+								<img alt="" src="<%= request.getContextPath() %>/images/lock_icon3.png" class="cs_board_secret"> ${vo.subject}</span>
 							<span class="name">${vo.memberName}</span>
 							<span class="mdate">${vo.created}</span>
 							<span class="hit">${vo.hit} </span>

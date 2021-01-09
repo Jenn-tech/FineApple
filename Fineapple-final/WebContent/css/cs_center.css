@@ -409,6 +409,14 @@
 	padding: 50px 0 30px 10px;
 	margin-bottom: 40px;
 }
+
+
+.cs_board_secret {
+	width: 5%;
+	margin-bottom: -4px;
+	margin: 0 1px -4px 0;
+}
+
 /*-----------------------------------------------------------*/
 
 
