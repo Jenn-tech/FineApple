@@ -42,9 +42,9 @@
 	
 	<header class="cs_func_page_header">
 		<div class="cs_category">
-			<a href="#">구매하기</a>
-			<a href="#">결제하기</a>
-			<a href="#">구매정보</a>
+			<p>구매하기</p>
+			<p>결제하기</p>
+			<p>구매정보</p>
 		</div>
 	</header>
 	
