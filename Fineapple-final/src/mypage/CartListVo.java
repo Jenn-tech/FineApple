@@ -10,6 +10,7 @@ public class CartListVo {
 	private String product_name;
 	private int product_price;
 	private String product_picture_url;
+	
 	public int getCart_code() {
 		return cart_code;
 	}

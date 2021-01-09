@@ -1,3 +1,4 @@
+<%@page import="mypage.CartListVo"%>
 <%@page import="mypage.CartDao"%>
 <%@page import="product.ProductVo"%>
 <%@page import="java.util.List"%>
@@ -6,6 +7,7 @@
 	<%@page import="java.text.DecimalFormat"%>
 <%@page import="mypage.CartVo"%>
 <%@page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<CartVo> cart = null;
@@ -141,22 +143,79 @@ function fnGo(){
 			<%
 			//해당 상품정보 받아오기
 			CartDao dao = new CartDao();
-			String temp=request.getParameter("product_serial");
-			int temp1= Integer.parseInt(temp);
-			
-			int product_serial=temp1;
-			int product_amount=Integer.parseInt(request.getParameter("product_amount"));
-			String product_color=request.getParameter("product_color");
 			ProductVo vo =new ProductVo();
-			vo = dao.basket(product_serial);
+			String product_serial=request.getParameter("product_serial");
+			int product_amount=Integer.parseInt(request.getParameter("amount"));
+			String product_color=request.getParameter("product_color");
+			String member_id=(String)session.getAttribute("member_mid");
+			
 			
 			
 			//카트 리스트에 추가하기
+			dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록
+			List<CartListVo> cartList = dao.CartList(member_id);
+			request.setAttribute("cartList", cartList);
 			
+			int total=0;
 			
+			for(int j=0;j<cartList.size();j++){
+				total += cartList[j].
+			}
 			
+			%>
 			
-		if(cart.size() == 0) {
+			<c:forEach var='vo' items="${cartList}">
+			<tr class="content" style="overflow: visible;">
+					<td class="slt">
+						<div class="checkbox">
+							<label> <input type="checkbox" class="_cartItemCheckbox"
+								checked="checked"><span></span>
+							</label>
+						</div>
+					</td>
+					<td class="cart-item-img-td"><a
+						class="cart-item-wrap" href="/nail/?idx=151">
+							<div class="cart-item-img">
+								<img
+									src="${vo.getProduct_picture_url }"
+									width="70" height="70" alt="cart item">
+							</div>
+
+							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
+								id="shop_cart_title">${vo.getProduct_name }</p>
+					</a></td>
+					<td class="amount-td">
+						<div class="text-13 title text-center">
+							<span class="cart-product-amount">${vo.getCart_amount }</span></em>
+						</div>
+						
+						<div class="text-center">
+							<span class="cart-btn-tools"> <a href="javascript:;"
+								class="cart-btn-tools">변경</a>
+								<!-- 아래 옵션 변경과 같은 기능. 모바일에선 해당 버튼은 사라지고 아래 옵션 변경 버튼이 노출-->
+							</span>
+						</div>
+					</td>
+					<td class="cart-delivery-td">
+							<div class="delivery-way">택배</div>
+						</td>
+					<td class="cart-delivery-price-td">
+						<div class="cart-delivery-price">
+							<div>
+								<span>2,500원</span>
+							</div>
+
+						</div></td>
+					<td class="cart-product-price">${vo.getProduct_price }</td>
+					<td class="orderlist-delivery-location-btn">
+					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
+				total+=${vo.getProduct_price}*${vo.getProduct_amount};
+				</tr>
+				
+				
+		</c:forEach>
+			  
+		<!-- if(cartList.size() == 0) {
 			out.println("<tr align='center'>");
 				out.println("<td colspan= '5'>");
 					out.println("장바구니에 담긴 상품이 없습니다.");
@@ -166,11 +225,10 @@ function fnGo(){
 		} else {
 			int totalSum = 0, total = 0;
 			DecimalFormat df = new DecimalFormat("￦#,##0");
-			for(int i = 0; i < cart.size(); i++) {
-				CartVo vo = cart.get(i);
+			for(int i = 0; i < cartList.size(); i++) {
 				out.println("<tr align= 'center'>");
 					out.println("<td>" + (i + 1) + "</td>");
-					out.println("<td>" + vo.getName() + "</td>");
+					out.println("<td>" + cartList[i].getProduct_picture_url + "</td>");
 					out.println("<td>" + df.format(vo.getPrice()) + "</td>");
 					out.println("<td>" + vo.getCnt() + "</td>");
 					total = vo.getPrice() * vo.getCnt();
@@ -189,7 +247,7 @@ function fnGo(){
 			out.println("</td>");
 		out.println("</tr>");
 		}//if else
-		%>
+		%> -->
 				
 			</tbody>
 
@@ -201,7 +259,7 @@ function fnGo(){
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price">0원</span></td>
+						id="cart_main_total_price"></span></td>
 					<td></td>
 				</tr>
 			</tfoot>

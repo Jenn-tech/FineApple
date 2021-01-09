@@ -167,8 +167,7 @@ public class CartDao {
 		} finally {
 			Application.close(conn, ps, rs);
 			return list;
-		}
-				
+		}			
 	}
-
+	
 }
