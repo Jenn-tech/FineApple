@@ -25,7 +25,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 2000px;
+	height: 1700px;
 }
 </style>
 </head>
@@ -151,7 +151,6 @@
 								
 							</div>
 					</div>
-					
 					<div class="frm-submit">
 						<input type="button" onclick="check_Pwd()" name="frm_submit" value="결제하기">
 					</div>
