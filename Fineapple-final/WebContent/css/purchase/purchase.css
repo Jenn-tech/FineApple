@@ -51,7 +51,7 @@
 
 /* finalPay */
 .finalPay div {
-	margin-top: 80px;
+	margin-top: 30px;
 	font-size: 30px;
 	display: flex;
 	align-items: center;
@@ -78,10 +78,43 @@
 
 
 
+/* 결제 수단 */
+
+
+.finalPay_idea div {
+	margin-top: 30px;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	width: 500px;
+	
+}
+
+.pay_align > .pay_img {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.pay_img > label > img {
+	width: 150px;
+	
+	
+}
+
+
+
+.finalPay_idea > div > select:hover {
+	box-shadow: 0px 0px 2px 0px #202224;
+
+}
+
+
 /* 쿠폰 할인 금액 */
 
 .finalPay_dis div {
-	margin-top: 80px;
+	margin-top: 40px;
 	font-size: 30px;
 	display: flex;
 	align-items: center;
@@ -107,13 +140,7 @@
 }
 
 
-
 /* 회원가입 영역 잡기 */
-
-
-
-
-
 .welcome-img {
 	text-align: center;
 }
@@ -126,13 +153,23 @@
 
 .section-hr {
 	width: 600px;
-	margin: 30px auto 50px auto;
+	margin: 50px auto 50px auto;
 }
 
+
+.section-hr-two {
+	width: 600px;
+	margin: 80px auto 30px auto;
+}
 /* 세션 2 */
 .section-two {
 	width: 700px;
 	margin: 0px auto 15px auto;
+	height: 1500px;
+}
+
+.section-two > form {
+	height: 1000px;
 }
 
 /* 아이디 */
@@ -337,7 +374,7 @@
 .frm-submit {
 	width: 500px;
 	font-size: 20px;
-	height: 30px;
+
 	margin-top: 20px;
 	margin: 30px auto 0 auto;
 	

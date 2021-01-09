@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>회원정보 수정</title>
+<title>구매하기</title>
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="stylesheet" href="../css/purchase/purchase.css">
@@ -25,7 +25,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 170vh;
+	height: 2000px;
 }
 </style>
 </head>
@@ -56,6 +56,7 @@
 					<hr class="section-hr">
 				</div>
 			</section>
+			
 			<section class="section-two">
 				<form class="frm-member" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
@@ -96,6 +97,7 @@
 					<div class="frm-label">
 						<label>배송메세지</label>
 					</div>
+					
 					<div class="frm-input-moving">
 						<select>
 						<option>배송메세지를 선택해 주세요.</option>
@@ -118,9 +120,8 @@
 						</select>
 						<input type="button" name="frm_sales" value="적용">
 					</div>
-
 					
-					<hr class="section-hr">
+					<hr class="section-hr-two">
 					
 					<div class= "finalPay_dis frm-label">
 						<div style="font-size: 14px;">쿠폰 할인 금액
@@ -133,15 +134,33 @@
 						<input style="font-weight:bold" type="text" name="frm_final_pay" placeholder="성명을 입력해주세요." value="0원">
 						</div>
 					</div>
-
+					
+					<div class= "finalPay_idea frm-label">
+						<div>결제 수단 선택</div>
+							
+							<div class="pay_align">
+								<div class="pay_img">
+								<label for="pay_bisa"><img src="../images/UsersJoin/visa.png"></label>
+								<input type="radio" name="myradio" id="pay_bisa">
+								</div>
+								
+								<div class="pay_img">
+								<label for="pay_bank"><img src="../images/UsersJoin/bank.png"></label>
+								<input type="radio" name="myradio" id="pay_bank">
+								</div>
+								
+							</div>
+					</div>
+					
 					<div class="frm-submit">
 						<input type="button" onclick="check_Pwd()" name="frm_submit" value="결제하기">
 					</div>
-
+					
+					
 				</form>
 			</section>
 		</div>
-	
+
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
