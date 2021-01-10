@@ -29,7 +29,6 @@
 	 SELECT SUBSTR(member_phone, 5) FROM members WHERE member_mid = #{name}
 	</select>
 
-
 	<update id="up_profile" parameterType="users.MemberVo">
 	 	UPDATE members SET member_pwd = '${member_pwd}', member_name = '${member_name}', member_email = '${member_email}', member_phone = '${member_phone}', member_zipcode= '${member_zipcode}', member_address = '${member_address}' WHERE member_mid = '${member_mid}'
 	</update>

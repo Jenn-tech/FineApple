@@ -4,6 +4,7 @@ package bean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServlet;
 
@@ -81,4 +82,46 @@ public class MemberDao {
 		return pwd;
 	}
 	
+	
+	public ArrayList<MemberVo> getMemberAll(){
+
+		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+
+		try {
+
+			String sql = "select * from members";
+
+			ps = conn.prepareStatement(sql);
+
+			rs = ps.executeQuery();
+
+			while(rs.next()){
+
+				MemberVo vo =  new MemberVo();
+				vo.setMember_mid(rs.getString("member_mid"));
+				vo.setMember_name(rs.getString("member_name"));
+				vo.setMember_email(rs.getString("member_email"));
+				vo.setMember_phone(rs.getString("member_phone"));
+
+
+				list.add(vo);
+
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("getMemberAll err : ");
+
+		} finally {
+
+			try {
+
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {
+			}
+		}
+		return list;
+	}
 }

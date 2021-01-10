@@ -89,7 +89,8 @@ String member_pwd = (String)session.getAttribute("member_pwd");
 					<select name="phone_first">
 						<option selected>010</option>
 						<option>017</option>
-					</select> <input type="text" name="frm_phone" id="phoneNum"
+					</select> 
+					<input type="text" name="frm_phone" id="phoneNum"
 						placeholder="3333-3333" maxlength="9">
 				</div>
 

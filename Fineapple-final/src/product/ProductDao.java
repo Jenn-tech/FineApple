@@ -116,6 +116,40 @@ public class ProductDao {
 			return list;
 		}
 		
+		//전체 상품 목록 출력
+		public ArrayList<ProductVo> getProductAll(){
+			ArrayList<ProductVo> list = new ArrayList<ProductVo>();	
+					try {
+				
+				conn = new Application().getConn();
+
+						
+				String sql = "select * from product";
+				ps = conn.prepareStatement(sql);
+				rs = ps.executeQuery();
+				
+				while(rs.next()){
+					ProductVo vo = new ProductVo();
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					list.add(vo);
+				}
+				
+			} catch (Exception e) {
+				System.out.println("getProductAll err : " + e);
+			} finally {
+				try {
+					rs.close();
+					ps.close();
+					conn.close();
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+			return list;
+		}
 		
 		
 	

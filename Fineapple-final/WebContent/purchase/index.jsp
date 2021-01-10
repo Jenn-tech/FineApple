@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../css/UsersJoin/agree.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 <script src="../js/userjoin/mypage.js"></script>
 <script
@@ -91,7 +92,7 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm_phone" placeholder="0000-0000"}">
+						<input style="font-weight:bold" type="text" name="frm_phone" id="phoneNum" maxlength="9"     placeholder="0000-0000">
 					</div>
 					
 					<div class="frm-label">
@@ -114,7 +115,6 @@
 						<option>경비실에 맡겨주세요.</option>
 						<option>택배함에 놔주세요.</option>
 						</select>
-						<input type="button" name="frm_moving" value="선택">
 						
 					</div>
 					
@@ -177,7 +177,8 @@
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
-
+	member();
+	phoneHypen();
 	</script>
 </body>
 </html>
