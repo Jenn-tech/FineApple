@@ -47,39 +47,29 @@ public class userProfileServlet extends HttpServlet {
 			String name = (String) session.getAttribute("member_mid");
 			
 			
-			String name_ID = request.getParameter("frm-name");
-			System.out.println("name_ID : " + name_ID);
-			/* 핸드폰 번호 쿼리문 */
-			String findPhone = dao.sqlSession.selectOne("board.findPhone", name);
-			
 			MemberVo vo = new MemberVo();
+			
+			String song = request.getParameter("frm_phone");
+			String findPhone = dao.sqlSession.selectOne("board.findPhone", song);
+			
 			
 			vo.setMember_mid(request.getParameter("frm-id"));
 			vo.setMember_pwd(request.getParameter("re_frm_password"));
 			vo.setMember_name(request.getParameter("frm-name"));
 			vo.setMember_email(request.getParameter("frm-email"));
 			vo.setMember_phone(findPhone);
+			vo.setMember_phone(request.getParameter("frm_phone"));
 			vo.setMember_zipcode(request.getParameter("zipcode"));
 			vo.setMember_address(request.getParameter("address"));
 			
 			System.out.println(vo);
 			
-			/* 마이바티스 유저 정보 검색 쿼리문 */
-			List<MemberVo> list = dao.sqlSession.selectList("board.users", name);
-			
-			
-			
-			
 			/* 유저 객체 저장 */
 			ServletContext app = request.getServletContext();
 			
-			
-			List<MemberVo> UpdatePro = new ArrayList<>();
-			
-			
 			int update = dao.sqlSession.update("board.up_profile", vo);
 			
-			System.out.println("UpdatePro : " + UpdatePro);
+
 			
 			if(update > 0) {
 				System.out.println(update);
