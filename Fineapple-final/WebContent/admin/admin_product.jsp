@@ -25,9 +25,9 @@
 	<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">관리자페이지</h1>
 		<div class="cs_category">
-			<a href="admin_member.jsp">회원관리</a>
-			<a href="admin_product.jsp">상품관리</a>
-			<a href="#">매출통계</a>
+			<a href="admin_member.jsp">회원 관리</a>
+			<a href="admin_product.jsp">상품 관리</a>
+			<a href="admin_sum.jsp">매출 달력</a>
 		</div>
 </header>
 	

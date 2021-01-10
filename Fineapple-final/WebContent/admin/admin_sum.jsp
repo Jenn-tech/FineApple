@@ -17,7 +17,7 @@
 </head>
 <body>
 <jsp:useBean id="dao" class="bean.MemberDao"/>
-  
+
 		<!-- header영역 -->
 	<jsp:include page="../main/header.jsp"/>
 	
@@ -30,42 +30,54 @@
 		</div>
 </header>
 	
-<div class="admin-container">
+	<h2> 매출 달력</h2>
+<div class="admin-sum-container">
 
 
-	<h2> 전체 회원 관리</h2>
-
-
-	<table class = "admin-table" style="width:100%" >
+	<div class="calender">
+   		<%@include file="calender.jsp" %>
+	</div>
+	<table class = "admin-sum-table" style="width:100%" >
 
 		<tr >
 
-			<th>아이디</th><th>회원명</th><th>이메일</th><th>전화</th><th>정보</th>
+			<th>상품분류</th><th>매출액</th><th>전년대비</th><th>전월대비</th>
 
 		</tr>
 
-	<%
-	ArrayList<MemberVo> list = dao.getMemberAll();
-
-	for(MemberVo vo : list){
-	%>
 			<tr>
-				<td><%=vo.getMember_mid() %></td>
-				<td><%=vo.getMember_name() %></td>
-				<td><%=vo.getMember_email() %></td>
-				<td><%=vo.getMember_phone() %></td>
-				<td><a href="javascript:admin_view_member('')">상세보기</a></td>
+				<td>휴대폰</td>
+				<td>3,230,000</td>
+				<td>-2.2%</td>
+				<td>-3.5%</td>
 			</tr>
-	<%} %>
+			<tr>
+				<td>노트북</td>
+				<td>9,690,000</td>
+				<td>-1.2%</td>
+				<td>-5.2%</td>
+			</tr>
+			<tr>
+				<td>태블릿pc</td>
+				<td>7,170,000</td>
+				<td>+3.3%</td>
+				<td>+2.5%</td>
+			</tr>
+			<tr>
+				<td>스마트워치</td>
+				<td>2,740,000</td>
+				<td>+3.2%</td>
+				<td>+1.1%</td>
+			</tr>
+			<tr>
+				<td>악세서리</td>
+				<td>1,650,000</td>
+				<td>+2.2%</td>
+				<td>+4.1%</td>
+			</tr>
+	
 	</table>	
-	<form action="member_modify_admin_form.jsp" name="modifyFrm" method="post">
-		<input type="hidden" name="id">
-	</form>
-</div>
-		<div class = 'btns'>
-		<input type = 'button' value = '<'/>
-		<input type = 'button'class = 'num' value = '1'>
-		<input type = 'button' value = '>'/>
+
 	</div>
 			
    <!-- footer영역 -->
