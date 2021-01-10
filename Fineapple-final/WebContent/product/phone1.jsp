@@ -53,7 +53,7 @@
 
 	               <div class="btns">
 	               		<input type="button" value="장바구니" class="btn1"/>
-	               		<a href="#"><input type="submit" value="바로구매" class="btn2"/></a>
+	               		<input type="button" value="바로구매" class="btn2" onclick="funcPO"/>
 	               </div>
             </form>
         </div>
@@ -185,7 +185,7 @@
              
              
              <%--review에서 가져옴 --%>
-        <div class="container">
+<%--         <div class="container">
  		<div class="row">
  		<form method="post" name="frm_review">
 	 			<table class="review-table-detail" style="text-align: center;"> 
@@ -194,17 +194,17 @@
 	 						<td class="table-left">제목</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
 	 						
-	 					<%-- 	<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td> --%>
+	 						<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
-	 						<%-- <td class="table-right" colspan="2"><%= rv.getMemberId() %></td> --%>
+	 						<td class="table-right" colspan="2"><%= rv.getMemberId() %></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성일자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
-	 						<%-- <td class="table-right" colspan="2"><%= rv.getReviewDate()%></td> --%>
+	 						<td class="table-right" colspan="2"><%= rv.getReviewDate()%></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">사진</td>
@@ -217,7 +217,7 @@
 						</tr>
 	 					<tr>
 	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
-	 						<%-- <td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td> --%>
+	 						<td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td>
 	 					</tr>
 	 						
 	 				</tbody>
@@ -226,7 +226,7 @@
  			</form> 
  		</div>
  	</div>
- 	
+ 	 --%>
  			
             </div>
         </div>
