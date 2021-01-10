@@ -8,7 +8,7 @@ var laptop = function(url){
 	}
 	$.ajax({
 		type: 'POST',
-		url: "../product_index/laptop.jsp",
+		url: "../productList.do?desc=노트북",
 		data: "",
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {
@@ -31,8 +31,8 @@ var phone = function(url){
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {
 			$('#product_list').html(data);
-			alert("okokokokokokokok");
-			var a = "1234";
+/*			alert("okokokokokokokok");
+			var a = "1234";*/
 			
 		},
 		error: function(request, status, error) {
@@ -47,7 +47,7 @@ var tablet = function(url){
 	}
 	$.ajax({
 		type: 'POST',
-		url: "../product_index/tablet.jsp",
+		url: "../productList.do?desc=태블릿PC",
 		data: "",
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {
@@ -66,7 +66,7 @@ var watch = function(url){
 	}
 	$.ajax({
 		type: 'POST',
-		url: "../product_index/watch.jsp",
+		url: "../productList.do?desc=스마트워치",
 		data: "",
 		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 		success: function(data) {

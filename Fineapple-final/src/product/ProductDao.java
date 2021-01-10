@@ -25,7 +25,7 @@ public class ProductDao {
 		public int getTotListSize(String findStr) throws Exception {
 			int totListSize = 0;
 			String sql = "SELECT count(serial)cnt FROM product"
-					+ " WHERE code LIKE ? or name  LIKE ? ";
+					+ " WHERE product_serial LIKE ? or product_name  LIKE ? ";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, "%" + findStr +"%");
@@ -42,7 +42,7 @@ public class ProductDao {
 		//c Read u d
 		public List<ProductVo> selectAllProducts(String description){
 			//최근 등록한 상품 먼저 출력하기
-			String sql = "select * from product where description = ? order by code ";
+			String sql = "select * from product where product_description = ? ";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
@@ -54,13 +54,22 @@ public class ProductDao {
 				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
-					vo.setCode(rs.getInt("code"));
-					vo.setName(rs.getString("name"));
-					vo.setPrice(rs.getInt("price"));
-					vo.setPictureUrl(rs.getString("PICTUREURL"));
-					vo.setDescription(rs.getString("DESCRIPTION"));
-					vo.setLinkUrl(rs.getString("linkurl"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
 					list.add(vo);
+					
+					
+					System.out.println(vo.getProduct_serial());
+					System.out.println(vo.getProduct_name());
+					System.out.println(vo.getProduct_price());
+					System.out.println(vo.getProduct_picture_url());
+					System.out.println(vo.getProduct_description());
+					System.out.println(vo.getProduct_link_url());
+					
 				}
 			
 				
@@ -79,18 +88,18 @@ public class ProductDao {
 				
 				conn = new Application().getConn();
 				
-				String sql = "SELECT * FROM product WHERE name LIKE ?";
+				String sql = "SELECT * FROM product WHERE product_name LIKE ?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, "%" + findStr + "%");
 				rs= ps.executeQuery();
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
-					vo.setCode(rs.getInt("code"));
-					vo.setName(rs.getString("name"));
-					vo.setPrice(rs.getInt("price"));
-					vo.setPictureUrl(rs.getString("PICTUREURL"));
-					vo.setDescription(rs.getString("DESCRIPTION"));
-					vo.setLinkUrl(rs.getString("linkurl"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
 					list.add(vo);
 				}
 

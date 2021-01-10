@@ -25,7 +25,7 @@ public class ProductDao2 {
 		public int getTotListSize(String findStr) throws Exception {
 			int totListSize = 0;
 			String sql = "SELECT count(serial)cnt FROM product"
-					+ " WHERE code LIKE ? or name  LIKE ? ";
+					+ " WHERE product_serial LIKE ? or product_name  LIKE ? ";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, "%" + findStr +"%");
@@ -42,7 +42,7 @@ public class ProductDao2 {
 		//c Read u d
 		public List<ProductVo> selectPricelist(){
 			//낮은 가격 순
-			String sql = "select * from product order by price asc";
+			String sql = "select * from product order by product_price asc";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
@@ -53,12 +53,12 @@ public class ProductDao2 {
 				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
-					vo.setCode(rs.getInt("code"));
-					vo.setName(rs.getString("name"));
-					vo.setPrice(rs.getInt("price"));
-					vo.setPictureUrl(rs.getString("PICTUREURL"));
-					vo.setDescription(rs.getString("DESCRIPTION"));
-					vo.setLinkUrl(rs.getString("linkurl"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
 					list.add(vo);
 				}
 			
@@ -74,7 +74,7 @@ public class ProductDao2 {
 		
 		public List<ProductVo> selectPricelistdesc(){
 			//높은가격 순
-			String sql = "select * from product order by price desc";
+			String sql = "select * from product order by product_price desc";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
@@ -85,12 +85,12 @@ public class ProductDao2 {
 				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
-					vo.setCode(rs.getInt("code"));
-					vo.setName(rs.getString("name"));
-					vo.setPrice(rs.getInt("price"));
-					vo.setPictureUrl(rs.getString("PICTUREURL"));
-					vo.setDescription(rs.getString("DESCRIPTION"));
-					vo.setLinkUrl(rs.getString("linkurl"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
 					list.add(vo);
 				}
 				
@@ -107,7 +107,7 @@ public class ProductDao2 {
 		
 		public List<ProductVo> selectRecentlist(){
 			//높은가격 순
-			String sql = "select * from product order by code ";
+			String sql = "select * from product order by product_serial ";
 			List<ProductVo> list = new ArrayList<ProductVo>();
 			
 			
@@ -118,12 +118,12 @@ public class ProductDao2 {
 				
 				while(rs.next()) {
 					ProductVo vo = new ProductVo();
-					vo.setCode(rs.getInt("code"));
-					vo.setName(rs.getString("name"));
-					vo.setPrice(rs.getInt("price"));
-					vo.setPictureUrl(rs.getString("PICTUREURL"));
-					vo.setDescription(rs.getString("DESCRIPTION"));
-					vo.setLinkUrl(rs.getString("linkurl"));
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
 					list.add(vo);
 				}
 				

@@ -1,51 +1,61 @@
 package product;
 
 public class ProductVo {
-	private Integer code;
-	private String name;
-	private Integer price;
-	private String description;
-	private String pictureUrl;
-	private String linkUrl;
-	
-	
-	
-	public String getLinkUrl() {
-		return linkUrl;
+	private Integer product_serial;
+	private String product_name;
+	private Integer product_price;
+	private String product_description;
+	private String product_picture_url;
+	private String product_link_url;
+	private String youtubeUrl;
+	private String pdInfo;
+	public Integer getProduct_serial() {
+		return product_serial;
 	}
-	public void setLinkUrl(String linkUrl) {
-		this.linkUrl = linkUrl;
+	public void setProduct_serial(Integer product_serial) {
+		this.product_serial = product_serial;
 	}
-	public Integer getCode() {
-		return code;
+	public String getProduct_name() {
+		return product_name;
 	}
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
-	public String getName() {
-		return name;
+	public Integer getProduct_price() {
+		return product_price;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setProduct_price(Integer product_price) {
+		this.product_price = product_price;
 	}
-	public Integer getPrice() {
-		return price;
+	public String getProduct_description() {
+		return product_description;
 	}
-	public void setPrice(Integer price) {
-		this.price = price;
+	public void setProduct_description(String product_description) {
+		this.product_description = product_description;
 	}
-	public String getDescription() {
-		return description;
+	public String getProduct_picture_url() {
+		return product_picture_url;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setProduct_picture_url(String product_picture_url) {
+		this.product_picture_url = product_picture_url;
 	}
-	public String getPictureUrl() {
-		return pictureUrl;
+	public String getProduct_link_url() {
+		return product_link_url;
 	}
-	public void setPictureUrl(String pictureUrl) {
-		this.pictureUrl = pictureUrl;
+	public void setProduct_link_url(String product_link_url) {
+		this.product_link_url = product_link_url;
 	}
-	
+	public String getYoutubeUrl() {
+		return youtubeUrl;
+	}
+	public void setYoutubeUrl(String youtubeUrl) {
+		this.youtubeUrl = youtubeUrl;
+	}
+	public String getPdInfo() {
+		return pdInfo;
+	}
+	public void setPdInfo(String pdInfo) {
+		this.pdInfo = pdInfo;
+	}
 	
 }
