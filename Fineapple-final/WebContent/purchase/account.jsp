@@ -72,11 +72,12 @@
     <script>
   
 
+    // 무통장 입금
     var IMP = window.IMP; // 생략가능
-    IMP.init('imp88752521');  // 가맹점 식별 코드
+    IMP.init('imp85740135');  // 가맹점 식별 코드
     IMP.request_pay({
-    	pg : "kakaopay", // version 1.1.0부터 지원.
-        pay_method : 'card',
+    	pg : "nice", // version 1.1.0부터 지원.
+        pay_method : 'vbank',
         merchant_uid : 'merchant_' + new Date().getTime(),
         name : '주문명:결제테스트',
         amount : 100,
@@ -92,12 +93,12 @@
             location.href='<%=request.getContextPath() %>/purchase/payComplete.jsp';
         } else {
             var msg = '결제에 실패하였습니다.';
-            rsp.error_msg;
+            rsp.error_msg; // 사용자 실패 메세지
             
         }
         alert(rsp.error_msg);
     });
-
+  
 
     </script>
 </body>

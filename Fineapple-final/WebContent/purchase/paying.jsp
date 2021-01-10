@@ -61,7 +61,7 @@
 				</div>
 				<div class="trk-header-align-btn">
 					<form action="/Fineapple-final/purchase/index.jsp" method="POST">
-					<input type="submit" value="취소하기">
+					<input type="submit" value="돌아가기">
 					</form>
 				</div>
 			</section>

@@ -58,7 +58,7 @@
 			</section>
 			
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" name="frm_member" action="" method="post">
+				<form class="frm-member" onsubmit="check();" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
 						<label>주문상품</label>
 					</div>
@@ -159,7 +159,7 @@
 							</div>
 					</div>
 					<div class="frm-submit">
-						<input type="button" onclick="location.href='/Fineapple-final/purchase/paying.jsp'" name="frm_submit" value="결제하기">
+						<input type="submit" id="frm_submit" name="frm_submit" value="결제하기">
 					</div>
 					
 					<div class="frm-kakao">
@@ -176,12 +176,28 @@
 	<!-- footer영역 -->
 	<%@include file="../main/footer.jsp"%>
 	<script>
-	member();
 
-	function button_kakao() {
-		;
-		}
 	
+
+	function check(){
+		var form = document.frm_member;
+		console.log(form.myradio[0].value);
+		//첫번째 라디오 버튼을 선택한 경우
+		if(form.myradio[0].checked == true){
+			
+			
+			form.action='paying.jsp';
+		}
+		//두번째 라디오 버튼을 선택한 경우
+		else if(form.myradio[1].checked == true){
+			form.action='account.jsp';
+		}
+		
+		form.submit();
+	}
+
+	
+
 	
 	</script>
 </body>
