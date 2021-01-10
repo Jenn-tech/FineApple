@@ -58,12 +58,12 @@ public class CartDao {
 			
 			
 			while(rs.next()) {
-				vo.setCode(rs.getInt("code"));
-				vo.setName(rs.getString("name"));
-				vo.setPrice(rs.getInt("price"));
-				vo.setPictureUrl(rs.getString("PICTUREURL"));
-				vo.setDescription(rs.getString("DESCRIPTION"));
-				vo.setLinkUrl(rs.getString("linkurl"));
+				vo.setProduct_serial(rs.getInt("product_serial"));
+	            vo.setProduct_name(rs.getString("product_name"));
+	            vo.setProduct_price(rs.getInt("product_price"));
+	            vo.setProduct_picture_url(rs.getString("product_picture_url"));
+	            vo.setProduct_description(rs.getString("product_description"));
+	            vo.setProduct_link_url(rs.getString("product_link_url"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -78,8 +78,8 @@ public class CartDao {
 		//카트에 상품 담기
 		
 		CartVo2 vo2= new CartVo2();
-		/* int a=SortCart(user_id); */
-		int a=0;
+		int a=SortCart(user_id);
+		
 		try {
 			String sql = "insert into cart values(";
 			if(a ==0){
@@ -108,6 +108,18 @@ public class CartDao {
 			System.out.println("list에 add완료");
 		}
 	}
+	
+	/* deleteCart 추가한거 확인하기
+	 * public void deleteCart(int cart_code) { String
+	 * sql="delete cart where cart_code=?";
+	 * 
+	 * conn=null; ps=null;
+	 * 
+	 * try { conn = new Application().getConn(); ps = conn.prepareStatement(sql);
+	 * 
+	 * ps.setInt(1, cart_code); ps.executeUpdate(); } catch(Exception e) {
+	 * e.printStackTrace(); }finally { Application.close(conn, ps); } }
+	 */
 	
 	
 	public int SortCart(String user_id) {
@@ -174,4 +186,41 @@ public class CartDao {
 		}			
 	}
 	
+	public List<CartListVo> OrderList(String user_id){
+		List<CartListVo> list = new ArrayList<CartListVo>();
+		try {
+			String sql = "select * from cart "
+					+ "join product on cart.product_code=product.product_serial "
+					+ "where userid=? and cart_statement=1";
+			
+			conn = new Application().getConn();
+			ps = conn.prepareStatement(sql);
+			CartListVo vo = new CartListVo();
+			
+			ps.setString(1, user_id);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				vo.setCart_statement(rs.getInt("cart_statement"));
+				vo.setCart_code(rs.getInt("cart_code"));
+				vo.setUserid(rs.getString("userid"));
+				vo.setCart_amount(rs.getInt("cart_amount"));
+				vo.setProduct_code(rs.getInt("product_code"));
+				vo.setProduct_serial(rs.getInt("product_serial"));
+				vo.setProduct_name(rs.getString("product_name"));
+				vo.setProduct_price(rs.getInt("product_price"));
+				vo.setProduct_picture_url(rs.getString("product_picture_url"));
+				
+				System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
+				System.out.println(vo.getCart_statement());
+				list.add(vo);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Application.close(conn, ps, rs);
+			return list;
+		}			
+	}
 }
