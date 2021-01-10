@@ -56,7 +56,7 @@ var notice = function() {
 		if(btnDelete !=null) {
 			btnDelete.onclick = function(){
 			let pwd = prompt("암호입력");
-			if(pwd==12341234){
+			if(pwd==0000){
 				alert('관리자 확인 완료');
 				frm.action = '../notice/delete_result.jsp'
 				frm.submit();
@@ -79,39 +79,3 @@ var notice = function() {
 
 
 
-	$(document).ready( function() {				
-		$(".hide").hide();		
-		$("#favorite").click(function(){			
-			
-			$.post(
-					"/favorite"
-					, {"articleId" : "${article.articleId}"}	
-					, function(data){
-												
-						var jsonData3 = {};
-						try {
-							jsonData3 = JSON.parse(data);
-						}catch(e) {
-							jsonData3.result = false;
-						}
-						console.log(jsonData3);
-						
-						if ( jsonData3.result ){
-							var text = $("#favorite").text();
-							if (jsonData3.isFavorite){
-								$("#favorite").text("♥");
-							}
-							else if (text == "♥"){
-									$("#favorite").text("♡");
-							} 
-						}
-						else {
-							/* alert("세션이 만료되었습니다. 다시 로그인해주세요.");
-							location.href = "/"; */
-						}
-					}
-			);
-		});
-		
-
-	} );

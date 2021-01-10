@@ -40,7 +40,7 @@
 
 		<tr >
 
-			<th>아이디</th><th>회원명</th><th>이메일</th><th>전화</th><th>정보</th>
+			<th>아이디</th><th>회원명</th><th>이메일</th><th>전화</th><th>주소</th>
 
 		</tr>
 
@@ -54,7 +54,7 @@
 				<td><%=vo.getMember_name() %></td>
 				<td><%=vo.getMember_email() %></td>
 				<td><%=vo.getMember_phone() %></td>
-				<td><a href="javascript:admin_view_member('')">상세보기</a></td>
+				<td><%=vo.getMember_address() %></td>
 			</tr>
 	<%} %>
 	</table>	

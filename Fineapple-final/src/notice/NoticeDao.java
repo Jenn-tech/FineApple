@@ -132,7 +132,7 @@ public String insert(NoticeVo vo) {
 }
 
 public String delete(NoticeVo vo) {
-	String msg = "방명록이 삭제되었습니다.";
+	String msg = "삭제되었습니다.";
 	try {
 		String sql = "delete from notice where notice_no=? ";
 		ps = conn.prepareStatement(sql);

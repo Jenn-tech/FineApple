@@ -54,7 +54,7 @@
 				<td><%=vo.getMember_name() %></td>
 				<td><%=vo.getMember_email() %></td>
 				<td><%=vo.getMember_phone() %></td>
-				<td><a href="javascript:admin_view_member('')">상세보기</a></td>
+				<td><%=vo.getMember_address() %></td>
 			</tr>
 	<%} %>
 	</table>	

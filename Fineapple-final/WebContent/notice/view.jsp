@@ -128,12 +128,13 @@
 	<div class = 'btns'>
 	
 		
-		<%if(session.getAttribute("member_mid")!=null){
-		if(session.getAttribute("member_mid").equals("kim")){ 
+		<%
+		String admin = (String)session.getAttribute("adminOk");
+		if(admin !=null){
 		%> 
 		<input type = 'submit' value = '삭제'  name = 'btnDelete' id = 'btnDelete'/>
 		<input type = 'submit' value = '수정'  name = 'btnModify' id = 'btnModify' />
-		<%} }%>
+		<%}%>
 		<input type = 'button' value = '목록'  name = 'btnSelect' id = 'btnSelect' onClick = "history.back()"/>
 		<input type="hidden" name="noticeNo" value ="${notice.noticeNo }"size="5" />
 		<input type = 'hidden' name = 'findStr' value = '${param.findStr }' />

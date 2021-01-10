@@ -3,5 +3,7 @@
 
 <%
 	session.removeAttribute("member_mid");
+	session.removeAttribute("adminOk"); 
+
 	response.sendRedirect("../main/index.jsp");
 %>

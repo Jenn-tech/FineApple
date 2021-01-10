@@ -24,8 +24,9 @@ if(b){
 	response.sendRedirect("../main/index.jsp");
 	
 }else if(admin){
+	session.setAttribute("adminOk", mid);
 
-	session.setAttribute("member_mid", membervo.getAdmin_id());
+	//session.setAttribute("member_mid", membervo.getAdmin_id());
 	response.sendRedirect("../admin/admin_index.jsp");
  } else {%>
 <script>

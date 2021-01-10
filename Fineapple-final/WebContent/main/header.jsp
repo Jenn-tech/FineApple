@@ -56,7 +56,13 @@
                
               
                
-               <%if( session.getAttribute("member_mid")== null){ //mid의 속성이 없으면 로그인 이전화면
+              	<%
+				String admin = (String)session.getAttribute("adminOk");
+				if(admin !=null){
+				%> 
+               <li><a href="<%=request.getContextPath() %>/admin/admin_index.jsp" class="button alt">관리자</a></li>  
+                <li><input type='button' id='btnLogout' value='로그아웃' /></li>         
+               <%}else if( session.getAttribute("member_mid")== null){ //mid의 속성이 없으면 로그인 이전화면
                %>            
                <li>
                   <a href="<%=request.getContextPath() %>/UsersJoin/agree.jsp" class="button alt">회원가입</a>     

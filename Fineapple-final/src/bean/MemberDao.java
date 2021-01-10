@@ -102,7 +102,7 @@ public class MemberDao {
 				vo.setMember_name(rs.getString("member_name"));
 				vo.setMember_email(rs.getString("member_email"));
 				vo.setMember_phone(rs.getString("member_phone"));
-
+				vo.setMember_address(rs.getString("member_address"));
 
 				list.add(vo);
 

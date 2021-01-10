@@ -46,11 +46,14 @@
 	<div id = 'notice_search'>
 		<form name = 'frm_notice' method = 'POST'>
 		
-		<%if(session.getAttribute("member_mid")!=null){
-		if(session.getAttribute("member_mid").equals("kim")){ 
-		%> 
+		<%
+		//if(session.getAttribute("member_mid")!=null){
+		//if(session.getAttribute("member_mid").equals("kim")){ 
+			String admin = (String)session.getAttribute("adminOk");
+			if(admin !=null){
+		%>
 			<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
-		<%}} %>
+		<%} %>
 			<div>
 				<input type = 'text' name = 'findNotice' id = 'findStr' value = '${param.findNotice }'/>
 				<input type = 'button' name = 'btnFind' id = 'btnFind' value='검색'/>
