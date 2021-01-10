@@ -63,7 +63,12 @@
 		<input type="hidden" name="id">
 	</form>
 </div>
-	
+		<div class = 'btns'>
+		<input type = 'button' value = '<'/>
+		<input type = 'button'class = 'num' value = '1'>
+		<input type = 'button' value = '>'/>
+	</div>
+			
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 
