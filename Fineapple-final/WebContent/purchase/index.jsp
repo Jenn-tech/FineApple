@@ -164,7 +164,7 @@
 					
 					<div class="frm-kakao">
 						<div class="kakao_img">
-						<button><img src="../images/UsersJoin/kakao.png"><span>KaKao Pay로 결제하기</span></button>
+						<button type="button" id="frm_kakao" onclick="location.href='/Fineapple-final/purchase/paying_kakao.jsp'"><img src="../images/UsersJoin/kakao.png"><span>KaKao Pay로 결제하기</span></button>
 						</div>
 					</div>
 					
@@ -177,6 +177,12 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
+
+	function button_kakao() {
+		;
+		}
+	
+	
 	</script>
 </body>
 </html>

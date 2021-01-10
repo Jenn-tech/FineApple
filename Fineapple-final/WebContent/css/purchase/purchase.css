@@ -422,7 +422,7 @@
 	width: 505px;
 	height: 80px;
 	background-color: #F7E500;
-	color: black;
+	color: #443731;
 	margin-top: 10px;
 	font-size: 20px;
 	border: white;
@@ -431,6 +431,7 @@
 	align-items:center;
 	align-content: center;
 	justify-content: center;
+	font-weight: 700;
 	
 }
 
@@ -441,4 +442,6 @@
 
 .kakao_img > button > img > span {
 	text-align: center;
+	
+
 }
