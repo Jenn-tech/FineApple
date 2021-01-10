@@ -9,9 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자페이지</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/admin_index.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/admin_index.css">
     <link rel="shortcut icon" href="../images/favicon.png">
     <link rel="icon" href="favicon.ico">
 </head>
@@ -25,7 +25,7 @@
 		<h1 style="font-size: 2em;">관리자페이지</h1>
 		<div class="cs_category">
 			<a href="admin_member.jsp">회원 관리</a>
-			<a href="admin_product.jsp">상품 관리</a>
+			<a href="<%=request.getContextPath() %>/admin.do?job=productSelect">상품 관리</a>
 			<a href="admin_sum.jsp">매출 달력</a>
 		</div>
 </header>
