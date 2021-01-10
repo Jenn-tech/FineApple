@@ -92,7 +92,7 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm_phone" placeholder="0000-0000"}">
+						<input style="font-weight:bold" type="text" name="frm_phone" id="phoneNum" maxlength="9"     placeholder="0000-0000">
 					</div>
 					
 					<div class="frm-label">
@@ -178,6 +178,7 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
+	phoneHypen();
 	</script>
 </body>
 </html>

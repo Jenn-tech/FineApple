@@ -75,7 +75,7 @@
     var IMP = window.IMP; // 생략가능
     IMP.init('imp85740135');  // 가맹점 식별 코드
     IMP.request_pay({
-    	pg : "tlgdacomxpay", // version 1.1.0부터 지원.
+    	pg : "inicis", // version 1.1.0부터 지원.
         pay_method : 'card',
         merchant_uid : 'merchant_' + new Date().getTime(),
         name : '주문명:결제테스트',
@@ -91,11 +91,10 @@
             var msg = '결제가 완료되었습니다.';
             location.href='<%=request.getContextPath() %>/purchase/payComplete.jsp';
         } else {
-            var msg = '결제에 실패하였습니다.';
-            rsp.error_msg; // 사용자 실패 메세지
-            
+            var msg = '결제에 실패하였습니다. ';
+            alert(msg + rsp.error_msg);
         }
-        alert(rsp.error_msg);
+        
     });
 
 

@@ -50,15 +50,15 @@ public class userProfileServlet extends HttpServlet {
 			MemberVo vo = new MemberVo();
 			
 			String song = request.getParameter("frm_phone");
-			String findPhone = dao.sqlSession.selectOne("board.findPhone", song);
-			
+			String song_ = "010-" + song;
+			System.out.println("song :" + song_);
+
 			
 			vo.setMember_mid(request.getParameter("frm-id"));
 			vo.setMember_pwd(request.getParameter("re_frm_password"));
 			vo.setMember_name(request.getParameter("frm-name"));
 			vo.setMember_email(request.getParameter("frm-email"));
-			vo.setMember_phone(findPhone);
-			vo.setMember_phone(request.getParameter("frm_phone"));
+			vo.setMember_phone(song_);
 			vo.setMember_zipcode(request.getParameter("zipcode"));
 			vo.setMember_address(request.getParameter("address"));
 			
