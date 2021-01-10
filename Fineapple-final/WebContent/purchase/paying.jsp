@@ -73,9 +73,9 @@
   
 
     var IMP = window.IMP; // 생략가능
-    IMP.init('imp88752521');  // 가맹점 식별 코드
+    IMP.init('imp85740135');  // 가맹점 식별 코드
     IMP.request_pay({
-    	pg : "kakaopay", // version 1.1.0부터 지원.
+    	pg : "inicis", // version 1.1.0부터 지원.
         pay_method : 'card',
         merchant_uid : 'merchant_' + new Date().getTime(),
         name : '주문명:결제테스트',
@@ -93,7 +93,7 @@
         } else {
             var msg = '결제에 실패하였습니다.';
             msg += '에러내용 : ' + rsp.error_msg;
-            location.href='<%=request.getContextPath() %>/purchase/index.jsp';
+            
         }
         alert(msg);
     });

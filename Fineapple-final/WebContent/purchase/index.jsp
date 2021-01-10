@@ -25,7 +25,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 1700px;
+	height: 1900px;
 }
 </style>
 </head>
@@ -160,6 +160,12 @@
 					</div>
 					<div class="frm-submit">
 						<input type="button" onclick="location.href='/Fineapple-final/purchase/paying.jsp'" name="frm_submit" value="결제하기">
+					</div>
+					
+					<div class="frm-kakao">
+						<div class="kakao_img">
+						<button><img src="../images/UsersJoin/kakao.png"><span>KaKao Pay로 결제하기</span></button>
+						</div>
 					</div>
 					
 					
