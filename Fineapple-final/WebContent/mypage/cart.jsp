@@ -84,15 +84,9 @@ function fnGo(){
 </script>
 </head>
 <!-- header -->
-<%if( session.getAttribute("mid")== null){ //mid의 속성이 없으면 로그인 이전화면
-	%>
 	<jsp:include page="../main/header.jsp"/>
 	
-	<%} else {%>
 	
-	<jsp:include page="../main/header.jsp"/>
-	
-	<%} %>
 	<header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">장바구니</h1>
 		<div class="cs_category">
@@ -158,9 +152,7 @@ function fnGo(){
 			
 			int total=0;
 			
-			for(int j=0;j<cartList.size();j++){
-				total += cartList[j].
-			}
+
 			
 			%>
 			
@@ -209,7 +201,6 @@ function fnGo(){
 					<td class="cart-product-price">${vo.getProduct_price }</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
-				total+=${vo.getProduct_price}*${vo.getProduct_amount};
 				</tr>
 				
 				
@@ -259,7 +250,7 @@ function fnGo(){
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price"></span></td>
+						id="cart_main_total_price">0원</span></td>
 					<td></td>
 				</tr>
 			</tfoot>
