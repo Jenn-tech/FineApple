@@ -101,7 +101,7 @@
 						<label>아이디</label>
 					</div>
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="<%= id%>">
+						<input style="font-weight:bold" type="text" name="frm-id" readonly="readonly" value="${userInfo.getMember_mid() }">
 					</div>
 
 					<div class="frm-label">
@@ -112,7 +112,7 @@
 					</div>
 						
 					<div class="frm-label">
-						<label>비밀번호 재입력</label>
+						<label>새로운 비밀번호</label>
 						
 					</div>
 					<div class="frm-input-password">
@@ -143,7 +143,7 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm-phone" placeholder="3333-3333" value="${userInfo.getMember_phone() }">
+						<input style="font-weight:bold" type="text"  id="phoneNum" name="frm_phone" placeholder="3333-3333" maxlength="9" value="${userInfo.getMember_phone() }">
 					</div>
 
 					<div class="frm-label">
@@ -191,6 +191,7 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 	member();
+	phoneHypen();
 	</script>
 </body>
 </html>

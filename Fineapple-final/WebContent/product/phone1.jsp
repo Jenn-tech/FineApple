@@ -1,3 +1,5 @@
+<%@page import="product.ProductVo"%>
+<%@page import="mypage.CartDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
@@ -25,6 +27,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
+<%
+CartDao dao = new CartDao();
+ProductVo vo =new ProductVo();
+int product_serial=1234;
+int product_amount=12;
+String member_id=(String)session.getAttribute("member_mid");
+
+
+
+//카트 리스트에 추가하기
+/* dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록 */
+
+%>
+
+
 	<!-- header영역 -->
 		<jsp:include page="../main/header.jsp"/>
 
@@ -32,7 +49,7 @@
     <div class="main" id="main">
         <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
         <div class="summary">
-           <form method="get" name="form">
+           <form method="get" name="form" id="form" target="iframe1">
           
                  <input type="hidden" name="phone-img" value="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" />
 	            <div class="테두리">
@@ -304,7 +321,8 @@
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 <script>
-productview()
+
 </script>
 </body>
+<iframe name="iframe1" style="display:none;"></iframe>
 </html>

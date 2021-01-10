@@ -69,6 +69,7 @@ h4{
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" type="text/css"
 	href="https://vendor-cdn.imweb.me/css/site/site2.css?1608687536">
+<script src="../js/cart.js">
 <script type="text/javascript">
 /* funcfion fnPay(){
 	alert("결제 API를 발급받으시기 바랍니다.");
@@ -137,29 +138,18 @@ function fnGo(){
 			<%
 			//해당 상품정보 받아오기
 			CartDao dao = new CartDao();
-			ProductVo vo =new ProductVo();
-			int product_serial=Integer.parseInt(request.getParameter("product_serial"));
-			int product_amount=Integer.parseInt(request.getParameter("amount"));
-			String product_color=request.getParameter("product_color");
+			
 			String member_id=(String)session.getAttribute("member_mid");
 			
-			
-			
-			//카트 리스트에 추가하기
-			dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록
 			List<CartListVo> cartList = dao.CartList(member_id);
+			
+			
 			request.setAttribute("cartList", cartList);
-			
+			request.setAttribute("dao",dao);
 			int total=0;
-			
-			System.out.println(member_id);
-			System.out.println(product_serial);
-			System.out.println(product_amount);
-			System.out.println(product_color);
 			
 			
 			%>
-			
 			<c:forEach var='vo' items="${cartList}">
 			<% 	System.out.println("@@@@@@@@@@@@@@@"); %>
 			<tr class="content" style="overflow: visible;">
@@ -172,7 +162,7 @@ function fnGo(){
 						</div>
 					</td>
 					<td class="cart-item-img-td"><a
-						class="cart-item-wrap" href="/nail/?idx=151">
+						class="cart-item-wrap" onclick="location.href='../product/phone1.jsp'">
 							<div class="cart-item-img">
 								<img
 									src="${vo.getProduct_picture_url()}"
@@ -204,14 +194,13 @@ function fnGo(){
 							</div>
 
 						</div></td>
-					<td class="cart-product-price">${vo.getProduct_price() }</td>
+					<td class="cart-product-price">${vo.getProduct_price() }원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
+					<input type="button" id="delivery-location-btn"  onclick="cart_delete(${vo.getProduct_serial})" style='cursor:pointer;' value="삭제">
 				</tr>
 				
 				
 		</c:forEach>
-			  
 		
 				
 			</tbody>
@@ -224,7 +213,7 @@ function fnGo(){
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price">0원</span></td>
+						id="cart_main_total_price">239800원</span></td>
 					<td></td>
 				</tr>
 			</tfoot>

@@ -91,7 +91,7 @@ $("#kakao-login-btn").on("click", function(){
 			alert('로그인성공');
               //var email = res.kakao_account.email;
 			  //var name = res.properties.nickname;
-			  location.href="test.jsp";
+			  location.href="kakaocallback.jsp";
 		
 
               
