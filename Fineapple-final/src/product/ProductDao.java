@@ -5,7 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
 
 import bean.Application;
 
@@ -13,7 +17,15 @@ public class ProductDao {
 	Connection conn; 
 	PreparedStatement ps; 
 	ResultSet rs;
+	SqlSession sqlSession;
+	
+	
 	public ProductDao() {
+		try {
+			sqlSession = ProductFactory.getFactory().openSession();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 		private static ProductDao instance = new ProductDao();
@@ -122,7 +134,12 @@ public class ProductDao {
 					try {
 				
 				conn = new Application().getConn();
-
+				String findStr = "";
+				int totListSize = getTotListSize(findStr);
+				ProductPage page = new ProductPage();
+				page.setTotListSize(totListSize);
+				page.pageCompute();
+				
 						
 				String sql = "select * from product";
 				ps = conn.prepareStatement(sql);
@@ -151,7 +168,30 @@ public class ProductDao {
 			return list;
 		}
 		
-		
+		public Map<String, Object> select(ProductPage page) {
+			Map<String, Object> map = new HashMap<>();
+			List<ProductVo> list = new ArrayList<>();
+			
+			try {
+				int totListSize = sqlSession.selectOne("admin.tot_list_size");
+				System.out.println(totListSize);
+				
+				page.setTotListSize(totListSize);
+				page.pageCompute();
+				list = sqlSession.selectList("admin.selectAll", page);
+				map.put("page", page);
+				map.put("list", list);
+				
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				sqlSession.close();
+			}
+			return map;
+			
+		}
 	
 		
 		
