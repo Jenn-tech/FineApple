@@ -76,6 +76,8 @@ var inquiry = function() {
 	
 	if(cs_board_btnFind != null) {
 		cs_board_btnFind.onclick = function() {
+			frm.findType.value = $('#cs_findType option:selected').val();
+			alert(frm.findType.value);
 			frm.action = 'inquiry.do?job=select';
 			frm.submit();
 		}

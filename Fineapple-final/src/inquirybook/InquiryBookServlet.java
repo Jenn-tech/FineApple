@@ -36,6 +36,7 @@ public class InquiryBookServlet extends HttpServlet {
 		int nowPage = 1;
 		String findStr = "";
 		String msg = "";
+		String findType = "";
 		int serial = 0;
 		RequestDispatcher rd = null;
 		dao = new InquiryBookDao();
@@ -51,7 +52,12 @@ public class InquiryBookServlet extends HttpServlet {
 		if(req.getParameter("findStr") != null) {
 			findStr = req.getParameter("findStr");
 		}
+		if(req.getParameter("findType") != null) {
+			findType = req.getParameter("findType");
+		}		
 		
+		System.out.println(findType);
+		page.setFindType(findType);
 		page.setNowPage(nowPage);
 		page.setFindStr(findStr);
 		
@@ -65,7 +71,6 @@ public class InquiryBookServlet extends HttpServlet {
 			
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
-			System.out.println(msg);
 			
 			rd = req.getRequestDispatcher("inquiry.do?job=select");
 			rd.forward(req, resp);

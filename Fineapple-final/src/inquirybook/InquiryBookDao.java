@@ -83,14 +83,15 @@ public class InquiryBookDao {
 		List<InquiryBookVo> list = new ArrayList<>();
 		
 		try {
+			System.out.println(page.getFindType() + "nul?"); 
 			int totListSize = sqlSession.selectOne("inquiry.tot_list_size", page);
+			System.out.println(totListSize + "tot");
 			page.setTotListSize(totListSize);
 			page.pageCompute();
 			
 			System.out.println(page.getStartNo());
 			System.out.println(page.getEndNo());
 			list = sqlSession.selectList("inquiry.select", page);
-			System.out.println(list + "+select");
 			map.put("page", page);
 			map.put("list", list);
 			

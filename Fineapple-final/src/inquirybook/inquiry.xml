@@ -48,18 +48,40 @@
 			(SELECT b.inquiry_pserial, b.INQUIRY_PWD, b.INQYIRY_VISIBLE, b.inquiry_serial, b.inquiry_subject, b.inquiry_mid, b.inquiry_date, b.inquiry_hit, 
 			(lpad(' ', (level-1)*6+1, ' ') || decode(LEVEL, 1, ' ', '└ [답변 완료]') || b.inquiry_subject) subject,
 			(select count(photo_serial) cnt from inquiry_photo where photo_pserial=b.inquiry_serial) attCnt 
-			FROM inquiry b WHERE inquiry_subject LIKE '%${findStr}%' OR inquiry_doc LIKE '%${findStr}%'
+			FROM inquiry b WHERE]]>	
+			<choose>
+				<when test="findType == 'null' or findType == ''">
+					INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%' 
+				</when>
+				<when test="findType != 'null' and findStr != ''">
+					INQUIRY_TYPE = #{findType} AND(INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%')
+				</when>
+				<when test="findType != 'null' and findStr == ''">
+					INQUIRY_TYPE = #{findType}
+				</when>
+			</choose>
+		<![CDATA[
 			START WITH inquiry_pserial IS NULL
 			CONNECT BY PRIOR inquiry_serial = inquiry_pserial
 			ORDER SIBLINGS BY inquiry_serial DESC) m
 			) WHERE rno between #{startNo} and #{endNo}
-
 		]]>	 
 	</select>
 	
 	<select id="tot_list_size" resultType="int" parameterType="bean.CsPage">
 		SELECT count(INQUIRY_SERIAL) FROM inquiry
-		WHERE INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%' 
+		WHERE
+		<choose>
+			<when test="findType == 'null' or findType == ''">
+				INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%' 
+			</when>
+			<when test="findType != 'null' and findStr != ''">
+				INQUIRY_TYPE = #{findType} AND(INQUIRY_SUBJECT LIKE '%${findStr}%' OR INQUIRY_DOC LIKE '%${findStr}%')
+			</when>
+			<when test="findType != 'null' and findStr == ''">
+				INQUIRY_TYPE = #{findType}
+			</when>
+		</choose>
 	</select>
 	
 	<select id="view" resultType="inquirybook.InquiryBookVo" parameterType="int" resultMap="voResult">

@@ -12,7 +12,15 @@ public class CsPage {
 	int blockSize = 5;
 	
 	String findStr;
+	String findType;
 	
+	
+	public String getFindType() {
+		return findType;
+	}
+	public void setFindType(String findType) {
+		this.findType = findType;
+	}
 	public CsPage() {}
 	public CsPage(int tot, int now) {
 		this.totListSize = tot;

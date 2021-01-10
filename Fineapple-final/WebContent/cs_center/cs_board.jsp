@@ -20,10 +20,25 @@
 		<div class="cs_board_input">
 			<input type="button" name="btnInsert" value="글쓰기" class="frm_board_btns" id="cs_btnInsert"/>
 			<div class="cs_board_input_select-box">
+			
 			<input type="hidden" name="nowPage" value="${(empty param.nowPage)? 1: param.nowPage}"/>
+			<select name="cs_findType" id="cs_findType" aria-placeholder="문의 유형" size="1" style="width: 24%; height: 30px; border:none; border-bottom: 1px solid #000000;">
+		        <option value="null">문의 유형</option>
+		        <option value="환불">환불</option>
+		        <option value="취소">취소(출하 전 취소)</option>
+		        <option value="배송">배송</option>
+		        <option value="불량/AS">불량/AS</option>
+		        <option value="주문/결제">주문/결제</option>
+		        <option value="상품/재입고">상품/재입고</option>
+		        <option value="적립금">적립금</option>
+		        <option value="회원 관련">회원 관련</option>
+		        <option value="기타 문의">기타 문의</option>
+		        <option value="신고">신고</option>
+		    </select>
 			<input type="text" name="findStr" placeholder="검색어를 입력해주세요!" value="${param.findStr }"/>
 			<input type="button" name="cs_board_btnFind" id="cs_board_btnFind" value="조회" class="frm_board_btns" />
 			<input type='hidden' name='serial'  value='0'/>
+			<input type='hidden' name='findType'  value=''/>
 			<input type='hidden' name='hit'  value='0'/>
 			</div>
 		</div>
