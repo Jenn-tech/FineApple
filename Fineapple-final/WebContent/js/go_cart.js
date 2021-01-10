@@ -15,31 +15,12 @@ function funcPO(){
 	frm.action = "../login/login.jsp";
 	frm.submit();
 }
-var formData = new FormData($('#form')[0]);
-function addCartList(){
-	$.ajax({
-		type: 'POST',
-		url: "../mypage/addcart.jsp",
-		data: formData,
-		cache:false,
-		async: false,
-		contentType:false,
-		processData:false,
-		success: function(data) {
-			
-		},
-		error: function(request, status, error) {
-			alert(error);
-		}
-	});
-};
-function add(){
-	
-	var b ="<%=dao.insertCart(member_id, product_serial, product_amount)%>";
-}
 $().ready(function () {
    $(".btn1").click(function () {
-	
+   var frm = document.form;
+   frm.action = '../mypage/addcart.jsp';
+   frm.submit();
+   
       Swal.fire({
          title: '장바구니에 추가되었습니다.',
          icon: 'success',
@@ -50,15 +31,15 @@ $().ready(function () {
          cancelButtonText: '쇼핑 계속하기'
       }).then((result) => {
           if (result.isConfirmed) {
-             funcCart();
-               
+            frm.target = 'none';
+            frm.action = "../mypage/cart.jsp";
+            frm.submit();
          }else if(result.isCanceled){
             Swal.fire(history.go(-1))
          }
       })
    });
 });
-
 $().ready(function () {
    $(".btn2").click(function () {
 	funcPO();

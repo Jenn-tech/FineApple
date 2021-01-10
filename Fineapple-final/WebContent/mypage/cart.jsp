@@ -69,6 +69,7 @@ h4{
 <link rel="stylesheet" href="../css/indexstyle.css">
 <link rel="stylesheet" type="text/css"
 	href="https://vendor-cdn.imweb.me/css/site/site2.css?1608687536">
+<script src="../js/cart.js">
 <script type="text/javascript">
 /* funcfion fnPay(){
 	alert("결제 API를 발급받으시기 바랍니다.");
@@ -144,12 +145,11 @@ function fnGo(){
 			
 			
 			request.setAttribute("cartList", cartList);
-			
+			request.setAttribute("dao",dao);
 			int total=0;
 			
 			
 			%>
-			
 			<c:forEach var='vo' items="${cartList}">
 			<% 	System.out.println("@@@@@@@@@@@@@@@"); %>
 			<tr class="content" style="overflow: visible;">
@@ -196,12 +196,11 @@ function fnGo(){
 						</div></td>
 					<td class="cart-product-price">${vo.getProduct_price() }원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn" onclick="location.href='' " style='cursor:pointer;' value="삭제">
+					<input type="button" id="delivery-location-btn"  onclick="cart_delete(${vo.getProduct_serial})" style='cursor:pointer;' value="삭제">
 				</tr>
 				
 				
 		</c:forEach>
-			  
 		
 				
 			</tbody>
