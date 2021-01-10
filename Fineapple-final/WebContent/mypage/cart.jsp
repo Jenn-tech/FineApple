@@ -25,7 +25,7 @@ if(obj == null) {	//주문한 제품이 없으면 배열을 생성
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script src='../js/pay.js'></script>
+<!-- <script src='../js/pay.js'></script> -->
 <style>
 .table{
 	margin : 0 auto;
@@ -70,7 +70,7 @@ h4{
 <link rel="stylesheet" type="text/css"
 	href="https://vendor-cdn.imweb.me/css/site/site2.css?1608687536">
 <script type="text/javascript">
-funcfion fnPay(){
+/* funcfion fnPay(){
 	alert("결제 API를 발급받으시기 바랍니다.");
 }
 function fnClear(){
@@ -80,7 +80,7 @@ function fnClear(){
 }
 function fnGo(){
 	location.href="../main/index.jsp";
-}
+} */
 </script>
 </head>
 <!-- header -->
@@ -138,7 +138,7 @@ function fnGo(){
 			//해당 상품정보 받아오기
 			CartDao dao = new CartDao();
 			ProductVo vo =new ProductVo();
-			String product_serial=request.getParameter("product_serial");
+			int product_serial=Integer.parseInt(request.getParameter("product_serial"));
 			int product_amount=Integer.parseInt(request.getParameter("amount"));
 			String product_color=request.getParameter("product_color");
 			String member_id=(String)session.getAttribute("member_mid");
@@ -149,14 +149,14 @@ function fnGo(){
 			dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록
 			List<CartListVo> cartList = dao.CartList(member_id);
 			request.setAttribute("cartList", cartList);
-<<<<<<< HEAD
 			
 			int total=0;
 			
-
-=======
-		
->>>>>>> 363570ec31fe69a03744b7d35f5aab8f9e3a7313
+			System.out.println(member_id);
+			System.out.println(product_serial);
+			System.out.println(product_amount);
+			System.out.println(product_color);
+			
 			
 			%>
 			
@@ -175,16 +175,16 @@ function fnGo(){
 						class="cart-item-wrap" href="/nail/?idx=151">
 							<div class="cart-item-img">
 								<img
-									src="${vo.getProduct_picture_url }"
+									src="${vo.getProduct_picture_url()}"
 									width="70" height="70" alt="cart item">
 							</div>
 
 							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
-								id="shop_cart_title">${vo.getProduct_name }</p>
+								id="shop_cart_title">${vo.getProduct_name() }</p>
 					</a></td>
 					<td class="amount-td">
 						<div class="text-13 title text-center">
-							<span class="cart-product-amount">${vo.getCart_amount }</span></em>
+							<span class="cart-product-amount">${vo.getCart_amount() }</span></em>
 						</div>
 						
 						<div class="text-center">
@@ -204,7 +204,7 @@ function fnGo(){
 							</div>
 
 						</div></td>
-					<td class="cart-product-price">${vo.getProduct_price }</td>
+					<td class="cart-product-price">${vo.getProduct_price() }</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 				</tr>

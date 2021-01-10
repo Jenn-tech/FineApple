@@ -74,25 +74,25 @@ public class CartDao {
 	}
 	
 	
-	public void insertCart(String user_id, String product_code, int cart_amount){
+	public void insertCart(String user_id, int product_code, int cart_amount){
 		//카트에 상품 담기
 		
 		CartVo2 vo2= new CartVo2();
-		int a=SortCart(user_id);
-		
+		/* int a=SortCart(user_id); */
+		int a=0;
 		try {
 			String sql = "insert into cart values(";
 			if(a ==0){
-			sql += "'seq_cart.nextVal', ";}
+			sql += "seq_cart.nextVal, ";}
 			else{ 
-			sql += "'seq_cart.currval', ";
+			sql += "seq_cart.currval, ";
 			}
-			sql += "'0', ?, ?, ?";
-			
+			sql += "0, ?, ?, ?)";
+			System.out.println(sql);
 			conn = new Application().getConn();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1,user_id);
-			ps.setString(2, product_code);
+			ps.setInt(2, product_code);
 			ps.setInt(3, cart_amount);
 			
 			int rowCnt = ps.executeUpdate();
@@ -105,8 +105,8 @@ public class CartDao {
 			e.printStackTrace();
 		} finally {
 			Application.close(conn, ps, rs);
+			System.out.println("list에 add완료");
 		}
-		System.out.println("list에 add완료");
 	}
 	
 	
@@ -130,6 +130,7 @@ public class CartDao {
 			}} catch (Exception e) {
 				e.printStackTrace();
 			}finally{
+				Application.close(conn, ps, rs);
 				return a;
 			}
 		}
@@ -153,18 +154,22 @@ public class CartDao {
 				vo.setCart_statement(rs.getInt("cart_statement"));
 				vo.setCart_code(rs.getInt("cart_code"));
 				vo.setUserid(rs.getString("userid"));
-				vo.setProduct_code(rs.getString("product"));
 				vo.setCart_amount(rs.getInt("cart_amount"));
-				vo.setProduct_serial(rs.getString("product_serial"));
+				vo.setProduct_code(rs.getInt("product_code"));
+				vo.setProduct_serial(rs.getInt("product_serial"));
 				vo.setProduct_name(rs.getString("product_name"));
 				vo.setProduct_price(rs.getInt("product_price"));
 				vo.setProduct_picture_url(rs.getString("product_picture_url"));
+				
+				System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
+				System.out.println(vo.getCart_statement());
 				list.add(vo);
 			}
 			
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			Application.close(conn, ps, rs);
 			return list;
 		}			
 	}

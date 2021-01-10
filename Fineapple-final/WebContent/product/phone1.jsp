@@ -37,7 +37,7 @@
                  <input type="hidden" name="phone-img" value="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" />
 	            <div class="테두리">
 	               <h1>갤럭시 Z 폴드2 5G</h1><input type= hidden name="product_name" value= "갤럭시 Z 폴드2 5G"><br>
-	               상품코드 : SM-F916NZKAKOO<input type=hidden name="product_serial" value= "SM-F916NZKAKOO"><br>
+	               상품코드 : SM-F916NZKAKOO<input type=hidden name="product_serial" value= "1"><br>
 	               판매가 : 2,398,000원<br>
 	               색상 : 미스틱브론즈<input type=hidden name="product_color" value= "미스틱브론즈"><br>
 	               메모리 : 256 GB<br>

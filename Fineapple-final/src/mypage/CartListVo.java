@@ -4,9 +4,9 @@ public class CartListVo {
 	private int cart_code;
 	private int cart_statement;
 	private String userid;
-	private String product_code;
+	private int product_code;
 	private int cart_amount;
-	private String product_serial;
+	private int product_serial;
 	private String product_name;
 	private int product_price;
 	private String product_picture_url;
@@ -29,10 +29,10 @@ public class CartListVo {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getProduct_code() {
+	public int getProduct_code() {
 		return product_code;
 	}
-	public void setProduct_code(String product_code) {
+	public void setProduct_code(int product_code) {
 		this.product_code = product_code;
 	}
 	public int getCart_amount() {
@@ -41,10 +41,10 @@ public class CartListVo {
 	public void setCart_amount(int cart_amount) {
 		this.cart_amount = cart_amount;
 	}
-	public String getProduct_serial() {
+	public int getProduct_serial() {
 		return product_serial;
 	}
-	public void setProduct_serial(String product_serial) {
+	public void setProduct_serial(int product_serial) {
 		this.product_serial = product_serial;
 	}
 	public String getProduct_name() {
