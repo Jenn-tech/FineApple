@@ -13,10 +13,12 @@
 <link rel="stylesheet" href="../css/UsersJoin/agree.css">
 <link rel="stylesheet" href="../css/indexstyle.css">
 
-
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 <script src="../js/userjoin/mypage.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>  
 
 <style>
 .div-container {
@@ -78,7 +80,7 @@
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input style="font-weight:bold" type="text" name="frm_name" placeholder="성명을 입력해주세요." value="${userInfo.getMember_name() }">
+						<input style="font-weight:bold" type="text" name="frm_name" placeholder="성명을 입력해주세요.">
 					</div>
 					
 					<div class="frm-label">
@@ -89,16 +91,16 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm_phone" placeholder="0000-0000" value="${userInfo.getMember_phone() }">
+						<input style="font-weight:bold" type="text" name="frm_phone" placeholder="0000-0000"}">
 					</div>
 					
 					<div class="frm-label">
 						<label>배송정보</label>
 					</div>
 					<div class="frm-input-zipcode">
-						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호" value="${userInfo.getMember_zipcode() }">
+						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호">
 						<input style="font-weight:bold" type="button" name="btnZipcode" id="btnFindZip" value="신규 배송지">
-						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소" value="${userInfo.getMember_address() }">
+						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소">
 					</div>
 						
 					<div class="frm-label">
@@ -106,8 +108,7 @@
 					</div>
 					
 					<div class="frm-input-moving">
-						<select>
-						<option>배송메세지를 선택해 주세요.</option>
+						<select name="btn_select">
 						<option>부재시 문 앞에 부탁드립니다.</option>
 						<option>배송 전 연락바랍니다.</option>
 						<option>경비실에 맡겨주세요.</option>
@@ -177,28 +178,6 @@
 	<%@include file="../main/footer.jsp"%>
 	<script>
 
-	
-
-	function check(){
-		var form = document.frm_member;
-		console.log(form.myradio[0].value);
-		//첫번째 라디오 버튼을 선택한 경우
-		if(form.myradio[0].checked == true){
-			
-			
-			form.action='paying.jsp';
-		}
-		//두번째 라디오 버튼을 선택한 경우
-		else if(form.myradio[1].checked == true){
-			form.action='account.jsp';
-		}
-		
-		form.submit();
-	}
-
-	
-
-	
 	</script>
 </body>
 </html>

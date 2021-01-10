@@ -107,7 +107,8 @@ function joinCheck(obj) {
             checkFlag=false;
          }
 		*/ 
-		
+	
+	
 	if(!deny_char.test(obj.frm_id.value)) {
 		alert('영문자와 한글,숫자만을 입력하세요');
 		obj.frm_id.value ="";
@@ -174,3 +175,23 @@ function joinCheck(obj) {
 	
 	return true;
 }
+
+
+/* 카드로 결제 할 건지, 계좌이체 할 것인지 */
+
+function check(){
+
+		var form = document.frm_member;
+		console.log(form.myradio[0].value);
+		//첫번째 라디오 버튼을 선택한 경우 -> 카드결제
+		if(form.myradio[0].checked == true){
+			
+			form.action='paying.jsp';
+		}
+		//두번째 라디오 버튼을 선택한 경우 -> 무통장입금
+		else if(form.myradio[1].checked == true){
+			form.action='account.jsp';
+		}
+		
+		form.submit();
+	}

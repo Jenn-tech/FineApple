@@ -49,12 +49,16 @@ public class userProfileServlet extends HttpServlet {
 			
 			String name_ID = request.getParameter("frm-name");
 			System.out.println("name_ID : " + name_ID);
+			/* 핸드폰 번호 쿼리문 */
+			String findPhone = dao.sqlSession.selectOne("board.findPhone", name);
+			
 			MemberVo vo = new MemberVo();
+			
 			vo.setMember_mid(request.getParameter("frm-id"));
 			vo.setMember_pwd(request.getParameter("re_frm_password"));
 			vo.setMember_name(request.getParameter("frm-name"));
 			vo.setMember_email(request.getParameter("frm-email"));
-			vo.setMember_phone(request.getParameter("frm-phone"));
+			vo.setMember_phone(findPhone);
 			vo.setMember_zipcode(request.getParameter("zipcode"));
 			vo.setMember_address(request.getParameter("address"));
 			
@@ -63,8 +67,8 @@ public class userProfileServlet extends HttpServlet {
 			/* 마이바티스 유저 정보 검색 쿼리문 */
 			List<MemberVo> list = dao.sqlSession.selectList("board.users", name);
 			
-			/* 핸드폰 번호 쿼리문 */
-			String findPhone = dao.sqlSession.selectOne("board.findPhone", name);
+			
+			
 			
 			/* 유저 객체 저장 */
 			ServletContext app = request.getServletContext();
