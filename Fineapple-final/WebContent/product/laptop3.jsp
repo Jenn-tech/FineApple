@@ -78,17 +78,7 @@
             </div>
             
             <br/><br/><br/><br/><br/>
-            <img class="ipone" width="1000px" src="http://img2.tmon.kr/cdn3/deals/2020/12/17/4977790134/review_16081780198_42a04.jpg">
-            <img class="ipone" width="1000px" src="http://img2.tmon.kr/cdn3/deals/2020/12/17/4977790134/review_16081780193_1e96e.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/75a7/ffa5d7159d981ce648f45c3994945335df62d0359f8c4450a7e93f8cd2e7.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/733f/d44eef7a8e5c7d6c183faf733f94b14b22e89f1af3bca28ef635487395f6.png">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/24ea/6f677f67dd48dfc8375601a0a9e486b91ad52ad5e2c724e7aeb174691bf7.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/61f4/e48421867e23e5f76a7d43fe1e41dcf3ee5d84790c86270a7ead4c4ac9a9.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/089d/16be41fe682e6200f114220d3a89f03cbed7952c74fe82f12360af3f2dd2.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/52ba/dac16abf49391307a83b20b400dd7e50a5afe61b26cc764f7253a29adab8.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/617d/2d348c75d3468bcdf9017c019e0814a8f88e6963a6b4204b7c2daada16ef.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/b189/d64a3e8672e00f8ef20c247411fcac4bf1be13850831afa11db80d3c17d9.jpg">
-            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/4a72/ba16396df05961f92c78fa3bf4131f5947cf47809621d4c5a60fb416b128.jpg">
+            <img class="ipone" width="1000px" src="http://image1.coupangcdn.com/image/vendor_inventory/21d3/dcd60f237b698d2762fc3f0bae4a51b4c1d41cc3b7f8fb68f1bf8c999a13.jpg">
         
         <!-- 상품평 -->
         <div class="review" id="review">

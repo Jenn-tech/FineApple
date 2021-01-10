@@ -7,8 +7,8 @@ public class ProductVo {
 	private String product_description;
 	private String product_picture_url;
 	private String product_link_url;
-	private String youtubeUrl;
-	private String pdInfo;
+	private String product_youtubeUrl;
+	private String product_pdInfo;
 	public Integer getProduct_serial() {
 		return product_serial;
 	}
@@ -45,17 +45,17 @@ public class ProductVo {
 	public void setProduct_link_url(String product_link_url) {
 		this.product_link_url = product_link_url;
 	}
-	public String getYoutubeUrl() {
-		return youtubeUrl;
+	public String getProduct_youtubeUrl() {
+		return product_youtubeUrl;
 	}
-	public void setYoutubeUrl(String youtubeUrl) {
-		this.youtubeUrl = youtubeUrl;
+	public void setProduct_youtubeUrl(String product_youtubeUrl) {
+		this.product_youtubeUrl = product_youtubeUrl;
 	}
-	public String getPdInfo() {
-		return pdInfo;
+	public String getProduct_pdInfo() {
+		return product_pdInfo;
 	}
-	public void setPdInfo(String pdInfo) {
-		this.pdInfo = pdInfo;
+	public void setProduct_pdInfo(String product_pdInfo) {
+		this.product_pdInfo = product_pdInfo;
 	}
 	
-}
+}	

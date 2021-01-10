@@ -1,5 +1,8 @@
+<%@page import="product.ProductVo"%>
+<%@page import="product.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "cs" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -23,24 +26,37 @@
    
 </head>
 <body>
+<%
+  ProductDao dao = new ProductDao();
+  ProductVo vo = new ProductVo();
+  
+  int product_serial = Integer.parseInt(request.getParameter("product_serial"));
+  
+  vo = dao.product_view(product_serial);
+ 	System.out.println(vo.getProduct_serial());
+  request.setAttribute("vo", vo);
+  
+%>
    <!-- header영역 -->
       <jsp:include page="../main/header.jsp"/>
 
     <!-- main -->
+ 
+    
     <div class="main" id="main">
-        <img class="phone-img" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" alt="iPhone 12 Pro" width="600px">
+        <img class="phone-img" src="${vo.getProduct_picture_url() }" alt="iPhone 12 Pro" width="600px">
         <div class="summary">
            <form method="get" name="form" onsubmit="funcCart()">
 				<input type="hidden" name="phone-img" value="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" />	            
 	            <div class="테두리">
-	               <h1>iPhone 12 Pro Max</h1><input type= hidden name="product_name" value= "iPhone 12 Pro Max"><br>
-	               상품코드 : iPhone12ProMax<input type=hidden name="product_serial" value= "iPhone12ProMax"><br>
-	               판매가 : 1,490,000원<br>
+	               <h1>${vo.getProduct_name() }</h1><input type= hidden name="product_name" value= "${vo.getProduct_name() }"><br>
+	               상품코드 : ${vo.getProduct_serial() }<input type=hidden name="product_serial" value= "${vo.getProduct_serial() }"><br>
+	               판매가 : ${vo.getProduct_price() }원<br>
 	               색상 : 퍼시픽블루<input type=hidden name="product_color" value= "퍼시픽블루"><br>
 	               메모리 : 256 GB<br>
 	            </div>
 	                <div class="amount">
-	                    수량  <input type=hidden name="sell_price" value="1490000">
+	                    수량  <input type=hidden name="product_price" value="${vo.getProduct_price() }">
 	                    <input type="button" value=" - " onclick="del();">
 	                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
 	                    <input type="button" value=" + " onclick="add();"><br/>
@@ -59,7 +75,7 @@
     <div class = "menubar2">
         <div class = "여백3"></div>
         <div class="item-title">
-            <a href="#main"><h2>iPhone 12 Pro Max</h2></a>
+            <a href="#main"><h2>${vo.getProduct_name() }</h2></a>
             <div class="item-title2">
                 <ul>
                     <a href="#item-benefits"><li>특장점</li></a>
@@ -74,12 +90,13 @@
         <!-- 특장점 -->
         <div class="item-benefits" id="item-benefits">
             <div class="item-video">
-                <iframe width="1000" height="540" src="https://www.youtube.com/embed/d8GC5Nq5TWU?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="540" src="${vo.getProduct_youtubeUrl() }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
             <br/><br/><br/><br/><br/>
-            <img class="ipone" width="1000px" src="https://thumbnail7.coupangcdn.com/thumbnails/remote/q89/image/retail/images/3193753354917-4988afc6-1d72-4ce2-a371-278fc1b956b5.jpg">
+            <img class="ipone" width="1000px" src="${vo.getProduct_pdInfo() }">
         
+
         <!-- 상품평 -->
         <div class="review" id="review">
             <div class="여백1"></div>

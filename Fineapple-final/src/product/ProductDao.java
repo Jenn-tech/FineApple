@@ -63,12 +63,6 @@ public class ProductDao {
 					list.add(vo);
 					
 					
-					System.out.println(vo.getProduct_serial());
-					System.out.println(vo.getProduct_name());
-					System.out.println(vo.getProduct_price());
-					System.out.println(vo.getProduct_picture_url());
-					System.out.println(vo.getProduct_description());
-					System.out.println(vo.getProduct_link_url());
 					
 				}
 			
@@ -116,7 +110,39 @@ public class ProductDao {
 			return list;
 		}
 		
-		
+		public ProductVo product_view(int product_serial){
+			//최근 등록한 상품 먼저 출력하기
+			String sql = "select * from product where product_serial = ? ";
+			ProductVo vo = new ProductVo();
+					
+			
+			try {
+				conn = new Application().getConn();
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, product_serial);
+				rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					vo.setProduct_serial(rs.getInt("product_serial"));
+					vo.setProduct_name(rs.getString("product_name"));
+					vo.setProduct_price(rs.getInt("product_price"));
+					vo.setProduct_picture_url(rs.getString("product_picture_url"));
+					vo.setProduct_description(rs.getString("product_description"));
+					vo.setProduct_link_url(rs.getString("product_link_url"));
+					
+					
+				
+					
+				}
+			
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				Application.close(conn, ps, rs);
+			}
+			return vo;
+		}
 		
 	
 		
