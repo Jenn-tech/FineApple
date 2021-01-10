@@ -17,7 +17,8 @@
 <link rel="stylesheet" href="../css/notice.css">
 <link rel="stylesheet" href="../css/footer.css">
 <script type="text/javascript" src="../js/notice.js"></script>
-
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <jsp:useBean id="dao" class="notice.NoticeDao"/>
@@ -53,14 +54,14 @@
 			</tr>
 		</table>
 		
-			<label>첨부파일</label>
+<!-- 			<label>첨부파일</label>
 			<input type = 'file' name = 'photo' id='btnPhoto'/>
 			<br><br>
 			<label></label>
 			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
 			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
 			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
-			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>			
+			<img src = 'http://placehold.it/200x140' id=photo width = '200px' height = '140px'/>	 -->		
 			<br><br><br><br>
 			<div class = 'btns'>
 				<input type = 'submit' value = '저장' id = 'btnSave' onclick="save()"/>

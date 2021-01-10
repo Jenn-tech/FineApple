@@ -17,6 +17,8 @@
 <script src='../js/login.js'></script>
 <script src='../js/indexProduct.js'></script>
 <script src='../js/Productlist.js'></script>
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="icon" href="favicon.ico">
 
 		
 </head>

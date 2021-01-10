@@ -13,11 +13,12 @@
 <meta charset="UTF-8">
 <title>notice</title>
 
-<link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/notice.css">
 <link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/header.css">
 <script type="text/javascript" src="../js/notice.js"></script>
-
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <jsp:useBean id="dao" class="notice.NoticeDao"/>

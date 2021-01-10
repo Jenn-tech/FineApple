@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <!-- 카카오 버튼이 생기는 a태그 -->

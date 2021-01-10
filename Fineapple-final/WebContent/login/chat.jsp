@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    
+       <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="icon" href="favicon.ico"> 
 </head>
 <style>
 h4{
