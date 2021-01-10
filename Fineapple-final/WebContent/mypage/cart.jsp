@@ -149,15 +149,21 @@ function fnGo(){
 			dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록
 			List<CartListVo> cartList = dao.CartList(member_id);
 			request.setAttribute("cartList", cartList);
+<<<<<<< HEAD
 			
 			int total=0;
 			
 
+=======
+		
+>>>>>>> 363570ec31fe69a03744b7d35f5aab8f9e3a7313
 			
 			%>
 			
 			<c:forEach var='vo' items="${cartList}">
+			<% 	System.out.println("@@@@@@@@@@@@@@@"); %>
 			<tr class="content" style="overflow: visible;">
+			
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"
@@ -206,39 +212,7 @@ function fnGo(){
 				
 		</c:forEach>
 			  
-		<!-- if(cartList.size() == 0) {
-			out.println("<tr align='center'>");
-				out.println("<td colspan= '5'>");
-					out.println("장바구니에 담긴 상품이 없습니다.");
-					out.println("<a href= '../main/index.jsp'>주문하기</a>");
-				out.println("</td>");
-			out.println("</tr>");
-		} else {
-			int totalSum = 0, total = 0;
-			DecimalFormat df = new DecimalFormat("￦#,##0");
-			for(int i = 0; i < cartList.size(); i++) {
-				out.println("<tr align= 'center'>");
-					out.println("<td>" + (i + 1) + "</td>");
-					out.println("<td>" + cartList[i].getProduct_picture_url + "</td>");
-					out.println("<td>" + df.format(vo.getPrice()) + "</td>");
-					out.println("<td>" + vo.getCnt() + "</td>");
-					total = vo.getPrice() * vo.getCnt();
-					out.println("<td>" + df.format(total) + "</td>");
-				out.println("</tr>");
-				totalSum += total;
-			}
-		out.println("<tr align = 'center'>");
-			out.println("<td colspan= '4'>");
-				out.println("<input type='button' value='결제하기' onclick='fnPay()' />");
-				out.println("<input type='button' value='장바구니 비우기' onclick='fnClear()' />");
-				out.println("<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />");
-			out.println("</td>");
-			out.println("<td>");
-			out.println(df.format(totalSum));
-			out.println("</td>");
-		out.println("</tr>");
-		}//if else
-		%> -->
+		
 				
 			</tbody>
 
