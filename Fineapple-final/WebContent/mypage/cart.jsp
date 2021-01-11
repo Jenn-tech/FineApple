@@ -35,6 +35,11 @@ if(obj == null) {	//주문한 제품이 없으면 배열을 생성
 .cart-box-title{
 	font-size : 15px;
 }
+.orderlist-delivery-location-btn>#delivery-location-btn{
+	background-color : black;
+	color : white;
+	font-size:15px;
+}
 .cart-order-btn>#cart-btn{
 	background-color : black;
 	color : white;
@@ -203,13 +208,15 @@ function fnGo(){
 							</div>
 
 						</div></td>
-					<td class="cart-product-price">${vo.getProduct_price() }원</td>
+					<td class="cart-product-price">${vo.getProduct_price()*vo.getCart_amount()}원</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제" onclick="funcdelete(${vo.getProduct_serial()})">
 				</tr>
+				<c:set var ="sum" value="${sum+vo.getProduct_price()*vo.getCart_amount()}"></c:set>
 		</c:forEach>
 		<form method="get" name="form" id="cartform">
 			<input type="hidden" name="product_s" value="">
+			<input type="hidden" name="product_price" value="">
 		</form>
 		
 				
@@ -223,7 +230,7 @@ function fnGo(){
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price">239800원</span></td>
+						id="cart_main_total_price">${sum}원</span></td>
 					<td></td>
 				</tr>
 			</tfoot>
@@ -247,6 +254,10 @@ function fnGo(){
 		frm.action="deleteAllCart.jsp";
 		frm.submit();
 		}
+	function funcSumCart(price){
+		var frm = document.form;
+		frm.product_price.value=price;
+		frm.action=}
 	</script>
 	</body>
 	 <!-- footer영역 -->

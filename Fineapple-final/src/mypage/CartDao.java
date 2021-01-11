@@ -147,6 +147,26 @@ public class CartDao {
 			  } 
 	}
 	
+	public void sumCart(int product_code, String user_id) {
+		String sql="select sum(cart where product_code=? and userid=? and cart_statement=0";
+		  try { 
+
+			  conn = new Application().getConn();
+				ps = conn.prepareStatement(sql);
+		  
+		  ps.setInt(1, product_code); 
+		  ps.setString(2, user_id); 
+		  ps.executeUpdate(); 
+		  }
+		  catch(Exception e) 
+		  {
+		  e.printStackTrace(); 
+		  }finally { 
+			  Application.close(conn, ps); 
+			  } 
+		  }
+	
+	
 	/*
 	 * public void updateCart(int product_code) { String sql="alter " try {
 	 * 
