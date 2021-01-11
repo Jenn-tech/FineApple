@@ -1,8 +1,13 @@
 
+<%@page import="mypage.CartDao"%>
+<%@page import="mypage.CartListVo"%>
+<%@page import="java.util.List"%>
 <%@page import="org.apache.tomcat.util.http.fileupload.RequestContext"%>
 <%@page import="users.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   	
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +34,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 1900px;
+	height: 2000px;
 }
 </style>
 </head>
@@ -42,7 +47,26 @@
 	String id = (String)session.getAttribute("member_mid");
 	String member_pwd = (String)session.getAttribute("member_pwd");
 	
+	CartDao dao = new CartDao();
+	String member_id=(String)session.getAttribute("member_mid");
+	
+	List<CartListVo> cartList = dao.CartList(member_id);
+	
+	
+	request.setAttribute("cartList", cartList);
+	
+	
+	int total=0;
+	
+	
+	
 	%>
+	
+	<c:forEach var='vo' items="${cartList}">
+		<c:set var ="sum" value="${sum+vo.getProduct_price()*vo.getCart_amount()}"></c:set>
+	</c:forEach>
+	<c:set var="sum" value="${sum}" > </c:set>
+	
 	
 	<header class="cs_func_page_header">
 		<div class="cs_category">
@@ -62,27 +86,35 @@
 			</section>
 			
 			<section class="section-two">
-				<form class="frm-member" onsubmit="check();" id="frm_member" name="frm_member" action="" method="post">
+				<form class="frm-member" onsubmit="check()" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
 						<label>주문상품</label>
 					</div>
+					<c:forEach var='vo' items="${cartList}">
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="MacBook Air 13인치">
+					
+						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="${vo.getProduct_name() }"><br>
+						
 					</div>
+					</c:forEach>
+					
 					
 					<div class="frm-label">
 						<label>주문번호</label>
 					</div>
+					
 					<div class="frm-input-id">
 						<input style="font-weight:bold" type="text" name="frm_num" readonly="readonly" value="20210109FIANAPPLECODE">
 					</div>
-
+					
 
 					<div class="frm-label">
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input style="font-weight:bold" type="text" name="frm_name" placeholder="${vo.getMember_mid() }">
+					
+						<input style="font-weight:bold" type="text" name="frm_name" value="${vo.getMember_mid() }">
+						
 					</div>
 					
 					<div class="frm-label">
@@ -135,13 +167,14 @@
 					<div class= "finalPay_dis cupon_align">
 						<div style="font-size: 20px;">적용 쿠폰<input type="text" id="pay_coupon"></div>
 						<div style="font-size: 20px;">쿠폰 할인 금액
-						<input style="font-weight:bold"  type="text" name="frm_final_dis" placeholder="성명을 입력해주세요." value="0원">
+						<input style="font-weight:bold"  id="finalPay_dis" type="text" name="frm_final_dis" value="0원"/>
+					
 						</div>
 					</div>
 						
 					<div class= "finalPay frm-label">
 						<div>최종 결제 금액 
-						<input style="font-weight:bold" type="text" name="frm_final_pay" placeholder="성명을 입력해주세요." value="0원">
+						<input style="font-weight:bold" id="finalPay"type="text" name="frm_final_pay" value="<fmt:formatNumber>${sum }</fmt:formatNumber>"/>
 						</div>
 					</div>
 					
@@ -181,6 +214,46 @@
 	<script>
 	member();
 	phoneHypen();
+
+	function apply() {
+		var frm = document.frm_member;
+		
+	 	// cupon_select 클래스 가져오기
+	 	let cupon_select = document.querySelector('.cupon_select');
+		
+		// select 값 넘어옴
+		let text = cupon_select.options[cupon_select.selectedIndex].text;
+		
+		
+		let coupon = document.getElementById('pay_coupon'); 
+		
+		coupon.value = text;
+		
+
+		var name = '${sum}';
+		console.log(typeof(name));
+		var sum1 = parseInt(name);
+		console.log(typeof(sum1))
+
+		var sum2 = sum1*0.1;
+		console.log(sum2);
+		
+		var disSum = numberWithCommas("-"+sum2);
+		var finalsum = numberWithCommas(sum1-sum2);
+
+		
+		$('#finalPay_dis').attr('value', disSum);
+		$('#finalPay').attr('value', finalsum);
+
+	
+		console.log(finalsum);
+		
+	}
+		
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
 	</script>
 </body>
 </html>

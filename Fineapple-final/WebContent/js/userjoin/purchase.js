@@ -17,4 +17,7 @@ function apply() {
 	let coupon = document.getElementById('pay_coupon'); 
 	
 	coupon.value = text;
+	
+
+	
 }
