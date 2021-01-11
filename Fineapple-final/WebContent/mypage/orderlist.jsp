@@ -1,5 +1,9 @@
+<%@page import="mypage.CartDao"%>
+<%@page import="mypage.CartListVo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,9 +105,19 @@
 			<tbody>
 			
 			<%
+			CartDao dao = new CartDao();
 			
+			String member_id=(String)session.getAttribute("member_mid");
+			
+			List<CartListVo> orderList = dao.OrderList(member_id);
+			
+			
+			request.setAttribute("orderList", orderList);
+			request.setAttribute("dao",dao);
+			int total=0;
 			
 			%>
+			<c:forEach var='vo' items="${orderList}">
 				<tr class="content" style="overflow: visible;">
 					<td class="slt">
 						<div class="checkbox">
@@ -113,27 +127,22 @@
 						</div>
 					</td>
 					<td class="cart-item-img-td"><a
-						class="cart-item-wrap" href="/nail/?idx=151">
+						class="cart-item-wrap" onclick="location.href='../product/phone1.jsp'">
 							<div class="cart-item-img">
 								<img
-									src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=470&amp;hei=556&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1604021663000"
+									src="${vo.getProduct_picture_url()}"
 									width="70" height="70" alt="cart item">
 							</div>
 
 							<p class="cart-item-title" style="font-size: 18px; text-decoration : none; cursor : pointer; color : black;"
-								id="shop_cart_title">iPhone 12 Pro</p>
+								id="shop_cart_title">${vo.getProduct_name() }</p>
 					</a></td>
 					<td class="amount-td">
 						<div class="text-13 title text-center">
-							<span class="cart-product-amount">1개</span></em>
+							<span class="cart-product-amount">${vo.getCart_amount() }개</span></em>
 						</div>
 						
-						<div class="text-center">
-							<span class="cart-btn-tools"> <a href="javascript:;"
-								class="cart-btn-tools">변경</a>
-								<!-- 아래 옵션 변경과 같은 기능. 모바일에선 해당 버튼은 사라지고 아래 옵션 변경 버튼이 노출-->
-							</span>
-						</div>
+						
 					</td>
 					<td class="cart-delivery-td">
 							<div class="delivery-way">택배</div>
@@ -141,11 +150,11 @@
 					<td class="cart-delivery-price-td">
 						<div class="cart-delivery-price">
 							<div>
-								<span>2,500원</span>
+								<span>무료 배송</span>
 							</div>
 
 						</div></td>
-					<td class="cart-product-price">1,350,000원</td>
+					<td class="cart-product-price"><fmt:formatNumber value="${vo.getProduct_price()*vo.getCart_amount()}" pattern="#,###"></fmt:formatNumber>원</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 				</tr>
@@ -170,6 +179,7 @@
 					</td>
 					<td></td>
 				</tr>
+				</c:forEach>
 			</tbody>
 
 			<tfoot>

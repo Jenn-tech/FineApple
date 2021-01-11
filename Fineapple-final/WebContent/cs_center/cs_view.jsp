@@ -64,6 +64,8 @@
 			<input type="hidden" name="docvisible" value="${vo.docVisible}"/>
 			<input type="hidden" name="hit" value="${vo.hit}"/>
 			<input type="hidden" name="pserial" value="${vo.pserial }">
+			<input type="hidden" name="subject" value="${vo.subject}">
+			<input type="hidden" name="inquiryType" value="${vo.inquiryType}">
 		</div>
 		<div id="cs_modal">
 			<div class="cs_modal_content">
