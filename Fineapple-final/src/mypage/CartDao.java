@@ -77,10 +77,10 @@ public class CartDao {
 
 		try {
 			String sql = "insert into cart values(";
-			if (a == 0) {
+			if (a == 1) {
 				sql += "seq_cart.nextval, ";
 			} else {
-				sql += "seq_cart.currval, ";
+				sql += "seq_cart.nextval, ";
 			}
 			sql += "0, ?, ?, ?)";
 			System.out.println(sql);
@@ -178,17 +178,19 @@ public class CartDao {
 	
 	public int SortCart(String user_id) {
 		CartVo2 vo = new CartVo2();
-		int a = 0;
+		int a = 0; //a는 장바구니 상태 0이면 장바구니 사용중 1이면 장바구니 미사용중
 		try {
-			String sql = "select * from Cart where user_id=?, cart_statement=0";
+			String sql = "select * from Cart where userid= ? and cart_statement=0";
 
 			conn = new Application().getConn();
 			ps = conn.prepareStatement(sql);
-
+			
+			System.out.println(sql);
+			
 			ps.setString(1, user_id);
 			rs = ps.executeQuery();
 
-			if (!rs.next()) { // 장바구니가 비었을 때
+			if (rs != null) { // 장바구니가 비었을 때
 				a = 0;
 			} else {
 				a = 1;
@@ -241,7 +243,7 @@ public class CartDao {
 		List<CartListVo> list = new ArrayList<CartListVo>();
 		try {
 			String sql = "select * from cart " + "join product on cart.product_code=product.product_serial "
-					+ "where userid=? and cart_statement=1";
+					+ "where userid=? and cart_statement=1 ";
 
 			conn = new Application().getConn();
 			ps = conn.prepareStatement(sql);
@@ -261,8 +263,6 @@ public class CartDao {
 				vo.setProduct_price(rs.getInt("product_price"));
 				vo.setProduct_picture_url(rs.getString("product_picture_url"));
 
-				System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
-				System.out.println(vo.getCart_statement());
 				list.add(vo);
 			}
 
@@ -273,4 +273,29 @@ public class CartDao {
 			return list;
 		}
 	}
+	
+	public void payment(String user_id) {
+		try {
+			String sql = "update cart set cart_statement = 1 "
+					+ "where userid=? and cart_statement = 0";
+
+			conn = new Application().getConn();
+			ps = conn.prepareStatement(sql);
+
+			ps.setString(1, user_id);
+			int rowCnt = ps.executeUpdate();
+
+			if(rowCnt<1) {
+			String msg = "장바구니에서 결제내역으로 이동 중 오류 발생";
+				throw new Exception(msg);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			Application.close(conn, ps, rs);
+		}
+	}
+
+	
 }
