@@ -32,8 +32,10 @@
 }
 
 .phone-img{
-    margin-top: 100px;
-    margin-left: 100px;    
+	width: 650px;
+    margin-top: 180px;
+    margin-left: 100px;
+    border-radius: 23px    
 }
 
 .summary{

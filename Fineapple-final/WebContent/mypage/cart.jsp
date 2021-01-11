@@ -153,7 +153,10 @@ function fnGo(){
 			<form method="get" name="form" id="cartform" target="iframe1">
 			<c:forEach var='vo' items="${cartList}">
 			<tr class="content" style="overflow: visible;">
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 562013963ee248712ae5cff93371cf526f226160
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"
@@ -222,7 +225,7 @@ function fnGo(){
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="결제하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='../purchase/index.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
 	
 	</body>
