@@ -28,20 +28,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
-<%
-CartDao dao = new CartDao();
-ProductVo vo =new ProductVo();
-int product_serial=1234;
-int product_amount=12;
-String member_id=(String)session.getAttribute("member_mid");
-
-
-
-//카트 리스트에 추가하기
-/* dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록 */
-%>
-
-
 	<!-- header영역 -->
 		<jsp:include page="../main/header.jsp"/>
 
