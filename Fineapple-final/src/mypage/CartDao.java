@@ -109,9 +109,8 @@ public class CartDao {
 	}
 
 	
-	public void deleteCart(int product_code) { 
-		String sql="delete cart where product_code=?";
-	  
+	public void deleteCart(int product_code,String user_id) { 
+		String sql="delete cart where product_code=? and userid=? and cart_statement=0";
 	 
 	  try { 
 
@@ -119,6 +118,7 @@ public class CartDao {
 			ps = conn.prepareStatement(sql);
 	  
 	  ps.setInt(1, product_code); 
+	  ps.setString(2, user_id); 
 	  ps.executeUpdate(); 
 	  }
 	  catch(Exception e) 
@@ -129,7 +129,19 @@ public class CartDao {
 		  } 
 	  }
 	 
-
+	public void deleteCartAll(String user_id) {
+		
+	}
+	
+	/*
+	 * public void updateCart(int product_code) { String sql="alter " try {
+	 * 
+	 * conn = new Application().getConn(); ps = conn.prepareStatement(sql);
+	 * 
+	 * ps.setInt(1, product_code); ps.executeUpdate(); } catch(Exception e) {
+	 * e.printStackTrace(); }finally { Application.close(conn, ps); } }
+	 */
+	
 	public int SortCart(String user_id) {
 		CartVo2 vo = new CartVo2();
 		int a = 0;

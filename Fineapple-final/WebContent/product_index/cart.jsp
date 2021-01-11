@@ -196,7 +196,7 @@ function fnGo(){
 						</div></td>
 					<td class="cart-product-price">${vo.getProduct_price() }원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn"  onclick="cart_delete(${vo.getProduct_serial})" style='cursor:pointer;' value="삭제">
+					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제">
 				</tr>
 				
 				

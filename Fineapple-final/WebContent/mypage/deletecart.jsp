@@ -19,7 +19,9 @@ String member_id=(String)session.getAttribute("member_mid");
 
 
 //카트 리스트에 추가하기
-dao.deleteCart(product_serial);//카트 db에서 삭제
+dao.deleteCart(product_serial,member_id);//카트 db에서 삭제
+response.sendRedirect("../mypage/cart.jsp");
+
 %>
 </body>
 </html>
