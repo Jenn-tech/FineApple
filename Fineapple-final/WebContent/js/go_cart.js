@@ -15,6 +15,33 @@ function funcPO(){
 	frm.action = "../login/login.jsp";
 	frm.submit();
 }
+
+$().ready(function () {
+   $("#delivery-location-btn").click(function () {
+   var frm = document.form;
+   frm.action = '../mypage/deletecart.jsp';
+   frm.submit();
+   
+      Swal.fire({
+         title: '삭제되었습니다.',
+         icon: 'success',
+         showCancelButton: true, 
+         confirmButtonColor: '#000',
+         cancelButtonColor: '#000', 
+         confirmButtonText: '삭제하기', 
+         cancelButtonText: '취소하기'
+      }).then((result) => {
+          if (result.isConfirmed) {
+            frm.target = 'none';
+            frm.action = "../mypage/cart.jsp";
+            frm.submit();
+         }else if(result.isCanceled){
+            Swal.fire(history.go(-1))
+         }
+      })
+   });
+});
+
 $().ready(function () {
    $(".btn1").click(function () {
    var frm = document.form;

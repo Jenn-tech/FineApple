@@ -150,6 +150,7 @@ function fnGo(){
 			
 			
 			%>
+			<form method="get" name="form" id="cartform" target="iframe1">
 			<c:forEach var='vo' items="${cartList}">
 			<tr class="content" style="overflow: visible;">
 			${vo.getProduct_serial()}
@@ -173,7 +174,7 @@ function fnGo(){
 					</a></td>
 					<td class="amount-td">
 						<div class="text-13 title text-center">
-							<span class="cart-product-amount">${vo.getCart_amount() }</span></em>
+							<span class="cart-product-amount">${vo.getCart_amount() }개</span></em>
 						</div>
 						
 						<div class="text-center">
@@ -197,9 +198,8 @@ function fnGo(){
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제">
 				</tr>
-				
-				
 		</c:forEach>
+		</form>
 		
 				
 			</tbody>
