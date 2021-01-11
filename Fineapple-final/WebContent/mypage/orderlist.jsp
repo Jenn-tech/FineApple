@@ -171,10 +171,10 @@
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
 					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="선택상품 취소">
-					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="선택상품 정보"></td>
+				
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
-						style="font-size: 20px; font-weight: 600;"
+						style="font-size: 18px; font-weight: 600;"
 						id="cart_main_total_price"><fmt:formatNumber value="${sum}" pattern="#,###"></fmt:formatNumber>원</span></td>
 					<td></td>
 				</tr>

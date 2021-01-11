@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -24,8 +25,11 @@
 <%
 	String mid =(String) session.getAttribute("member_mid");
 	request.setAttribute("mid", mid);
+	PrintWriter out1 = response.getWriter();
 	if(mid==null){
-		System.out.print("alert('')");
+		out1.println("<script>alert('로그인 후 작성이 가능합니다'); </script>");
+		response.sendRedirect("../review.do?job=select");
+		out1.flush();
 	}
 %>
 	<h3>리뷰글쓰기</h3>
@@ -41,6 +45,12 @@
 	 					<tr>
 	 						<td class="table-left">제목</td>
 	 						<td class="table-right" colspan="2"><input type="text" placeholder="글 제목" name="reviewTitle" style="width: 100%; height: 45px;" maxlength="50"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">상품명</td>
+	 						<td class="table-right" colspan="2"><input type="button" id="btnProduct" name="btnProduct" value="상품선택" style="width: 10%; height: 45px;" >
+	 						<input type="text" value="" name="productName" style="width: 80%; height: 45px;" readonly="readonly">	
+	 						</td>
 	 					</tr>
 	 					<tr>
 							<td class="table-left">사진</td>
