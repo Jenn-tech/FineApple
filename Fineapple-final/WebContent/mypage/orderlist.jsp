@@ -179,7 +179,7 @@
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
 				
-					<input type="button" id="delete-all-cart-btn" onclick="funcdeleteAllOrderlist()" style='cursor:pointer;' value="전체 상품 삭제">
+					<input type="button" id="delete-all-cart-btn" onclick="funcdeleteAllOrderlist()" style='cursor:pointer;' value="전체 상품 취소">
 				
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
