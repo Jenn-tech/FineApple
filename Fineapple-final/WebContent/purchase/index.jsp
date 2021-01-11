@@ -81,7 +81,7 @@
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input style="font-weight:bold" type="text" name="frm_name" placeholder="성명을 입력해주세요.">
+						<input style="font-weight:bold" type="text" name="frm_name" placeholder="${vo.getMember_mid() }">
 					</div>
 					
 					<div class="frm-label">
@@ -92,16 +92,16 @@
 							<option selected >010</option>
 							<option>017</option>
 						</select>
-						<input style="font-weight:bold" type="text" name="frm_phone" id="phoneNum" maxlength="9"     placeholder="0000-0000">
+						<input style="font-weight:bold" type="text" name="frm_phone" id="phoneNum" maxlength="9" value="${vo.getMember_phone() }" placeholder="0000-0000">
 					</div>
 					
 					<div class="frm-label">
 						<label>배송정보</label>
 					</div>
 					<div class="frm-input-zipcode">
-						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호">
+						<input style="font-weight:bold" type="text" name="zipcode" placeholder="우편번호" value="${vo.getMember_zipcode() }">
 						<input style="font-weight:bold" type="button" name="btnZipcode" id="btnFindZip" value="신규 배송지">
-						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소">
+						<input style="font-weight:bold" type="text" name="address" placeholder="상세주소" value="${vo.getMember_address() }">
 					</div>
 						
 					<div class="frm-label">
