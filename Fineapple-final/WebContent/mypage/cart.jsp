@@ -47,6 +47,13 @@ if(obj == null) {	//주문한 제품이 없으면 배열을 생성
 	height : 30px;
 	width : 130px;
 }
+.cart-btn-choose-product>#delete-all-cart-btn{
+	background-color : black;
+	color : white;
+	font-size:18px;
+	height : 30px;
+	width : 130px;
+}
 .bottom-btn>#cart-btn{
 	background-color : black;
 	color : white;
@@ -56,6 +63,7 @@ if(obj == null) {	//주문한 제품이 없으면 배열을 생성
 	height : 50px;
 	width : 130px;
 	}
+
 h4{
  text-align : center;
 }
