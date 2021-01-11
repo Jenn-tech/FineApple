@@ -52,8 +52,7 @@
 	               <h1>${vo.getProduct_name() }</h1><input type= hidden name="product_name" value= "${vo.getProduct_name() }"><br>
 	               상품코드 : ${vo.getProduct_serial() }<input type=hidden name="product_serial" value= "${vo.getProduct_serial() }"><br>
 	               판매가 : ${vo.getProduct_price() }원<br>
-	               색상 : 퍼시픽블루<input type=hidden name="product_color" value= "퍼시픽블루"><br>
-	               메모리 : 256 GB<br>
+	               색상 : ${vo.getProduct_color() }<input type=hidden name="product_color" value= "${vo.getProduct_color() }"><br>
 	            </div>
 	                <div class="amount">
 	                    수량  <input type=hidden name="product_price" value="${vo.getProduct_price() }">

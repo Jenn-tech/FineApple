@@ -72,6 +72,9 @@ public class ProductDao {
 					vo.setProduct_picture_url(rs.getString("product_picture_url"));
 					vo.setProduct_description(rs.getString("product_description"));
 					vo.setProduct_link_url(rs.getString("product_link_url"));
+					vo.setProduct_youtubeUrl(rs.getString("product_youtubeUrl"));
+					vo.setProduct_pdInfo(rs.getString("product_pdInfo"));
+					vo.setProduct_color(rs.getString("product_color"));
 					list.add(vo);
 					
 					
@@ -122,6 +125,7 @@ public class ProductDao {
 			return list;
 		}
 		
+
 		public ProductVo product_view(int product_serial){
 			//최근 등록한 상품 먼저 출력하기
 			String sql = "select * from product where product_serial = ? ";
@@ -141,7 +145,9 @@ public class ProductDao {
 					vo.setProduct_picture_url(rs.getString("product_picture_url"));
 					vo.setProduct_description(rs.getString("product_description"));
 					vo.setProduct_link_url(rs.getString("product_link_url"));
-					
+					vo.setProduct_youtubeUrl(rs.getString("product_youtubeUrl"));
+					vo.setProduct_pdInfo(rs.getString("product_pdInfo"));
+					vo.setProduct_color(rs.getString("product_color"));
 					
 				
 					
@@ -156,6 +162,7 @@ public class ProductDao {
 			return vo;
 		}
 		
+
 		//전체 상품 목록 출력
 		public ArrayList<ProductVo> getProductAll(){
 			ArrayList<ProductVo> list = new ArrayList<ProductVo>();	

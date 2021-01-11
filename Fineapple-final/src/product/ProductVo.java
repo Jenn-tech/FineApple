@@ -9,6 +9,8 @@ public class ProductVo {
 	private String product_link_url;
 	private String product_youtubeUrl;
 	private String product_pdInfo;
+	private String product_color;
+	
 	public Integer getProduct_serial() {
 		return product_serial;
 	}
@@ -57,5 +59,12 @@ public class ProductVo {
 	public void setProduct_pdInfo(String product_pdInfo) {
 		this.product_pdInfo = product_pdInfo;
 	}
+	public String getProduct_color() {
+		return product_color;
+	}
+	public void setProduct_color(String product_color) {
+		this.product_color = product_color;
+	}
+
 	
 }	
