@@ -6,13 +6,13 @@
 $(document).ready(function(){
     init();
 }) 
-var sell_price;
+var product_price;
 var amount;
 
 function init () {
-    sell_price = document.form.sell_price.value;
+    product_price = document.form.product_price.value;
     amount = document.form.amount.value;
-    document.form.sum.value = sell_price;
+    document.form.sum.value = product_price;
     change();
 }
 
@@ -21,7 +21,7 @@ function add () {
     sum = document.form.sum;
     hm.value ++ ;
 
-    sum.value = parseInt(hm.value) * sell_price;
+    sum.value = parseInt(hm.value) * product_price;
 }
 
 function del () {
@@ -29,7 +29,7 @@ function del () {
     sum = document.form.sum;
         if (hm.value > 1) {
             hm.value -- ;
-            sum.value = parseInt(hm.value) * sell_price;
+            sum.value = parseInt(hm.value) * product_price;
         }
 }
 
@@ -40,7 +40,7 @@ function change () {
         if (hm.value < 0) {
             hm.value = 0;
         }
-    sum.value = parseInt(hm.value) * sell_price;
+    sum.value = parseInt(hm.value) * product_price;
 }
 
 
