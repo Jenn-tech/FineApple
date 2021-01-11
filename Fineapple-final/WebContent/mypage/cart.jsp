@@ -150,13 +150,11 @@ function fnGo(){
 			
 			
 			%>
-			<form method="get" name="form" id="cartform" target="iframe1">
+		
 			<c:forEach var='vo' items="${cartList}">
 			<tr class="content" style="overflow: visible;">
-<<<<<<< HEAD
-			
-=======
->>>>>>> 562013963ee248712ae5cff93371cf526f226160
+
+
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"
@@ -199,9 +197,11 @@ function fnGo(){
 						</div></td>
 					<td class="cart-product-price">${vo.getProduct_price() }원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제">
+					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제" onclick="funcdelete(${vo.getProduct_serial()})">
 				</tr>
 		</c:forEach>
+		<form method="get" name="form" id="cartform">
+			<input type="hidden" name="product_s" value="">
 		</form>
 		
 				
@@ -227,7 +227,14 @@ function fnGo(){
 	<div class="bottom-btn">
 		<input type="button" id="cart-btn" onclick="location.href='../purchase/index.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
-	
+	<script type="text/javascript">
+	function funcdelete(serial){
+		var frm = document.form;
+		frm.product_s.value = serial;
+		frm.action="deletecart.jsp";
+		frm.submit();
+		}
+	</script>
 	</body>
 	 <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
