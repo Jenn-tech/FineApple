@@ -122,7 +122,6 @@ public class ProductDao {
 			return list;
 		}
 		
-<<<<<<< HEAD
 		public ProductVo product_view(int product_serial){
 			//최근 등록한 상품 먼저 출력하기
 			String sql = "select * from product where product_serial = ? ";
@@ -157,73 +156,7 @@ public class ProductDao {
 			return vo;
 		}
 		
-=======
-		//전체 상품 목록 출력
-		public ArrayList<ProductVo> getProductAll(){
-			ArrayList<ProductVo> list = new ArrayList<ProductVo>();	
-					try {
-				
-				conn = new Application().getConn();
-				String findStr = "";
-				int totListSize = getTotListSize(findStr);
-				ProductPage page = new ProductPage();
-				page.setTotListSize(totListSize);
-				page.pageCompute();
-				
-						
-				String sql = "select * from product";
-				ps = conn.prepareStatement(sql);
-				rs = ps.executeQuery();
-				
-				while(rs.next()){
-					ProductVo vo = new ProductVo();
-					vo.setProduct_description(rs.getString("product_description"));
-					vo.setProduct_serial(rs.getInt("product_serial"));
-					vo.setProduct_name(rs.getString("product_name"));
-					vo.setProduct_price(rs.getInt("product_price"));
-					list.add(vo);
-				}
-				
-			} catch (Exception e) {
-				System.out.println("getProductAll err : " + e);
-			} finally {
-				try {
-					rs.close();
-					ps.close();
-					conn.close();
-				} catch (Exception e2) {
-					// TODO: handle exception
-				}
-			}
-			return list;
-		}
 		
-		public Map<String, Object> select(ProductPage page) {
-			Map<String, Object> map = new HashMap<>();
-			List<ProductVo> list = new ArrayList<>();
-			
-			try {
-				int totListSize = sqlSession.selectOne("admin.tot_list_size");
-				System.out.println(totListSize);
-				
-				page.setTotListSize(totListSize);
-				page.pageCompute();
-				list = sqlSession.selectList("admin.selectAll", page);
-				map.put("page", page);
-				map.put("list", list);
-				
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-			finally {
-				sqlSession.close();
-			}
-			return map;
-			
-		}
->>>>>>> 0d5b922a5c980754896107645db2909d6e2e4b68
-	
 		
 		
 		
