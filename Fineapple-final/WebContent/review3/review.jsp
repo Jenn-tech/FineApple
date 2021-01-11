@@ -29,7 +29,10 @@
 <div class="review">
 	<!-- header영역 -->
 		<jsp:include page="../main/header.jsp"/>
-
+<%
+	String mid =(String) session.getAttribute("member_mid");
+	request.setAttribute("mid", mid);
+%>
 
 <header class="cs_func_page_header">
 		<h1 style="font-size: 2em;">커뮤니티</h1>
@@ -52,6 +55,7 @@
 				<input type='button' name='btnFind' id='btnFind' value='검색'/>
 				<input type='hidden' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage}'/>
 				<input type='hidden' name='reviewSerial' />
+				<input type="hidden" name="mid" value="${mid }">
 			</div>
 		</form>
 	</div>

@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
  <figure class="product">
                 <img src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-openbackmysticbronze-308345462?$PD_GALLERY_L_PNG$" width="250px" height="230px" />
-                <figcaption>
+                 <figcaption>
                   <h3>  더 알아보기</h3>
                   <h5>more detail</h5>
-                </figcaption>
+                 </figcaption>
                 <a href="../product/phone1.jsp"></a>
                 <div id="detail">갤럭시 Z 폴드2 5G</br>2,398,000</div>
             </figure>

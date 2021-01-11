@@ -21,6 +21,10 @@
     	<!-- header영역 -->
 		<jsp:include page="../main/header.jsp"/>
 
+<%
+	String mid =(String) session.getAttribute("member_mid");
+	request.setAttribute("mid", mid);
+%>
 	<h3>리뷰글쓰기</h3>
  	<div class="container">
  		<div class="row">
@@ -29,7 +33,7 @@
 	 				<tbody>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
-	 						<td class="table-right" colspan="2"><input type="text"  placeholder="작성자" name="memberId" style="width: 100%; height: 45px;" maxlength="50" value="jeong" readonly="readonly"></td>
+	 						<td class="table-right" colspan="2"><input type="text"  placeholder="작성자" name="memberId" style="width: 100%; height: 45px;" maxlength="50" value="${mid }" readonly="readonly"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">제목</td>
