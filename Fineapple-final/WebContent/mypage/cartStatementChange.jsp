@@ -18,7 +18,7 @@ String memberid=(String)session.getAttribute("member_mid");
 
 //카트 리스트에 추가하기
 dao.payment(memberid);//카트 db에서 statement 1로 변경
-response.sendRedirect("../purchase/purchase.do");
+response.sendRedirect("../purchase/payComplete.jsp");
 
 %>
 </body>
