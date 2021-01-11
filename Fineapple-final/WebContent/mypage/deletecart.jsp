@@ -14,7 +14,7 @@
 //해당 상품정보 받아오기
 System.out.println("deletecart 시작");
 CartDao dao = new CartDao();
-int product_serial=Integer.parseInt(request.getParameter("product_serial"));
+int product_serial=Integer.parseInt(request.getParameter("product_s"));
 String member_id=(String)session.getAttribute("member_mid");
 
 

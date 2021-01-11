@@ -150,10 +150,11 @@ function fnGo(){
 			
 			
 			%>
-			<form method="get" name="form" id="cartform" target="iframe1">
+		
 			<c:forEach var='vo' items="${cartList}">
 			<tr class="content" style="overflow: visible;">
-			${vo.getProduct_serial()}
+
+
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"
@@ -196,9 +197,11 @@ function fnGo(){
 						</div></td>
 					<td class="cart-product-price">${vo.getProduct_price() }원</td>
 					<td class="orderlist-delivery-location-btn">
-					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제">
+					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제" onclick="funcdelete(${vo.getProduct_serial()})">
 				</tr>
 		</c:forEach>
+		<form method="get" name="form" id="cartform">
+			<input type="hidden" name="product_s" value="">
 		</form>
 		
 				
@@ -207,7 +210,7 @@ function fnGo(){
 			<tfoot>
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
-					<input type="button" id="cart-btn" onclick="location.href='cartClear.jsp' " style='cursor:pointer;' value="전체 상품 삭제">
+					<input type="button" id="delete-all-cart-btn" onclick="funcdeleteAllCart()" style='cursor:pointer;' value="전체 상품 삭제">
 					<input type="button" id="cart-btn" onclick="location.href='../main/index.jsp' " style='cursor:pointer;' value="다른 상품 보기"></td>
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
@@ -222,9 +225,21 @@ function fnGo(){
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="결제하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='../purchase/index.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
-	
+	<script type="text/javascript">
+	function funcdelete(serial){
+		var frm = document.form;
+		frm.product_s.value = serial;
+		frm.action="deletecart.jsp";
+		frm.submit();
+		}
+	function funcdeleteAllCart(){
+		var frm = document.form;
+		frm.action="deleteAllCart.jsp";
+		frm.submit();
+		}
+	</script>
 	</body>
 	 <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
