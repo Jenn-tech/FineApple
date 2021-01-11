@@ -37,10 +37,14 @@
 	width :100px;
 	border-bottom: 1px solid #aaaaaa;
 }
-
+.review-table>thead .productName{
+	display : inline-block;
+	width :100px;
+	border-bottom: 1px solid #aaaaaa;
+}
 .review-table>thead .title{
 	display : inline-block;
-	width :500px;
+	width :400px;
 	border-bottom: 1px solid #aaaaaa;
 }
 
@@ -63,10 +67,15 @@
 	height: 35px;
 	line-height: 35px;
 }
-
+.review-table>tbody .productName{
+	display : inline-block;
+	width :100px;
+	height: 35px;
+	line-height: 35px;
+}
 .review-table>tbody .title{
 	display : inline-block;
-	width :500px;
+	width :400px;
 	height: 35px;
 	line-height: 35px;
 }
