@@ -95,7 +95,7 @@
             rsp.error_msg;
             
         }
-        alert(rsp.error_msg);
+       // alert(rsp.error_msg);
     });
 
 

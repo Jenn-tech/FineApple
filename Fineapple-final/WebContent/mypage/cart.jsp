@@ -240,7 +240,7 @@ function fnGo(){
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='../purchase/index.jsp' " style='cursor:pointer;'value="결제하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='../purchase/purchase.do' " style='cursor:pointer;'value="결제하기"> 
 	</div>
 	<script type="text/javascript">
 	function funcdelete(serial){
