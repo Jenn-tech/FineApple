@@ -40,7 +40,7 @@
 	<% 
 	String id = (String)session.getAttribute("member_mid");
 	String member_pwd = (String)session.getAttribute("member_pwd");
-
+	
 	%>
 	
 	<header class="cs_func_page_header">
