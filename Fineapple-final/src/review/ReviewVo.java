@@ -7,7 +7,7 @@ public class ReviewVo {
 	String reviewDate;
 	String reviewDoc;
 	String productName;
-	String reviewCategory;
+	int productSerial;
 	String reviewImg;
 	int reviewAvailable;
 	String delFile;
@@ -55,12 +55,6 @@ public class ReviewVo {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getReviewCategory() {
-		return reviewCategory;
-	}
-	public void setReviewCategory(String reviewCategory) {
-		this.reviewCategory = reviewCategory;
-	}
 	public String getReviewImg() {
 		return reviewImg;
 	}
@@ -72,6 +66,12 @@ public class ReviewVo {
 	}
 	public void setReviewAvailable(int i) {
 		this.reviewAvailable = i;
+	}
+	public int getProductSerial() {
+		return productSerial;
+	}
+	public void setProductSerial(int productSerial) {
+		this.productSerial = productSerial;
 	}
 	
 	

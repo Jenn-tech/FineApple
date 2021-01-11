@@ -65,6 +65,7 @@
  				<thead>
  					<tr class="table-top">
  						<th class="no" style="background-color: #ffffff; text-align: center;">번호</th>
+ 						<th class="productName" style="backlground-color: #ffffff; text-align: center;">상품명</th>
  						<th class="title" style="backlground-color: #ffffff; text-align: center;">제목</th>
  						<th class="name" style="background-color: #ffffff; text-align: center;">작성자</th>
  						<th class="date" style="background-color: #ffffff; text-align: center;">작성일</th>
@@ -75,6 +76,7 @@
 					<c:forEach var='vo' items="${list}">	
 		 				<tr class="table-item" style = "cursor:pointer;" onclick="view('${vo.reviewSerial}')">
 		 					<td class="no">${no}</td>
+		 					<td class="productName">${vo.productName}</td>
 		 					<td class="title">${vo.reviewTitle}</td>
 		 					<td class="name">${vo.memberId}</td>
 		 					<td class="date">${vo.reviewDate}</td> 

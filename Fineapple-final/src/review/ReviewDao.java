@@ -43,7 +43,7 @@ public class ReviewDao {
 			
 			String sql = " select * from ("
 			           + "   select rownum no, m.* from ("
-			           + "     select * from review "
+			           + "     select * from review join product on review.product_serial=product.product_serial "
 					   + "     where review_subject like ? or review_doc like ? or review_no like ? "
 					   + "     order by review_no desc) m   "
 					   + " ) where no between ? and ? ";
@@ -65,6 +65,8 @@ public class ReviewDao {
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
+				vo.setProductName(rs.getString("product_name"));
+				vo.setProductSerial(rs.getInt("product_serial"));
 				//vo.setDelFile(rs.getString("delFile"));
 				list.add(vo);
 			}
