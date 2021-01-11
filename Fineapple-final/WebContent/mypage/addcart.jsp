@@ -12,7 +12,7 @@
 <jsp:include page="../main/header.jsp"/>
 <%
 //해당 상품정보 받아오기
-System.out.println("#############");
+
 CartDao dao = new CartDao();
 ProductVo vo =new ProductVo();
 int product_serial=Integer.parseInt(request.getParameter("product_serial"));

@@ -153,7 +153,7 @@ function fnGo(){
 			<form method="get" name="form" id="cartform" target="iframe1">
 			<c:forEach var='vo' items="${cartList}">
 			<tr class="content" style="overflow: visible;">
-			${vo.getProduct_serial()}
+			
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"
