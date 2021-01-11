@@ -7,7 +7,9 @@
 	margin-top: 50px;
 }
 
-
+.review>.container input{
+	background-color: white;
+}
 /*리뷰 container*/
 .review>.container {
 	width: 70%; 

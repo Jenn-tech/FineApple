@@ -10,8 +10,8 @@
 <head>
 <title>FineApple Review</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/review4.css"> 
 <link rel='stylesheet' type='text/css'
    href='http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css'/>
 <script src='http://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
@@ -35,6 +35,11 @@
 	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
 	 						
 	 					<%-- 	<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td> --%>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">상품명</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.productName }"></td>
+	 						<%-- <td class="table-right" colspan="2"><%= rv.getMemberId() %></td> --%>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
@@ -66,7 +71,7 @@
 						<hr/>
 						</tr>
 	 					<tr>
-	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
+	 						<td class="table-right" id="table-doc" colspan="2"><textarea name="reivewDoc" disabled="disabled" style="height: 350px; width: 100%;" >${vo.reviewDoc }</textarea></td>
 	 						<%-- <td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td> --%>
 	 					</tr>
 	 					

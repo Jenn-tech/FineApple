@@ -131,31 +131,31 @@
 	 				<tbody>
 	 					<tr>
 	 						<td class="table-left">제목</td>
-	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${list.reviewTitle() }"></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${list.getReviewTitle() }"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">상품명</td>
-	 						<td class="table-right" colspan="2"><input type="text" name="productName" disabled="disabled" value="${list.productName() }"></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="productName" disabled="disabled" value="${list.getProductName() }"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
-	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${list.memberId() }"></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${list.getMemberId() }"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성일자</td>
-	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${list.reviewDate() }"></td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${list.getReviewDate() }"></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">사진</td>
 	 						<td  class="table-right" colspan="2">
-	 						<a href='<%=request.getContextPath() %>/review3/upload/${list.reviewImg()}' download = '${list.reviewImg() }'>
-										<img src='<%=request.getContextPath() %>/review3/upload/${list.reviewImg()}' width='200px' height='140px'/>
+	 						<a href='<%=request.getContextPath() %>/review3/upload/${list.getReviewImg()}' download = '${list.getReviewImg() }'>
+										<img src='<%=request.getContextPath() %>/review3/upload/${list.getReviewImg()}' width='200px' height='140px'/>
 									</a>
 							</td>	
 						<hr/>
 						</tr>
 	 					<tr>
-	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${list.reviewDoc() }"></td>
+	 						<td class="table-right" id="table-doc" colspan="2"><textarea name="reivewDoc" disabled="disabled" style="height: 350px; width: 100%;" >${list.getReviewDoc() }"></textarea></td>
 	 					</tr>
 	 						
 	 				</tbody>

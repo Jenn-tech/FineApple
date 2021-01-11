@@ -216,6 +216,8 @@ public class ReviewDao {
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
+				vo.setProductName(rs.getString("product_name"));
+				vo.setProductSerial(rs.getInt("review_serial"));
 				
 				System.out.println(vo.getReviewSerial());
 			}
@@ -243,7 +245,7 @@ public class ReviewDao {
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
 				vo.setProductName(rs.getString("product_name"));
-				vo.setProductSerial(rs.getInt("review_serial"));
+				vo.setProductSerial(rs.getInt("product_serial"));
 				list.add(vo);
 				
 				
