@@ -22,7 +22,10 @@
 				function funcgo(serial){
 					var frm = document.frm;
 					frm.product_serial.value = serial;
+<<<<<<< HEAD
 					/* alert(frm.product_serial.value); */
+=======
+>>>>>>> a3152d3f8efa5a66cc7282871b12d649c1556871
 					$('.frm').submit();
 				}
 				</script>

@@ -3,7 +3,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
+	<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,28 +158,12 @@
 					<td class="cart-product-price"><fmt:formatNumber value="${vo.getProduct_price()*vo.getCart_amount()}" pattern="#,###"></fmt:formatNumber>원</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
+					<c:set var ="sum" value="${sum+vo.getProduct_price()*vo.getCart_amount()}"></c:set>
 				</tr>
 				
 				
 		
-				<tr class="payment-info">
-					<td colspan="4"></td>
-					<td class="pay-txt">
-						<p style="font-size:17px;">상품가격</p>
-						<p style="font-size:17px;">배송비</p>
-
-					</td>
-					<td class="pay-number">
-
-						<p class="cart-final-product-price">
-							<span class="opacity-0" style="font-size:17px;">3,150,000원</span>
-						</p>
-						<p class="cart-final-delivery-price">
-							<span class="opacity-0" style="font-size:17px;">2,500원</span>
-						</p>
-					</td>
-					<td></td>
-				</tr>
+		
 				</c:forEach>
 			</tbody>
 
@@ -190,7 +175,7 @@
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price">3,152,500원</span></td>
+						id="cart_main_total_price"><fmt:formatNumber value="${sum}" pattern="#,###"></fmt:formatNumber>원</span></td>
 					<td></td>
 				</tr>
 			</tfoot>

@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "cs" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -20,7 +21,8 @@
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
     <link rel="shortcut icon" href="<%=request.getContextPath() %>/images/favicon.png">
     <link rel="icon" href="favicon.ico">
-    <script src='../js/go_cart.js'></script>  
+    <script src='../js/go_cart.js'></script>
+    <script src='../js/comma.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
    
@@ -51,13 +53,13 @@
 	            <div class="테두리">
 	               <h1>${vo.getProduct_name() }</h1><input type= hidden name="product_name" value= "${vo.getProduct_name() }"><br>
 	               상품코드 : ${vo.getProduct_serial() }<input type=hidden name="product_serial" value= "${vo.getProduct_serial() }"><br>
-	               판매가 : ${vo.getProduct_price() }원<br>
+	               판매가 : <fmt:formatNumber value="${vo.getProduct_price() }" type="number"/>원<br>
 	               색상 : ${vo.getProduct_color() }<input type=hidden name="product_color" value= "${vo.getProduct_color() }"><br>
 	            </div>
 	                <div class="amount">
-	                    수량  <input type=hidden name="product_price" value="${vo.getProduct_price() }">
+	                    수량  <input type=hidden id="moneyComma" name="product_price" value="${vo.getProduct_price() }" />
 	                    <input type="button" value=" - " onclick="del();">
-	                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
+	                    <input type="text" id="money" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
 	                    <input type="button" value=" + " onclick="add();"><br/>
 	                    금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
 	                </div><br>
