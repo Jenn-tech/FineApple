@@ -232,10 +232,7 @@ function fnGo(){
 				</tr>
 			</tfoot>
 		</table>
-<%
-	String sum = (String)pageContext.getAttribute("sum");
-	session.setAttribute("sum", sum);
-%>
+
 			
 	</div>
 	<!--END-->
