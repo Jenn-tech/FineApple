@@ -66,7 +66,7 @@
 						<label>주문상품</label>
 					</div>
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="아보카도 중대과 175g 내외 10개입">
+						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="MacBook Air 13인치">
 					</div>
 					
 					<div class="frm-label">
