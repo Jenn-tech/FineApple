@@ -247,12 +247,12 @@ public class CartDao {
 
 			conn = new Application().getConn();
 			ps = conn.prepareStatement(sql);
-			CartListVo vo = new CartListVo();
 
 			ps.setString(1, user_id);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
+				CartListVo vo = new CartListVo();
 				vo.setCart_statement(rs.getInt("cart_statement"));
 				vo.setCart_code(rs.getInt("cart_code"));
 				vo.setUserid(rs.getString("userid"));
