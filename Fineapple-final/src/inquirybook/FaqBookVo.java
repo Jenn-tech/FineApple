@@ -3,6 +3,15 @@ package inquirybook;
 public class FaqBookVo {
 	String subject;
 	String doc;
+	String docType;
+	
+	
+	public String getDocType() {
+		return docType;
+	}
+	public void setDocType(String docType) {
+		this.docType = docType;
+	}
 	public String getSubject() {
 		return subject;
 	}
