@@ -17,15 +17,11 @@
 	String mid = (String)session.getAttribute("member_mid");
 	
 	if(mid != null){
-		dao.insertCart(mid, product_serial, product_amount);
-		System.out.print("이거 되냐구..");
-	%>
-		<script>location.href = "../purchase/index.jsp"; </script>
-	<%
+		response.sendRedirect("../purchase/index.jsp"); 
+
 	}else{
-		System.out.print("이거 안되냐구..");
-	%>
-		<script>location.href = "../login/loginfo.jsp"; </script>
-	<%}%>
+		response.sendRedirect("../login/loginfo.jsp");
+	}
+%>
 </body>
 </html>
