@@ -1,3 +1,4 @@
+<%@page import="review.ReviewDao"%>
 <%@page import="product.ProductVo"%>
 <%@page import="product.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -29,7 +30,7 @@
 <%
   ProductDao dao = new ProductDao();
   ProductVo vo = new ProductVo();
-  
+  ReviewDao rdao = new ReviewDao();
   int product_serial = Integer.parseInt(request.getParameter("product_serial"));
   
   vo = dao.product_view(product_serial);

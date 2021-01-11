@@ -227,12 +227,12 @@ public class ReviewDao {
 		}
 	}
 	
-	public List<ReviewVo> viewList(int reviewSerial){
+	public List<ReviewVo> viewList(int productSerial){
 		List<ReviewVo> list = new ArrayList<ReviewVo>();
 		try {
-			String sql = "select * from review where review_no = ? ";
+			String sql = "select * from review where product_serial = ? ";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, reviewSerial);
+			ps.setInt(1, productSerial);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				ReviewVo vo = new ReviewVo();
@@ -242,6 +242,8 @@ public class ReviewDao {
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
+				vo.setProductName(rs.getString("product_name"));
+				vo.setProductSerial(rs.getInt("review_serial"));
 				list.add(vo);
 				
 				
