@@ -34,7 +34,7 @@
 	border: 1px solid #d2d6dc;
 	box-shadow: 0px 0px 10px 10px white;
 	background-color: white;
-	height: 1900px;
+	height: 2000px;
 }
 </style>
 </head>
@@ -59,13 +59,13 @@
 	int total=0;
 	
 	
+	
 	%>
 	
 	<c:forEach var='vo' items="${cartList}">
 		<c:set var ="sum" value="${sum+vo.getProduct_price()*vo.getCart_amount()}"></c:set>
 	</c:forEach>
 	<c:set var="sum" value="${sum}" > </c:set>
-	<h1>안녕${sum }</h1>
 	
 	
 	<header class="cs_func_page_header">
@@ -86,27 +86,35 @@
 			</section>
 			
 			<section class="section-two">
-				<form class="frm-member" id="frm_member" name="frm_member" action="" method="post">
+				<form class="frm-member" onsubmit="check()" id="frm_member" name="frm_member" action="" method="post">
 					<div class="frm-label">
 						<label>주문상품</label>
 					</div>
+					<c:forEach var='vo' items="${cartList}">
 					<div class="frm-input-id">
-						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="MacBook Air 13인치">
+					
+						<input style="font-weight:bold" type="text" name="frm_id" readonly="readonly" value="${vo.getProduct_name() }"><br>
+						
 					</div>
+					</c:forEach>
+					
 					
 					<div class="frm-label">
 						<label>주문번호</label>
 					</div>
+					
 					<div class="frm-input-id">
 						<input style="font-weight:bold" type="text" name="frm_num" readonly="readonly" value="20210109FIANAPPLECODE">
 					</div>
-
+					
 
 					<div class="frm-label">
 						<label>이름</label>
 					</div>
 					<div class="frm-input-name">
-						<input style="font-weight:bold" type="text" name="frm_name" placeholder="${vo.getMember_mid() }">
+					
+						<input style="font-weight:bold" type="text" name="frm_name" value="${vo.getMember_mid() }">
+						
 					</div>
 					
 					<div class="frm-label">
@@ -148,7 +156,7 @@
 					</div>
 					<div class="frm-input-cupon">
 						<select class="cupon_select">
-						<option>FineApple 임직원 30%</option>
+						<option>FineApple 임직원 30% 할인</option>
 						<option>FineApple 오픈 기념 10% 할인</option>
 						</select>
 						<input type="button" name="frm_sales" value="적용" onclick="apply();"/>
