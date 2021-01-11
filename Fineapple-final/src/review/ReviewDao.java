@@ -83,15 +83,16 @@ public class ReviewDao {
 		String msg = "리뷰가 정상적으로 저장되었습니다.";
 		
 		try {
-			String sql = "insert into review(review_no, review_mid, review_subject, review_date, review_doc, review_photo)"
-					+ "values(seq_review.nextval,?,?,sysdate,?,?)";
+			String sql = "insert into review(review_no, review_mid, review_subject, review_date, review_doc, review_photo, product_name, product_serial)"
+					+ " values(seq_review.nextval,?,?,sysdate,?,?,?,?)";
 			
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, vo.getMemberId());
 				ps.setString(2, vo.getReviewTitle());
 				ps.setString(3, vo.getReviewDoc());
 				ps.setString(4, vo.getReviewImg());
-				
+				ps.setString(5, vo.getProductName());
+				ps.setInt(6, vo.getProductSerial());
 				
 				int rowCnt = ps.executeUpdate();
 				if (rowCnt<1) {

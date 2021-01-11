@@ -19,6 +19,14 @@ var review = function(){
 	var btnModify = getID('btnModify');
 	var btnUpdate = getID('btnUpdate');
 	var btnDelete = getID('btnDelete');
+	var btnProduct = getID('btnProduct');
+	
+	if(btnProduct != null){//write에서 상품 불러오기
+		btnProduct.onclick = function(){
+			var win = window.open('../review3/insertProduct.jsp', 'win', 'width=600px, height=500px, left=300px, top=300px')
+		}
+	}
+	
 	
 	if(btnDelete != null){//삭제하기
 		btnDelete.onclick = function(){

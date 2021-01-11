@@ -1,3 +1,4 @@
+<%@page import="product.ProductDao"%>
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -31,6 +32,7 @@
 		response.sendRedirect("../review.do?job=select");
 		out1.flush();
 	}
+	
 %>
 	<h3>리뷰글쓰기</h3>
  	<div class="container">
@@ -69,6 +71,7 @@
 	 			<div class = 'btns'>
 	 				<input type="button" class="btn-review-write" id="btnSave" value="글쓰기"/>
 	 				<input type='button' value='목록으로' id='btnSelect' />
+	 				<input type="text" value="" name="productSerial" >
  				</div>
  			</form>
  		</div>

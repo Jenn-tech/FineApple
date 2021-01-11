@@ -41,8 +41,8 @@ public class ReviewFileUpload {
 		vo.setReviewTitle(mul.getParameter("reviewTitle"));
 		vo.setReviewDate(mul.getParameter("reviewDate"));
 		vo.setReviewDoc(mul.getParameter("reviewDoc"));
-		//vo.setProductName(mul.getParameter("productName"));
-		//vo.setReviewCategory(mul.getParameter("reviewCategory"));
+		vo.setProductName(mul.getParameter("productName"));
+		vo.setProductSerial(Integer.parseInt(mul.getParameter("productSerial")));
 		vo.setReviewImg(sysFile);
 		System.out.println("2sys"+sysFile);
 
