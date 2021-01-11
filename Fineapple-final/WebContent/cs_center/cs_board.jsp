@@ -64,6 +64,23 @@
 	
 	<div class="cs_board_items">
 		<c:set var="no" value="${page.startNo}"></c:set>
+			<% 
+			String admin = (String)session.getAttribute("adminOk");
+			if(admin != null) {
+			%>
+			<c:forEach var="vo" items="${list}">
+						<div class="cs_board_item" onclick="view('${vo.serial}', '${vo.hit}')">
+							<span class="no">${no}</span>
+							<span class="subject">${vo.subject}</span>
+							<span class="name">${vo.memberName}</span>
+							<span class="mdate">${vo.created}</span>
+							<span class="hit">${vo.hit}</span>
+						</div>
+				<c:set var="no" value="${no=no+1 }"></c:set>	
+			</c:forEach>
+			<%}
+			else {
+			%>
 			<c:forEach var="vo" items="${list}">
 				<c:set var="visible" value="${vo.docVisible}"></c:set>
 				<c:choose>
@@ -89,6 +106,7 @@
 				</c:choose>	
 				<c:set var="no" value="${no=no+1 }"></c:set>	
 			</c:forEach>
+			<%} %>
 	</div>
 	
 	<div class="cs_board_paging">

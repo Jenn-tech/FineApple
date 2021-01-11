@@ -49,7 +49,11 @@ var inquiry = function() {
 	var cs_update_btnReturn = getID('cs_update_btnReturn');
 	var cs_board_btnFind = getID('cs_board_btnFind');
 	var cs_update_answer_btnSave = getID('cs_update_answer_btnSave');
+	var cs_view_btnUpdate_admin = getID('cs_view_btnUpdate_admin');
+	var cs_view_btnDelete_admin = getID('cs_view_btnDelete_admin');
+	
 	var frm = document.cs_frm_board;
+	
 	
 	
 	if(cs_update_answer_btnSave != null) {
@@ -196,20 +200,38 @@ var inquiry = function() {
 			alert("정상적으로 삭제되었습니다.")
 		}
 	}
+	if(cs_view_btnDelete_admin != null) {
+		cs_view_btnDelete_admin.onclick = function() {
+			alert("삭제 되었습니다.");
+			frm.action = 'inquiry.do?job=delete';
+			frm.submit(); 
+		}
+	}
+	
+	
+	if(cs_view_btnUpdate_admin != null) {
+		cs_view_btnUpdate_admin.onclick = function() {
+			frm.action = 'inquiry.do?job=Aupdate';
+			frm.submit();
+		}
+	}
 
 	/*Q&A 글에서 수정으로 들어가는 키*/
 	if(cs_view_btnUpdate != null) {
 		cs_view_btnUpdate.onclick = function() {
 			var pserial = frm.pserial.value;
+			var checkpwd = frm.checkpwd_update.value;
+			
 			if(pserial === '0') {
+				if(checkpwd === frm.pwd.value) {
 				frm.action = 'inquiry.do?job=update';
 				frm.submit();
+				}
+				else {
+					alert("비밀번호가 틀렸습니다. 다시 입력해주세요.");
+					return;
+				}
 			}
-			else {
-				frm.action = 'inquiry.do?job=Aupdate';
-				frm.submit();
-			}
-
 		}
 	}
 
@@ -423,15 +445,24 @@ var gofaq = function(value) {
 /*--------------- modal  ---------------*/
 
 var modal = function() {
-	 document.getElementById("cs_modal_btnOpen").onclick = function() {
+	document.getElementById("cs_modal_btnOpen").onclick = function() {
         document.getElementById("cs_modal").style.display="block";
     }
+	
 	document.getElementById("cs_modal_close_btns").onclick = function() {
         document.getElementById("cs_modal").style.display="none";
 	}
 }
 
-
+var modalUpdate = function() {
+	document.getElementById("cs_view_btnOpen_update").onclick = function() {
+        document.getElementById("cs_modal_update").style.display="block";
+    }
+	
+	document.getElementById("cs_modal_close_btn_update").onclick = function() {
+        document.getElementById("cs_modal_update").style.display="none";
+	}
+}
 
 
 

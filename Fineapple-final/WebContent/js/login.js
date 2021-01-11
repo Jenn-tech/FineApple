@@ -11,7 +11,7 @@ var logInOut = function(){
 	if(btnLogin != null){
 	btnLogin.onclick = function(){
 		var frm = document.form_log; //name가져옴
-		frm.action = '../login/login.jsp';
+		frm.action = '/Fineapple-final/login/login.jsp';
 		frm.submit();
 	}
 	}
@@ -20,7 +20,7 @@ var logInOut = function(){
 	btnLogout.onclick = function(){
 		if( confirm("정말 로그아웃 하시겠습니까?")){
 		alert("로그아웃되었습니다");
-		location.href = '../login/logout.jsp';
+		location.href = '/Fineapple-final/login/logout.jsp';
 		}
 	}
 	}
