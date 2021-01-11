@@ -37,12 +37,12 @@
 				        <option value="환불">환불</option>
 				        <option value="취소">취소(출하 전 취소)</option>
 				        <option value="배송">배송</option>
-				        <option value="불량/AS">불량/AS</option>
-				        <option value="주문/결제">주문/결제</option>
-				        <option value="상품/재입고">상품/재입고</option>
+				        <option value="불량AS">불량/AS</option>
+				        <option value="주문결제">주문/결제</option>
+				        <option value="상품재입고">상품/재입고</option>
 				        <option value="적립금">적립금</option>
-				        <option value="회원 관련">회원 관련</option>
-				        <option value="기타 문의">기타 문의</option>
+				        <option value="회원관련">회원 관련</option>
+				        <option value="기타문의">기타 문의</option>
 				        <option value="신고">신고</option>
 				    </select>
 				</div>

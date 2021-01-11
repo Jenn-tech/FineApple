@@ -168,6 +168,7 @@ var inquiry = function() {
 			checkFlag=false;
 		}
 		if(checkFlag) {
+			alert(frm.inquiryType.value)
 			frm.enctype = 'multipart/form-data';
 			frm.action ='../inquiry.do?job=insertA';
 			frm.submit();

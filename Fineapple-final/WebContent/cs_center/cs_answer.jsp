@@ -16,7 +16,7 @@
 		<div class="frm_cs_notice_body">
 			<div class="frm_cs_notice_body_item">
 				<label>제목</label>
-				<input type="text" name="subject" id="subject" placeholder="제목을 입력해주세요." required>
+				<input type="text" name="subject" id="subject" placeholder="제목을 입력해주세요." value="${param.subject }" required>
 				<label>작성자</label>
 				<input type="text" name="name" id="name" value="운영관리자" readOnly>
 			</div> 
@@ -39,7 +39,7 @@
 		<input type="hidden" name="nowPage" value="${param.nowPage}"/>
 		<input type="hidden" name="findStr" value="${param.findStr}"/>
 		<input type="hidden" name="mserial" value="0"/>
-		<input type="hidden" name="inquiryType" value="0"/>
+		<input type="hidden" name="inquiryType" value="${param.inquiryType }"/>
 		<input type="hidden" name="docvisible" value="${param.docvisible}"/>
 		<input type="hidden" name="hit" value="${param.hit}"/>
 		<input type="hidden" name="pwd" value="${param.pwd}"/>
