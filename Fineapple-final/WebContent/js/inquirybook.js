@@ -181,7 +181,7 @@ var inquiry = function() {
 			checkFlag = true;
 			
 		frm.inquiryType.value = $('#cs_inquiryType option:selected').val();
-		
+			
 		if($('#cs_check').is(":checked")) {
 			frm.docvisible.value = 'yes';
 		}
