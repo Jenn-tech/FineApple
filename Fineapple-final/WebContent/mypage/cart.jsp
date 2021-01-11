@@ -226,7 +226,7 @@ function fnGo(){
 					<input type="button" id="cart-btn" onclick="location.href='../main/index.jsp' " style='cursor:pointer;' value="다른 상품 보기"></td>
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
-						style="font-size: 20px; font-weight: 600;"
+						style="font-size: 18px; font-weight: 600;"
 						id="cart_main_total_price"><fmt:formatNumber value="${sum}" pattern="#,###"></fmt:formatNumber>원</span></td>
 					<td></td>
 				</tr>
