@@ -127,9 +127,46 @@ public class CartDao {
 		  Application.close(conn, ps); 
 		  } 
 	  }
+	public void deleteOrderlist(int product_code,String user_id) { 
+		String sql="delete cart where product_code=? and userid=? and cart_statement=1";
 	 
+	  try { 
+
+		  conn = new Application().getConn();
+			ps = conn.prepareStatement(sql);
+	  
+	  ps.setInt(1, product_code); 
+	  ps.setString(2, user_id); 
+	  ps.executeUpdate(); 
+	  }
+	  catch(Exception e) 
+	  {
+	  e.printStackTrace(); 
+	  }finally { 
+		  Application.close(conn, ps); 
+		  } 
+	  }
 	public void deleteCartAll(String user_id) {
 		String sql="delete cart where userid=? and cart_statement=0";
+		 
+		  try { 
+
+			  conn = new Application().getConn();
+				ps = conn.prepareStatement(sql);
+		  
+		  ps.setString(1, user_id); 
+		  ps.executeUpdate(); 
+		  }
+		  catch(Exception e) 
+		  {
+		  e.printStackTrace(); 
+		  }finally { 
+			  Application.close(conn, ps); 
+			  } 
+	}
+	
+	public void deleteAllOrderlist(String user_id) {
+		String sql="delete cart where userid=? and cart_statement=1";
 		 
 		  try { 
 
