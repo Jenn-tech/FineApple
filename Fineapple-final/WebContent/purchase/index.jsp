@@ -16,6 +16,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="../js/userjoin/userjoin.js"></script>
 <script src="../js/userjoin/mypage.js"></script>
+<script src="../js/userjoin/purchase.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -122,17 +123,18 @@
 						<label>할인쿠폰</label>
 					</div>
 					<div class="frm-input-cupon">
-						<select>
+						<select class="cupon_select">
 						<option>FineApple 임직원 30% 할인</option>
 						<option>FineApple 오픈 기념 10% 할인</option>
 						</select>
-						<input type="button" name="frm_sales" value="적용">
+						<input type="button" name="frm_sales" value="적용" onclick="apply();"/>
 					</div>
 					
 					<hr class="section-hr-two">
 					
-					<div class= "finalPay_dis frm-label">
-						<div style="font-size: 14px;">쿠폰 할인 금액
+					<div class= "finalPay_dis cupon_align">
+						<div style="font-size: 20px;">적용 쿠폰<input type="text" id="pay_coupon"></div>
+						<div style="font-size: 20px;">쿠폰 할인 금액
 						<input style="font-weight:bold"  type="text" name="frm_final_dis" placeholder="성명을 입력해주세요." value="0원">
 						</div>
 					</div>
