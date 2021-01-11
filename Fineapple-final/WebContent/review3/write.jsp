@@ -24,6 +24,9 @@
 <%
 	String mid =(String) session.getAttribute("member_mid");
 	request.setAttribute("mid", mid);
+	if(mid==null){
+		System.out.print("alert('')");
+	}
 %>
 	<h3>리뷰글쓰기</h3>
  	<div class="container">

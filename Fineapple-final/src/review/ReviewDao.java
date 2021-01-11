@@ -213,6 +213,8 @@ public class ReviewDao {
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
+				
+				System.out.println(vo.getReviewSerial());
 			}
 		}catch(Exception ex) {
 			ex.printStackTrace();

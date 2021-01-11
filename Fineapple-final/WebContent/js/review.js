@@ -149,10 +149,8 @@ function view(reviewSerial){
 	frm.submit();
 }
 
-function productview(reviewSerial){
+function productview(){
 	var frm = document.frm_review;
-	var serial = document.getElementsByName("reviewSerial");
 	frm.action = '../review.do?job=product';
-	reviewSerial = serial;
 	frm.submit();
 }
