@@ -54,6 +54,22 @@ public class FaqBookServlet extends HttpServlet {
 			rd = req.getRequestDispatcher("./cs_center/cs_func_page.jsp?func=cs_FAQ.jsp");
 			rd.forward(req, resp);
 			break;
+		case "insert":
+			FaqBookVo faqvo = new FaqBookVo();
+			String doc = req.getParameter("doc");
+			String subject = req.getParameter("subject");
+			String docType = req.getParameter("inquiryType");
+			
+			faqvo.setSubject(subject);
+			faqvo.setDoc(doc);
+			faqvo.setDocType(docType);
+			FaqBookDao faqDao = new FaqBookDao();
+			
+			faqDao.insert(faqvo);
+
+			rd = req.getRequestDispatcher("/faqbook.do?qa=selectFaq");
+			rd.forward(req, resp);
+			break;
 		}
 	}
 }

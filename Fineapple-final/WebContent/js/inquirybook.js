@@ -51,11 +51,51 @@ var inquiry = function() {
 	var cs_update_answer_btnSave = getID('cs_update_answer_btnSave');
 	var cs_view_btnUpdate_admin = getID('cs_view_btnUpdate_admin');
 	var cs_view_btnDelete_admin = getID('cs_view_btnDelete_admin');
-	
+	var cs_faq_insert = getID('cs_faq_insert');
+	var cs_faq_btnCancel = getID('cs_faq_btnCancel');
+	var cs_faq_btnSave = getID('cs_faq_btnSave');
 	var frm = document.cs_frm_board;
 	
 	
+	if(cs_faq_btnSave != null) {
+		cs_faq_btnSave.onclick = function() {
+			var checkFlag = true;
+			frm.inquiryType.value = $('#cs_inquiryType').val();
+			
+			if(!frm.inquiryType.checkValidity() || frm.inquiryType.value === 'null') {
+				alert("문의 유형을 설정해주세요.");
+				checkFlag = false;
+			}
+			else if(!frm.subject.checkValidity()) {
+				alert("제목을 입력하세요.")
+				checkFlag = false;
+			}
+			else if(!frm.doc.checkValidity()) {
+				alert("본문에 내용을 입력하세요.")
+				checkFlag = false;
+			}
+			
+			if(checkFlag) {
+			alert('작성이 완료되었습니다.');		
+			frm.action ='/Fineapple-final/faqbook.do?qa=insert';
+			frm.submit();
+			}
+		}
+	}
 	
+	if(cs_faq_btnCancel != null) {
+		cs_faq_btnCancel.onclick = function() {
+			frm.action = '/Fineapple-final/faqbook.do?qa=selectFaq';
+			frm.submit();
+		}
+	}
+	if(cs_faq_insert != null) {
+		cs_faq_insert.onclick = function() {
+			var frm = document.frm_faqbook;
+			frm.action = './cs_center/cs_func_page.jsp?func=cs_faq_insert.jsp';
+			frm.submit();
+		}
+	}
 	if(cs_update_answer_btnSave != null) {
 		cs_update_answer_btnSave.onclick = function() {
 			var checkFlag = true;

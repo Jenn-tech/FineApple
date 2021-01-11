@@ -232,12 +232,15 @@ function fnGo(){
 				</tr>
 			</tfoot>
 		</table>
-
-
+<%
+	String sum = (String)pageContext.getAttribute("sum");
+	session.setAttribute("sum", sum);
+%>
+			
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='./cartStatementChange.jsp' " style='cursor:pointer;'value="결제하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='../purchase/payComplete.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
 	<script type="text/javascript">
 	function funcdelete(serial){
