@@ -31,10 +31,10 @@ public class purchaseServlet extends HttpServlet {
 		// session 객체에서 member_mid 불러오기
 		HttpSession session = request.getSession();
 		String name = (String) session.getAttribute("member_mid");
-		
+	
+	
 		// sqlSession 연결
 		BoardDao dao = new BoardDao();
-		
 	
 		
 		// 핸드폰 번호
