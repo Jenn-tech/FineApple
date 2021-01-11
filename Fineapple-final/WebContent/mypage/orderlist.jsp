@@ -1,6 +1,7 @@
 <%@page import="mypage.CartDao"%>
 <%@page import="mypage.CartListVo"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>
@@ -29,6 +30,13 @@
 	background-color : black;
 	color : white;
 	font-size:18px;
+}
+.cart-btn-choose-product>#delete-all-cart-btn{
+	background-color : black;
+	color : white;
+	font-size:18px;
+	height : 30px;
+	width : 130px;
 }
 .bottom-btn>#cart-btn{
 	background-color : black;
@@ -160,17 +168,18 @@
 					<input type="button" id="delivery-location-btn" onclick="location.href='../Tracking/index.jsp' " style='cursor:pointer;' value="배송지 정보">
 					<c:set var ="sum" value="${sum+vo.getProduct_price()*vo.getCart_amount()}"></c:set>
 				</tr>
-				
-				
-		
-		
 				</c:forEach>
+					<form method="get" name="form" id="cartform">
+			<input type="hidden" name="product_s" value="">
+			<input type="hidden" name="product_price" value="">
+		</form>
 			</tbody>
 
 			<tfoot>
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
-					<input type="button" id="cart-btn" onclick="location.href='choose-product-delete.jsp' " style='cursor:pointer;' value="선택상품 취소">
+				
+					<input type="button" id="delete-all-cart-btn" onclick="funcdeleteAllOrderlist()" style='cursor:pointer;' value="전체 상품 삭제">
 				
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
@@ -187,7 +196,13 @@
 	<div class="bottom-btn">
 		<input type="button" id="cart-btn" onclick="location.href='../main/index.jsp' " style='cursor:pointer;'value="계속 쇼핑하기"> 
 	</div>
-	
+	<script type="text/javascript">
+	function funcdeleteAllOrderlist(){
+		var frm = document.form;
+		frm.action="deleteAllOrderlist.jsp";
+		frm.submit();
+		}
+	</script>
 	 <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
    	
