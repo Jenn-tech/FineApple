@@ -34,13 +34,28 @@
 			</div>
 		</div>
 		<div class="cs_center_notice_insert_send_box">
-			<input type="button" value="수정" id="cs_view_btnUpdate" class="cs_insert_btnSave">
-			<input type="button" value="삭제" id="cs_modal_btnOpen" class="cs_insert_btnSave">
-			<%if(session.getAttribute("member_mid")!=null){
-				if(session.getAttribute("member_mid").equals("kim")){ 
-			%> 
-				<input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
-			<%}} %>
+         <c:set var="pserial" value="${vo.pserial }"></c:set>
+
+         <%
+         String admin = (String)session.getAttribute("adminOk");
+         if(admin !=null){
+         %> 
+         <c:if test="${pserial != '0'}">
+            <input type="button" value="수정" id="cs_view_btnUpdate_admin" class="cs_insert_btnSave" >
+            <input type="button" value="삭제" id="cs_view_btnDelete_admin" class="cs_insert_btnSave">
+            <input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
+         </c:if>
+         <c:if test="${pserial == '0'}">
+            <input type="button" value="삭제" id="cs_view_btnDelete_admin" class="cs_insert_btnSave">
+            <input type="button" value="답변" id="cs_answer_btnInsert" class="cs_insert_btnCancel" style="float: right; background-color: rgb(91, 135, 164); color: #ffffff;">
+         </c:if>   
+         <%} 
+         else { %>
+		 <c:if test="${pserial == '0'}">
+               <input type="button" value="수정" id="cs_view_btnOpen_update" class="cs_insert_btnSave">
+               <input type="button" value="삭제" id="cs_modal_btnOpen" class="cs_insert_btnSave">
+         </c:if>
+		<%}%>
 			<input type="button" value="목록으로" id="cs_view_btnCancel" class="cs_insert_btnCancel">
 			<input type="hidden" value="${param.nowPage}" name="nowPage"/>
 			<input type="hidden" value="${param.findStr}" name="findStr"/>
@@ -59,6 +74,15 @@
 			</div>
 			<div class="modal_layer"></div>
 		</div>
+		<div id="cs_modal_update">
+			<div class="cs_modal_content">
+				<h3>설정하셨던 비밀번호를 입력해주세요.</h2>
+				<input type="password" name="checkpwd_update" id="cs_modal_input_update" >
+				<input type="button" value="전송" id="cs_view_btnUpdate" class="cs_modal_sava_btn"/>
+				<input type="button" value="취소" id="cs_modal_close_btn_update" class="cs_modal_cancel_btn"/>
+			</div>
+			<div class="modal_layer"></div>
+		</div>
 	</form>
 </div>
 
@@ -66,6 +90,7 @@
 <script type="text/javascript">
 inquiry()
 modal()
+modalUpdate()
 </script>
 </body>
 </html>
