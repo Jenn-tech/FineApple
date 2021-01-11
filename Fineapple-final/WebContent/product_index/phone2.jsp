@@ -22,7 +22,6 @@
 				function funcgo(serial){
 					var frm = document.frm;
 					frm.product_serial.value = serial;
-					alert(frm.product_serial.value);
 					$('.frm').submit();
 				}
 				</script>
