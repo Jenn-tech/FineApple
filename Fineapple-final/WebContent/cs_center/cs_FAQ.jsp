@@ -26,6 +26,12 @@
 			</div>
 			<div class="faq_category">
 				<form action="" name="frm_faqbook" method="post">
+					<%
+					String admin = (String)session.getAttribute("adminOk");
+						if(admin != null) {
+					 %>
+					<input type="button" name="btnInsert" value="글쓰기" class="frm_faq_btns" id="cs_faq_insert"/>
+					<%} %>
 					<input type="hidden" name="findStr" value="">
 					<input type="button" value="전체보기" class="btnFaq" onclick="gofaq(this.value)">
 					<input type="button" value="주문결제" class="btnFaq" onclick="gofaq(this.value)">

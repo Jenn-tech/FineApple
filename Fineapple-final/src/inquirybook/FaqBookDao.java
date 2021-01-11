@@ -3,6 +3,7 @@ package inquirybook;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,5 +49,36 @@ public class FaqBookDao {
 			}
 		}
 		return list;
+	}
+	
+	public String insert(FaqBookVo vo) {
+		String msg = "정상적으로 등록되었습니다.";
+		try {
+			String sql = "INSERT INTO faqbook(doctype, subject, doc) VALUES(?, ?, ?)";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, vo.getDocType());
+			ps.setString(2, vo.getSubject());
+			ps.setString(3, vo.getDoc());
+			
+			int rowCnt = ps.executeUpdate();
+			if(rowCnt<1) {
+				msg = "입력 중 오류 발생";
+				throw new Exception(msg);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+				
+			}
+			catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return msg;
+		
 	}
 }

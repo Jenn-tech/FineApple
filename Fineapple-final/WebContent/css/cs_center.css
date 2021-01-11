@@ -325,6 +325,20 @@
 	color: #ffffff;
 	cursor: pointer;
 }
+.frm_faq_btns {
+	font-size: 0.9rem!important;
+	background-color: #000000 !important;
+	color: #ffffff;
+	cursor: pointer;
+	display: block;
+	float: left;
+	padding: 0%!important;
+	width: 60px!important;
+	height: 35px;
+	margin: 8px 0 0 5px !important;
+}
+
+
 .cs_board_input_select-box {
 	display: inline-block;
 	float: right;
@@ -447,20 +461,21 @@
 
 .frm_cs_notice_body_item > label {
 	display: inline-block;
-	width: 50px
+	width: 65px;
+	margin-right: 10px;
 }
 .frm_cs_notice_body_item > input {
 	height: 30px;
 }
 .frm_cs_notice_body_item > #subject {
 	margin-right: 30px;
-	width: 60%;
+	width: 49%;
 	height: 30px;
 }
 .frm_cs_notice_body_item > #name {
-	width: 27%;
-	float: right;
+	width: 15%;
 	height: 30px;
+	margin-left: -17px;
 }
 
 .cs_center_notice_insert_send_box {
