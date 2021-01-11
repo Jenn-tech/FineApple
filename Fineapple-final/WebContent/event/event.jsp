@@ -46,7 +46,12 @@
 	<div id = 'event_search'>
 		<form name = 'frm_event' method = 'POST'>
 			<div class = 'event_search_input'>
+			<%
+			String admin = (String)session.getAttribute("adminOk");
+			if(admin !=null){
+			%>
 				<input type = 'button'	class ='btnInsert' id = 'btnInsert' value = '입력'/>
+			<%} %>
 				<div class='event_search_box'>
 				<input type = 'text' name = 'findStr' id = 'findStr'/>
 				<input type = 'button' name = 'btnFind' id = 'btnFind' value = '검색' class='frm_event_btns'/>
