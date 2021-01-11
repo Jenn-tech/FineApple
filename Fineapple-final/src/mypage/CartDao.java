@@ -129,7 +129,22 @@ public class CartDao {
 	  }
 	 
 	public void deleteCartAll(String user_id) {
-		
+		String sql="delete cart where userid=? and cart_statement=0";
+		 
+		  try { 
+
+			  conn = new Application().getConn();
+				ps = conn.prepareStatement(sql);
+		  
+		  ps.setString(1, user_id); 
+		  ps.executeUpdate(); 
+		  }
+		  catch(Exception e) 
+		  {
+		  e.printStackTrace(); 
+		  }finally { 
+			  Application.close(conn, ps); 
+			  } 
 	}
 	
 	/*

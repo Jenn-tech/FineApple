@@ -210,7 +210,7 @@ function fnGo(){
 			<tfoot>
 				<tr>
 					<td class="cart-btn-choose-product" colspan="4">
-					<input type="button" id="cart-btn" onclick="location.href='cartClear.jsp' " style='cursor:pointer;' value="전체 상품 삭제">
+					<input type="button" id="delete-all-cart-btn" onclick="funcdeleteAllCart()" style='cursor:pointer;' value="전체 상품 삭제">
 					<input type="button" id="cart-btn" onclick="location.href='../main/index.jsp' " style='cursor:pointer;' value="다른 상품 보기"></td>
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
@@ -232,6 +232,11 @@ function fnGo(){
 		var frm = document.form;
 		frm.product_s.value = serial;
 		frm.action="deletecart.jsp";
+		frm.submit();
+		}
+	function funcdeleteAllCart(){
+		var frm = document.form;
+		frm.action="deleteAllCart.jsp";
 		frm.submit();
 		}
 	</script>
