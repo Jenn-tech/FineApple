@@ -44,14 +44,17 @@ public class ReviewDao {
 			String sql = " select * from ("
 			           + "   select rownum no, m.* from ("
 			           + "     select * from review "
-					   + "     where review_no like ?"
+					   + "     where review_subject like ? or review_doc like ? or review_no like ? "
 					   + "     order by review_no desc) m   "
 					   + " ) where no between ? and ? ";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,  "%" + page.getFindStr() + "%");		
-			ps.setInt(2, page.getStartNo());
-			ps.setInt(3, page.getEndNo());
+			ps.setString(1,  "%" + page.getFindStr() + "%");	
+			ps.setString(2,  "%" + page.getFindStr() + "%");
+			ps.setString(3,  "%" + page.getFindStr() + "%");	
+			ps.setInt(4, page.getStartNo());
+			ps.setInt(5, page.getEndNo());
+			System.out.println(page.getFindStr());
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -210,6 +213,8 @@ public class ReviewDao {
 				vo.setReviewDate(rs.getString("review_date"));
 				vo.setReviewDoc(rs.getString("review_doc"));
 				vo.setReviewImg(rs.getString("review_photo"));
+				
+				System.out.println(vo.getReviewSerial());
 			}
 		}catch(Exception ex) {
 			ex.printStackTrace();

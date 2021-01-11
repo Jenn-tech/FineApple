@@ -1,3 +1,4 @@
+<%@page import="review.ReviewVo"%>
 <%@page import="product.ProductVo"%>
 <%@page import="mypage.CartDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -38,7 +39,6 @@ String member_id=(String)session.getAttribute("member_mid");
 
 //카트 리스트에 추가하기
 /* dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록 */
-
 %>
 
 
@@ -116,12 +116,12 @@ String member_id=(String)session.getAttribute("member_mid");
                 </ul>
             </div>
             <span class="total-review-menu">전체 상품평</span>
-            <button class="write-review-btn" onclick="location.href='./review3/write.jsp'"><i class="fas fa-pen"></i> 상품평 작성</button>
+            <button class="write-review-btn" onclick="location.href='../review3/write.jsp'"><i class="fas fa-pen"></i> 상품평 작성</button>
             <div class="total-review">
              
              
              <%--review에서 가져옴 --%>
-<%--         <div class="container">
+        <div class="container">
  		<div class="row">
  		<form method="post" name="frm_review">
 	 			<table class="review-table-detail" style="text-align: center;"> 
@@ -129,40 +129,34 @@ String member_id=(String)session.getAttribute("member_mid");
 	 					<tr>
 	 						<td class="table-left">제목</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
-	 						
-	 						<td class="table-right" colspan="2"><%= rv.getReviewTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>") %></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
-	 						<td class="table-right" colspan="2"><%= rv.getMemberId() %></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">작성일자</td>
 	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
-	 						<td class="table-right" colspan="2"><%= rv.getReviewDate()%></td>
 	 					</tr>
 	 					<tr>
 	 						<td class="table-left">사진</td>
 	 						<td  class="table-right" colspan="2">
-	 						<a href='review3/upload/${vo.reviewImg}' download = '${vo.reviewImg }'>
-										<img src='review3/upload/${vo.reviewImg}' width='200px' height='140px'/>
+	 						<a href='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg}' download = '${vo.reviewImg }'>
+										<img src='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg}' width='200px' height='140px'/>
 									</a>
 							</td>	
 						<hr/>
 						</tr>
 	 					<tr>
 	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
-	 						<td class="table-right" id="table-doc" colspan="2"><%= rv.getReviewDoc().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")%></td>
 	 					</tr>
 	 						
 	 				</tbody>
 	 			</table>
-	 			<input type="hidden" name="reviewSerial" value="6">
+	 			<input type="hidden" name="reviewSerial" value="21">
  			</form> 
  		</div>
  	</div>
- 	 --%>
  			
             </div>
         </div>
@@ -240,7 +234,7 @@ String member_id=(String)session.getAttribute("member_mid");
    <!-- footer영역 -->
    	<%@include file="../main/footer.jsp" %>
 <script>
-
+productview()
 </script>
 </body>
 <iframe name="iframe1" style="display:none;"></iframe>

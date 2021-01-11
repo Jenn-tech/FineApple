@@ -119,7 +119,7 @@ var review = function(){
 	if(btnFind != null){//검색
 		btnFind.onclick = function(){
 			var frm = document.frm_review;
-			frm.action = "../review.do?job=select";
+			frm.action = "review.do?job=select";
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
@@ -149,10 +149,8 @@ function view(reviewSerial){
 	frm.submit();
 }
 
-function productview(reviewSerial){
+function productview(){
 	var frm = document.frm_review;
-	var serial = document.getElementsByName("reviewSerial");
 	frm.action = '../review.do?job=product';
-	reviewSerial = serial;
 	frm.submit();
 }
