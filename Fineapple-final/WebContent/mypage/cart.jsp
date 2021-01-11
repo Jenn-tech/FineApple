@@ -222,7 +222,7 @@ function fnGo(){
 	</div>
 	<!--END-->
 	<div class="bottom-btn">
-		<input type="button" id="cart-btn" onclick="location.href='orderlist.jsp' " style='cursor:pointer;'value="결제하기"> 
+		<input type="button" id="cart-btn" onclick="location.href='../purchase/index.jsp' " style='cursor:pointer;'value="결제하기"> 
 	</div>
 	
 	</body>
