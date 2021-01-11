@@ -224,6 +224,34 @@ public class ReviewDao {
 		}
 	}
 	
+	public List<ReviewVo> viewList(int reviewSerial){
+		List<ReviewVo> list = new ArrayList<ReviewVo>();
+		try {
+			String sql = "select * from review where review_no = ? ";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, reviewSerial);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				ReviewVo vo = new ReviewVo();
+				vo.setReviewSerial(rs.getInt("review_no"));
+				vo.setMemberId(rs.getString("review_mid"));
+				vo.setReviewTitle(rs.getString("review_subject"));
+				vo.setReviewDate(rs.getString("review_date"));
+				vo.setReviewDoc(rs.getString("review_doc"));
+				vo.setReviewImg(rs.getString("review_photo"));
+				list.add(vo);
+				
+				
+				System.out.println(vo.getReviewSerial());
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			disConn();
+			return list;
+		}
+	}
+	
 	public void disConn() {
 		try {
 			conn.close();

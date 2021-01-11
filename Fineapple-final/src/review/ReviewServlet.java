@@ -153,6 +153,16 @@ public class ReviewServlet extends HttpServlet{
 			rd.forward(req, resp);
 			break;
 			
+		case "productlist":
+			String temp33 = req.getParameter("reviewSerial");
+			int temp44 = Integer.parseInt(temp33);
+			int reviewSerial4 = temp44;
+			List<ReviewVo> list2 = dao.viewList(reviewSerial4);
+			
+			req.setAttribute("list2", list2);
+			rd = req.getRequestDispatcher("product/phone6.jsp");
+			rd.forward(req, resp);
+			break;
 		}
 		
 	}

@@ -151,9 +151,8 @@ function fnGo(){
 			
 			%>
 			<c:forEach var='vo' items="${cartList}">
-			<% 	System.out.println("@@@@@@@@@@@@@@@"); %>
 			<tr class="content" style="overflow: visible;">
-			
+			${vo.getProduct_serial()}
 					<td class="slt">
 						<div class="checkbox">
 							<label> <input type="checkbox" class="_cartItemCheckbox"

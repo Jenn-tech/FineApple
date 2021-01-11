@@ -16,7 +16,7 @@
                   <h3>더 알아보기</h3>
                   <h5>more detail</h5>
                 </figcaption>
-                <a href="../product/phone1-1.jsp"></a>
+                <a href="../product/phone6.jsp"></a>
                 <div id="detail">갤럭시 Z 폴드2 5G</br>2,398,000</div>
             </figure>
 

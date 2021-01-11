@@ -1,8 +1,9 @@
+<%@page import="review.ReviewVo"%>
 <%@page import="product.ProductVo"%>
-<%@page import="product.ProductDao"%>
+<%@page import="mypage.CartDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix = "cs" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -14,59 +15,64 @@
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
     crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src='../js/product.js'></script>
+    <script src='<%=request.getContextPath() %>/js/product.js'></script>
+	<script src='../js/review.js'></script>
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/product.css">
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/header.css">
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/review3.css"> 
     <link rel="shortcut icon" href="<%=request.getContextPath() %>/images/favicon.png">
     <link rel="icon" href="favicon.ico">
     <script src='../js/go_cart.js'></script>  
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-   
 </head>
 <body>
 <%
-  ProductDao dao = new ProductDao();
-  ProductVo vo = new ProductVo();
-  
-  int product_serial = Integer.parseInt(request.getParameter("product_serial"));
-  
-  vo = dao.product_view(product_serial);
- 	System.out.println(vo.getProduct_serial());
-  request.setAttribute("vo", vo);
-  
+CartDao dao = new CartDao();
+ProductVo vo =new ProductVo();
+int product_serial=1234;
+int product_amount=12;
+String member_id=(String)session.getAttribute("member_mid");
+
+
+
+//카트 리스트에 추가하기
+/* dao.insertCart(member_id, product_serial, product_amount);//카트 db에 등록 */
 %>
-   <!-- header영역 -->
-      <jsp:include page="../main/header.jsp"/>
+
+
+	<!-- header영역 -->
+		<jsp:include page="../main/header.jsp"/>
 
     <!-- main -->
- 
-    
     <div class="main" id="main">
-        <img class="phone-img" src="${vo.getProduct_picture_url() }" alt="iPhone 12 Pro" width="600px">
+        <img class="phone-img" src="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" alt="갤럭시 Z 폴드2 5G">
         <div class="summary">
            <form method="get" name="form" id="form" target="iframe1">
-				<input type="hidden" name="phone-img" value="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021658000" />	            
+          
+                 <input type="hidden" name="phone-img" value="https://images.samsung.com/is/image/samsung/sec-galaxy-z-fold2-f916-sm-f916nznakoo-frontmysticbronze-308345475?$PD_GALLERY_L_PNG$" />
 	            <div class="테두리">
-	               <h1>${vo.getProduct_name() }</h1><input type= hidden name="product_name" value= "${vo.getProduct_name() }"><br>
-	               상품코드 : ${vo.getProduct_serial() }<input type=hidden name="product_serial" value= "${vo.getProduct_serial() }"><br>
-	               판매가 : ${vo.getProduct_price() }원<br>
-	               색상 : ${vo.getProduct_color() }<input type=hidden name="product_color" value= "${vo.getProduct_color() }"><br>
+	               <h1>갤럭시 Z 폴드2 5G</h1><input type= hidden name="product_name" value= "갤럭시 Z 폴드2 5G"><br>
+	               상품코드 : SM-F916NZKAKOO<input type=hidden name="product_serial" value= "1"><br>
+	               판매가 : 2,398,000원<br>
+	               색상 : 미스틱브론즈<input type=hidden name="product_color" value= "미스틱브론즈"><br>
+	               메모리 : 256 GB<br>
 	            </div>
-	                <div class="amount">
-	                    수량  <input type=hidden name="product_price" value="${vo.getProduct_price() }">
-	                    <input type="button" value=" - " onclick="del();">
-	                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
-	                    <input type="button" value=" + " onclick="add();"><br/>
-	                    금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
-	                </div><br>
-	                
+                <div class="amount">
+                    수량  <input type=hidden name="sell_price" value="2398000">
+                    <input type="button" value=" - " onclick="del();">
+                    <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
+                    <input type="button" value=" + " onclick="add();"><br/>
+                    금액  <input type="text" style = "text-align:center;" name="sum" size="11" readonly>원
+                </div>
+            <br/>
+
 	               <div class="btns">
 	               		<input type="button" value="장바구니" class="btn1"/>
 	               		<input type="button" value="바로구매" class="btn2" onclick="funcPO"/>
 	               </div>
-         	</form>
+            </form>
         </div>
     </div>
 
@@ -74,7 +80,7 @@
     <div class = "menubar2">
         <div class = "여백3"></div>
         <div class="item-title">
-            <a href="#main"><h2>${vo.getProduct_name() }</h2></a>
+            <a href="#main"><h2>갤럭시 Z 폴드2 5G</h2></a>
             <div class="item-title2">
                 <ul>
                     <a href="#item-benefits"><li>특장점</li></a>
@@ -89,13 +95,14 @@
         <!-- 특장점 -->
         <div class="item-benefits" id="item-benefits">
             <div class="item-video">
-                <iframe width="1000" height="540" src="${vo.getProduct_youtubeUrl() }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="1000" height="540" src="https://www.youtube.com/embed/lAOSljJYOqI?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <br/><br/><br/><br/><br/><br/><br/>
             
-            <br/><br/><br/><br/><br/>
-            <img class="ipone" width="1000px" src="${vo.getProduct_pdInfo() }">
+			<img class="ipone" width="1000px" src="https://thumbnail9.coupangcdn.com/thumbnails/remote/q89/image/retail/images/21809451964480-11946b45-1882-46f1-ae62-1c51537ab367.jpg">
         
-
+        </div>
+        
         <!-- 상품평 -->
         <div class="review" id="review">
             <div class="여백1"></div>
@@ -109,45 +116,50 @@
                 </ul>
             </div>
             <span class="total-review-menu">전체 상품평</span>
-            <button class="write-review-btn"><i class="fas fa-pen"></i> 상품평 작성</button>
+            <button class="write-review-btn" onclick="location.href='../review3/write.jsp'"><i class="fas fa-pen"></i> 상품평 작성</button>
             <div class="total-review">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut doloremque porro enim, possimus sit eaque harum rem maxime reiciendis molestiae saepe voluptatem unde, aperiam laboriosam similique! Dolorum facilis animi exercitationem!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus autem nisi natus ex obcaecati est expedita nam? Distinctio accusantium quis, minima tenetur non, dolore consectetur est voluptatem rem eum quo.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, molestiae! Porro exercitationem fugiat nobis cumque ut molestiae? Veritatis harum obcaecati temporibus recusandae quod tenetur ipsa consequuntur quisquam ducimus, sint quibusdam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt iure expedita nobis autem veritatis vitae, cupiditate aliquam, quisquam saepe neque, aspernatur dolorem beatae ipsum alias eaque nam magnam distinctio.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta dolores iste cupiditate modi officia saepe cumque necessitatibus, suscipit, doloremque quam illo rem numquam delectus. Aliquid officia amet voluptatum reiciendis!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni earum nisi accusantium deserunt architecto perferendis eos necessitatibus cum nesciunt et, veniam id natus dolorem explicabo omnis cupiditate nulla? Est!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque iure quibusdam eum voluptatibus eveniet earum quasi soluta praesentium at vitae natus itaque neque possimus aut modi, est quaerat! Dolor, est.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat saepe ipsam impedit numquam. Dolorum laboriosam, quos quae consectetur modi odio explicabo aspernatur ab aperiam voluptatibus, magni doloribus cumque saepe iure?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, itaque odio? Vitae eveniet cumque quod magnam, ea reiciendis repellendus, dolor eaque quae, suscipit repellat dolorem impedit! Quo ab illo atque?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia, numquam iusto blanditiis temporibus placeat quod aperiam voluptatum nulla dolorum fugit rem optio saepe fugiat aliquid cum doloribus facere repellendus!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet deserunt voluptatibus odit! Impedit error aliquid fugit nobis minima eligendi natus laboriosam aut in quis laborum quam incidunt id, maiores similique.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non aspernatur assumenda quis delectus doloribus. Reiciendis dolorum enim cum fugit iure laudantium numquam quidem esse, neque vitae est beatae vero atque.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maxime molestias consequuntur temporibus ut molestiae voluptatum explicabo? Velit error ratione tempore. Fuga qui maiores porro adipisci nostrum cum, voluptates nulla!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur necessitatibus asperiores dolore nobis, impedit saepe incidunt, esse aut libero temporibus beatae quia repellendus veniam quod molestiae aliquid minima qui.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a eligendi ipsa accusantium! Laudantium aliquam omnis ipsum repellendus perferendis nisi saepe? Error incidunt facere cum quam saepe cupiditate pariatur similique?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias unde fugiat in ipsam illo recusandae omnis ad cumque sed dicta asperiores mollitia sint nemo, reiciendis officia consequatur eos! Possimus, quae.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id dolores aspernatur sit, vel nihil quos, voluptatibus possimus, nam neque veritatis ex sunt sapiente eaque? Voluptates voluptatem hic dolorem numquam laborum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, est? Vel tempora sint libero non commodi atque expedita aliquam amet vitae sapiente esse accusamus quae recusandae perspiciatis, totam molestiae laboriosam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut doloremque porro enim, possimus sit eaque harum rem maxime reiciendis molestiae saepe voluptatem unde, aperiam laboriosam similique! Dolorum facilis animi exercitationem!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus autem nisi natus ex obcaecati est expedita nam? Distinctio accusantium quis, minima tenetur non, dolore consectetur est voluptatem rem eum quo.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, molestiae! Porro exercitationem fugiat nobis cumque ut molestiae? Veritatis harum obcaecati temporibus recusandae quod tenetur ipsa consequuntur quisquam ducimus, sint quibusdam!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt iure expedita nobis autem veritatis vitae, cupiditate aliquam, quisquam saepe neque, aspernatur dolorem beatae ipsum alias eaque nam magnam distinctio.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta dolores iste cupiditate modi officia saepe cumque necessitatibus, suscipit, doloremque quam illo rem numquam delectus. Aliquid officia amet voluptatum reiciendis!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni earum nisi accusantium deserunt architecto perferendis eos necessitatibus cum nesciunt et, veniam id natus dolorem explicabo omnis cupiditate nulla? Est!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque iure quibusdam eum voluptatibus eveniet earum quasi soluta praesentium at vitae natus itaque neque possimus aut modi, est quaerat! Dolor, est.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat saepe ipsam impedit numquam. Dolorum laboriosam, quos quae consectetur modi odio explicabo aspernatur ab aperiam voluptatibus, magni doloribus cumque saepe iure?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, itaque odio? Vitae eveniet cumque quod magnam, ea reiciendis repellendus, dolor eaque quae, suscipit repellat dolorem impedit! Quo ab illo atque?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A mollitia, numquam iusto blanditiis temporibus placeat quod aperiam voluptatum nulla dolorum fugit rem optio saepe fugiat aliquid cum doloribus facere repellendus!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet deserunt voluptatibus odit! Impedit error aliquid fugit nobis minima eligendi natus laboriosam aut in quis laborum quam incidunt id, maiores similique.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non aspernatur assumenda quis delectus doloribus. Reiciendis dolorum enim cum fugit iure laudantium numquam quidem esse, neque vitae est beatae vero atque.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt maxime molestias consequuntur temporibus ut molestiae voluptatum explicabo? Velit error ratione tempore. Fuga qui maiores porro adipisci nostrum cum, voluptates nulla!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur necessitatibus asperiores dolore nobis, impedit saepe incidunt, esse aut libero temporibus beatae quia repellendus veniam quod molestiae aliquid minima qui.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt a eligendi ipsa accusantium! Laudantium aliquam omnis ipsum repellendus perferendis nisi saepe? Error incidunt facere cum quam saepe cupiditate pariatur similique?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias unde fugiat in ipsam illo recusandae omnis ad cumque sed dicta asperiores mollitia sint nemo, reiciendis officia consequatur eos! Possimus, quae.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id dolores aspernatur sit, vel nihil quos, voluptatibus possimus, nam neque veritatis ex sunt sapiente eaque? Voluptates voluptatem hic dolorem numquam laborum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, est? Vel tempora sint libero non commodi atque expedita aliquam amet vitae sapiente esse accusamus quae recusandae perspiciatis, totam molestiae laboriosam!
-                </p>
+             
+             
+             <%--review에서 가져옴 --%>
+        <div class="container">
+ 		<div class="row">
+ 		<form method="post" name="frm_review">
+             <c:forEach>
+	 			<table class="review-table-detail" style="text-align: center;"> 
+	 				<tbody>
+	 					<tr>
+	 						<td class="table-left">제목</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reivewTitle" disabled="disabled" value="${vo.reviewTitle }"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">작성자</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="memberId" disabled="disabled" value="${vo.memberId }"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">작성일자</td>
+	 						<td class="table-right" colspan="2"><input type="text" name="reviewDate" disabled="disabled" value="${vo.reviewDate }"></td>
+	 					</tr>
+	 					<tr>
+	 						<td class="table-left">사진</td>
+	 						<td  class="table-right" colspan="2">
+	 						<a href='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg}' download = '${vo.reviewImg }'>
+										<img src='<%=request.getContextPath() %>/review3/upload/${vo.reviewImg}' width='200px' height='140px'/>
+									</a>
+							</td>	
+						<hr/>
+						</tr>
+	 					<tr>
+	 						<td class="table-right" id="table-doc" colspan="2"><input type="text" name="reivewDoc" disabled="disabled" value="${vo.reviewDoc }"></td>
+	 					</tr>
+	 						
+	 				</tbody>
+	 			</table>
+             </c:forEach>
+	 			<input type="hidden" name="reviewSerial" value="21">
+ 			</form> 
+ 		</div>
+ 	</div>
+ 			
             </div>
         </div>
 
@@ -222,9 +234,9 @@
         </div>
         
    <!-- footer영역 -->
-      <%@include file="../main/footer.jsp" %>
+   	<%@include file="../main/footer.jsp" %>
 <script>
-
+productlistview()
 </script>
 </body>
 <iframe name="iframe1" style="display:none;"></iframe>

@@ -154,3 +154,9 @@ function productview(){
 	frm.action = '../review.do?job=product';
 	frm.submit();
 }
+
+function productlistview(){
+	var frm = document.frm_review;
+	frm.action = '../review.do?job=productlist';
+	frm.submit();
+}
