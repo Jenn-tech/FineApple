@@ -12,7 +12,7 @@ function funcCart(){
 
 function funcPO(){
 	var frm = document.form;
-	frm.action = "../login/login.jsp";
+	frm.action = "../product/prodlogin.jsp";
 	frm.submit();
 }
 $().ready(function () {

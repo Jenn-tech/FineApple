@@ -39,7 +39,7 @@
 	               메모리 : 256 GB<br>
 	            </div>        
                 <div class="amount">
-                    수량  <input type=hidden name="sell_price" value="1290000">
+                    수량  <input type=hidden name="product_price" value="1290000">
                     <input type="button" value=" - " onclick="del();">
                     <input type="text" style = "text-align:center;" name="amount" value="1" size="3" onchange="change();">
                     <input type="button" value=" + " onclick="add();"><br/>
