@@ -16,13 +16,13 @@
 	</figure>
 	</c:forEach>
 				<form method="post" class="frm" name="frm" style="display: inline-block;" action = "../product/dbproduct.jsp">
-            	<input type = "hidden" name= "product_serial" value="">
+            	<input type = "text" name= "product_serial" value="">
 				</form>
 				<script type="text/javascript">
 				function funcgo(serial){
 					var frm = document.frm;
 					frm.product_serial.value = serial;
-					/* alert(frm.product_serial.value); */
+					alert(frm.product_serial.value);
 					$('.frm').submit();
 				}
 				</script>

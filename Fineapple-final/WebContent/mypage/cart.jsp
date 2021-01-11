@@ -7,6 +7,7 @@
 	<%@page import="java.text.DecimalFormat"%>
 <%@page import="mypage.CartVo"%>
 <%@page import="java.util.ArrayList" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"  %>    
 <%
 request.setCharacterEncoding("utf-8");
@@ -191,12 +192,7 @@ function fnGo(){
 							<span class="cart-product-amount">${vo.getCart_amount() }개</span></em>
 						</div>
 						
-						<div class="text-center">
-							<span class="cart-btn-tools"> <a href="javascript:;"
-								class="cart-btn-tools">변경</a>
-								<!-- 아래 옵션 변경과 같은 기능. 모바일에선 해당 버튼은 사라지고 아래 옵션 변경 버튼이 노출-->
-							</span>
-						</div>
+						
 					</td>
 					<td class="cart-delivery-td">
 							<div class="delivery-way">택배</div>
@@ -204,11 +200,12 @@ function fnGo(){
 					<td class="cart-delivery-price-td">
 						<div class="cart-delivery-price">
 							<div>
-								<span>2,500원</span>
+								<span>무료 배송</span>
 							</div>
 
 						</div></td>
-					<td class="cart-product-price">${vo.getProduct_price()*vo.getCart_amount()}원</td>
+	
+					<td class="cart-product-price"><fmt:formatNumber value="${vo.getProduct_price()*vo.getCart_amount()}" pattern="#,###"></fmt:formatNumber>원</td>
 					<td class="orderlist-delivery-location-btn">
 					<input type="button" id="delivery-location-btn"  style='cursor:pointer;' value="삭제" onclick="funcdelete(${vo.getProduct_serial()})">
 				</tr>
@@ -230,7 +227,7 @@ function fnGo(){
 					<td class="amount txt"><span style="font-size:18px;">결제금액</span></td>
 					<td class="amount text-brand"><span
 						style="font-size: 20px; font-weight: 600;"
-						id="cart_main_total_price">${sum}원</span></td>
+						id="cart_main_total_price"><fmt:formatNumber value="${sum}" pattern="#,###"></fmt:formatNumber>원</span></td>
 					<td></td>
 				</tr>
 			</tfoot>
@@ -257,7 +254,7 @@ function fnGo(){
 	function funcSumCart(price){
 		var frm = document.form;
 		frm.product_price.value=price;
-		frm.action=}
+		}
 	</script>
 	</body>
 	 <!-- footer영역 -->
