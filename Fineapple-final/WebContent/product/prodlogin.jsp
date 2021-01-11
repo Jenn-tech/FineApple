@@ -11,18 +11,17 @@
 <jsp:include page="../main/header.jsp"/>
 <%
 	CartDao dao = new CartDao();
-int product_serial=Integer.parseInt(request.getParameter("product_serial"));
-int product_amount=Integer.parseInt(request.getParameter("amount"));
+	int product_serial=Integer.parseInt(request.getParameter("product_serial"));
+	int product_amount=Integer.parseInt(request.getParameter("amount"));
 
-	String mid = (String) session.getAttribute("member_mid");
+	String mid = (String)session.getAttribute("member_mid");
 	
 	if(mid != null){
-		dao.insertCart(mid, product_serial, product_amount);
-		response.sendRedirect("../purchase/index.jsp");
+		response.sendRedirect("../purchase/index.jsp"); 
+
 	}else{
 		response.sendRedirect("../login/loginfo.jsp");
 	}
-
 %>
 </body>
 </html>
