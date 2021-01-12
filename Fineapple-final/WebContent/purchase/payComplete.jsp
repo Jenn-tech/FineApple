@@ -62,7 +62,7 @@ dao.payment(memberid);//카트 db에서 statement 1로 변경
 					
 				</div>
 				<div class="trk-header-align-btn">
-					<form action="/Fineapple-final/login/loginfo.jsp" method="POST">
+					<form action="/Fineapple-final/main/index.jsp" method="POST">
 					<input type="submit" value="주문내역으로 이동하기">
 					</form>
 				</div>
