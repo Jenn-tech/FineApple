@@ -11,12 +11,15 @@
 <%
 	String member_id=(String)session.getAttribute("member_mid");
 	System.out.println(member_id);
+	RequestDispatcher rd = null;
 	if(member_id == null){
-%>
-		<script>location.href='../login/loginfo.jsp';</script>
-<% 	}else{%>
-		<script>location.href='../purchase/purchase.do';</script>
-<% }%>
+		rd = request.getRequestDispatcher("../login/loginfo.jsp");
+		rd.forward(request, response);
+		
+ 	}else{
+ 		rd = request.getRequestDispatcher("../purchase/purchase.do");
+		rd.forward(request, response);
+}%>
 </body>
 </html>
 <!-- 		response.sendRedirect("../login/loginfo.jsp");
