@@ -13,9 +13,9 @@
 	System.out.println(member_id);
 	if(member_id == null){
 %>
-		<script>location.href='/login/loginfo.jsp';</script>
+		<script>location.href='/Fineapple-final/login/loginfo.jsp';</script>
 <% 	}else{%>
-		<script>location.href='/purchase/purchase.do';</script>
+		<script>location.href='/Fineapple-final/purchase/purchase.do';</script>
 <% }%>
 </body>
 </html>
